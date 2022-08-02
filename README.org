@@ -1,0 +1,15 @@
+To try the configuration above, clone this repository in your home folder (~~~):
+
+#+BEGIN_SRC shell
+cd;
+git clone git@github.com:bfonta/dot-emacs.git;
+#+END_SRC
+
+and replace the contents of your ~~/.emacs~ file by:
+
+#+BEGIN_SRC shell
+(load-file "~/dot-emacs/init.el")
+(setq user-emacs-directory "~/dot-emacs/")
+#+END_SRC
+
+*Issues might happen!* Keep a backup of your files just in case.
