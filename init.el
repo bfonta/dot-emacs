@@ -31,13 +31,13 @@
   )
 
 ;; using deprecated 'cl' package
-(add-to-list 'load-path "~/.emacs.d/zoom/")
+(add-to-list 'load-path "~/dot-emacs/zoom/")
 (require 'zoom-frm)
 
 ;;; ---------------------------
 ;;; Load custom content
 ;;; ---------------------------
-(add-to-list 'load-path "~/bash_definitions/.emacs.d/custom/")
+(add-to-list 'load-path "~/dot-emacs/custom/")
 (load-library "cust_definitions")
 (load-library "cust_company")
 (load-library "cust_cpp")
@@ -80,14 +80,14 @@
 ;;; ---------------------------
 ;;; Load non-MELPA packages
 ;;; ---------------------------
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(add-to-list 'load-path "~/.emacs.d/markerpen/")
+(add-to-list 'custom-theme-load-path "~/dot-emacs/themes/")
+(add-to-list 'load-path "~/dot-emacs/markerpen/")
 (load-library "markerpen")
 
 ;;; Indentation in python
 ;;; References: https://github.com/antonj/Highlight-Indentation-for-Emacs/blob/master/highlight-indentation.el
 ;;;             https://github.com/antonj/Highlight-Indentation-for-Emacs/issues/16
-(add-to-list 'load-path "~/bash_definitions/.emacs.d/highlight-indentation/")
+(add-to-list 'load-path "~/dot-emacs/highlight-indentation/")
 (load-library "highlight-indentation")
 (set-face-attribute 'highlight-indentation-face nil
                     :stipple (list 8 4 (string 16 16 16 16))
