@@ -1,11 +1,11 @@
-To try the configuration above, clone this repository in your home folder (~~~):
+To try the configuration above, clone this repository in your home folder (=~=):
 
 #+BEGIN_SRC shell
-cd;
-git clone git@github.com:bfonta/dot-emacs.git;
+cd
+git clone git@github.com:bfonta/dot-emacs.git
 #+END_SRC
 
-and replace the contents of your ~~/.emacs~ file by:
+and replace the contents of your =~/.emacs= file by:
 
 #+BEGIN_SRC shell
 (load-file "~/dot-emacs/init.el")
