@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: shifter_begin
+# key: sbegin
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+TRG Shifter: BRUNO ALVES
+Log in Central European Summer Time.
+
+h ${1:"hour"}.00 -  shift started
+
+Instructions from previous shifter: ${2:None}
+${0}

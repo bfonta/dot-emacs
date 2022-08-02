@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: no_mouth
+# key: n
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+:no-mouth: $0 

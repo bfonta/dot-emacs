@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: image
+# key: im
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+#+CAPTION: ${1:"caption"$(unless yas/modified-p (reftex-label "caption" 'dont-insert))}
+#+NAME: fig:${2:"name"$(unless yas/modified-p (reftex-label "name" 'dont-insert))}
+#+ATTR_LATEX: :width ${3:"width"}cm
+file:~/${3:"path.ext"}
+$0

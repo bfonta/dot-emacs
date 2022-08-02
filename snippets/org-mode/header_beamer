@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: header
+# key: h
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+#+title: ${1:"insert title"}
+#+AUTHOR: Bruno Alves
+#+EMAIL: bruno.alves@cern.ch
+#+DATE: \today
+#+OPTIONS: H:2 toc:t
+#+latex_header: \mode<beamer>{\usetheme{metropolis}}
+$0

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: expected
+# key: exp
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+
+\mathbf{E}\left[ $0 \right]

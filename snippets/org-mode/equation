@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: equation
+# key: eq
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+\begin{equation}
+${2:"insert latex equation"$(unless yas/modified-p (reftex-label "name" 'dont-insert))}
+\label{eq:${1:"insert name"$(unless yas/modified-p (reftex-label "name" 'dont-insert))}}
+\end{equation}
+$0

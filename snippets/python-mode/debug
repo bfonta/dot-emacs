@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: debug
+# key: db
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+print('++++++++++++++ DEBUG +++++++++++++++++')
+print($1)
+${2:quit()}
+$0

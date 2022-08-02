@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: name
+# key: name
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+#+NAME: ${1:"name"}
+$0

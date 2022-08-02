@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: pinch
+# key: p
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+:pinching_hand: $0 

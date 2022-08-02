@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: variance
+# key: var
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+
+\mathbf{V}[\left $0 \right]

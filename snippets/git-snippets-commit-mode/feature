@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: feature
+# key: f
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+:rocket: $0 

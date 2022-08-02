@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: sparkles
+# key: s
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+:sparkles: $0 

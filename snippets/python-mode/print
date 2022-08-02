@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: print
+# key: p
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+print($1)$0

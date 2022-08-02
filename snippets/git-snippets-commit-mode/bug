@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: bug
+# key: b
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+:bug: $0 

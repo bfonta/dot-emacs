@@ -1,0 +1,28 @@
+# -*- mode: snippet -*-
+# name: shifter
+# key: sadd
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+-----------------------------------------------------------------------------------------
+h HH:MM - Run XXXXXXX starts ()
+
+    * SUBSYSTEMS:
+    * TRG SUBSYSTEMS:
+    * KEYS:
+    * PRESCALE:
+
+    * L1 RATES
+       * L1A Calibration: ~  Hz
+       * L1A Random:      ~  kHz 
+       * L1A Physics:     ~  Hz
+       * L1A Total Rate:  ~  kHz
+
+    * PHYSICS STREAM: ~ Hz
+    * EXPRESS RATE: ~  Hz
+
+    * DEADTIME: ~  %
+
+    * WARNINGS
+	  
+
+h HH:MM - Run XXXXXXX stops

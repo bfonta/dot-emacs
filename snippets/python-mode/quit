@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: quit
+# key: q
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+quit()
+$0

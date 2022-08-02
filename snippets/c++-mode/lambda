@@ -1,0 +1,7 @@
+# name: Lambda
+# key: lambda
+# --
+auto ${1:lambda} = [&$2]($3, $4)
+    {
+    $0;
+    };

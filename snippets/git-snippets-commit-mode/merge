@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: merge
+# key: m
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+:twisted_rightwards_arrows: $0 

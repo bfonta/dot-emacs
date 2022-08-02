@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: construction
+# key: c
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+:construction: $0 
