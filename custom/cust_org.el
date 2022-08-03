@@ -36,6 +36,9 @@
 
   (setq org-log-into-drawer t)
 
+  ;; hide blocks by default
+  (setq org-startup-folded t)
+
   ;; TODO keywords
   (setq org-todo-keywords
 		(quote ((sequence "TODO(t)" "NEXT(n)" "IN PROGRESS(p)" "|" "DONE(d)" "WAITING" "CANCELLED")

@@ -4,7 +4,6 @@
 # contributor: Bruno Alves (bruno.alves@cern.ch)
 # --
 
-Instructions to next shifter: ${1:None}
+** Instructions to next shifter: ${1:None}
 
-h ${2:"hour"}.00 -  shift finished
-${0}
+h ${2:"hour"}.00 - shift finished

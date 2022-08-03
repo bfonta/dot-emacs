@@ -310,7 +310,7 @@ attention to case differences."
 
 (ert-deftest undo-redo ()
   "Check redoing of snippet undo."
-  (yas-with-snippet-dirs '((".emacs.d/snippets"
+  (yas-with-snippet-dirs '(("dot-emacs/snippets"
                             ("emacs-lisp-mode" ("x" . "${1:one},and done"))))
     (with-temp-buffer
       (emacs-lisp-mode)
@@ -334,7 +334,7 @@ attention to case differences."
 
 (defun yas-test-expand-and-undo (mode snippet-entry initial-contents)
   (yas-with-snippet-dirs
-   `((".emacs.d/snippets" (,(symbol-name mode) ,snippet-entry)))
+   `(("dot-emacs/snippets" (,(symbol-name mode) ,snippet-entry)))
    (with-temp-buffer
      (funcall mode)
      (yas-reload-all)
@@ -687,7 +687,7 @@ mapconcat #'(lambda (arg)
 (ert-deftest expand-with-unused-yas-selected-text ()
   (with-temp-buffer
     (yas-with-snippet-dirs
-      '((".emacs.d/snippets"
+      '(("dot-emacs/snippets"
          ("emacs-lisp-mode"
           ("foo" . "expanded `yas-selected-text`foo"))))
       (yas-reload-all)
@@ -700,7 +700,7 @@ mapconcat #'(lambda (arg)
 (ert-deftest yas-expand-command-snippet ()
   (with-temp-buffer
     (yas-with-snippet-dirs
-      '((".emacs.d/snippets"
+      '(("dot-emacs/snippets"
          ("emacs-lisp-mode"
           ("foo" . "\
 # type: command
@@ -856,7 +856,7 @@ TODO: correct this bug!"
      (let ((yas-tests--ran-exit-hook nil)
            (yas-triggers-in-field t))
        (yas-with-snippet-dirs
-         '((".emacs.d/snippets"
+         '(("dot-emacs/snippets"
             ("emacs-lisp-mode"
              ("foo" . "\
 # expand-env: ((yas-after-exit-snippet-hook (lambda () (setq yas-tests--ran-exit-hook t))))
@@ -889,7 +889,7 @@ the expand-env field."
            (yas-triggers-in-field t)
            (yas-after-exit-snippet-hook nil))
        (yas-with-snippet-dirs
-         '((".emacs.d/snippets"
+         '(("dot-emacs/snippets"
             ("emacs-lisp-mode"
              ("foo" . "foobar\n")
              ("baz" . "\
@@ -917,7 +917,7 @@ accessible from mirror transformations."
      (let ((yas-triggers-in-field t)
            (yas-good-grace nil))
        (yas-with-snippet-dirs
-         '((".emacs.d/snippets"
+         '(("dot-emacs/snippets"
             ("emacs-lisp-mode"
              ("baz" . "\
 # expand-env: ((func #'upcase))
@@ -940,7 +940,7 @@ hello ${1:$(when (stringp yas-text) (funcall func yas-text))} foo${1:$$(concat \
   (with-temp-buffer
     (yas-saving-variables
      (yas-with-snippet-dirs
-       '((".emacs.d/snippets"
+       '(("dot-emacs/snippets"
           ("emacs-lisp-mode"
            ("foo-barbaz" . "# condition: yas--foobarbaz\n# --\nOKfoo-barbazOK")
            ("barbaz" . "# condition: yas--barbaz\n# --\nOKbarbazOK")
@@ -987,7 +987,7 @@ hello ${1:$(when (stringp yas-text) (funcall func yas-text))} foo${1:$$(concat \
 (ert-deftest nested-snippet-expansion-2 ()
   (let ((yas-triggers-in-field t))
     (yas-with-snippet-dirs
-      '((".emacs.d/snippets"
+      '(("dot-emacs/snippets"
          ("text-mode"
           ("nest" . "one($1:$1) two($2).$0"))))
       (yas-reload-all)
@@ -1010,7 +1010,7 @@ hello ${1:$(when (stringp yas-text) (funcall func yas-text))} foo${1:$$(concat \
 (ert-deftest nested-snippet-expansion-3 ()
   (let ((yas-triggers-in-field t))
     (yas-with-snippet-dirs
-      '((".emacs.d/snippets"
+      '(("dot-emacs/snippets"
          ("text-mode"
           ("rt" . "\
 \\sqrt${1:$(if (string-equal \"\" yas/text) \"\" \"[\")}${1:}${1:$(if (string-equal \"\" yas/text) \"\" \"]\")}{$2}$0"))))
@@ -1052,7 +1052,7 @@ hello ${1:$(when (stringp yas-text) (funcall func yas-text))} foo${1:$$(concat \
   `(yas-saving-variables
     (yas-with-overriden-buffer-list
      (yas-with-snippet-dirs
-       '((".emacs.d/snippets"
+       '(("dot-emacs/snippets"
           ("c-mode"
            (".yas-parents" . "cc-mode")
            ("printf" . "printf($1);"))  ;; notice the overriding for issue #281
@@ -1081,7 +1081,7 @@ hello ${1:$(when (stringp yas-text) (funcall func yas-text))} foo${1:$$(concat \
 (ert-deftest yas-lookup-snippet-with-env ()
   (with-temp-buffer
     (yas-with-snippet-dirs
-      '((".emacs.d/snippets"
+      '(("dot-emacs/snippets"
          ("emacs-lisp-mode"
           ("foo" . "\
 # expand-env: ((foo \"bar\"))
@@ -1134,7 +1134,7 @@ hello ${1:$(when (stringp yas-text) (funcall func yas-text))} foo${1:$$(concat \
   "Make sure snippets can be saved correctly."
   (yas-saving-variables
    (yas-with-snippet-dirs
-    '((".emacs.d/snippets"
+    '(("dot-emacs/snippets"
        ("text-mode")))
     (cl-letf (((symbol-function 'y-or-n-p) (lambda (&rest _) t))
               ((symbol-function 'read-file-name)
@@ -1180,7 +1180,7 @@ hello ${1:$(when (stringp yas-text) (funcall func yas-text))} foo${1:$$(concat \
 (ert-deftest loading-with-cyclic-parenthood ()
   "Test loading when cyclic parenthood is setup."
   (yas-saving-variables
-   (yas-with-snippet-dirs '((".emacs.d/snippets"
+   (yas-with-snippet-dirs '(("dot-emacs/snippets"
                              ("c-mode"
                               (".yas-parents" . "cc-mode"))
                              ("cc-mode"
@@ -1207,7 +1207,7 @@ hello ${1:$(when (stringp yas-text) (funcall func yas-text))} foo${1:$$(concat \
 (ert-deftest extra-modes-parenthood ()
   "Test activation of parents of `yas--extra-modes'."
   (yas-saving-variables
-   (yas-with-snippet-dirs '((".emacs.d/snippets"
+   (yas-with-snippet-dirs '(("dot-emacs/snippets"
                              ("c-mode"
                               (".yas-parents" . "cc-mode"))
                              ("yet-another-c-mode"
@@ -1238,7 +1238,7 @@ hello ${1:$(when (stringp yas-text) (funcall func yas-text))} foo${1:$$(concat \
 
 (ert-deftest issue-492-and-494 ()
   (define-derived-mode yas--test-mode yas--phony-c-mode "Just a test mode")
-  (yas-with-snippet-dirs '((".emacs.d/snippets"
+  (yas-with-snippet-dirs '(("dot-emacs/snippets"
                             ("yas--test-mode")))
                          (yas-reload-all)
                          (with-temp-buffer
@@ -1258,7 +1258,7 @@ hello ${1:$(when (stringp yas-text) (funcall func yas-text))} foo${1:$$(concat \
 
 (ert-deftest issue-504-tricky-jit ()
   (yas-with-snippet-dirs
-   '((".emacs.d/snippets"
+   '(("dot-emacs/snippets"
       ("yas--another-test-mode"
        (".yas-parents" . "yas--test-mode"))
       ("yas--test-mode")))
@@ -1329,7 +1329,7 @@ hello ${1:$(when (stringp yas-text) (funcall func yas-text))} foo${1:$$(concat \
   (declare (debug t))
   `(yas-saving-variables
     (yas-with-snippet-dirs
-      `((".emacs.d/snippets"
+      `(("dot-emacs/snippets"
          ("c-mode"
           (".yas-make-groups" . "")
           ("printf" . "printf($1);")
@@ -1448,7 +1448,7 @@ TODO: be meaner"
 (ert-deftest test-yas-tab-binding ()
   (yas-saving-variables
    (yas-with-snippet-dirs
-    '((".emacs.d/snippets"
+    '(("dot-emacs/snippets"
        ("fundamental-mode"
         ("foo" . "foobar"))))
     (yas-reload-all)
@@ -1484,7 +1484,7 @@ TODO: be meaner"
 (ert-deftest test-yas-in-org ()
   (yas-saving-variables
    (yas-with-snippet-dirs
-    '((".emacs.d/snippets"
+    '(("dot-emacs/snippets"
        ("org-mode"
         ("foo" . "foobar"))))
     (yas-reload-all)
@@ -1501,7 +1501,7 @@ TODO: be meaner"
                        :passed :failed)
   (yas-saving-variables
    (yas-with-snippet-dirs
-    '((".emacs.d/snippets"
+    '(("dot-emacs/snippets"
        ("text-mode"
         ("T" . "${1:one} $1\n${2:two} $2\n<<$0>> done!"))))
     (let ((text-mode-hook '(yas-minor-mode))
@@ -1541,7 +1541,7 @@ add the snippets associated with the given mode."
   (with-temp-buffer
     (yas-saving-variables
      (yas-with-snippet-dirs
-       '((".emacs.d/snippets"
+       '(("dot-emacs/snippets"
           ("markdown-mode"
            ("_" . "_Text_ "))
           ("emacs-lisp-mode"

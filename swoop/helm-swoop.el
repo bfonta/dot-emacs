@@ -37,7 +37,7 @@
 
 ;; ;; Locate the helm-swoop folder to your path
 ;; ;; This line is unnecessary if you get this program from MELPA
-;; (add-to-list 'load-path "~/.emacs.d/elisp/helm-swoop")
+;; (add-to-list 'load-path "~/dot-emacs/elisp/helm-swoop")
 
 ;; (require 'helm-swoop)
 

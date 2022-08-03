@@ -289,7 +289,7 @@ See Github #675.
 
 *** New function `yas-lookup-snippet' (see Github #595, #596).
 
-*** .emacs.d/snippets directory is now created automatically.
+*** dot-emacs/snippets directory is now created automatically.
 If that value is present in `yas-snippet-dirs' (see Github #648).
 
 *** Default value for `yas-snippet-dirs' now uses `user-emacs-directory'

@@ -35,7 +35,7 @@
 ;;;;;;;;;;;;;;;;;;;
 ;; helm swoop ;;
 ;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/swoop/")
+(add-to-list 'load-path "~/dot-emacs/swoop/")
 (load-library "helm-swoop")
 (use-package helm-swoop
   :defer t

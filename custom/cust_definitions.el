@@ -79,5 +79,7 @@ Issue: It seems width-px is picked from the previous frame an action was perform
   (message (buffer-file-name)))
 (defalias 'pwd 'my-show-file-name)
 
+(global-set-key (kbd "C-x w") 'comint-send-invisible)
+
 (provide 'cust_definitions)
 ;;; cust_definitions.el ends here

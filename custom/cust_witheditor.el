@@ -2,7 +2,7 @@
 ;;; Code:
 ;;; Commentary: Uses the magit with-editor package (locally installed) https://github.com/magit/with-editor
 
-(add-to-list 'load-path "~/.emacs.d/with-editor/")
+(add-to-list 'load-path "~/dot-emacs/with-editor/")
 (load-library "with-editor")
 
 (use-package with-editor

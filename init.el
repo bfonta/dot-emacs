@@ -107,9 +107,6 @@
 (defun load-emacs ()
   """Quick emacs configuration loading."""
   (interactive)
-  ;; (load-file
-  ;;  (concat (file-name-as-directory (getenv "HOME")) ".emacs")
-  ;;  )
   (load user-init-file)
   )
 

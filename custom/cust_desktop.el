@@ -14,7 +14,7 @@
 (defvar desktop-load-locked-desktop)
 (defvar desktop-auto-save-timeout)
 
-(setq desktop-dirname             "~/.emacs.d/desktop/"
+(setq desktop-dirname             "~/dot-emacs/desktop/"
       desktop-base-file-name      "emacs.desktop"
       desktop-base-lock-name      "lock"
       desktop-path                (list desktop-dirname)
@@ -30,7 +30,7 @@
 (eval-after-load "desktop"
   '(progn
 
-	 (defvar choose-directory-desktops-directory "~/.emacs.d/desktops/"
+	 (defvar choose-directory-desktops-directory "~/dot-emacs/desktops/"
 	   "Initial default directory.")
 
 	 (defun desktop-change-dir-my-copy (dirname)
@@ -56,7 +56,7 @@
 (eval-after-load "desktop"
   '(progn
 
-	 (defvar choose-directory-desktops-directorys "~/.emacs.d/desktops/"
+	 (defvar choose-directory-desktops-directorys "~/dot-emacs/desktops/"
 	   "Initial default directory.")
 
 	 (defun desktop-save-my-copy (dirname &optional release only-if-changed version)
