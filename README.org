@@ -8,9 +8,11 @@ git clone git@github.com:bfonta/dot-emacs.git
 and replace the contents of your =~/.emacs= file by:
 
 #+BEGIN_SRC shell
-(load-file "~/dot-emacs/init.el")
 (setq user-emacs-directory "~/dot-emacs/")
+(load-file "~/dot-emacs/init.el")
 #+END_SRC
+
+During initialization you might be required to accept the donwload of some packages and data, depending on your system.
 
 *Issues might happen!* Keep a backup of your files just in case.
 
