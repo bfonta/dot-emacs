@@ -13,3 +13,22 @@ and replace the contents of your =~/.emacs= file by:
 #+END_SRC
 
 *Issues might happen!* Keep a backup of your files just in case.
+
+** Disclaimer
+
+I did not participate in the development of the following packages, included in this repository (at most I applied small modifications):
+
+- [[https://github.com/antonj/Highlight-Indentation-for-Emacs/blob/master/highlight-indentation.el][highlight-indentation]]
+- [[https://github.com/antonj/Highlight-Indentation-for-Emacs/blob/master/highlight-indentation.el][markerpen]]
+- =org_extras/=:
+  - [[https://github.com/takaxp/org-tree-slide][org-tree-slide]]
+  - [[https://github.com/antonj/Highlight-Indentation-for-Emacs/blob/master/highlight-indentation.el][org-present]] (inside =org-extras/=)
+- [[https://github.com/emacsorphanage/helm-swoop][swoop]]
+- [[https://github.com/magit/with-editor][with-editor]] (for the =magit= package)
+- [[https://elpa.gnu.org/packages/yasnippet.htmlhttps://github.com/antonj/Highlight-Indentation-for-Emacs/blob/master/highlight-indentation.el][yasnippet]] (0.13.0)
+- =zoom/=:
+  - [[https://elpa.gnu.org/packages/yasnippet.html][frame-fns.el]]
+  - [[https://elpa.gnu.org/packages/yasnippet.html][frame-cmds.el]]
+  - [[https://elpa.gnu.org/packages/yasnippet.html][misc-fns.el]]
+  - [[https://elpa.gnu.org/packages/yasnippet.html][strings.el]]
+  - [[https://elpa.gnu.org/packages/yasnippet.html][zoom-frm]]
