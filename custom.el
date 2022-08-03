@@ -99,6 +99,7 @@
 	 ("\\?\\?\\?+" . "#dc752f")))
  '(inhibit-startup-screen t)
  '(line-number-mode nil)
+ '(magit-bury-buffer-function 'magit-mode-quit-window)
  '(org-agenda-files
    '("~/org/PhD/BayesianStatistics/classes/16June2022/16June2022.org" "/home/bruno/org/Indico.org"))
  '(org-fontify-done-headline nil)
