@@ -19,6 +19,8 @@
   (concat "fusermount -q -u " locfolder "/")
   )
 
+; /scp: ssh for small files, scp for large files
+; /ssh: always ssh
 (defun my/connect (server)
   "Connects to a server."
   (interactive
@@ -27,7 +29,7 @@
 
   (cond ((string-equal server "LLR")
 		 (let ((default-directory
-				 "/ssh:alves@llr:/home/llr/cms/alves/CMSSW_12_5_0_pre1/src/METTriggerStudies/"))
+				 "/scp:alves@llr:/home/llr/cms/alves/CMSSW_12_5_0_pre1/src/METTriggerStudies/"))
 		   (dired default-directory)
 		   (if (get-buffer "shell_llr")
 			   (shell (concat "shell_" (read-string "LLR new shell buffer: shell_")))
@@ -35,7 +37,7 @@
 		
 		((string-equal server "KLUB")
 		 (let ((default-directory
-				 "/ssh:alves@llr:/home/llr/cms/alves/CMSSW_11_1_9/src/KLUBAnalysis/"))
+				 "/scp:alves@llr:/home/llr/cms/alves/CMSSW_11_1_9/src/KLUBAnalysis/"))
 		   (dired default-directory)
 		   (if (get-buffer "shell_klub")
 			   (shell (concat "shell_" (read-string "KLUB new shell buffer: shell_")))
@@ -47,7 +49,7 @@
 
 		((string-equal server "P5")
 		 (let ((default-directory
-				 "/ssh:bfontana@cmsusr:/nfshome0/bfontana/"))
+				 "/scp:bfontana@cmsusr:/nfshome0/bfontana/"))
 		   (dired default-directory)
 		   (if (get-buffer "shell_p5")
 			   (shell (concat "shell_" (read-string "P5 new shell buffer: shell_")))
@@ -55,7 +57,7 @@
 
 		((string-equal server "ECAL WWW")
 		 (let ((default-directory
-				 "/ssh:bfontana@lxplus:/eos/project/e/ecaltrg/www/"))
+				 "/scp:bfontana@lxplus:/eos/project/e/ecaltrg/www/"))
 		   (dired default-directory)
 		   (if (get-buffer "shell_ecal_www")
 			   (shell (concat "shell_" (read-string "ECAL WWW new shell buffer: shell_")))
@@ -129,6 +131,10 @@ Starts by disconnecting some sshfs connection on the same folder."
 			  "\\|^Repeat for confirmation:.*\'"
 			  "\\|^Enter PEM pass phrase:.*\'"
 			  "\\|^Enter it again:.*\'" ))
+
+; when t emacs does not read the shell history, rather the tramp history
+; https://www.gnu.org/software/emacs/manual/html_node/emacs/Shell-Ring.html
+(setq tramp-histfile-override nil)
 
 (provide 'cust_connection)
 ;;; cust_connection ends here
