@@ -34,3 +34,39 @@ I did not participate in the development of the following packages, included in 
   - [[https://elpa.gnu.org/packages/yasnippet.html][misc-fns.el]]
   - [[https://elpa.gnu.org/packages/yasnippet.html][strings.el]]
   - [[https://elpa.gnu.org/packages/yasnippet.html][zoom-frm]]
+
+** GNU Emacs Installation
+
+Emacs is [[https://github.com/emacs-mirror/emacs][mirrored in GitHub]], but the original git repository can be found [[https://savannah.gnu.org/git/?group=emacs][here]].
+
++ [[https://www.emacswiki.org/emacs/GccEmacs][Gcc Emacs]]: compiles ~elisp~ to native code, providing a performance improvement. Simply add the =--with-native-compilation= flag when building ~emacs~ (=./configure =--with-native-compilation=)
+
+First start by installing some required packages. Notice that other packages might be required depending on the options passed to the ~./configure~ step. For instace, =libwxgtk3= packages are required for using X Widgets.
+
+#+BEGIN_SRC shell
+sudo apt install build-essential libwxgtk3.0-gtk3-0v5 libwxgtk3.0-gtk3-dev
+#+END_SRC
+
+*** Version 29
+
+This version notably offers =pixel-scroll-precision-mode=. It also comes with pure GTK support, which might be goodif your system supports Wayland (instead of X11, like in Ubuntu). Type =echo $XDG_SESSION_TYPE= in your terminal to know which one you are currently using.
+
+As of 6^{th} August 2022 the latest tag points to [[https://git.savannah.gnu.org/cgit/emacs.git/tag/?h=emacs-28.1.91][emacs-28.1.91]]; indeed, the latest release available from the [[https://www.gnu.org/savannah-checkouts/gnu/emacs/emacs.html#Releases][official website]] is =28.1=. However, the latest [[https://git.savannah.gnu.org/cgit/emacs.git/tree/README][README]] file mentions "This directory tree holds version 29.0.50 of GNU Emacs". We thus can access version 29 buy building it from the source code in the =master= branch.
+
+The following steps show how to install =emacs-29=, storing it in a folder called with the same name:
+
+#+BEGIN_SRC shell
+git clone git://git.sv.gnu.org/emacs.git emacs29
+cd emacs29/
+./autogen.sh
+# ./configure --help displays all building options
+./configure --with-native-compilation --with-imagemagick --with-json --with-small-ja-dic --with-pgtk
+make -j8
+make install
+#+END_SRC
+
+**** Sources
++ [[https://www.gnu.org/software/emacs/manual/html_node/efaq/Installing-Emacs.html][GNU Emacs Manual: How do I install Emacs?]] (note however that no release for =emacs-29= is currently available
++ [[https://www.emacswiki.org/emacs/GccEmacs][Gcc Emacs installation]]
++ [[https://batsov.com/articles/2021/12/19/building-emacs-from-source-with-pgtk/][Bozhidar Batsov]] (focuses on the new ~pgtk~ support)
+
