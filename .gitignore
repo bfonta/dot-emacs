@@ -10,3 +10,7 @@ history
 org-roam.db
 places
 transient/
+session.*
+tramp
+recentf
+eln-cache/
