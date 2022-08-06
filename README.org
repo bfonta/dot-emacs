@@ -1,3 +1,5 @@
+Tested with emacs 29.0.50 (=emacs-version=).
+
 To try the configuration above, clone this repository in your home folder (=~=):
 
 #+BEGIN_SRC shell
@@ -12,9 +14,9 @@ and replace the contents of your =~/.emacs= file by:
 (load-file "~/dot-emacs/init.el")
 #+END_SRC
 
-During initialization you might be required to accept the donwload of some packages and data, depending on your system.
+During initialization you might be required to accept the download of some packages and data, depending on your system.
 
-*Issues might happen!* Keep a backup of your files just in case.
+*Issues might happen!* Keep a backup of your files just in case, and let me know if you find some issue/bug.
 
 ** Disclaimer
 
