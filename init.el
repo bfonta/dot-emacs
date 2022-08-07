@@ -61,6 +61,7 @@
 (load-library "my_windows")
 (load-library "my_connection")
 (load-library "my_helm")
+(load-library "my_avy")
 (load-library "my_snippets")
 (load-library "my_desktop")
 (load-library "my_colors")
