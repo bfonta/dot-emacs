@@ -36,6 +36,18 @@ I did not participate in the development of the following packages, included in 
   - [[https://elpa.gnu.org/packages/yasnippet.html][misc-fns.el]]
   - [[https://elpa.gnu.org/packages/yasnippet.html][strings.el]]
   - [[https://elpa.gnu.org/packages/yasnippet.html][zoom-frm]]
+- [[https://github.com/protesilaos/pulsar][pulsar]]
+- [[https://github.com/Bad-ptr/persp-mode.el][persp-mode]] (similar to [[https://github.com/nex3/perspective-el][perspective]])
+- [[https://github.com/emacs-mirror/emacs/blob/master/lisp/progmodes/which-func.el][which-func]]
+- [[https://github.com/abo-abo/avy][avy]]
+- [[https://www.emacswiki.org/emacs?action=browse;oldid=DeskTop;id=Desktop][desktop]]
+- [[https://github.com/magnars/expand-region.el][expand-region]]
+- [[https://github.com/magit/magit][magit]]
+- [[https://github.com/magnars/multiple-cursors.el][multiple-cursors]]
+- [[https://depp.brause.cc/shackle/][shackle]] (enforce appearance rules for popup windows)
+- [[https://github.com/casouri/vundo][vundo]] (visualize the undo tree)
+
+Let me know if I ommited some package by mistake.
 
 ** GNU Emacs Installation
 
