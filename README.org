@@ -42,7 +42,7 @@ I did not participate in the development of the following packages, included in 
 - [[https://github.com/takaxp/org-tree-slide][org-tree-slide]]
 - [[https://www.emacswiki.org/emacs?action=browse;oldid=DeskTop;id=Desktop][desktop]]
 
-Let me know if I ommited some package by mistake.
+Let me know if I omitted some package by mistake.
 
 ** GNU Emacs Installation
 
