@@ -18,6 +18,10 @@ During initialization you might be required to accept the download of some packa
 
 *Issues might happen!* Keep a backup of your files just in case, and let me know if you find some issue/bug.
 
+It should look as follows:
+
+[[screenshot.png]]
+
 ** Disclaimer
 
 I did not participate in the development of the following packages, included in this repository (at most I applied small modifications):
