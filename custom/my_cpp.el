@@ -1,4 +1,4 @@
-;;; cust_cpp --- Summary
+;;; my_cpp --- Summary
 ;;; Code:
 ;;; Commentary: https://emacs-lsp.github.io/lsp-mode/page/installation/
 
