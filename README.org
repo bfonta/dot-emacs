@@ -22,7 +22,7 @@ During initialization you might be required to accept the download of some packa
 
 I did not participate in the development of the following packages, included in this repository (at most I applied small modifications):
 
-- =zoom/=: [[https://elpa.gnu.org/packages/yasnippet.html][frame-fns.el]], [[https://elpa.gnu.org/packages/yasnippet.html][frame-cmds.el]], [[https://elpa.gnu.org/packages/yasnippet.html][misc-fns.el]], [[https://elpa.gnu.org/packages/yasnippet.html][strings.el]] and [[https://elpa.gnu.org/packages/yasnippet.html][zoom-frm]])
+- =zoom/=: [[https://elpa.gnu.org/packages/yasnippet.html][frame-fns.el]], [[https://elpa.gnu.org/packages/yasnippet.html][frame-cmds.el]], [[https://elpa.gnu.org/packages/yasnippet.html][misc-fns.el]], [[https://elpa.gnu.org/packages/yasnippet.html][strings.el]] and [[https://elpa.gnu.org/packages/yasnippet.html][zoom-frm]]
 - [[https://depp.brause.cc/shackle/][shackle]] (enforce appearance rules for popup windows)
 - [[https://elpa.gnu.org/packages/yasnippet.htmlhttps://github.com/antonj/Highlight-Indentation-for-Emacs/blob/master/highlight-indentation.el][yasnippet]] (0.13.0)
 - [[https://github.com/Bad-ptr/persp-mode.el][persp-mode]] (similar to [[https://github.com/nex3/perspective-el][perspective]])
