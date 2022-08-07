@@ -32,52 +32,5 @@
   (helm-mode 1)
   )
 
-;;;;;;;;;;;;;;;;;;;
-;; helm swoop ;;
-;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/dot-emacs/swoop/")
-(load-library "helm-swoop")
-(use-package helm-swoop
-  :defer t
-  :init (require 'helm)
-  :bind (("M-s" . helm-swoop)
-		 ("M-S" . helm-swoop-back-to-last-point)
-		 ("C-c M-s" . helm-multi-swoop)
-		 ;; "M-s-a-w") helm-multi-swoop-all)		  
-		 )
-  :config
-  ;; When doing isearch, hand the word over to helm-swoop
-  (define-key isearch-mode-map (kbd "M-s") 'helm-swoop-from-isearch)
-  ;; From helm-swoop to helm-multi-swoop-all
-  (define-key helm-swoop-map (kbd "M-s") 'helm-multi-swoop-all-from-helm-swoop)
-  ;; When doing evil-search, hand the word over to helm-swoop
-  ;; (define-key evil-motion-state-map (kbd "M-i") 'helm-swoop-from-evil-search)
-
-  ;; Instead of helm-multi-swoop-all, you can also use helm-multi-swoop-current-mode
-  (define-key helm-swoop-map (kbd "M-m") 'helm-multi-swoop-current-mode-from-helm-swoop)
-
-  ;; Move up and down like isearch
-  (define-key helm-swoop-map (kbd "C-r") 'helm-previous-line)
-  (define-key helm-swoop-map (kbd "C-s") 'helm-next-line)
-  (define-key helm-multi-swoop-map (kbd "C-r") 'helm-previous-line)
-  (define-key helm-multi-swoop-map (kbd "C-s") 'helm-next-line)
-  
-  (setq helm-multi-swoop-edit-save t ;; Save buffer when helm-multi-swoop-edit complete
-		;; If this value is t, split window inside the current window
-		helm-swoop-split-with-multiple-windows nil
-		;; Split direction. 'split-window-vertically or 'split-window-horizontally
-		helm-swoop-split-direction 'split-window-vertically
-		;; If nil, you can slightly boost invoke speed in exchange for text color
-		helm-swoop-speed-or-color nil
-		;; ;; Go to the opposite side of line from the end or beginning of line
-		helm-swoop-move-to-line-cycle t
-		;; Optional face for line numbers
-		;; Face name is `helm-swoop-line-number-face`
-		helm-swoop-use-line-number-face t
-		;; If you prefer fuzzy matching
-		helm-swoop-use-fuzzy-match t
-		)
-  )
-
 (provide 'cust_helm)
 ;;; cust_helm ends here
