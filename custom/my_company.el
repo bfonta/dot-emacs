@@ -1,4 +1,4 @@
-;;; cust_company --- Summary
+;;; my_company --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -48,5 +48,5 @@
   (global-company-fuzzy-mode 1)
   )
 
-(provide 'cust_company)
-;;; cust_company ends here
+(provide 'my_company)
+;;; my_company ends here

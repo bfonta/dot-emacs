@@ -1,4 +1,4 @@
-;;; cust_pdf --- Summary
+;;; my_pdf --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -18,5 +18,5 @@
   (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward) ;; use normal isearch
   )
 
-(provide 'cust_pdf)
-;;; cust_pdf.el ends here
+(provide 'my_pdf)
+;;; my_pdf.el ends here

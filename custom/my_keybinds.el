@@ -1,4 +1,4 @@
-;;; cust_keybinds --- Summary
+;;; my_keybinds --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -34,5 +34,5 @@
 (define-key ctl-x-map [(control ?=)] 'zoom-in/out)
 (define-key ctl-x-map [(control ?0)] 'zoom-in/out)
 
-(provide 'cust_keybinds)
-;;; cust_keybinds ends here
+(provide 'my_keybinds)
+;;; my_keybinds ends here

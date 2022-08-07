@@ -1,4 +1,4 @@
-;;; cust_buffers --- Summary
+;;; my_buffers --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -158,5 +158,5 @@ will be killed."
     (interactive)  
     (kill-new (file-name-nondirectory (buffer-file-name (window-buffer (minibuffer-selected-window))))))
 
-(provide 'cust_buffers)
-;;; cust_buffers ends here
+(provide 'my_buffers)
+;;; my_buffers ends here

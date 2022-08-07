@@ -1,9 +1,9 @@
-;;; cust_emacsclient --- Summary
+;;; my_emacsclient --- Summary
 ;;; Code:
 ;;; Commentary:
 
 (load "server")
 (unless (server-running-p) (server-start))
 
-(provide 'cust_emacsclient)
-;;; cust_emacsclient ends here
+(provide 'my_emacsclient)
+;;; my_emacsclient ends here

@@ -1,4 +1,4 @@
-;;; cust_magit --- Summary
+;;; my_magit --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -24,5 +24,5 @@
   :bind ("C-x h" . git-timemachine)
   )
 
-(provide 'cust_magit)
-;;; cust_magit ends here
+(provide 'my_magit)
+;;; my_magit ends here

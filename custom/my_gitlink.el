@@ -1,4 +1,4 @@
-;;; cust_gitlink --- Summary
+;;; my_gitlink --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -9,5 +9,5 @@
   (git-link-open-in-browser t)
   (git-link-use-single-line-number t))
 
-(provide 'cust_gitlink)
-;;; cust_gitlink ends here
+(provide 'my_gitlink)
+;;; my_gitlink ends here

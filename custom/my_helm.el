@@ -1,4 +1,4 @@
-;;; cust_helm --- Summary
+;;; my_helm --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -40,5 +40,5 @@
   ;; colors can be changed with `customize-group ivy-faces` in 'Swiper Line Face'
   )
 
-(provide 'cust_helm)
-;;; cust_helm ends here
+(provide 'my_helm)
+;;; my_helm ends here

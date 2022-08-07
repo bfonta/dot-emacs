@@ -1,4 +1,4 @@
-;;; cust_expandregion --- Summary
+;;; my_expandregion --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -6,5 +6,5 @@
   :defer t
   :bind ("C-=" . er/expand-region))
 
-(provide 'cust_expandregion)
-;;; cust_expandregion ends here
+(provide 'my_expandregion)
+;;; my_expandregion ends here

@@ -26,7 +26,7 @@
   ;; remove headline
   (setq lsp-headerline-breadcrumb-enable nil)
 
-  ;; remove modeline (use custom one defined in cust_modeline.el)
+  ;; remove modeline (use custom one defined in my_modeline.el)
   (setq lsp-modeline-code-actions-enable nil)
 
   ;; remove sideline (warnings, ...)
@@ -60,5 +60,5 @@
     :config
     (which-key-mode))
 
-(provide 'cust_cpp)
-;;; cust_cpp ends here
+(provide 'my_cpp)
+;;; my_cpp ends here

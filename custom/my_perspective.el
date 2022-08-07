@@ -12,3 +12,5 @@
 	(setq persp-autokill-buffer-on-remove 'kill-weak)
 	(add-hook 'window-setup-hook #'(lambda () (persp-mode 1))))
   )
+(provide 'my_perspective)
+;;; my_perspective ends here

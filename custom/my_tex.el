@@ -1,4 +1,4 @@
-;;; cust_tex --- Summary
+;;; my_tex --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -75,7 +75,7 @@
   ;; Update PDF buffers after successful LaTeX runs
   (add-hook 'TeX-after-compilation-finished-functions
 			#'TeX-revert-document-buffer)
-
   )
 
-(provide 'cust_tex)
+(provide 'my_tex)
+;;; my_gitlink ends here

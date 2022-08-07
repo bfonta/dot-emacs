@@ -1,4 +1,4 @@
-;;; cust_connection --- Summary
+;;; my_connection --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -136,5 +136,5 @@ Starts by disconnecting some sshfs connection on the same folder."
 ; https://www.gnu.org/software/emacs/manual/html_node/emacs/Shell-Ring.html
 (setq tramp-histfile-override nil)
 
-(provide 'cust_connection)
-;;; cust_connection ends here
+(provide 'my_connection)
+;;; my_connection ends here

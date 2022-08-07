@@ -1,4 +1,4 @@
-;;; cust_snippets --- Summary
+;;; my_snippets --- Summary
 ;;; Code:
 ;;; Commentary:
 (use-package yasnippet
@@ -11,5 +11,5 @@
   (define-key yas-minor-mode-map (kbd "TAB") nil)
   (define-key yas-minor-mode-map (kbd "<M-tab>") 'yas-expand)
   )
-(provide 'cust_snippets)
-;;; cust_snippets.el ends here
+(provide 'my_snippets)
+;;; my_snippets.el ends here

@@ -1,4 +1,4 @@
-;;; cust_cursor --- Summary
+;;; my_cursor --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -8,5 +8,5 @@
 ;; change cursor color
 (add-to-list 'default-frame-alist '(cursor-color . "grey50"))
 
-(provide 'cust_cursor)
-;;; cust_cursor ends here
+(provide 'my_cursor)
+;;; my_cursor ends here

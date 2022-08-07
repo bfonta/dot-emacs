@@ -1,4 +1,4 @@
-;;; cust_shackle --- Summary
+;;; my_shackle --- Summary
 ;;; Code:
 ;;; Commentary: controls how buffers are mapped to windows
 
@@ -21,5 +21,5 @@
   (shackle-mode 1)
   )
 
-(provide 'cust_shackle)
-;;; cust_shackle ends here
+(provide 'my_shackle)
+;;; my_shackle ends here

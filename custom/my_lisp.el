@@ -1,4 +1,4 @@
-;;; cust_lisp --- Summary
+;;; my_lisp --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -9,5 +9,5 @@
   (setq inferior-lisp-program "/usr/bin/sbcl")
   )
 			 
-(provide 'cust_lisp)
-;;; cust_lisp ends here
+(provide 'my_lisp)
+;;; my_lisp ends here

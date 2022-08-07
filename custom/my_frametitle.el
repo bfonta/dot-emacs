@@ -1,4 +1,4 @@
-;;; cust_frametitle --- Summary
+;;; my_frametitle --- Summary
 ;;; Code:
 ;;; Commentary: http://emacs-fu.blogspot.com/2011/01/setting-frame-title.html
 
@@ -7,5 +7,5 @@
                 (abbreviate-file-name (buffer-file-name))
                   "%b"))))
 
-(provide 'cust_frametitle)
-;;; cust_frametitle ends here
+(provide 'my_frametitle)
+;;; my_frametitle ends here

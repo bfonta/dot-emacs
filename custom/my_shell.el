@@ -1,4 +1,4 @@
-;;; cust_shell --- Summary
+;;; my_shell --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -60,5 +60,5 @@
   (comint-send-input)
   )
 
-(provide 'cust_shell)
-;;; cust_shell ends here
+(provide 'my_shell)
+;;; my_shell ends here

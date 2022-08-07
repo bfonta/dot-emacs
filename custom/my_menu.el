@@ -1,4 +1,4 @@
-;;; cust_menu --- Summary
+;;; my_menu --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -9,5 +9,5 @@
 		imenu-list-after-jump-hook nil)
   )
   
-(provide 'cust_menu)
-;;; cust_menu ends here
+(provide 'my_menu)
+;;; my_menu ends here

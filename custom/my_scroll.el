@@ -1,4 +1,4 @@
-;;; cust_scroll --- Summary
+;;; my_scroll --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -23,5 +23,5 @@
   (setq pixel-scroll-precision-large-scroll-height 40.0)
   (setq pixel-scroll-precision-interpolation-factor 30))
 
-(provide 'cust_scroll)
-;;; cust_scroll ends here
+(provide 'my_scroll)
+;;; my_scroll ends here

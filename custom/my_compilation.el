@@ -1,4 +1,4 @@
-;;; cust_compilation --- Summary
+;;; my_compilation --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -7,5 +7,5 @@
       compilation-skip-threshold 1
       )
 
-(provide 'cust_compilation)
-;;; cust_compilation ends here
+(provide 'my_compilation)
+;;; my_compilation ends here

@@ -5,3 +5,6 @@
 (use-package vundo
   :ensure t
   )
+
+(provide 'my_vundo)
+;;; my_vundo.el ends here

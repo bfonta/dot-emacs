@@ -1,4 +1,4 @@
-;;; cust_pastebuffer --- Summary
+;;; my_pastebuffer --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -18,5 +18,5 @@
   (setq browse-url-generic-program (executable-find "firefox") )
   )
 
-(provide 'cust_pastebuffer)
-;;; cust_pastebuffer ends here
+(provide 'my_pastebuffer)
+;;; my_pastebuffer ends here

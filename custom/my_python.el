@@ -1,4 +1,4 @@
-;;; cust_python --- Summary
+;;; my_python --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -46,6 +46,6 @@
   (pyvenv-mode 1)
   )
 
-(provide 'cust_python)
-;;; cust_python ends here
+(provide 'my_python)
+;;; my_python ends here
 

@@ -1,4 +1,4 @@
-;;; cust_multiplecursors --- Summary
+;;; my_multiplecursors --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -10,4 +10,4 @@
   (global-set-key (kbd "C-c C-,") 'mc/mark-previous-like-this)
   )
 
-(provide 'cust_multiplecursors)
+(provide 'my_multiplecursors)

@@ -1,4 +1,4 @@
-;;; cust_dired --- Summary
+;;; my_dired --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -37,5 +37,5 @@
 			    )
 		 )
 
-(provide 'cust_dired)
-;;; cust_dired ends here
+(provide 'my_dired)
+;;; my_dired ends here

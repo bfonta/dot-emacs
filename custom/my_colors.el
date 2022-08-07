@@ -1,4 +1,4 @@
-;;; cust_colors --- Summary
+;;; my_colors --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -18,5 +18,5 @@
 ;; active region color
 (set-face-attribute 'region nil :background "#666" :foreground "#ffffff")
 
-(provide 'cust_colors)
-;;; cust_colors ends here
+(provide 'my_colors)
+;;; my_colors ends here

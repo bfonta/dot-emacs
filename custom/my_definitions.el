@@ -1,4 +1,4 @@
-;;; cust_definitions --- Summary
+;;; my_definitions --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -81,5 +81,5 @@ Issue: It seems width-px is picked from the previous frame an action was perform
 
 (global-set-key (kbd "C-x w") 'comint-send-invisible)
 
-(provide 'cust_definitions)
-;;; cust_definitions.el ends here
+(provide 'my_definitions)
+;;; my_definitions.el ends here

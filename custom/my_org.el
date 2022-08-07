@@ -1,4 +1,4 @@
-;;; cust_org --- Summary
+;;; my_org --- Summary
 ;;; Code:
 ;;; Commentary: https://emacs.christianbaeuerlein.com/my-org-config.html#orgc3bc9b5 and https://hugocisneros.com/org-config/#faces-setup
 
@@ -301,5 +301,5 @@
   (add-hook 'org-mode-hook #'turn-on-org-cdlatex)
   )
 
-(provide 'cust_org)
-;;; cust_org ends here
+(provide 'my_org)
+;;; my_org ends here

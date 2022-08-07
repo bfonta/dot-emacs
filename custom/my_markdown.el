@@ -1,4 +1,4 @@
-;;; cust_markdown --- Summary
+;;; my_markdown --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -19,5 +19,5 @@
 
   )
 
-(provide 'cust_markdown)
-;;; cust_markdown ends here
+(provide 'my_markdown)
+;;; my_markdown ends here

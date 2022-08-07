@@ -1,4 +1,4 @@
-;;; cust_modeline --- Summary
+;;; my_modeline --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -100,5 +100,5 @@
 ;;; Emacs 28.1: compactify mode line if it is longer than buffer width
 (setq mode-line-compact 'long)
 
-(provide 'cust_modeline)
-;;; cust_modeline ends here
+(provide 'my_modeline)
+;;; my_modeline ends here

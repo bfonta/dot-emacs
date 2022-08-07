@@ -1,4 +1,4 @@
-;;; cust_replace --- Summary
+;;; my_replace --- Summary
 ;;; Code:
 ;;; Commentary:
 
@@ -20,5 +20,5 @@
                   ret-alist)))
     ret-alist))
 
-(provide 'cust_replace)
-;;; cust_replace ends here
+(provide 'my_replace)
+;;; my_replace ends here
