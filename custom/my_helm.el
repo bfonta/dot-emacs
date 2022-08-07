@@ -32,5 +32,13 @@
   (helm-mode 1)
   )
 
+(use-package swiper-helm
+  :ensure t
+  :bind (("C-s" . swiper-helm))
+  :config
+  (setq swiper-helm-display-function 'helm-default-display-buffer)
+  ;; colors can be changed with `customize-group ivy-faces` in 'Swiper Line Face'
+  )
+
 (provide 'cust_helm)
 ;;; cust_helm ends here

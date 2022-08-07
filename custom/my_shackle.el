@@ -9,6 +9,7 @@
 				   ("*grep*" :regexp nil :size 0.5 :align 'below)
 				   ("*Help*" :regexp nil :size 0.3 :align 'below :select t)
 				   (".*\\.gz" :regexp t :size 1. :same t)
+				   ("\\*swiper\\*" :regexp t :size .25 :align 'below :select t)
 				   ("^.*Man.*$" :regexp t :size 1. :same t)
 				   ("^.*Proced.*$" :regexp t :size 1. :same t)
 				   ("^.*Occur.*$" :regexp t :size 0.25 :align 'below :select t)

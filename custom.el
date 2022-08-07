@@ -48,8 +48,7 @@
 	  :help "Convert PostScript file to PDF")
 	 ("Glossaries" "makeglossaries %s" TeX-run-command nil
 	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
-	  :help "Run makeglossaries to create glossary
-     file")
+	  :help "Run makeglossaries to create glossary\12     file")
 	 ("Index" "makeindex %s" TeX-run-index nil
 	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
 	  :help "Run makeindex to create index file")
@@ -115,7 +114,9 @@
  '(safe-local-variable-values '((TeX-master . t)))
  '(send-mail-function 'smtpmail-send-it)
  '(size-indication-mode t)
- '(smerge-command-prefix "v")
+ '(smerge-command-prefix "\3v")
+ '(swiper-faces
+   '(swiper-match-face-1 swiper-match-face-2 swiper-match-face-3 swiper-match-face-4))
  '(vc-handled-backends '(Git))
  '(warning-suppress-types '((magit) (comp)))
  '(which-function-mode t))
@@ -171,6 +172,8 @@
  '(org-verbatim ((t (:inherit default :foreground "dark violet" :weight bold :family "Sans Serif"))))
  '(org-verse ((t (:inherit org-block :height 0.8))))
  '(region ((t (:extend t :background "sienna"))))
+ '(swiper-line-face ((t (:extend t :background "peru" :foreground "black" :box (:line-width (3 . 3) :color "black" :style pressed-button) :overline nil :underline nil))))
+ '(swiper-match-face-1 ((t (:inherit lazy-highlight :background "chocolate" :foreground "black"))))
  '(tex-verbatim ((t (:inherit default))))
  '(variable-pitch ((t (:weight thin :height 80 :family "ETBook"))))
  '(vc-state-base ((t (:foreground "orange red"))))
