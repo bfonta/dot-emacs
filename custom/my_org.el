@@ -5,8 +5,8 @@
 (use-package org
   :mode ("\\.org$" . org-mode)
   :config
-  (global-set-key "\C-cl" 'org-store-link)
-  (global-set-key "\C-ca" 'org-agenda)
+  ;(global-set-key "\C-cl" 'org-store-link)
+  ;(global-set-key "\C-ca" 'org-agenda)
   (global-set-key (kbd "\C-cv") 'org-latex-export-to-pdf)
 
   ;; Org-mode: support shift selection also when cua mode is on
