@@ -1,4 +1,4 @@
-Tested with emacs 29.0.50 (=emacs-version=).
+Tested with emacs 27.2 and 29.0.50 (=emacs-version=).
 
 To try the configuration above, clone this repository in your home folder (=~=):
 
@@ -14,7 +14,7 @@ and replace the contents of your =~/.emacs= file by:
 (load-file "~/dot-emacs/init.el")
 #+END_SRC
 
-During initialization you might be required to accept the download of some packages and data, depending on your system.
+You should now be able to open emacs. During initialization you might be required to accept the download of some packages and data, depending on your system. Ocasionally one gets an error similar to "Package not found"; please run =package-refresh-contents= and reopen emacs.
 
 *Issues might happen!* Keep a backup of your files just in case, and let me know if you find some issue/bug.
 
