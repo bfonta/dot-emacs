@@ -34,7 +34,7 @@
 
 (use-package swiper-helm
   :ensure t
-  :bind (("C-s" . swiper-helm))
+  :bind (("M-s s" . swiper-helm))
   :config
   (setq swiper-helm-display-function 'helm-default-display-buffer)
   ;; colors can be changed with `customize-group ivy-faces` in 'Swiper Line Face'
