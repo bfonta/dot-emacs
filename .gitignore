@@ -4,6 +4,7 @@
 # exclude patterns (uncomment them if you want to use them):
 # *.[oa]
 *~
+*#
 .org-id-locations
 emojis/
 history
@@ -14,3 +15,5 @@ session.*
 tramp
 recentf
 eln-cache/
+.cache/
+.lsp-session*
