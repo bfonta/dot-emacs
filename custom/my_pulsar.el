@@ -29,8 +29,8 @@
   (setq pulsar-pulse t
 		pulsar-delay 0.07
 		pulsar-iterations 20 ;; how long it highlights
-		pulsar-face 'pulsar-red
-		pulsar-highlight-face 'pulsar-yellow
+		pulsar-face 'pulsar-cyan
+		pulsar-highlight-face 'pulsar-cyan
 		pulsar-pulse-on-window-change t)
   )
 (provide 'my_pulsar)
