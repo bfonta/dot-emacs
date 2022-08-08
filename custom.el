@@ -48,7 +48,8 @@
 	  :help "Convert PostScript file to PDF")
 	 ("Glossaries" "makeglossaries %s" TeX-run-command nil
 	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
-	  :help "Run makeglossaries to create glossary\12     file")
+	  :help "Run makeglossaries to create glossary
+     file")
 	 ("Index" "makeindex %s" TeX-run-index nil
 	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
 	  :help "Run makeindex to create index file")
@@ -116,7 +117,7 @@
  '(safe-local-variable-values '((TeX-master . t)))
  '(send-mail-function 'smtpmail-send-it)
  '(size-indication-mode t)
- '(smerge-command-prefix "\3v")
+ '(smerge-command-prefix "v")
  '(swiper-faces
    '(swiper-match-face-1 swiper-match-face-2 swiper-match-face-3 swiper-match-face-4))
  '(vc-handled-backends '(Git))
