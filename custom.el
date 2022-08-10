@@ -48,8 +48,7 @@
 	  :help "Convert PostScript file to PDF")
 	 ("Glossaries" "makeglossaries %s" TeX-run-command nil
 	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
-	  :help "Run makeglossaries to create glossary
-     file")
+	  :help "Run makeglossaries to create glossary\12     file")
 	 ("Index" "makeindex %s" TeX-run-index nil
 	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
 	  :help "Run makeindex to create index file")
@@ -117,7 +116,7 @@
  '(safe-local-variable-values '((TeX-master . t)))
  '(send-mail-function 'smtpmail-send-it)
  '(size-indication-mode t)
- '(smerge-command-prefix "v")
+ '(smerge-command-prefix "\3v")
  '(swiper-faces
    '(swiper-match-face-1 swiper-match-face-2 swiper-match-face-3 swiper-match-face-4))
  '(vc-handled-backends '(Git))
@@ -144,6 +143,8 @@
  '(font-latex-slide-title-face ((t (:foreground "tomato" :weight bold :height 1.2 :width normal))))
  '(font-latex-verbatim-face ((t (:inherit fixed-pitch :foreground "dark gray" :height 0.45))))
  '(font-lock-function-name-face ((t (:foreground "#93E0E3"))))
+ '(hl-line ((t (:extend t :background "saddle brown" :box (:line-width (1 . 1) :color "light gray" :style flat-button)))))
+ '(isearch ((t (:background "gray15" :foreground "#D0BF8F" :weight bold))))
  '(org-block ((t (:inherit fixed-pitch :extend t :background "gray30" :height 0.5))))
  '(org-block-begin-line ((t (:inherit fixed-pitch :foreground "orange red" :height 0.4))))
  '(org-block-end-line ((t (:inherit fixed-pitch :foreground "orange red" :height 0.4))))

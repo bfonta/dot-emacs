@@ -39,6 +39,7 @@
 ;;; ---------------------------
 (add-to-list 'load-path "~/dot-emacs/custom/")
 (load-library "my_definitions")
+(load-library "my_search")
 (load-library "my_vundo")
 (load-library "my_company")
 (load-library "my_cpp")
