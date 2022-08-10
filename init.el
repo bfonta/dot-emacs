@@ -65,7 +65,7 @@
 ;;(load-library "my_avy")
 (load-library "my_pulsar")
 (load-library "my_snippets")
-(load-library "my_perspective") ; (load-library "my_desktop")
+(load-library "my_desktop") ;;(load-library "my_perspective")
 (load-library "my_colors")
 (load-library "my_scroll")
 (load-library "my_shell")
