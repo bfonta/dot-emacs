@@ -2,9 +2,10 @@
 ;;; Code: https://github.com/casouri/vundo
 ;;; Commentary: tree undo
 
-(use-package vundo
-  :ensure t
-  )
+(unless (version< emacs-version "28.0")
+  (use-package vundo
+    :ensure t
+    ))
 
 (provide 'my_vundo)
 ;;; my_vundo.el ends here
