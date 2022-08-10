@@ -2,6 +2,16 @@
 ;;; Code:
 ;;; Commentary:
 
+;; Kill text when doing incremental search
+(defun my/isearch-kill-result ()
+  "https://stackoverflow.com/questions/11943285/how-can-i-most-quickly-edit-the-text-highlighted-by-incremental-search"
+  (interactive)
+  (if (use-region-p)
+      (call-interactively 'kill-region)
+    (kill-region (point) isearch-other-end))
+  (isearch-exit))
+(define-key isearch-mode-map [(control f)] 'my/isearch-kill-result)
+
 ;; Font size adjustment
 (defun my/adjust-font-size-start-up ()
   "Inspired by https://emacs.stackexchange.com/a/44930/17066"

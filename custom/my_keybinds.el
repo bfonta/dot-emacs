@@ -9,7 +9,8 @@
 	)
   )
 
-(global-set-key (kbd "M-r") 'replace-string)
+(global-set-key (kbd "M-r") 'replace-regexp)
+(global-set-key (kbd "M-q") 'align-regexp)
 
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
