@@ -107,10 +107,10 @@
    '(:foreground orange :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.5 :matchers
 				 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(package-selected-packages
-   '(pulsar vundo persp-mode tramp imenu-list company-fuzzy flx git-timemachine ebib multiple-cursors restart-emacs company-jedi company-box company-quickhelp tex company-auctex auctex tex-ispell cl latex python-mode markdown-mode emojify nlinum shackle org-roam latex-math-preview epc conda realgud git bash-completion impatient-mode ein ess gnuplot pdf-continuous-scroll-mode quelpa org-pdftools yasnippet-snippets yasnippet-classic-snippets native-complete webpaste ssh expand-region org-download visual-fill-column org-fancy-priorities org-superstar zenburn-theme exwm xterm-color which-key rainbow-delimiters spacemacs-theme org-bullets hide-mode-line org-tree-slide easy-after-load minions ghub mu4e-alert use-package smtpmail-multi company-c-headers zoom git-link smooth-scrolling helm-pydoc pydoc anaconda-mode csv-mode pdf-tools exec-path-from-shell magithub eimp image+ go-mode neotree smartparens flycheck company latex-preview-pane yaml-mode latex-unicode-math-mode magit yasnippet julia-mode))
+   '(pulsar vundo tramp imenu-list company-fuzzy flx git-timemachine multiple-cursors restart-emacs company-jedi company-box company-quickhelp tex company-auctex auctex tex-ispell cl latex python-mode markdown-mode emojify nlinum shackle org-roam latex-math-preview epc conda realgud git bash-completion impatient-mode ein ess gnuplot pdf-continuous-scroll-mode quelpa org-pdftools yasnippet-snippets yasnippet-classic-snippets native-complete webpaste ssh expand-region org-download visual-fill-column org-fancy-priorities org-superstar zenburn-theme exwm xterm-color which-key rainbow-delimiters spacemacs-theme org-bullets hide-mode-line org-tree-slide easy-after-load minions ghub mu4e-alert use-package smtpmail-multi company-c-headers zoom git-link smooth-scrolling helm-pydoc pydoc anaconda-mode csv-mode pdf-tools exec-path-from-shell magithub eimp image+ go-mode neotree smartparens flycheck company latex-preview-pane yaml-mode latex-unicode-math-mode magit yasnippet julia-mode))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
  '(persp-keymap-prefix [M-up])
- '(persp-mode t nil (persp-mode))
+ '(persp-mode t)
  '(preview-gs-options
    '("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4" "-dDELAYSAFER"))
  '(safe-local-variable-values '((TeX-master . t)))
@@ -138,7 +138,7 @@
  '(company-tooltip-common-selection ((t (:foreground "firebrick"))))
  '(company-tooltip-selection ((t (:background "sandy brown" :foreground "black"))))
  '(cua-rectangle ((t (:inherit region))))
- '(fixed-pitch ((t (:family "Fira Code Retina" :height 160))))
+ '(fixed-pitch ((t (:family "Fira Code Retina"))))
  '(font-latex-math-face ((t (:foreground "dark violet"))))
  '(font-latex-slide-title-face ((t (:foreground "tomato" :weight bold :height 1.2 :width normal))))
  '(font-latex-verbatim-face ((t (:inherit fixed-pitch :foreground "dark gray" :height 0.45))))
@@ -175,6 +175,7 @@
  '(org-tag-group ((t (:height 1.0 :background "#303030" :foreground "#9FC59F"))))
  '(org-verbatim ((t (:inherit default :foreground "dark violet" :weight bold :family "Sans Serif"))))
  '(org-verse ((t (:inherit org-block :height 0.8))))
+ '(read-multiple-choice-face ((t (:inherit (help-key-binding underline) :weight medium :height 1.0))))
  '(region ((t (:extend t :background "sienna"))))
  '(swiper-line-face ((t (:extend t :background "peru" :foreground "black" :box (:line-width (3 . 3) :color "black" :style pressed-button) :overline nil :underline nil))))
  '(swiper-match-face-1 ((t (:inherit lazy-highlight :background "chocolate" :foreground "black"))))

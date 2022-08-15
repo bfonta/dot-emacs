@@ -12,31 +12,6 @@
   (isearch-exit))
 (define-key isearch-mode-map [(control f)] 'my/isearch-kill-result)
 
-;; Font size adjustment
-(defun my/adjust-font-size-start-up ()
-  "Inspired by https://emacs.stackexchange.com/a/44930/17066"
-  (let ((width-px (nth 3 (nth 1 (frame-monitor-attributes)))))
-	(when (eq width-px 1024) ;; Home
-	  (set-face-attribute 'default t :height 120))
-	(when (eq width-px 2560) ;; TP
-	  (set-face-attribute 'default t :height 220))
-	)
-  )
-(add-hook 'emacs-startup-hook #'my/adjust-font-size-start-up)
-
-;; (nth 3 (nth 1 (car (display-monitor-attributes-list))))
-(defun my/adjust-font-size-new-frame (frame)
-  "Inspired by https://emacs.stackexchange.com/a/44930/17066.
-Issue: It seems width-px is picked from the previous frame an action was performed..."
-  (let ((width-px (nth 3 (nth 1 (frame-monitor-attributes)))))
-	(when (eq width-px 1024) ;; Home
-	  (set-face-attribute 'default t :height 120))
-	(when (eq width-px 2560) ;; TP
-	  (set-face-attribute 'default t :height 220))
-	)
-  )
-(add-hook 'after-make-frame-functions #'my/adjust-font-size-new-frame)
-
 (use-package zenburn-theme
   ;; adding here all definitions that do not clearly belong to any package
   :init

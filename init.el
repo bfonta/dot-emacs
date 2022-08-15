@@ -26,9 +26,9 @@
 (setenv "LSP_USE_PLISTS" "true")
 
 ;;; Required when compiled version 28.1 from source
-(use-package popup
-  :ensure t
-  )
+;; (use-package popup
+;;   :ensure t
+;;   )
 
 ;; using deprecated 'cl' package
 (add-to-list 'load-path "~/dot-emacs/zoom/")
@@ -39,7 +39,8 @@
 ;;; ---------------------------
 (add-to-list 'load-path "~/dot-emacs/custom/")
 (load-library "my_definitions")
-(load-library "my_search")
+(load-library "my_startup")
+(load-library "my_frame")
 (load-library "my_vundo")
 (load-library "my_company")
 (load-library "my_cpp")
@@ -63,6 +64,7 @@
 (load-library "my_windows")
 (load-library "my_connection")
 (load-library "my_helm")
+(load-library "my_search")
 ;;(load-library "my_avy")
 (load-library "my_pulsar")
 (load-library "my_snippets")
