@@ -8,9 +8,9 @@
 (use-package swiper-helm
   :ensure t
   :requires helm
-  :bind (("M-s s" . swiper-helm))
   :config
   (setq swiper-helm-display-function 'helm-default-display-buffer)
+  (global-set-key (kbd "M-s s") 'swiper-helm)
   ;; colors can be changed with `customize-group ivy-faces` in 'Swiper Line Face'
   )
 
