@@ -15,7 +15,7 @@
     (setq webpaste-paste-confirmation nil)
     (setq webpaste-open-in-browser t)
     (setq webpaste-paste-raw-text nil))
-  (setq browse-url-generic-program (executable-find "firefox") )
+  (setq browse-url-generic-program (executable-find "brave") )
   )
 
 (provide 'my_pastebuffer)
