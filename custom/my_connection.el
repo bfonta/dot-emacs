@@ -25,7 +25,7 @@
   "Connects to a server."
   (interactive
    (let ((completion-ignore-case t))
-     (list (completing-read "Server: " '("LLR" "KLUB" "P5" "ECAL WWW") nil t))))
+     (list (completing-read "Server: " '("LLR" "KLUB" "Lxplus8" "P5") nil t))))
 
   (cond ((string-equal server "LLR")
 		 (let ((default-directory
@@ -55,13 +55,13 @@
 			   (shell (concat "shell_" (read-string "P5 new shell buffer: shell_")))
 			 (shell "shell_p5"))))
 
-		((string-equal server "ECAL WWW")
+		((string-equal server "Lxplus8")
 		 (let ((default-directory
-				 "/scp:bfontana@lxplus:/eos/project/e/ecaltrg/www/"))
+				 "/scp:bfontana@lxplus8:/afs/cern.ch/work/b/bfontana/"))
 		   (dired default-directory)
-		   (if (get-buffer "shell_ecal_www")
-			   (shell (concat "shell_" (read-string "ECAL WWW new shell buffer: shell_")))
-			 (shell "shell_ecal_www"))))
+		   (if (get-buffer "shell_lxplus8")
+			   (shell (concat "shell_" (read-string "Lxplus8 new shell buffer: shell_")))
+			 (shell "shell_lxplus8"))))
 
 		(t (user-error "Function implementation error. Fix."))
 		)
@@ -72,7 +72,7 @@
 		 (insert "cmsenv;"))
 		((string-equal server "P5")
 		 (insert ". /nfshome0/ecaldev/utils/pro;"))
-		((string-equal server "ECAL WWW")
+		((string-equal server "Lxplus8")
 		 (insert ""))
 		(t (user-error "Function implementation error. Fix."))
 		)
@@ -84,7 +84,7 @@
 Starts by disconnecting some sshfs connection on the same folder."
   (interactive
    (let ((completion-ignore-case t))
-     (list (completing-read "Server: " '("LLR" "KLUB" "P5" "ECAL WWW") nil t))))
+     (list (completing-read "Server: " '("LLR" "KLUB" "P5") nil t))))
   
   (cond ((string-equal server "LLR")
 	 (insert (concat (my/sshfs-unmount-string "llr")
@@ -103,13 +103,6 @@ Starts by disconnecting some sshfs connection on the same folder."
 			 "; "
 			 (my/sshfs-mount-string "p5" "cmsusr"
 									"/nfshome0/bfontana/"))
-			 ))
-
-	((string-equal server "ECAL WWW")
-	 (insert (concat (my/sshfs-unmount-string "p5")
-			 "; "
-			 (my/sshfs-mount-string "ecalwww" "lxplus"
-									"/eos/project/e/ecaltrg/www/TPGAnalysis/2022/Update_table/"))
 			 ))
 
 	(t (user-error "Function implementation error. Fix."))
