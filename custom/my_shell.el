@@ -31,7 +31,6 @@
 	(helm-mode +1)
 	(when (fboundp 'company-mode)
       (company-mode -1)
-      ;; (define-key company-active-map (kbd "<tab>") #'company-complete-selection)
       ))
   (add-hook 'shell-mode-hook 'my-shell-mode-setup-function)
 
