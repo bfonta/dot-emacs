@@ -8,6 +8,7 @@
   ;(global-set-key "\C-cl" 'org-store-link)
   ;(global-set-key "\C-ca" 'org-agenda)
   (global-set-key (kbd "\C-cv") 'org-latex-export-to-pdf)
+  (global-set-key (kbd "\C-cb") 'org-beamer-export-to-pdf)
 
   ;; Org-mode: support shift selection also when cua mode is on
   (setq org-support-shift-select t)
@@ -85,11 +86,6 @@
   (defun my-org-config/after-org-mode-load ()
 	(visual-line-mode)
 	(vi-tilde-fringe-mode -1)
-
-	;; Set a wider body witdh for olivetti-mode: "text-processor-like" visual mode
-	;; (require 'olivetti)
-	;; (olivetti-mode)
-	;; (setq olivetti-body-width 81)
 	)
 
   (add-hook 'org-mode-hook 'my-org-config/after-org-mode-load)
@@ -286,15 +282,6 @@
    '((gnuplot . t)))
   ;; add additional languages with '((language . t)))
   )
-
-(use-package org-fancy-priorities
-  :defer t
-  :hook
-  (org-mode . org-fancy-priorities-mode)
-  :mode
-  ("\\.org\\'" . org-mode)
-  :config
-  (setq org-fancy-priorities-list '("❗❗❗" "⚡" "▶" "◇" "☯")))
 
 (use-package cdlatex
   :config
