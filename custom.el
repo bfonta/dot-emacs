@@ -107,7 +107,7 @@
    '(:foreground orange :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.5 :matchers
 				 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(package-selected-packages
-   '(pulsar vundo tramp imenu-list company-fuzzy flx git-timemachine multiple-cursors restart-emacs company-jedi company-box company-quickhelp tex company-auctex auctex tex-ispell cl latex python-mode markdown-mode emojify nlinum shackle org-roam latex-math-preview epc conda realgud git bash-completion impatient-mode ein ess gnuplot pdf-continuous-scroll-mode quelpa org-pdftools yasnippet-snippets yasnippet-classic-snippets native-complete webpaste ssh expand-region org-download visual-fill-column org-fancy-priorities org-superstar zenburn-theme exwm xterm-color which-key rainbow-delimiters spacemacs-theme org-bullets hide-mode-line org-tree-slide easy-after-load minions ghub mu4e-alert use-package smtpmail-multi company-c-headers zoom git-link smooth-scrolling helm-pydoc pydoc anaconda-mode csv-mode pdf-tools exec-path-from-shell magithub eimp image+ go-mode neotree smartparens flycheck company latex-preview-pane yaml-mode latex-unicode-math-mode magit yasnippet julia-mode))
+   '(company vundo imenu-list flx git-timemachine restart-emacs company-jedi tex company-auctex tex-ispell cl latex emojify nlinum shackle latex-math-preview epc git impatient-mode pdf-continuous-scroll-mode org-pdftools yasnippet-classic-snippets native-complete ssh org-download visual-fill-column org-superstar exwm xterm-color rainbow-delimiters spacemacs-theme hide-mode-line easy-after-load minions ghub mu4e-alert smtpmail-multi company-c-headers smooth-scrolling helm-pydoc pydoc anaconda-mode magithub eimp image+ go-mode neotree smartparens latex-preview-pane yaml-mode latex-unicode-math-mode yasnippet))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
  '(persp-keymap-prefix [M-up])
  '(persp-mode t)
@@ -129,13 +129,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "DAMA" :family "Ubuntu Mono"))))
- '(company-scrollbar-bg ((t (:background "black"))))
- '(company-scrollbar-fg ((t (:background "tomato"))))
  '(company-tooltip ((t (:background "cornsilk" :foreground "black"))))
  '(company-tooltip-annotation ((t (:background "black" :foreground "#DFAF8F"))))
  '(company-tooltip-annotation-selection ((t (:background "black" :foreground "#DFAF8F"))))
  '(company-tooltip-common ((t (:foreground "tomato"))))
  '(company-tooltip-common-selection ((t (:foreground "firebrick"))))
+ '(company-tooltip-scrollbar-thumb ((t (:background "tomato"))))
+ '(company-tooltip-scrollbar-track ((t (:background "black"))))
  '(company-tooltip-selection ((t (:background "sandy brown" :foreground "black"))))
  '(cua-rectangle ((t (:inherit region))))
  '(fixed-pitch ((t (:family "Fira Code Retina"))))
