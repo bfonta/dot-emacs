@@ -88,6 +88,8 @@
 (add-to-list 'custom-theme-load-path "~/dot-emacs/themes/")
 (add-to-list 'load-path "~/dot-emacs/markerpen/")
 (load-library "markerpen")
+(add-to-list 'load-path "~/dot-emacs/transpose_frame/")
+(require 'transpose-frame)
 
 ;;; Indentation in python
 ;;; References: https://github.com/antonj/Highlight-Indentation-for-Emacs/blob/master/highlight-indentation.el
