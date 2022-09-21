@@ -2,11 +2,6 @@
 ;;; Code:
 ;;; Commentary:
 
-;; too slow
-;; (use-package elpy
-;;   :init
-;;   (elpy-enable))
-
 (use-package python-mode
   :bind (("C->" . python-indent-shift-right)
 		 ("C-<" . python-indent-shift-left))
@@ -24,17 +19,14 @@
 
   (defun my-python-hooks()
     (interactive)
-    (setq tab-width     4
+    (setq tab-width 4
           python-indent 4
-		  indent-tabs-mode nil
-          python-shell-interpreter "ipython"
-          python-shell-interpreter-args "-i")
+		  indent-tabs-mode nil)
     (add-to-list
      'imenu-generic-expression
      '("Sections" "^#### \\[ \\(.*\\) \\]$" 1))
     (setq imenu-create-index-function 'my-merge-imenu)
 	)
-
   (add-hook 'python-mode-hook 'my-python-hooks)
   )
 
