@@ -90,8 +90,6 @@
 (load-library "markerpen")
 (add-to-list 'load-path "~/dot-emacs/transpose_frame/")
 (require 'transpose-frame)
-(add-to-list 'load-path "~/dot-emacs/tbemail/")
-(require 'tbemail)
 
 ;;; Indentation in python
 ;;; References: https://github.com/antonj/Highlight-Indentation-for-Emacs/blob/master/highlight-indentation.el
