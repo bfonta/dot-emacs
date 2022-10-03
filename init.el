@@ -79,7 +79,7 @@
 (load-library "my_emojis")
 (load-library "my_magit")
 (load-library "my_multiplecursors")
-;; ;; (load-library "witheditor")
+;; (load-library "witheditor")
 (load-library "my_keybinds") ;;;; should be the last one to be loaded
 
 ;;; ---------------------------
@@ -90,8 +90,6 @@
 (load-library "markerpen")
 (add-to-list 'load-path "~/dot-emacs/transpose_frame/")
 (require 'transpose-frame)
-(add-to-list 'load-path "~/dot-emacs/tbemail/")
-(require 'tbemail)
 
 ;;; Indentation in python
 ;;; References: https://github.com/antonj/Highlight-Indentation-for-Emacs/blob/master/highlight-indentation.el

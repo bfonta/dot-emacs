@@ -158,9 +158,6 @@
   ;; Add a special face to #+begin_quote and #+begin_verse block.
   (setq org-fontify-quote-and-verse-blocks t)
 
-  ;; Set bullet glyphs for Org headings via org-superstar-mode. 
-  (setq org-superstar-headline-bullets-list '("⬢" "◆" "▲" "■"))
-
   ;; Show tags directly after headings (not on the right), which plays nicer with line-wrapping.
   (setq org-tags-column 0)
 

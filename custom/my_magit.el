@@ -19,7 +19,6 @@
 
 ;;; Reference: https://github.com/emacsmirror/git-timemachine
 (use-package git-timemachine
-  :defer t
   :after magit
   :bind ("C-x h" . git-timemachine)
   )

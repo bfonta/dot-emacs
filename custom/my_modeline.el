@@ -31,18 +31,18 @@
                                      'cogent-line-read-only-face
                                    'cogent-line-read-only-face-inactive)))
                         " "))
-	       
-	       ;; version control information
-	       '(:eval (when-let (vc vc-mode)
+			   
+	       	   ;; version control information
+			   '(:eval (when-let (vc-mode vc-mode)
                          (list ""
                                (propertize (concat "(⚑ " (substring vc 5) ") ")
                                            'face
-					   'my-vc-branch-face
-					   )
+	    								   'my-vc-branch-face
+	    								   )
                                "")))
-	       
+
                ;; relative position in file
-	       ;; '(:eval (list (nyan-create))) ;; from the nyan-mode package
+			   ;; '(:eval (list (nyan-create))) ;; from the nyan-mode package
                (propertize "%p " 'face 'font-lock-constant-face)
 
 	       ;; "%m "
@@ -52,24 +52,11 @@
 	       " "
 	       mode-line-misc-info ; for eyebrowse
 	       
-	       ;; "[" ;; insert vs overwrite mode, input-method in a tooltip
-	       ;; '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
-		   ;; 		   'face 'font-lock-preprocessor-face
-		   ;; 		   'help-echo (concat "Buffer is in "
-		   ;; 				      (if overwrite-mode "overwrite" "insert") " mode")))
-
-	       ;; ;; was this buffer modified since the last save?
-	       ;; '(:eval (when (buffer-modified-p)
-		   ;; 	 (concat ","  (propertize "Mod"
-		   ;; 				  'face 'font-lock-warning-face
-		   ;; 				  'help-echo "Buffer has been modified"))))
-	       
-	       ;; ;; is this buffer read-only?
-	       ;; '(:eval (when buffer-read-only
-		   ;; 	 (concat ","  (propertize "RO"
-		   ;; 				  'face 'font-lock-type-face
-		   ;; 				  'help-echo "Buffer is read-only"))))  
-	       ;; "] "
+	       ;; is this buffer read-only?
+	       '(:eval (when buffer-read-only
+	    	 (propertize "RO"
+	    				 'face 'font-lock-type-face
+	    				 'help-echo "Buffer is read-only")))
 	       
                ;; spaces to align right
                '(:eval (propertize
@@ -84,21 +71,32 @@
 (defun last-latex-compilation-status-update (arg)
   "Update the string that holds the status of the last latex compilation"
   (setq last-latex-compilation-status
-    (save-excursion
-      (set-buffer "*Messages*")
-      (goto-char (point-max))   
-      (if (search-backward-regexp "^LaTeX\\(.*\\)$" nil t nil)
-          (let ((compilationstatus (match-string 1)))
-        (cond
-         ((string-match "successfully" compilationstatus) (propertize "Success" 'font-lock-face '(:background "#006400")))
-         ((string-match "errors" compilationstatus) (propertize "Error" 'font-lock-face '(:foreground "red")))
-         ((string-match "unresolved" compilationstatus) (propertize "Unresolved" 'font-lock-face '(:foreground "blue")))
-         (t "No Compilation")))))))
+	(save-excursion
+	  (set-buffer "*Messages*")
+	  (goto-char (point-max))   
+	  (if (search-backward-regexp "^LaTeX\\(.*\\)$" nil t nil)
+	      (let ((compilationstatus (match-string 1)))
+		(cond
+		 ((string-match "successfully" compilationstatus) (propertize "Success" 'font-lock-face '(:background "#006400")))
+		 ((string-match "errors" compilationstatus) (propertize "Error" 'font-lock-face '(:foreground "red")))
+		 ((string-match "unresolved" compilationstatus) (propertize "Unresolved" 'font-lock-face '(:foreground "blue")))
+		 (t "No Compilation")))))))
 (setq last-latex-compilation-status "No Compilation") 
 (setq-default mode-line-format (append mode-line-format '((:eval (last-latex-compilation-status-update nil)))))
 
 ;;; Emacs 28.1: compactify mode line if it is longer than buffer width
 (setq mode-line-compact 'long)
+
+;;; Remove very slow VC (opening takes ~6 seconds) from org files
+;; (add-hook 'emacs-lisp-mode-hook
+;;           (lambda ()
+;;             (face-remap-add-relative
+;;              'mode-line '((:foreground "ivory" :background "DarkOrange2") mode-line))))
+
+;; (defun add-mode-line-vc()
+;;   "Set `mode-line-position' buffer-locally to nil."
+;;   (setq-local mode-line-position nil))
+;; (add-hook 'my-mode-hook #'remove-mode-line-position) ;; Usage example.
 
 (provide 'my_modeline)
 ;;; my_modeline ends here
