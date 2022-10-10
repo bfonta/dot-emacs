@@ -25,14 +25,22 @@
   "Connects to a server."
   (interactive
    (let ((completion-ignore-case t))
-     (list (completing-read "Server: " '("LLR" "KLUB" "Lxplus8" "P5") nil t))))
+     (list (completing-read "Server: " '("Triggers" "FPGAs" "KLUB" "Lxplus8" "P5") nil t))))
 
-  (cond ((string-equal server "LLR")
+  (cond ((string-equal server "Triggers")
 		 (let ((default-directory
 				 "/scp:alves@llr:/home/llr/cms/alves/CMSSW_12_5_0_pre1/src/METTriggerStudies/"))
 		   (dired default-directory)
-		   (if (get-buffer "shell_llr")
-			   (shell (concat "shell_" (read-string "LLR new shell buffer: shell_")))
+		   (if (get-buffer "shell_triggers")
+			   (shell (concat "shell_" (read-string "Triggers new shell buffer: shell_")))
+			 (shell "shell_llr"))))
+
+		((string-equal server "FPGAs")
+		 (let ((default-directory
+				 "/scp:alves@llr:/home/llr/cms/alves/CMSSW_12_5_0_pre1/src/bye_splits/"))
+		   (dired default-directory)
+		   (if (get-buffer "shell_fpgas")
+			   (shell (concat "shell_" (read-string "FPGAs new shell buffer: shell_")))
 			 (shell "shell_llr"))))
 		
 		((string-equal server "KLUB")
@@ -66,8 +74,10 @@
 		(t (user-error "Function implementation error. Fix."))
 		)
   
-  (cond ((string-equal server "LLR")
+  (cond ((string-equal server "Triggers")
 		 (insert "cmsenv; conda activate Trigger;"))
+		((string-equal server "FPGAs")
+		 (insert "cmsenv; conda activate FPGA;"))
 		((string-equal server "KLUB")
 		 (insert "cmsenv;"))
 		((string-equal server "P5")
@@ -84,29 +94,34 @@
 Starts by disconnecting some sshfs connection on the same folder."
   (interactive
    (let ((completion-ignore-case t))
-     (list (completing-read "Server: " '("LLR" "KLUB" "P5") nil t))))
+     (list (completing-read "Server: " '("Triggers" "FPGAs" "KLUB" "P5") nil t))))
   
-  (cond ((string-equal server "LLR")
-	 (insert (concat (my/sshfs-unmount-string "llr")
-			 "; "
-			 (my/sshfs-mount-string "llr" "llr"
-									"/home/llr/cms/alves/CMSSW_12_5_0_pre1/src/METTriggerStudies; "))))
-		
-	((string-equal server "KLUB")
-	 (insert (concat (my/sshfs-unmount-string "klub")
-			 "; "
-			 (my/sshfs-mount-string "klub" "llr"
-									"/home/llr/cms/alves/CMSSW_11_1_9/src/KLUBAnalysis"))))
+  (cond ((string-equal server "Triggers")
+		 (insert (concat (my/sshfs-unmount-string "llr_triggers")
+						 "; "
+						 (my/sshfs-mount-string "llr_triggers" "llr"
+												"/home/llr/cms/alves/CMSSW_12_5_0_pre1/src/METTriggerStudies; "))))
 
-	((string-equal server "P5")
-	 (insert (concat (my/sshfs-unmount-string "p5")
-			 "; "
-			 (my/sshfs-mount-string "p5" "cmsusr"
-									"/nfshome0/bfontana/"))
-			 ))
+		((string-equal server "FPGAs")
+		 (insert (concat (my/sshfs-unmount-string "llr_fpgas")
+						 "; "
+						 (my/sshfs-mount-string "llr_fpgas" "llr"
+												"/home/llr/cms/alves/CMSSW_12_5_0_pre1/src/bye_splits; "))))
+		((string-equal server "KLUB")
+		 (insert (concat (my/sshfs-unmount-string "klub")
+						 "; "
+						 (my/sshfs-mount-string "klub" "llr"
+												"/home/llr/cms/alves/CMSSW_11_1_9/src/KLUBAnalysis"))))
 
-	(t (user-error "Function implementation error. Fix."))
-	)
+		((string-equal server "P5")
+		 (insert (concat (my/sshfs-unmount-string "p5")
+						 "; "
+						 (my/sshfs-mount-string "p5" "cmsusr"
+												"/nfshome0/bfontana/"))
+				 ))
+
+		(t (user-error "Function implementation error. Fix."))
+		)
   (comint-send-input)
   )
 
