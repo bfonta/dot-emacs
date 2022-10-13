@@ -75,7 +75,7 @@
 		)
   
   (cond ((string-equal server "Triggers")
-		 (insert "cmsenv; conda activate Trigger;"))
+		 (insert "#cmsenv"))
 		((string-equal server "FPGAs")
 		 (insert "cmsenv; conda activate FPGA;"))
 		((string-equal server "KLUB")
