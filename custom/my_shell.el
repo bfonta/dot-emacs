@@ -59,5 +59,17 @@
   (comint-send-input)
   )
 
+(defun my/spawn-shell (name)
+  "Create new shell buffer"
+  (interactive "MName of new shell buffer: shell_")
+  (pop-to-buffer (get-buffer-create (generate-new-buffer-name (concat "shell_" name))))
+  (shell (current-buffer)))
+
+(defun my/spawn-term (name)
+  "Create new term buffer"
+  (interactive "MName of new shell buffer: term_")
+  (pop-to-buffer (get-buffer-create (generate-new-buffer-name (concat "term_" name))))
+  (vterm (current-buffer)))
+
 (provide 'my_shell)
 ;;; my_shell ends here

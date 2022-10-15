@@ -6,6 +6,7 @@
   :defer t
   :custom
   (shackle-rules '(("^\\*?shell.*" :regexp t :size 1.  :same t)
+				   ("^\\*?term.*" :regexp t :size 1.  :same t)
 				   ("*grep*" :regexp nil :size 0.33 :align 'below)
 				   ("*Help*" :regexp nil :size 0.3 :align 'below :select t)
 				   (".*\\.gz" :regexp t :size 1. :same t)
