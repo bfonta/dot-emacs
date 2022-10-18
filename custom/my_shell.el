@@ -6,6 +6,14 @@
   :defer t
   )
 
+;; requires libtool and libtool-bin
+(use-package term
+  :config
+  (setq explicit-shell-file-name "bash")
+  ;; regexp to recognize prompts in the inferior process.
+  (setq term-prompt-regexp "^[^#$%>\n]*[#$%>] *") 
+  )
+
 (use-package bash-completion
   :init
   (when window-system

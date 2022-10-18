@@ -48,7 +48,8 @@
 	  :help "Convert PostScript file to PDF")
 	 ("Glossaries" "makeglossaries %s" TeX-run-command nil
 	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
-	  :help "Run makeglossaries to create glossary\12     file")
+	  :help "Run makeglossaries to create glossary
+     file")
 	 ("Index" "makeindex %s" TeX-run-index nil
 	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
 	  :help "Run makeindex to create index file")
@@ -110,13 +111,13 @@
    '(vterm-toggle vterm orglink company vundo imenu-list flx git-timemachine restart-emacs company-jedi tex company-auctex tex-ispell cl latex emojify nlinum shackle latex-math-preview epc git impatient-mode pdf-continuous-scroll-mode org-pdftools yasnippet-classic-snippets native-complete ssh org-download visual-fill-column org-superstar exwm xterm-color rainbow-delimiters spacemacs-theme hide-mode-line easy-after-load minions ghub mu4e-alert smtpmail-multi company-c-headers smooth-scrolling helm-pydoc pydoc anaconda-mode magithub eimp image+ go-mode neotree smartparens latex-preview-pane yaml-mode latex-unicode-math-mode yasnippet))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
  '(persp-keymap-prefix [M-up])
- '(persp-mode t)
+ '(persp-mode t nil (persp-mode))
  '(preview-gs-options
    '("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4" "-dDELAYSAFER"))
  '(safe-local-variable-values '((TeX-master . t)))
  '(send-mail-function 'smtpmail-send-it)
  '(size-indication-mode t)
- '(smerge-command-prefix "\3v")
+ '(smerge-command-prefix "v")
  '(swiper-faces
    '(swiper-match-face-1 swiper-match-face-2 swiper-match-face-3 swiper-match-face-4))
  '(vc-handled-backends '(Git))
