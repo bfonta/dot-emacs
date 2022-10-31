@@ -48,8 +48,7 @@
 	  :help "Convert PostScript file to PDF")
 	 ("Glossaries" "makeglossaries %s" TeX-run-command nil
 	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
-	  :help "Run makeglossaries to create glossary
-     file")
+	  :help "Run makeglossaries to create glossary\12     file")
 	 ("Index" "makeindex %s" TeX-run-index nil
 	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
 	  :help "Run makeindex to create index file")
@@ -77,8 +76,9 @@
  '(cua-mode t nil (cua-base))
  '(custom-enabled-themes '(zenburn))
  '(custom-safe-themes
-   '("3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
+   '("dea4b7d43d646aa06a4f705a58f874ec706f896c25993fcf73de406e27dc65ba" "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
  '(dired-listing-switches "-a -l -h --group-directories-first")
+ '(fringe-mode '(1 . 0) nil (fringe))
  '(grep-command "grep --nr '.' -e '' ")
  '(helm-completion-style 'emacs)
  '(hl-todo-keyword-faces
@@ -111,13 +111,13 @@
    '(php-mode vterm-toggle vterm orglink company vundo imenu-list flx git-timemachine restart-emacs company-jedi tex company-auctex tex-ispell cl latex emojify nlinum shackle latex-math-preview epc git impatient-mode pdf-continuous-scroll-mode org-pdftools yasnippet-classic-snippets native-complete ssh org-download visual-fill-column org-superstar exwm xterm-color rainbow-delimiters spacemacs-theme hide-mode-line easy-after-load minions ghub mu4e-alert smtpmail-multi company-c-headers smooth-scrolling helm-pydoc pydoc anaconda-mode magithub eimp image+ go-mode neotree smartparens latex-preview-pane yaml-mode latex-unicode-math-mode yasnippet))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
  '(persp-keymap-prefix [M-up])
- '(persp-mode t nil (persp-mode))
+ '(persp-mode t)
  '(preview-gs-options
    '("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4" "-dDELAYSAFER"))
  '(safe-local-variable-values '((TeX-master . t)))
  '(send-mail-function 'smtpmail-send-it)
  '(size-indication-mode t)
- '(smerge-command-prefix "v")
+ '(smerge-command-prefix "\3v")
  '(swiper-faces
    '(swiper-match-face-1 swiper-match-face-2 swiper-match-face-3 swiper-match-face-4))
  '(vc-handled-backends '(Git))
