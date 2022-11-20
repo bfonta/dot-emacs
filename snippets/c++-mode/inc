@@ -1,4 +1,4 @@
 # name: Include
 # key: inc
 # --
-#include $0
+#include <${0:iostream}>

@@ -1,5 +1,5 @@
 # name: Class method
-# key: method
+# key: meth
 # --
 ${1:void} ${2:Class}::${3:func}($0)
 {

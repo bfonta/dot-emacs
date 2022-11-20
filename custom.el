@@ -170,6 +170,7 @@
  '(org-link ((t (:inherit default :foreground "steel blue" :underline t :weight bold :height 50 :family "Sans Serif"))))
  '(org-meta-line ((t (:inherit fixed-pitch :height 0.4))))
  '(org-property-value ((t (:inherit fixed-pitch :height 0.5))) t)
+ '(org-quote ((t (:extend t :background "gray25" :foreground "goldenrod"))))
  '(org-special-keyword ((t (:inherit fixed-pitch :height 0.5))))
  '(org-table ((t (:inherit fixed-pitch :foreground "#83a598" :height 0.45))))
  '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.4))))

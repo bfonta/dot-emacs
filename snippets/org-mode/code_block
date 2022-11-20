@@ -3,7 +3,6 @@
 # key: code
 # contributor: Bruno Alves (bruno.alves@cern.ch)
 # --
-#+NAME: ${1:"insert name"}
-#+BEGIN_SRC ${2:<language>} ${3:<switches>} ${4:<header arguments>}
+#+BEGIN_SRC shell
 $0
 #+END_SRC
