@@ -17,7 +17,6 @@
 (use-package bash-completion
   :init
   (when window-system
-	(add-hook 'emacs-startup-hook #'shell)
 	(savehist-mode))
 
   (add-hook 'shell-mode-hook

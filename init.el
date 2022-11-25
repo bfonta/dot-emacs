@@ -65,13 +65,13 @@
 (load-library "my_connection")
 (load-library "my_helm")
 (load-library "my_search")
-;;(load-library "my_avy")
+(load-library "my_avy")
 (load-library "my_pulsar")
 (load-library "my_snippets")
 (load-library "my_desktop") ;;(load-library "my_perspective")
 (load-library "my_colors")
 (load-library "my_scroll")
-(load-library "my_shell")
+;; (load-library "my_shell")
 (load-library "my_expandregion")
 (load-library "my_pastebuffer")
 (load-library "my_org")
@@ -116,5 +116,7 @@
   (interactive)
   (load user-init-file)
   )
+
+(dired ".")
 
 ;;; init.el ends here

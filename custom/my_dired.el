@@ -32,10 +32,18 @@
   (dired-toggle-marks) ;; dired *t command
   (dired-do-kill-lines) ;; dired k command
   )
-(eval-after-load "dired" '(progn
-			    (define-key dired-mode-map [?%?h] 'dired-show-only)
-			    )
-		 )
+(eval-after-load "dired"
+  '(progn
+	 (define-key dired-mode-map [?%?h] 'dired-show-only)
+	 ))
+(eval-after-load "dired"
+  '(progn
+	 (define-key dired-mode-map (kbd "C-<up>") 'dired-up-directory)
+	 ))
+(eval-after-load "dired"
+  '(progn
+	 (define-key dired-mode-map (kbd "S-<return>") 'dired-find-file-other-window)
+	 ))
 
 (provide 'my_dired)
 ;;; my_dired ends here
