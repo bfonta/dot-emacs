@@ -25,13 +25,23 @@
 ;; https://emacs.stackexchange.com/questions/16891/changing-confirmation-style-when-deleting-files-in-dired
 ;; Type `y` or `n` without requiring additional `Enter` key press
 ;; Note that recursive directory deletion hard-codes a yes-or-no-p because it's a more dangerous action.
-
 (defun dired-show-only (regexp)
   (interactive "sFiles to show (regexp): ") 
   (dired-mark-files-regexp regexp) ;; dired %m command
   (dired-toggle-marks) ;; dired *t command
   (dired-do-kill-lines) ;; dired k command
   )
+
+;;press enter only once to enter folder/file after isearch
+(add-hook 'isearch-mode-end-hook 
+  (lambda ()
+    (when (and (eq major-mode 'dired-mode)
+			   (not isearch-mode-end-hook-quit)
+			   (eq last-input-event 'return)
+			   )
+      (dired-find-file))))
+
+;; keyboard custom shortcuts
 (eval-after-load "dired"
   '(progn
 	 (define-key dired-mode-map [?%?h] 'dired-show-only)
