@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: setup
+# key: s
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+#+SETUPFILE: ~/org/notes.setup$0
