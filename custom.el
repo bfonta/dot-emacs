@@ -145,6 +145,7 @@
  '(font-latex-slide-title-face ((t (:foreground "tomato" :weight bold :height 1.2 :width normal))))
  '(font-latex-verbatim-face ((t (:inherit fixed-pitch :foreground "dark gray" :height 0.45))))
  '(font-lock-function-name-face ((t (:foreground "#93E0E3"))))
+ '(hideshowvis-hidable-face ((t (:foreground "brown"))))
  '(hl-line ((t (:extend t :background "gray55" :foreground "black" :box (:line-width (1 . 1) :color "gray55" :style flat-button) :weight medium))))
  '(isearch ((t (:background "gray15" :foreground "#D0BF8F" :weight bold))))
  '(lsp-details-face ((t (:inherit shadow))))

@@ -36,7 +36,6 @@
 
 (add-to-list 'load-path "~/dot-emacs/hideshow/")
 (load-library "hideshow-org")
-(load-library "hideshowvis")
 
 ;;; ---------------------------
 ;;; Load custom content

@@ -12,6 +12,11 @@
 
 (setq hs-isearch-open 't) ;;"code", "comments" or "t" (both)
 
+;; what to display in folded region (ascii)
+(setq buffer-display-table (copy-tree standard-display-table))
+(set-display-table-slot buffer-display-table 4
+[35 61 61 61 61 61 61 61 61 61 35])
+
 (add-hook 'c-mode-common-hook   'hs-minor-mode)
 (add-hook 'c-mode-common-hook   'hs-org/minor-mode)
 (add-hook 'lisp-mode-hook       'hs-minor-mode)
