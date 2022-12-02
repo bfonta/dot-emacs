@@ -34,6 +34,10 @@
 (add-to-list 'load-path "~/dot-emacs/zoom/")
 (require 'zoom-frm)
 
+(add-to-list 'load-path "~/dot-emacs/hideshow/")
+(load-library "hideshow-org")
+(load-library "hideshowvis")
+
 ;;; ---------------------------
 ;;; Load custom content
 ;;; ---------------------------
@@ -80,6 +84,7 @@
 (load-library "my_magit")
 (load-library "my_multiplecursors")
 ;; (load-library "witheditor")
+(load-library "my_hideshow")
 (load-library "my_keybinds") ;;;; should be the last one to be loaded
 
 ;;; ---------------------------
