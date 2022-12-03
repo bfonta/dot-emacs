@@ -71,10 +71,10 @@
 
 (require 'hideshow)
 
-(defvar hs-org/trigger-keys-block (list (kbd "TAB"))
+(defvar hs-org/trigger-keys-block (list (kbd "C-q C-w"))
   "The keys to bind to toggle block visibility.")
 
-(defvar hs-org/trigger-keys-all (list [S-tab] [S-iso-lefttab] [(shift tab)] [backtab])
+(defvar hs-org/trigger-keys-all (list (kbd "C-q C-e"))
   "The keys to bind to toggle all block visibility.")
 
 (defvar hs-org/minor-mode-map nil
