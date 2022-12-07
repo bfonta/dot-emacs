@@ -2,13 +2,6 @@
 ;;; Code:
 ;;; Commentary:
 
-(use-package cua-base
-  :config
-  (progn
-	(define-key cua-global-keymap (kbd "C-x C-x") 'exchange-dot-and-mark)
-	)
-  )
-
 (global-set-key (kbd "M-r") 'replace-regexp)
 (global-set-key (kbd "C-M-r") 'my/batch-replace-strings)
 (global-set-key (kbd "M-q") 'align-regexp)

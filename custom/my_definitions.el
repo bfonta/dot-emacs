@@ -11,8 +11,6 @@
   (toggle-scroll-bar -1)
   (tool-bar-mode -1)
 
-  (cua-mode t)
-
   (put 'scroll-left 'disabled nil)
   (put 'upcase-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
