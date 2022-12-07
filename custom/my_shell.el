@@ -59,12 +59,15 @@
 (defun my/debian-update ()
   "Runs apt update and upgrade commands."
   (interactive)
-  (insert (concat "sudo apt update && "
-			 "sudo apt upgrade -y && "
-			 "sudo apt full-upgrade -y && "
-			 "sudo apt autoremove -y "))
-  (comint-send-input)
-  )
+  (let ((buffer "shell"))
+	(split-window-below -15)
+	(other-window 1)
+	(shell buffer)
+	(insert (concat "sudo apt update && sudo apt upgrade -y && "
+					"sudo apt full-upgrade -y && "
+					"sudo apt autoremove -y "))
+	(comint-send-input)
+	))
 
 (defun my/spawn-shell (name)
   "Create new shell buffer"
