@@ -2,7 +2,14 @@
 ;;; Code:
 ;;; Commentary:
 
-(setq dired-deletion-confirmer #'y-or-n-p) ;; ls program name
+(setq dired-deletion-confirmer #'y-or-n-p ;; ls program name
+	  dired-omit-mode t
+	  dired-omit-files (rx (or (seq bol (? ".") "#")
+							   (seq bol "." eol)
+							   (seq bol "." (+ any) eol)
+							   (seq bol ".." eol)
+							   (seq bol "#" eol))))
+(add-hook 'dired-mode-hook 'dired-omit-mode)
 
 ;;; Sort directories first
 ;;; https://www.emacswiki.org/emacs/DiredSortDirectoriesFirst
