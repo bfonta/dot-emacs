@@ -9,8 +9,6 @@
   (interactive "P")
   (TeX-command-run-all arg)
   (reduce-this-window-width)
-  (pdf-view-auto-slice-minor-mode)
-  (pdf-view-fit-width-to-window)
   )
 (add-hook 'LaTeX-mode-hook
 		  (lambda () (local-set-key (kbd "C-c C-a") #'my-TeX-command-run-all)))
@@ -24,9 +22,14 @@
 
   (setq-default TeX-master nil)
   ;; display PDF
-  ;; (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
-  ;; 		TeX-view-evince-keep-focus t
-  ;; 		TeX-source-correlate-start-server t )
+  (setq TeX-source-correlate-mode t
+		TeX-source-correlate-start-server t
+		TeX-view-program-selection
+		'(((output-dvi has-no-display-manager) "dvi2tty")
+		  ((output-dvi style-pstricks) "dvips and gv")
+		  (output-pdf "Okular")
+		  (output-dvi "xdvi")
+		  (output-html "xdg-open")))
   (setq TeX-auto-save t
 		TeX-parse-self t
 		TeX-PDF-mode t)
