@@ -41,14 +41,13 @@
 ;;; Load custom content
 ;;; ---------------------------
 (add-to-list 'load-path "~/dot-emacs/custom/")
-(load-library "my_definitions")
 (load-library "my_startup")
 (load-library "my_frame")
-(load-library "my_vundo")
+(load-library "my_menu")
+(load-library "my_definitions")
 (load-library "my_company")
 (load-library "my_cpp")
 (load-library "my_emacsclient")
-(load-library "my_menu")
 (load-library "my_magit")
 (load-library "my_lisp")
 (load-library "my_shackle")
@@ -57,7 +56,6 @@
 (load-library "my_python")
 (load-library "my_whichfunc")
 (load-library "my_modeline")
-(load-library "my_frametitle")
 (load-library "my_pdf")
 (load-library "my_gitlink")
 (load-library "my_tex")
@@ -68,7 +66,6 @@
 (load-library "my_helm")
 (load-library "my_search")
 (load-library "my_dired")
-(load-library "my_avy")
 (load-library "my_pulsar")
 (load-library "my_snippets")
 (load-library "my_desktop") ;;(load-library "my_perspective")
@@ -82,7 +79,7 @@
 (load-library "my_emojis")
 (load-library "my_magit")
 (load-library "my_multiplecursors")
-;; (load-library "witheditor")
+(load-library "my_vundo")
 (load-library "my_hideshow")
 (load-library "my_keybinds") ;;;; should be the last one to be loaded
 

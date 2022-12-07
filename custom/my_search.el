@@ -15,5 +15,15 @@
   ;; colors can be changed with `customize-group ivy-faces` in 'Swiper Line Face'
   )
 
+;; Kill text when doing incremental search
+(defun my/isearch-kill-result ()
+  "https://stackoverflow.com/questions/11943285/how-can-i-most-quickly-edit-the-text-highlighted-by-incremental-search"
+  (interactive)
+  (if (use-region-p)
+      (call-interactively 'kill-region)
+    (kill-region (point) isearch-other-end))
+  (isearch-exit))
+(define-key isearch-mode-map [(control f)] 'my/isearch-kill-result)
+
 (provide 'my_search)
 ;;; my_search ends here

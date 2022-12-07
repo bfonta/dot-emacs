@@ -17,5 +17,10 @@ Issue: It seems width-px is picked from the previous frame an action was perform
   )
 (add-hook 'after-make-frame-functions #'my/adjust-font-size-new-frame)
 
+(setq frame-title-format
+  '("" invocation-name ": "(:eval (if (buffer-file-name)
+                (abbreviate-file-name (buffer-file-name))
+                  "%b"))))
+
 (provide 'my_frame)
 ;;; my_frame ends here

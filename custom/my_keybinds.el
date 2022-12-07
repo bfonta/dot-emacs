@@ -10,6 +10,7 @@
   )
 
 (global-set-key (kbd "M-r") 'replace-regexp)
+(global-set-key (kbd "C-M-r") 'my/batch-replace-strings)
 (global-set-key (kbd "M-q") 'align-regexp)
 
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)

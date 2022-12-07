@@ -2,16 +2,6 @@
 ;;; Code:
 ;;; Commentary:
 
-;; Kill text when doing incremental search
-(defun my/isearch-kill-result ()
-  "https://stackoverflow.com/questions/11943285/how-can-i-most-quickly-edit-the-text-highlighted-by-incremental-search"
-  (interactive)
-  (if (use-region-p)
-      (call-interactively 'kill-region)
-    (kill-region (point) isearch-other-end))
-  (isearch-exit))
-(define-key isearch-mode-map [(control f)] 'my/isearch-kill-result)
-
 (use-package zenburn-theme
   ;; adding here all definitions that do not clearly belong to any package
   :init

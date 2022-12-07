@@ -4,6 +4,7 @@
 
 ;;(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/helm/") ; facultative when installed with make install
 (use-package helm
+  :ensure t
   :bind (("M-x" . helm-M-x)
          ("C-x r b" . helm-filtered-bookmarks)
 		 ("C-x C-f" . helm-find-files)
