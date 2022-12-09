@@ -2,14 +2,21 @@
 ;;; Code:
 ;;; Commentary:
 
-(setq dired-deletion-confirmer #'y-or-n-p ;; ls program name
-	  dired-omit-mode t
-	  dired-omit-files (rx (or (seq bol (? ".") "#")
-							   (seq bol "." eol)
-							   (seq bol "." (+ any) eol)
-							   (seq bol ".." eol)
-							   (seq bol "#" eol))))
-(add-hook 'dired-mode-hook 'dired-omit-mode)
+(use-package dired
+  :ensure nil
+  :init
+  (require 'dired-x)
+  :config
+  (define-key dired-mode-map [?%?h] 'dired-show-only)
+  (define-key dired-mode-map (kbd "C-<up>") 'dired-up-directory)
+  (define-key dired-mode-map (kbd "S-<return>") 'dired-find-file-other-window)
+  (setq dired-deletion-confirmer #'y-or-n-p ;; ls program name
+		dired-omit-files (rx (or (seq bol (? ".") "#")
+								 (seq bol "." eol)
+								 (seq bol "." (+ any) eol)
+								 (seq bol ".." eol)
+								 (seq bol "#" eol))))
+  (add-hook 'dired-mode-hook 'dired-omit-mode))
 
 ;;; Sort directories first
 ;;; https://www.emacswiki.org/emacs/DiredSortDirectoriesFirst
@@ -47,20 +54,6 @@
 			   (eq last-input-event 'return)
 			   )
       (dired-find-file))))
-
-;; keyboard custom shortcuts
-(eval-after-load "dired"
-  '(progn
-	 (define-key dired-mode-map [?%?h] 'dired-show-only)
-	 ))
-(eval-after-load "dired"
-  '(progn
-	 (define-key dired-mode-map (kbd "C-<up>") 'dired-up-directory)
-	 ))
-(eval-after-load "dired"
-  '(progn
-	 (define-key dired-mode-map (kbd "S-<return>") 'dired-find-file-other-window)
-	 ))
 
 (provide 'my_dired)
 ;;; my_dired ends here
