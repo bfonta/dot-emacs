@@ -5,7 +5,7 @@
 (defun my/replace-new-lines (beg end)
   "Replace new lines in buffer or region with spaces."
   (interactive "r")
-  (format-replace-strings '(("\n" . " "))
+  (format-replace-strings '(("\n" . " ") ("- " . ""))
                           nil beg end))
 (defun my/paste-and-replace ()
   "Paste and replace new lines from the source with spaces."
