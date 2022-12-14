@@ -6,7 +6,7 @@
 (blink-cursor-mode 0)
 
 ;; change cursor color
-(add-to-list 'default-frame-alist '(cursor-color . "grey50"))
+(add-to-list 'default-frame-alist '(cursor-color . "gray75"))
 
 (provide 'my_cursor)
 ;;; my_cursor ends here
