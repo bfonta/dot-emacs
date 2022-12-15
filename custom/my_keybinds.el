@@ -5,6 +5,7 @@
 (global-set-key (kbd "M-r") 'replace-regexp)
 (global-set-key (kbd "C-M-r") 'my/batch-replace-strings)
 (global-set-key (kbd "M-q") 'align-regexp)
+(global-set-key (kbd "M-c") 'goto-line)
 
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
