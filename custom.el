@@ -151,6 +151,8 @@
  '(lsp-face-highlight-textual ((t (:inherit highlight :height 1.0))))
  '(lsp-face-highlight-write ((t (:inherit highlight :weight bold :height 1.0))))
  '(lsp-face-rename ((t (:underline t :height 1.0))))
+ '(markdown-footnote-text-face ((t (:inherit font-lock-comment-face))))
+ '(markdown-html-attr-value-face ((t (:inherit font-lock-string-face))))
  '(org-block ((t (:inherit fixed-pitch :extend t :background "gray30" :height 0.5))))
  '(org-block-begin-line ((t (:inherit fixed-pitch :foreground "orange red" :height 0.4))))
  '(org-block-end-line ((t (:inherit fixed-pitch :foreground "orange red" :height 0.4))))

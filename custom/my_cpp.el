@@ -26,9 +26,6 @@
 
   ;; remove modeline (use custom one defined in my_modeline.el)
   (setq lsp-modeline-code-actions-enable nil)
-
-  ;; remove sideline (warnings, ...)
-  (setq lsp-ui-sideline-enable nil)
   
   (with-eval-after-load 'lsp-mode
 	(add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
@@ -38,7 +35,12 @@
 
 ;; optionally
 (use-package lsp-ui
-  :commands lsp-ui-mode)
+  :commands lsp-ui-mode
+  :config  ;; remove sideline (warnings, ...)
+  (setq lsp-ui-sideline-enable nil
+		lsp-ui-doc-enable t
+		lsp-ui-doc-show-with-mouse nil)
+  )
 
 ;; if you are helm user
 (use-package helm-lsp
