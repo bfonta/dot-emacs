@@ -59,9 +59,10 @@
 (defun my/debian-update ()
   "Runs apt update and upgrade commands."
   (interactive)
-  (let ((buffer "shell"))
-	(split-window-below -15)
-	(other-window 1)
+  (let ((buffer "*shell*") (wth (window-total-height)))
+	(unless (or (eq major-mode 'shell-mode) (< wth 12) (get-buffer-window buffer t))
+	  (split-window-below (round (* -0.4 wth)))
+	  (other-window 1))
 	(shell buffer)
 	(insert (concat "sudo apt update && sudo apt upgrade -y && "
 					"sudo apt full-upgrade -y && "
