@@ -96,9 +96,10 @@ Starts by disconnecting some sshfs connection on the same folder."
    (let ((completion-ignore-case t))
      (list (completing-read "Server: " '("Triggers" "FPGAs" "KLUB" "P5") nil t))))
 
-  (let ((buffer "shell"))
-	(split-window-below -15)
-	(other-window 1)
+  (let ((buffer "*shell*") (wth (window-total-height)))
+	(unless (or (eq major-mode 'shell-mode) (< wth 12) (get-buffer-window buffer t))
+	  (split-window-below (round (* -0.4 wth)))
+	  (other-window 1))
 	(shell buffer)
 
 	(cond ((string-equal server "Triggers")
