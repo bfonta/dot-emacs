@@ -95,34 +95,40 @@ Starts by disconnecting some sshfs connection on the same folder."
   (interactive
    (let ((completion-ignore-case t))
      (list (completing-read "Server: " '("Triggers" "FPGAs" "KLUB" "P5") nil t))))
-  
-  (cond ((string-equal server "Triggers")
-		 (insert (concat (my/sshfs-unmount-string "llr_triggers")
-						 "; "
-						 (my/sshfs-mount-string "llr_triggers" "llr"
-												"/home/llr/cms/alves/CMSSW_12_5_0_pre1/src/METTriggerStudies; "))))
 
-		((string-equal server "FPGAs")
-		 (insert (concat (my/sshfs-unmount-string "llr_fpgas")
-						 "; "
-						 (my/sshfs-mount-string "llr_fpgas" "llr"
-												"/home/llr/cms/alves/CMSSW_12_5_0_pre1/src/bye_splits; "))))
-		((string-equal server "KLUB")
-		 (insert (concat (my/sshfs-unmount-string "klub")
-						 "; "
+  (let ((buffer "shell"))
+	(split-window-below -15)
+	(other-window 1)
+	(shell buffer)
+
+	(cond ((string-equal server "Triggers")
+		   (insert (concat (my/sshfs-unmount-string "llr_triggers")
+						   "; "
+						   (my/sshfs-mount-string "llr_triggers" "llr"
+												  "/home/llr/cms/alves/CMSSW_12_5_0_pre1/src/METTriggerStudies; "))))
+		  
+		  ((string-equal server "FPGAs")
+		   (insert (concat (my/sshfs-unmount-string "llr_fpgas")
+						   "; "
+						   (my/sshfs-mount-string "llr_fpgas" "llr"
+												  "/home/llr/cms/alves/CMSSW_12_5_0_pre1/src/bye_splits; "))))
+		  ((string-equal server "KLUB")
+		   (insert (concat (my/sshfs-unmount-string "klub")
+						   "; "
 						 (my/sshfs-mount-string "klub" "llr"
 												"/home/llr/cms/alves/CMSSW_11_1_9/src/KLUBAnalysis"))))
-
-		((string-equal server "P5")
-		 (insert (concat (my/sshfs-unmount-string "p5")
-						 "; "
-						 (my/sshfs-mount-string "p5" "cmsusr"
-												"/nfshome0/bfontana/"))
-				 ))
-
-		(t (user-error "Function implementation error. Fix."))
-		)
-  (comint-send-input)
+		  
+		  ((string-equal server "P5")
+		   (insert (concat (my/sshfs-unmount-string "p5")
+						   "; "
+						   (my/sshfs-mount-string "p5" "cmsusr"
+												  "/nfshome0/bfontana/"))
+				   ))
+		  
+		  (t (user-error "Function implementation error. Fix."))
+		  )
+	(comint-send-input)
+	)
   )
 
 ; disable company-mode in remote dired environments."
