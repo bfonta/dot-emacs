@@ -17,3 +17,6 @@ recentf
 eln-cache/
 .cache/
 .lsp-session*
+bookmarks
+image-dired/
+request/
