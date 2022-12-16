@@ -177,10 +177,8 @@
 							`(org-level-2 ((t (:height 1.05 :foreground "#7F9F7F"))))
 							`(org-level-3 ((t (:height 1.00 :foreground "#8CD0D3"))))
 							`(org-level-4 ((t (:height 1.00 :foreground "#DEB887"))))
-							;; `(org-level-5 ((t (:height 1.00 :foreground "#DEB887"))))
-							;; `(org-level-6 ((t (:height 1.00 :foreground "#DEB887"))))
-							;; `(org-level-7 ((t (:height 1.00 :foreground "#DEB887"))))
-							;; `(org-level-8 ((t (:height 1.00 :foreground "#DEB887"))))
+							`(org-level-5 ((t (:height 1.00 :foreground "#BA55D3"))))
+							`(org-level-6 ((t (:height 1.00 :foreground "#5C4033"))))
 
 							`(org-ellipsis ((t (:height 1.00 :foreground "#989890"))))
 							`(org-meta-line ((t (:height 1.00 :foreground "#989890"))))
