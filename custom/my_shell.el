@@ -61,7 +61,7 @@
   (interactive)
   (let ((buffer "*shell*") (wth (window-total-height)))
 	(unless (or (eq major-mode 'shell-mode) (< wth 12) (get-buffer-window buffer t))
-	  (split-window-below (round (* -0.4 wth)))
+	  (split-window-below (round (* -0.35 wth)))
 	  (other-window 1))
 	(shell buffer)
 	(insert (concat "sudo apt update && sudo apt upgrade -y && "

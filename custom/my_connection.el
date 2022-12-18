@@ -98,7 +98,7 @@ Starts by disconnecting some sshfs connection on the same folder."
 
   (let ((buffer "*shell*") (wth (window-total-height)))
 	(unless (or (eq major-mode 'shell-mode) (< wth 12) (get-buffer-window buffer t))
-	  (split-window-below (round (* -0.4 wth)))
+	  (split-window-below (round (* -0.35 wth)))
 	  (other-window 1))
 	(shell buffer)
 
