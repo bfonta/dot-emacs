@@ -10,9 +10,10 @@
 (defun my/paste-and-replace ()
   "Paste and replace new lines from the source with spaces."
   (interactive)
-  (delete-region (mark) (point))
+  (if (region-active-p) (delete-active-region))
   (cua-paste nil)
-  (my/replace-new-lines (mark) (point)))
+  (my/replace-new-lines (mark) (point))
+  )
 
 (use-package cua-base
   :config
