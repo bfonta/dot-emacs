@@ -10,6 +10,7 @@
 (defun my/paste-and-replace ()
   "Paste and replace new lines from the source with spaces."
   (interactive)
+  (delete-region (mark) (point))
   (cua-paste nil)
   (my/replace-new-lines (mark) (point)))
 
