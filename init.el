@@ -55,6 +55,7 @@
 (load-library "my_compilation")
 (load-library "my_markdown")
 (load-library "my_python")
+;; (load-library "my_dap") debugger, TODO
 (load-library "my_whichfunc")
 (load-library "my_modeline")
 (load-library "my_pdf")
@@ -82,6 +83,7 @@
 (load-library "my_multiplecursors")
 (load-library "my_vundo")
 (load-library "my_hideshow")
+(load-library "my_hydra")
 (load-library "my_keybinds") ;;;; should be the last one to be loaded
 
 ;;; ---------------------------
@@ -118,6 +120,13 @@
   (interactive)
   (load user-init-file)
   )
+
+;; The default is 800 kilobytes.  Measured in bytes.
+(setq gc-cons-threshold (* 50 1000 1000))
+;; Silence compiler warnings as they can be pretty disruptive
+(setq native-comp-async-report-warnings-errors nil)
+;; Set the right directory to store the native comp cache
+(add-to-list 'native-comp-eln-load-path (expand-file-name "eln-cache/" user-emacs-directory))
 
 (dired ".")
 

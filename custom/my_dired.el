@@ -7,6 +7,7 @@
   :init
   (require 'dired-x)
   :config
+  (global-set-key (kbd "C-x C-f") 'dired-jump)
   (define-key dired-mode-map [?%?h] 'dired-show-only)
   (define-key dired-mode-map (kbd "C-<up>") 'dired-up-directory)
   (define-key dired-mode-map (kbd "S-<return>") 'dired-find-file-other-window)

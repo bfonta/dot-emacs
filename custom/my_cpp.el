@@ -13,9 +13,7 @@
   (add-hook 'c-mode-hook 'lsp)
   (add-hook 'c++-mode-hook 'lsp)
   
-  ;; garbage collection
-  (setq gc-cons-threshold 1000000)
-  ;; 1mb: amout of data Emcas reads from the process
+  ;; 1mb: amount of data Emacs reads from the process
   (setq read-process-output-max (* 1024 1024)
 		treemacs-space-between-root-nodes nil
 		lsp-idle-delay 0.1  ;; clangd is fast

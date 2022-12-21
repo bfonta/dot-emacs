@@ -27,8 +27,7 @@
      '("Sections" "^#### \\[ \\(.*\\) \\]$" 1))
     (setq imenu-create-index-function 'my-merge-imenu)
 	)
-  (add-hook 'python-mode-hook 'my-python-hooks)
-  )
+  (add-hook 'python-mode-hook 'my-python-hooks))
 
 (use-package pyvenv
   :defer t

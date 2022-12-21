@@ -107,7 +107,7 @@
    '(:foreground orange :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.5 :matchers
 				 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(package-selected-packages
-   '(pdf-tools php-mode vterm-toggle vterm orglink company vundo imenu-list flx git-timemachine restart-emacs company-jedi tex company-auctex tex-ispell cl latex emojify nlinum shackle latex-math-preview epc git impatient-mode pdf-continuous-scroll-mode org-pdftools yasnippet-classic-snippets native-complete ssh org-download visual-fill-column org-superstar exwm xterm-color rainbow-delimiters spacemacs-theme hide-mode-line easy-after-load minions ghub mu4e-alert smtpmail-multi company-c-headers smooth-scrolling helm-pydoc pydoc anaconda-mode magithub eimp image+ go-mode neotree smartparens latex-preview-pane yaml-mode latex-unicode-math-mode yasnippet))
+   '(with-venv pdf-tools php-mode vterm-toggle vterm orglink company vundo imenu-list flx git-timemachine restart-emacs company-jedi tex company-auctex tex-ispell cl latex emojify nlinum shackle latex-math-preview epc git impatient-mode pdf-continuous-scroll-mode org-pdftools yasnippet-classic-snippets native-complete ssh org-download visual-fill-column org-superstar exwm xterm-color rainbow-delimiters spacemacs-theme hide-mode-line easy-after-load minions ghub mu4e-alert smtpmail-multi company-c-headers smooth-scrolling helm-pydoc pydoc anaconda-mode magithub eimp image+ go-mode neotree smartparens latex-preview-pane yaml-mode latex-unicode-math-mode yasnippet))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
  '(persp-keymap-prefix [M-up])
  '(persp-mode t)
@@ -166,6 +166,12 @@
  '(org-ellipsis ((t (:height 1.0 :foreground "#989890"))))
  '(org-indent ((t (:inherit (org-hide fixed-pitch)))))
  '(org-latex-and-related ((t (:foreground "burlywood"))))
+ '(org-level-1 ((t (:height 1.1 :foreground "#6C3333"))))
+ '(org-level-2 ((t (:height 1.05 :foreground "#7F9F7F"))))
+ '(org-level-3 ((t (:height 1.0 :foreground "#8CD0D3"))))
+ '(org-level-4 ((t (:height 1.0 :foreground "#DEB887"))))
+ '(org-level-5 ((t (:height 1.0 :foreground "#BA55D3"))))
+ '(org-level-6 ((t (:height 1.0 :foreground "#5C4033"))))
  '(org-link ((t (:inherit default :foreground "steel blue" :underline t :weight bold :height 50 :family "Sans Serif"))))
  '(org-meta-line ((t (:inherit fixed-pitch :height 0.4))))
  '(org-property-value ((t (:inherit fixed-pitch :height 0.5))) t)
