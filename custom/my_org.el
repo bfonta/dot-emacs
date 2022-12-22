@@ -170,7 +170,7 @@
   ;; Beautify
   (defun my/style-org ()
 	;; I have removed indentation to make the file look cleaner
-	(org-indent-mode -1)
+	(org-indent-mode 1)
 	
 	;;(my/buffer-face-mode-variable)
 	(setq line-spacing 0.1
@@ -471,12 +471,14 @@
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "→"))))
 						  ("\\(<-\\)"
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "←"))))
+						  ("\\(+-\\)"
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "±"))))
 						  ))
 
 (use-package cdlatex
   :config
   (add-hook 'org-mode-hook #'turn-on-org-cdlatex)
   )
-  
+
 (provide 'my_org)
 ;;; my_org ends here
