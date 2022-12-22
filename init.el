@@ -45,6 +45,7 @@
 (load-library "my_frame")
 (load-library "my_menu")
 (load-library "my_definitions")
+(load-library "my_open")
 (load-library "my_cua")
 (load-library "my_company")
 (load-library "my_cpp")
