@@ -7,8 +7,8 @@
   :ensure t
   :bind (("M-x" . helm-M-x)
          ("C-x r b" . helm-filtered-bookmarks)
-		 ;; ("C-x C-f" . helm-find-files)
-		 ;; ("C-x C-d" . helm-browse-project)
+		 ("C-x C-f" . helm-find-files)
+		 ("C-x C-d" . helm-browse-project)
 		 ("C-x b" . helm-mini)
 		 ("C-D" . 'helm-buffer-run-kill-buffers)
 		 ;; "<tab>" . helm-execute-persistent-action) ; rebind tab to run persistent action
