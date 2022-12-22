@@ -85,11 +85,17 @@
   ;;Once Org mode loaded, turn on olivetti, hide tilde fringes and enable visual line mode.
   (defun my-org-config/after-org-mode-load ()
 	(visual-line-mode)
-	(vi-tilde-fringe-mode -1)
-	)
-
+	(vi-tilde-fringe-mode -1))
   (add-hook 'org-mode-hook 'my-org-config/after-org-mode-load)
 
+  ;; Use monospaced font faces in current buffer
+  (defun my-org-config/set-base-font ()
+    "Sets a fixed width (monospace) font in current buffer"
+	(interactive)
+	(setq buffer-face-mode-face '(:family "Sans Serif"))
+	(buffer-face-mode))
+  (add-hook 'org-mode-hook 'my-org-config/set-base-font)
+  
   ;; I use a general inbox file to collect all new tasks on the run and will batch-schedule/refile them a couple times a day.
   ;; Inbox and mobile inbox co-exist to prevent sync conflicts when adding tasks while having no internet connection. This works pretty well and I treat them equally in the agenda views. 
   (defvar org-my-inbox-file "~/org/inbox.org")
@@ -171,35 +177,83 @@
           org-pretty-entities t
 		  )
 
-	;; inspired on zenburn theme
-	(custom-theme-set-faces 'user
-							`(org-level-1 ((t (:height 1.10 :foreground "#6C3333"))))
-							`(org-level-2 ((t (:height 1.05 :foreground "#7F9F7F"))))
-							`(org-level-3 ((t (:height 1.00 :foreground "#8CD0D3"))))
-							`(org-level-4 ((t (:height 1.00 :foreground "#DEB887"))))
-							`(org-level-5 ((t (:height 1.00 :foreground "#BA55D3"))))
-							`(org-level-6 ((t (:height 1.00 :foreground "#5C4033"))))
-
-							`(org-ellipsis ((t (:height 1.00 :foreground "#989890"))))
-							`(org-meta-line ((t (:height 1.00 :foreground "#989890"))))
-							`(org-drawer ((t (:height 1.00 :background "#303030" :foreground "#6CA0A3"))))
-							`(org-verbatim ((t (:height 1.0 :foreground "#DC8CC3"))))
-							`(org-property-value ((t (:height 1.0 :background "#2B2B2B" :foreground "#FFFFEF"))))
-							`(org-checkbox ((t (:height 1.0 :foreground "#FFFFFD"))))
-							`(org-block ((t (:height 1.0 :background "#303030" :foreground "#FFFFFD"))))
-							`(org-document-info ((t (:height 1.0 :background "#303030"))))
-							`(org-document-info-keyword ((t (:height 1.0 :background "#303030"))))
-							`(org-tag ((t (:height 1.0 :background "#303030" :foreground "#9FC59F"))))
-							`(org-special-keyword ((t (:height 1.0 :background "#303030" :foreground "#9FC59F"))))
-							`(org-tag-group ((t (:height 1.0 :background "#303030" :foreground "#9FC59F"))))
-							`(org-verse ((t (:height 1.0 :foreground "#9FC59F"))))
-							`(org-block-begin-line ((t (:height 1.0 :background "#303030" :foreground "#7C4343"))))
-							`(org-block-end-line ((t (:height 1.0 :background "#303030" :foreground "#7C4343"))))
-							`(org-code     ((t (:height 1.0 :foreground "#D0BF8F"))))
-							`(org-link     ((t (:height 1.0 :foreground "#93E0E3" :underline (:color foreground-color :style line) ))))
-							`(org-table    ((t (:height 1.0 :foreground "#9FC59F"))))
-							`(org-document-title ((t (:height 1.15 :foreground "#6C3333" :underline nil))))
-							)
+	;; fonts and colors (inspired on zenburn theme)
+	(let*
+		((sans-font
+		  (cond ((x-family-fonts "Sans Serif") '(:family "Sans Serif"))
+				(nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
+		 (base-font-color     (face-foreground 'default nil 'default))
+		 (headline           `(:inherit default :weight semibold :foreground ,base-font-color)))
+	  ;; ((default-font
+	  ;; 	(base-font-color     (face-foreground 'default nil 'default))))
+	  
+	  (custom-theme-set-faces 'user
+							  `(org-level-1
+								((t (,@headline ,@sans-font :foreground "#6C3333"))))
+							  `(org-level-2
+								((t (,@headline ,@sans-font :foreground "#7F9F7F"))))
+							  `(org-level-3
+								((t (,@headline ,@sans-font :foreground "#8CD0D3"))))
+							  `(org-level-4
+								((t (,@headline ,@sans-font :foreground "#DEB887"))))
+							  `(org-level-5
+								((t (,@headline ,@sans-font :foreground "#BA55D3"))))
+							  `(org-level-6
+								((t (,@headline ,@sans-font :foreground "#5C4033"))))
+							  
+							  `(org-ellipsis
+								((t (,@headline ,@sans-font :foreground "#989890"))))
+							  `(org-meta-line
+								((t (,@sans-font :foreground "#989890"))))
+							  `(org-drawer
+								((t (,@sans-font
+									 :background "#303030" :foreground "#6CA0A3"))))
+							  `(org-verbatim
+								((t (,@sans-font :foreground "#DC8CC3"))))
+							  `(org-property-value
+								((t (,@sans-font
+									 :background "#2B2B2B" :foreground "#FFFFEF"))))
+							  `(org-checkbox
+								((t (,@sans-font :foreground "#FFFFFD"))))
+							  `(org-block
+								((t (:font "Monospace" :height 1.0
+										   :background "gray30" :foreground "#FFFFFD"))))
+							  `(org-document-info
+								((t (,@sans-font :background "#303030"))))
+							  `(org-document-info-keyword
+								((t (,@sans-font :background "#303030"))))
+							  `(org-tag
+								((t (,@sans-font
+									 :background "#303030" :foreground "#9FC59F"))))
+							  `(org-special-keyword
+								((t (,@sans-font
+									 :background "#303030" :foreground "#9FC59F"))))
+							  `(org-tag-group
+								((t (,@sans-font
+									 :background "#303030" :foreground "#9FC59F"))))
+							  `(org-verse
+								((t (,@sans-font :foreground "#9FC59F"))))
+							  `(org-block-begin-line
+								((t (,@sans-font :height 0.75 :weight semibold
+												 :width ultracondensed
+									 :background "gray30" :foreground "gray10"))))
+							  `(org-block-end-line
+								((t (,@sans-font :height 0.75 :weight semibold
+												 :width ultracondensed
+									 :background "gray30" :foreground "gray10"))))
+							  `(org-code
+								((t (:font "Monospace" :height 1.0
+									 :foreground "#D0BF8F"))))
+							  `(org-link
+								((t (,@sans-font
+									 :foreground "#93E0E3" :underline (:color foreground-color :style line) ))))
+							  `(org-table
+								((t (,@sans-font :foreground "#9FC59F"))))
+							  `(org-document-title
+								((t (,@sans-font
+									 :foreground "#6C3333" :underline nil))))
+							  )
+	  )
 	)
   (add-hook 'org-mode-hook 'my/style-org)
 
@@ -401,14 +455,23 @@
 ("\\section{%s}" . "\\section*{%s}")
 ("\\subsection{%s}" . "\\subsection*{%s}")
 ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
-
   
   )
+
+(use-package org-bullets
+  :config
+  (setq org-bullets-bullet-list '("●" "■" "▶" "★" "✸"))
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+;; replace list bullet
+(font-lock-add-keywords 'org-mode
+						'(("^ *\\([\+]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
 (use-package cdlatex
   :config
   (add-hook 'org-mode-hook #'turn-on-org-cdlatex)
   )
-
+  
 (provide 'my_org)
 ;;; my_org ends here
