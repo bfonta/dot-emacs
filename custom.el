@@ -77,6 +77,7 @@
  '(custom-safe-themes
    '("dea4b7d43d646aa06a4f705a58f874ec706f896c25993fcf73de406e27dc65ba" "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
  '(dired-listing-switches "-a -l -h --group-directories-first")
+ '(dired-subtree-line-prefix "   ")
  '(fringe-mode '(1 . 0) nil (fringe))
  '(grep-command "grep --nr '.' -e '' ")
  '(helm-completion-style 'emacs)
@@ -107,7 +108,7 @@
    '(:foreground orange :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.5 :matchers
 				 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(package-selected-packages
-   '(with-venv pdf-tools php-mode vterm-toggle vterm orglink company vundo imenu-list flx git-timemachine restart-emacs company-jedi tex company-auctex tex-ispell cl latex emojify nlinum shackle latex-math-preview epc git impatient-mode pdf-continuous-scroll-mode org-pdftools yasnippet-classic-snippets native-complete ssh org-download visual-fill-column org-superstar exwm xterm-color rainbow-delimiters spacemacs-theme hide-mode-line easy-after-load minions ghub mu4e-alert smtpmail-multi company-c-headers smooth-scrolling helm-pydoc pydoc anaconda-mode magithub eimp image+ go-mode neotree smartparens latex-preview-pane yaml-mode latex-unicode-math-mode yasnippet))
+   '(dired-collapse dired dired-rainbow with-venv pdf-tools php-mode vterm-toggle vterm orglink company vundo imenu-list flx git-timemachine restart-emacs company-jedi tex company-auctex tex-ispell cl latex emojify nlinum shackle latex-math-preview epc git impatient-mode pdf-continuous-scroll-mode org-pdftools yasnippet-classic-snippets native-complete ssh org-download visual-fill-column org-superstar exwm xterm-color rainbow-delimiters spacemacs-theme hide-mode-line easy-after-load minions ghub mu4e-alert smtpmail-multi company-c-headers smooth-scrolling helm-pydoc pydoc anaconda-mode magithub eimp image+ go-mode neotree smartparens latex-preview-pane yaml-mode latex-unicode-math-mode yasnippet))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
  '(persp-keymap-prefix [M-up])
  '(persp-mode t)
@@ -138,6 +139,9 @@
  '(company-tooltip-scrollbar-track ((t (:background "black"))))
  '(company-tooltip-selection ((t (:background "sandy brown" :foreground "black"))))
  '(cursor ((t (:background "gainsboro" :foreground "black" :weight heavy))))
+ '(dired-subtree-depth-1-face ((t (:background "gray25"))))
+ '(dired-subtree-depth-2-face ((t (:background "RoyalBlue4"))))
+ '(dired-subtree-depth-3-face ((t (:background "dim gray"))))
  '(fixed-pitch ((t (:family "Fira Code Retina"))))
  '(font-latex-math-face ((t (:foreground "dark violet"))))
  '(font-latex-slide-title-face ((t (:foreground "tomato" :weight bold :height 1.2 :width normal))))
