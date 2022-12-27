@@ -183,7 +183,7 @@
 		  (cond ((x-family-fonts "Sans Serif") '(:family "Sans Serif"))
 				(nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
 		 (base-font-color     (face-foreground 'default nil 'default))
-		 (headline           `(:inherit default :weight semibold :foreground ,base-font-color)))
+		 (headline           `(:inherit default :weight regular :foreground ,base-font-color)))
 	  ;; ((default-font
 	  ;; 	(base-font-color     (face-foreground 'default nil 'default))))
 	  
@@ -193,7 +193,7 @@
 							  `(org-level-2
 								((t (,@headline ,@sans-font :foreground "#7F9F7F"))))
 							  `(org-level-3
-								((t (,@headline ,@sans-font :foreground "#8CD0D3"))))
+								((t (,@headline ,@sans-font :foreground "#6a5acd"))))
 							  `(org-level-4
 								((t (,@headline ,@sans-font :foreground "#DEB887"))))
 							  `(org-level-5
@@ -479,6 +479,19 @@
   :config
   (add-hook 'org-mode-hook #'turn-on-org-cdlatex)
   )
+
+;; https://emacs.stackexchange.com/questions/66218/possible-to-copy-paste-without-markup-in-org-mode
+(defun my/org-copy-code ()
+  "Export code silently to kill-ring, removing org formatting."
+  (interactive)
+  (require 'ox-ascii)
+  (cl-letf (((symbol-function 'org-element-normalize-string) #'identity))
+    (save-excursion
+      (kill-new
+       (org-export-as 'ascii
+              nil nil t
+              '(:ascii-verbatim-format "%s" :ascii-paragraph-spacing auto :ascii-headline-spacing nil :preserve-breaks t))
+       ))))
 
 (provide 'my_org)
 ;;; my_org ends here
