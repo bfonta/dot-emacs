@@ -12,7 +12,8 @@
   ("o" (dired "~/org/") "org")
   ("d" (dired "~/Documents/") "Documents")
   ("1" (dired "~/llr_fpgas/bye_splits") "fpgas")
-  ("2" (dired "~/llr_fpgas/bye_splits/plot/display") "display"))
+  ("2" (dired "~/llr_fpgas/bye_splits/plot/display") "display")
+  ("3" (dired "~/llr_hgctpg/L1Trigger/L1THGCal/test/HGCalTriggerGeomTesterV9Imp3.cc") "hgc-tpg"))
 
 (global-set-key (kbd "C-x d") 'hydra-dired/body)
 
