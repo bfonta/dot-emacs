@@ -25,7 +25,7 @@
   "Connects to a server."
   (interactive
    (let ((completion-ignore-case t))
-     (list (completing-read "Server: " '("Triggers" "FPGAs" "KLUB" "Lxplus8" "P5") nil t))))
+     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "KLUB" "Lxplus8" "P5") nil t))))
 
   (cond ((string-equal server "Triggers")
 		 (let ((default-directory
@@ -42,7 +42,15 @@
 		   (if (get-buffer "shell_fpgas")
 			   (shell (concat "shell_" (read-string "FPGAs new shell buffer: shell_")))
 			 (shell "shell_llr"))))
-		
+
+		((string-equal server "HGC-TPG")
+		 (let ((default-directory
+				 "/scp:alves@llr:/home/llr/cms/alves/CMSSW_12_5_0_pre4/src/"))
+		   (dired default-directory)
+		   (if (get-buffer "shell_hgc_tpg")
+			   (shell (concat "shell_" (read-string "HGC-TPG new shell buffer: shell_")))
+			 (shell "shell_hgc_tpg"))))
+
 		((string-equal server "KLUB")
 		 (let ((default-directory
 				 "/scp:alves@llr:/home/llr/cms/alves/CMSSW_11_1_9/src/KLUBAnalysis/"))
@@ -78,6 +86,8 @@
 		 (insert "cmsenv; conda activate Trigger;"))
 		((string-equal server "FPGAs")
 		 (insert "cmsenv; conda activate FPGA;"))
+		((string-equal server "HGC-TPG")
+		 (insert "cmsenv;"))
 		((string-equal server "KLUB")
 		 (insert "cmsenv;"))
 		((string-equal server "P5")
@@ -94,7 +104,7 @@
 Starts by disconnecting some sshfs connection on the same folder."
   (interactive
    (let ((completion-ignore-case t))
-     (list (completing-read "Server: " '("Triggers" "FPGAs" "KLUB" "P5") nil t))))
+     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "KLUB" "P5") nil t))))
 
   (let ((buffer "*shell*") (wth (window-total-height)))
 	(unless (or (eq major-mode 'shell-mode) (< wth 12) (get-buffer-window buffer t))
@@ -113,6 +123,11 @@ Starts by disconnecting some sshfs connection on the same folder."
 						   "; "
 						   (my/sshfs-mount-string "llr_fpgas" "llr"
 												  "/home/llr/cms/alves/CMSSW_12_5_0_pre1/src/bye_splits; "))))
+		  ((string-equal server "HGC-TPG")
+		   (insert (concat (my/sshfs-unmount-string "llr_hgctpg")
+						   "; "
+						   (my/sshfs-mount-string "llr_hgctpg" "llr"
+												  "/home/llr/cms/alves/CMSSW_12_5_0_pre4/src/; "))))
 		  ((string-equal server "KLUB")
 		   (insert (concat (my/sshfs-unmount-string "klub")
 						   "; "
