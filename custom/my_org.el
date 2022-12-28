@@ -234,13 +234,11 @@
 							  `(org-verse
 								((t (,@sans-font :foreground "#9FC59F"))))
 							  `(org-block-begin-line
-								((t (,@sans-font :height 0.75 :weight semibold
-												 :width ultracondensed
-									 :background "gray30" :foreground "gray10"))))
+								((t
+								  (:family "Sans Serif" :width ultracondensed :height 0.6 :weight semibold :foreground "gray16" :background "orange4" :box (:style released-button) :extend t))))
 							  `(org-block-end-line
-								((t (,@sans-font :height 0.75 :weight semibold
-												 :width ultracondensed
-									 :background "gray30" :foreground "gray10"))))
+								((t
+								  (:family "Sans Serif" :width ultracondensed :height 0.6 :weight semibold :foreground "gray16" :background "orange4" :box (:style released-button) :extend t))))
 							  `(org-code
 								((t (:font "Monospace" :height 1.0
 									 :foreground "#D0BF8F"))))
