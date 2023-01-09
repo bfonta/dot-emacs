@@ -5,69 +5,70 @@
  ;; If there is more than one, they won't work right.
  '(TeX-command-list
    '(("TeX" "%(PDF)%(tex) %(file-line-error) %`%(extraopts) %S%(PDFout)%(mode)%' %t" TeX-run-TeX nil
-	  (plain-tex-mode texinfo-mode ams-tex-mode)
-	  :help "Run plain TeX")
-	 ("LaTeX" "%`%l%(mode)%' --shell-escape %T" TeX-run-TeX nil
-	  (latex-mode doctex-mode)
-	  :help "Run LaTeX")
-	 ("Makeinfo" "makeinfo %(extraopts) %t" TeX-run-compile nil
-	  (texinfo-mode)
-	  :help "Run Makeinfo with Info output")
-	 ("Makeinfo HTML" "makeinfo %(extraopts) --html %t" TeX-run-compile nil
-	  (texinfo-mode)
-	  :help "Run Makeinfo with HTML output")
-	 ("AmSTeX" "amstex %(PDFout) %`%(extraopts) %S%(mode)%' %t" TeX-run-TeX nil
-	  (ams-tex-mode)
-	  :help "Run AMSTeX")
-	 ("ConTeXt" "%(cntxcom) --once --texutil %(extraopts) %(execopts)%t" TeX-run-TeX nil
-	  (context-mode)
-	  :help "Run ConTeXt once")
-	 ("ConTeXt Full" "%(cntxcom) %(extraopts) %(execopts)%t" TeX-run-TeX nil
-	  (context-mode)
-	  :help "Run ConTeXt until completion")
-	 ("BibTeX" "bibtex %s" TeX-run-BibTeX nil
-	  (plain-tex-mode latex-mode doctex-mode context-mode texinfo-mode ams-tex-mode)
-	  :help "Run BibTeX")
-	 ("Biber" "biber %s" TeX-run-Biber nil
-	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
-	  :help "Run Biber")
-	 ("View" "%V" TeX-run-discard-or-function t t :help "Run Viewer")
-	 ("Print" "%p" TeX-run-command t t :help "Print the file")
-	 ("Queue" "%q" TeX-run-background nil t :help "View the printer queue" :visible TeX-queue-command)
-	 ("File" "%(o?)dvips %d -o %f " TeX-run-dvips t
-	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
-	  :help "Generate PostScript file")
-	 ("Dvips" "%(o?)dvips %d -o %f " TeX-run-dvips nil
-	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
-	  :help "Convert DVI file to PostScript")
-	 ("Dvipdfmx" "dvipdfmx %d" TeX-run-dvipdfmx nil
-	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
-	  :help "Convert DVI file to PDF with dvipdfmx")
-	 ("Ps2pdf" "ps2pdf %f" TeX-run-ps2pdf nil
-	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
-	  :help "Convert PostScript file to PDF")
-	 ("Glossaries" "makeglossaries %s" TeX-run-command nil
-	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
-	  :help "Run makeglossaries to create glossary\12     file")
-	 ("Index" "makeindex %s" TeX-run-index nil
-	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
-	  :help "Run makeindex to create index file")
-	 ("upMendex" "upmendex %s" TeX-run-index t
-	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
-	  :help "Run upmendex to create index file")
-	 ("Xindy" "texindy %s" TeX-run-command nil
-	  (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
-	  :help "Run xindy to create index file")
-	 ("Check" "lacheck %s" TeX-run-compile nil
-	  (latex-mode)
-	  :help "Check LaTeX file for correctness")
-	 ("ChkTeX" "chktex -v6 %s" TeX-run-compile nil
-	  (latex-mode)
-	  :help "Check LaTeX file for common mistakes")
-	 ("Spell" "(TeX-ispell-document \"\")" TeX-run-function nil t :help "Spell-check the document")
-	 ("Clean" "TeX-clean" TeX-run-function nil t :help "Delete generated intermediate files")
-	 ("Clean All" "(TeX-clean t)" TeX-run-function nil t :help "Delete generated intermediate and output files")
-	 ("Other" "" TeX-run-command t t :help "Run an arbitrary command")))
+      (plain-tex-mode texinfo-mode ams-tex-mode)
+      :help "Run plain TeX")
+     ("LaTeX" "%`%l%(mode)%' --shell-escape %T" TeX-run-TeX nil
+      (latex-mode doctex-mode)
+      :help "Run LaTeX")
+     ("Makeinfo" "makeinfo %(extraopts) %t" TeX-run-compile nil
+      (texinfo-mode)
+      :help "Run Makeinfo with Info output")
+     ("Makeinfo HTML" "makeinfo %(extraopts) --html %t" TeX-run-compile nil
+      (texinfo-mode)
+      :help "Run Makeinfo with HTML output")
+     ("AmSTeX" "amstex %(PDFout) %`%(extraopts) %S%(mode)%' %t" TeX-run-TeX nil
+      (ams-tex-mode)
+      :help "Run AMSTeX")
+     ("ConTeXt" "%(cntxcom) --once --texutil %(extraopts) %(execopts)%t" TeX-run-TeX nil
+      (context-mode)
+      :help "Run ConTeXt once")
+     ("ConTeXt Full" "%(cntxcom) %(extraopts) %(execopts)%t" TeX-run-TeX nil
+      (context-mode)
+      :help "Run ConTeXt until completion")
+     ("BibTeX" "bibtex %s" TeX-run-BibTeX nil
+      (plain-tex-mode latex-mode doctex-mode context-mode texinfo-mode ams-tex-mode)
+      :help "Run BibTeX")
+     ("Biber" "biber %s" TeX-run-Biber nil
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Run Biber")
+     ("View" "%V" TeX-run-discard-or-function t t :help "Run Viewer")
+     ("Print" "%p" TeX-run-command t t :help "Print the file")
+     ("Queue" "%q" TeX-run-background nil t :help "View the printer queue" :visible TeX-queue-command)
+     ("File" "%(o?)dvips %d -o %f " TeX-run-dvips t
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Generate PostScript file")
+     ("Dvips" "%(o?)dvips %d -o %f " TeX-run-dvips nil
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Convert DVI file to PostScript")
+     ("Dvipdfmx" "dvipdfmx %d" TeX-run-dvipdfmx nil
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Convert DVI file to PDF with dvipdfmx")
+     ("Ps2pdf" "ps2pdf %f" TeX-run-ps2pdf nil
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Convert PostScript file to PDF")
+     ("Glossaries" "makeglossaries %s" TeX-run-command nil
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Run makeglossaries to create glossary
+     file")
+     ("Index" "makeindex %s" TeX-run-index nil
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Run makeindex to create index file")
+     ("upMendex" "upmendex %s" TeX-run-index t
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Run upmendex to create index file")
+     ("Xindy" "texindy %s" TeX-run-command nil
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Run xindy to create index file")
+     ("Check" "lacheck %s" TeX-run-compile nil
+      (latex-mode)
+      :help "Check LaTeX file for correctness")
+     ("ChkTeX" "chktex -v6 %s" TeX-run-compile nil
+      (latex-mode)
+      :help "Check LaTeX file for common mistakes")
+     ("Spell" "(TeX-ispell-document \"\")" TeX-run-function nil t :help "Spell-check the document")
+     ("Clean" "TeX-clean" TeX-run-function nil t :help "Delete generated intermediate files")
+     ("Clean All" "(TeX-clean t)" TeX-run-function nil t :help "Delete generated intermediate and output files")
+     ("Other" "" TeX-run-command t t :help "Run an arbitrary command")))
  '(TeX-engine 'xetex)
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
@@ -83,20 +84,20 @@
  '(helm-completion-style 'emacs)
  '(hl-todo-keyword-faces
    '(("TODO" . "#dc752f")
-	 ("NEXT" . "#dc752f")
-	 ("THEM" . "#2d9574")
-	 ("PROG" . "#4f97d7")
-	 ("OKAY" . "#4f97d7")
-	 ("DONT" . "#f2241f")
-	 ("FAIL" . "#f2241f")
-	 ("DONE" . "#86dc2f")
-	 ("NOTE" . "#b1951d")
-	 ("KLUDGE" . "#b1951d")
-	 ("HACK" . "#b1951d")
-	 ("TEMP" . "#b1951d")
-	 ("FIXME" . "#dc752f")
-	 ("XXX+" . "#dc752f")
-	 ("\\?\\?\\?+" . "#dc752f")))
+     ("NEXT" . "#dc752f")
+     ("THEM" . "#2d9574")
+     ("PROG" . "#4f97d7")
+     ("OKAY" . "#4f97d7")
+     ("DONT" . "#f2241f")
+     ("FAIL" . "#f2241f")
+     ("DONE" . "#86dc2f")
+     ("NOTE" . "#b1951d")
+     ("KLUDGE" . "#b1951d")
+     ("HACK" . "#b1951d")
+     ("TEMP" . "#b1951d")
+     ("FIXME" . "#dc752f")
+     ("XXX+" . "#dc752f")
+     ("\\?\\?\\?+" . "#dc752f")))
  '(inhibit-startup-screen t)
  '(line-number-mode nil)
  '(magit-bury-buffer-function 'magit-mode-quit-window)
@@ -106,18 +107,18 @@
  '(org-fontify-todo-headline nil)
  '(org-format-latex-options
    '(:foreground orange :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.5 :matchers
-				 ("begin" "$1" "$" "$$" "\\(" "\\[")))
+		 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(package-selected-packages
    '(openwith org-bullets dired-collapse dired dired-rainbow with-venv pdf-tools php-mode vterm-toggle vterm orglink company vundo imenu-list flx git-timemachine restart-emacs company-jedi tex company-auctex tex-ispell cl latex emojify nlinum shackle latex-math-preview epc git impatient-mode pdf-continuous-scroll-mode org-pdftools yasnippet-classic-snippets native-complete ssh org-download visual-fill-column org-superstar exwm xterm-color rainbow-delimiters spacemacs-theme hide-mode-line easy-after-load minions ghub mu4e-alert smtpmail-multi company-c-headers smooth-scrolling helm-pydoc pydoc anaconda-mode magithub eimp image+ go-mode neotree smartparens latex-preview-pane yaml-mode latex-unicode-math-mode yasnippet))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
  '(persp-keymap-prefix [M-up])
- '(persp-mode t)
+ '(persp-mode t nil (persp-mode))
  '(preview-gs-options
    '("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4" "-dDELAYSAFER"))
  '(safe-local-variable-values '((TeX-master . t)))
  '(send-mail-function 'smtpmail-send-it)
  '(size-indication-mode t)
- '(smerge-command-prefix "\3v")
+ '(smerge-command-prefix "v")
  '(swiper-faces
    '(swiper-match-face-1 swiper-match-face-2 swiper-match-face-3 swiper-match-face-4))
  '(vc-handled-backends '(Git))
@@ -138,59 +139,5 @@
  '(company-tooltip-scrollbar-thumb ((t (:background "tomato"))))
  '(company-tooltip-scrollbar-track ((t (:background "black"))))
  '(company-tooltip-selection ((t (:background "sandy brown" :foreground "black"))))
- '(cursor ((t (:background "gainsboro" :foreground "black" :weight heavy))))
- '(dired-subtree-depth-1-face ((t (:background "gray20"))))
- '(dired-subtree-depth-2-face ((t (:background "gray15"))))
- '(dired-subtree-depth-3-face ((t (:background "gray20"))))
- '(dired-subtree-depth-4-face ((t (:background "gray15"))))
- '(dired-subtree-depth-5-face ((t (:background "gray20"))))
- '(dired-subtree-depth-6-face ((t (:background "gray15"))))
- '(fixed-pitch ((t (:family "Fira Code Retina"))))
- '(font-latex-math-face ((t (:foreground "dark violet"))))
- '(font-latex-slide-title-face ((t (:foreground "tomato" :weight bold :height 1.2 :width normal))))
- '(font-latex-verbatim-face ((t (:inherit fixed-pitch :foreground "dark gray" :height 0.45))))
- '(font-lock-function-name-face ((t (:foreground "#93E0E3"))))
- '(hideshowvis-hidable-face ((t (:foreground "brown"))))
- '(hl-line ((t (:extend t :background "light sky blue" :foreground "black" :box (:line-width (2 . 2) :color "black" :style released-button)))))
- '(isearch ((t (:background "light gray" :distant-foreground "black" :foreground "sienna" :weight bold))))
- '(lsp-details-face ((t (:inherit shadow))))
- '(lsp-face-highlight-read ((t (:inherit highlight :underline t :height 1.0))))
- '(lsp-face-highlight-textual ((t (:inherit highlight :height 1.0))))
- '(lsp-face-highlight-write ((t (:inherit highlight :weight bold :height 1.0))))
- '(lsp-face-rename ((t (:underline t :height 1.0))))
- '(markdown-footnote-text-face ((t (:inherit font-lock-comment-face))))
- '(markdown-html-attr-value-face ((t (:inherit font-lock-string-face))))
- '(org-block ((t (:extend t :background "gray10" :foreground "#FFFFFD" :slant normal :weight regular :height 1.0 :width normal :foundry "bitstream" :family "DejaVu Sans Mono"))))
- '(org-block-begin-line ((t (:extend t :box (:style released-button) :background "orange4" :foreground "gray16" :weight semibold :height 0.6 :width ultracondensed :family "Sans Serif"))))
- '(org-block-end-line ((t (:extend t :box (:style released-button) :background "orange4" :foreground "gray16" :weight semibold :height 0.6 :width ultracondensed :family "Sans Serif"))))
- '(org-checkbox ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :foreground "#FFFFFD"))))
- '(org-code ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :height 90 :foreground "#D0BF8F"))))
- '(org-document-info ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :background "#303030"))))
- '(org-document-info-keyword ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :background "#303030"))))
- '(org-document-title ((t (:inherit default :foreground "#6C3333" :underline nil :weight semibold :height 1.1 :family "Sans Serif"))))
- '(org-drawer ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :height 90 :background "#303030" :foreground "#6CA0A3"))))
- '(org-ellipsis ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :foreground "#989890"))))
- '(org-level-1 ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :foreground "#6C3333"))))
- '(org-level-2 ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :foreground "#7F9F7F"))))
- '(org-level-3 ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :foreground "#8CD0D3"))))
- '(org-level-4 ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :foreground "#DEB887"))))
- '(org-level-5 ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :foreground "#BA55D3"))))
- '(org-level-6 ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :foreground "#5C4033"))))
- '(org-link ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :height 90 :foreground "#93E0E3" :underline (:color foreground-color :style line)))))
- '(org-meta-line ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :foreground "#989890"))))
- '(org-property-value ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :height 90 :background "#2B2B2B" :foreground "#FFFFEF"))) t)
- '(org-special-keyword ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :height 90 :background "#303030" :foreground "#9FC59F"))))
- '(org-table ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :foreground "#9FC59F"))))
- '(org-tag ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :height 90 :background "#303030" :foreground "#9FC59F"))))
- '(org-tag-group ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :height 90 :background "#303030" :foreground "#9FC59F"))))
- '(org-verbatim ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :foreground "#DC8CC3"))))
- '(org-verse ((t (:inherit default :height 90 :weight semibold :foreground "#f6f3e8" :family "Sans Serif" :foreground "#9FC59F"))))
- '(read-multiple-choice-face ((t (:inherit (help-key-binding underline) :weight medium :height 1.0))))
- '(region ((t (:extend t :background "sienna"))))
- '(swiper-line-face ((t (:extend t :background "peru" :foreground "black" :box (:line-width (3 . 3) :color "black" :style pressed-button) :overline nil :underline nil))))
- '(swiper-match-face-1 ((t (:inherit lazy-highlight :background "chocolate" :foreground "black"))))
- '(tex-verbatim ((t (:inherit default))))
- '(variable-pitch ((t (:weight thin :height 80 :family "ETBook"))))
- '(vc-state-base ((t (:foreground "orange red"))))
- '(which-func ((t (:background "gray26" :foreground "goldenrod")))))
+ '(cursor ((t (:background "gainsboro" :foreground "black" :weight heavy)))))
 
