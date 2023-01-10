@@ -20,8 +20,8 @@
 	   (fboundp 'pixel-scroll-precision-mode)
 	   (not (version< emacs-version "29.0")))
   (pixel-scroll-precision-mode 1)
-  (setq pixel-scroll-precision-large-scroll-height 40.0)
-  (setq pixel-scroll-precision-interpolation-factor 30))
+  (setq pixel-scroll-precision-large-scroll-height 5.0)
+  (setq pixel-scroll-precision-interpolation-factor 2))
 
 (provide 'my_scroll)
 ;;; my_scroll ends here
