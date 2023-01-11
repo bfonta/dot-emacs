@@ -8,15 +8,44 @@
     (add-hook 'prog-mode-hook 'company-mode)
     (setq company-idle-delay 0) ; No delay in showing suggestions.
     (setq company-minimum-prefix-length 2 ; Show suggestions after entering two characters.
-		  company-selection-wrap-around t ; connect end and start of suggestion list
-		  company-dabbrev-downcase nil ; avoid downcase
-		  company-idle-delay 0.0
-		  company-tng-configure-default 0 ; Use tab key to cycle through suggestions ('tng' means 'tab and go')
-		  company-require-match nil            ; Don't require match, so you can still move your cursor as expected.
+	  company-selection-wrap-around t ; connect end and start of suggestion list
+	  company-dabbrev-downcase nil ; avoid downcase
+	  company-idle-delay 0.0
+	  company-tng-configure-default 0 ; Use tab key to cycle through suggestions ('tng' means 'tab and go')
+	  company-require-match nil            ; Don't require match, so you can still move your cursor as expected.
           company-tooltip-align-annotations t  ; Align annotation to the right side.
           company-eclim-auto-save nil          ; Stop eclim auto save.
           company-dabbrev-downcase nil )
     )
+  )
+
+(defface company-tooltip-annotation
+  '(((t (:background "black" :foreground "#DFAF8F"))))
+  "help string"
+  )
+(defface company-tooltip-annotation-selection
+  '(((t (:background "black" :foreground "#DFAF8F"))))
+  ""
+  )
+(defface company-tooltip-common
+  '(((t (:foreground "tomato"))))
+  ""
+  )
+(defface company-tooltip-common-selection
+  '(((t (:foreground "firebrick"))))
+  ""
+  )
+(defface company-tooltip-scrollbar-thumb
+  '(((t (:background "tomato"))))
+  ""
+  )
+(defface company-tooltip-scrollbar-track
+  '(((t (:background "black"))))
+  ""
+  )
+(defface company-tooltip-selection
+  '(((t (:background "sandy brown" :foreground "black"))))
+  ""
   )
 
 (use-package company-quickhelp

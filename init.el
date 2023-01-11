@@ -25,24 +25,13 @@
 ;;; Emacs performance (plists vs slower hash-table)
 (setenv "LSP_USE_PLISTS" "true")
 
-;;; Required when compiled version 28.1 from source
-;; (use-package popup
-;;   :ensure t
-;;   )
-
-;; using deprecated 'cl' package
-(add-to-list 'load-path "~/dot-emacs/zoom/")
-(require 'zoom-frm)
-
-(add-to-list 'load-path "~/dot-emacs/hideshow/")
-(load-library "hideshow-org")
-
 ;;; ---------------------------
 ;;; Load custom content
 ;;; ---------------------------
 (add-to-list 'load-path "~/dot-emacs/custom/")
-(load-library "my_startup")
+(load-library "my_theme")
 (load-library "my_frame")
+(load-library "my_startup")
 (load-library "my_menu")
 (load-library "my_definitions")
 (load-library "my_open")
@@ -56,7 +45,6 @@
 (load-library "my_compilation")
 (load-library "my_markdown")
 (load-library "my_python")
-;; (load-library "my_dap") debugger, TODO
 (load-library "my_whichfunc")
 (load-library "my_modeline")
 (load-library "my_pdf")
@@ -90,31 +78,23 @@
 ;;; ---------------------------
 ;;; Load non-MELPA packages
 ;;; ---------------------------
-(add-to-list 'custom-theme-load-path "~/dot-emacs/themes/")
 (add-to-list 'load-path "~/dot-emacs/markerpen/")
 (load-library "markerpen")
+
 (add-to-list 'load-path "~/dot-emacs/transpose_frame/")
 (require 'transpose-frame)
 
-;;; Indentation in python
-;;; References: https://github.com/antonj/Highlight-Indentation-for-Emacs/blob/master/highlight-indentation.el
-;;;             https://github.com/antonj/Highlight-Indentation-for-Emacs/issues/16
-(add-to-list 'load-path "~/dot-emacs/highlight-indentation/")
-(load-library "highlight-indentation")
-(set-face-attribute 'highlight-indentation-face nil
-                    :stipple (list 8 4 (string 16 16 16 16))
-                    :inherit nil
-					:foreground "peru")
-(setq highlight-indentation-blank-lines t)
+(add-to-list 'load-path "~/dot-emacs/zoom/") ;; using deprecated 'cl' package
+(require 'zoom-frm)
+
+(add-to-list 'load-path "~/dot-emacs/hideshow/")
+(load-library "hideshow-org")
 
 ;;; --------------------------------
 ;;; Load content added by customize
 ;;; --------------------------------
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
-
-;;; Temporary miscellaneous
-(setq-default tab-width 4)
 
 (defun load-emacs ()
   """Quick emacs configuration loading."""
