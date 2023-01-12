@@ -37,6 +37,17 @@
   (pyvenv-mode 1)
   )
 
+;;; References: https://github.com/antonj/Highlight-Indentation-for-Emacs/blob/master/highlight-indentation.el https://github.com/antonj/Highlight-Indentation-for-Emacs/issues/16
+(add-to-list 'load-path "~/dot-emacs/highlight-indentation/")
+(load-library "highlight-indentation")
+(set-face-attribute 'highlight-indentation-face nil
+                    :stipple (list 8 4 (string 16 16 16 16))
+                    :inherit nil
+					:foreground "peru")
+(setq highlight-indentation-blank-lines t)
+
+(setq-default tab-width 4)
+
 (provide 'my_python)
 ;;; my_python ends here
 
