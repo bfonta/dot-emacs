@@ -27,24 +27,8 @@
   '(((t (:background "black" :foreground "#DFAF8F"))))
   ""
   )
-(defface company-tooltip-common
-  '(((t (:foreground "tomato"))))
-  ""
-  )
 (defface company-tooltip-common-selection
   '(((t (:foreground "firebrick"))))
-  ""
-  )
-(defface company-tooltip-scrollbar-thumb
-  '(((t (:background "tomato"))))
-  ""
-  )
-(defface company-tooltip-scrollbar-track
-  '(((t (:background "black"))))
-  ""
-  )
-(defface company-tooltip-selection
-  '(((t (:background "sandy brown" :foreground "black"))))
   ""
   )
 
