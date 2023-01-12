@@ -16,8 +16,7 @@
                 "mpv"
                 '(file))
           (list (openwith-make-extension-regexp
-                '("xbm" "pbm" "pgm" "ppm" "pnm"
-                  "png" "gif" "bmp" "tif" "jpeg")) ;; Removed jpg because Telega was
+                '("png" "gif" "jpeg" "jpg"))
                   "okular"
                   '(file))
           (list (openwith-make-extension-regexp
