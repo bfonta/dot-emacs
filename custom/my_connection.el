@@ -92,7 +92,7 @@
 		((string-equal server "KLUB")
 		 (insert "cmsenv;"))
 		((string-equal server "BigNtuples")
-		 (insert "cd CMSSW_10_6_29/src/LLRHiggsTauTau/; cmsenv;"))
+		 (insert "cd CMSSW_10_6_29/src/LLRHiggsTauTau; cmsenv;"))
 		((string-equal server "P5")
 		 (insert ". /nfshome0/ecaldev/utils/pro;"))
 		(t (user-error "Function implementation error. Fix."))
@@ -139,7 +139,7 @@ Starts by disconnecting some sshfs connection on the same folder."
 		   (insert (concat (my/sshfs-unmount-string "big_ntuples")
 						   "; "
 						   (my/sshfs-mount-string "big_ntuples" "lxplus"
-												  "/afs/cern.ch/work/b/bfontana/CMSSW_10_6_29/src/LLRHiggsTauTau/"))))
+												  "/afs/cern.ch/work/b/bfontana/CMSSW_10_6_29/src/"))))
 
 		  ((string-equal server "P5")
 		   (insert (concat (my/sshfs-unmount-string "p5")
