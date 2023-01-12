@@ -25,7 +25,7 @@
   "Connects to a server."
   (interactive
    (let ((completion-ignore-case t))
-     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "KLUB" "Lxplus8" "P5") nil t))))
+     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "KLUB" "BigNtuples" "P5") nil t))))
 
   (cond ((string-equal server "Triggers")
 		 (let ((default-directory
@@ -63,6 +63,15 @@
 		  "/cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_9/external/slc7_amd64_gcc820/bin/git")
 		 )
 
+		((string-equal server "BigNtuples")
+		 (let ((default-directory
+				 "/scp:bfontana@lxplus:/afs/cern.ch/work/b/bfontana/"))
+		   (dired default-directory)
+		   (if (get-buffer "shell_big_ntuples")
+			   (shell (concat "shell_" (read-string "Big Ntuples new shell buffer: shell_")))
+			 (shell "shell_big_ntuples")))
+		 )
+
 		((string-equal server "P5")
 		 (let ((default-directory
 				 "/scp:bfontana@cmsusr:/nfshome0/bfontana/"))
@@ -70,14 +79,6 @@
 		   (if (get-buffer "shell_p5")
 			   (shell (concat "shell_" (read-string "P5 new shell buffer: shell_")))
 			 (shell "shell_p5"))))
-
-		((string-equal server "Lxplus8")
-		 (let ((default-directory
-				 "/scp:bfontana@lxplus8:/afs/cern.ch/work/b/bfontana/"))
-		   (dired default-directory)
-		   (if (get-buffer "shell_lxplus8")
-			   (shell (concat "shell_" (read-string "Lxplus8 new shell buffer: shell_")))
-			 (shell "shell_lxplus8"))))
 
 		(t (user-error "Function implementation error. Fix."))
 		)
@@ -90,10 +91,10 @@
 		 (insert "cmsenv;"))
 		((string-equal server "KLUB")
 		 (insert "cmsenv;"))
+		((string-equal server "BigNtuples")
+		 (insert "cd CMSSW_10_6_29/src/LLRHiggsTauTau/; cmsenv;"))
 		((string-equal server "P5")
 		 (insert ". /nfshome0/ecaldev/utils/pro;"))
-		((string-equal server "Lxplus8")
-		 (insert ""))
 		(t (user-error "Function implementation error. Fix."))
 		)
   (comint-send-input)
@@ -104,7 +105,7 @@
 Starts by disconnecting some sshfs connection on the same folder."
   (interactive
    (let ((completion-ignore-case t))
-     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "KLUB" "P5") nil t))))
+     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "KLUB" "BigNtuples" "P5") nil t))))
 
   (let ((buffer (concat "*shell_sshfs_" server "*")) (wth (window-total-height)))
 	(unless (or (eq major-mode 'shell-mode) (< wth 12) (get-buffer-window buffer t))
@@ -133,7 +134,13 @@ Starts by disconnecting some sshfs connection on the same folder."
 						   "; "
 						 (my/sshfs-mount-string "klub" "llr"
 												"/home/llr/cms/alves/CMSSW_11_1_9/src/KLUBAnalysis"))))
-		  
+
+		  ((string-equal server "BigNtuples")
+		   (insert (concat (my/sshfs-unmount-string "big_ntuples")
+						   "; "
+						   (my/sshfs-mount-string "big_ntuples" "lxplus"
+												  "/afs/cern.ch/work/b/bfontana/CMSSW_10_6_29/src/LLRHiggsTauTau/"))))
+
 		  ((string-equal server "P5")
 		   (insert (concat (my/sshfs-unmount-string "p5")
 						   "; "
