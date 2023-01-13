@@ -110,15 +110,6 @@
   ;; Private tasks and notes. 
   (defvar org-my-projects-dir "~/org/projects")
 
-  ;; The files to be used for agenda display. This contains:  Task inbox file, Mobile task inbox file, Work tasks file
-  ;; (add-to-list 'org-agenda-files org-my-general-files)
-  ;; (add-to-list 'org-agenda-files org-my-projects-dir)
-
-  ;; Refile targets are all agenda files, plus my project files. I fine-tune the considered headings to prevent human error when choosing the new location.
-  ;; (setq org-refile-targets (quote (
-  ;;                                 (org-agenda-files :maxlevel . 2)
-  ;;                                 )))
-
   ;; Store new notes at the beginning of a file or entry. 
   (setq org-reverse-note-order t)
 
@@ -144,7 +135,6 @@
   ;;Store new notes at the beginning of a file or entry. 
   (setq org-reverse-note-order t)
 
-  ;; Appearance
   ;; Show the filename and outline path in helm when refiling an entry. Also refile in one step (makes much more sense for helm).
   (setq org-refile-use-outline-path 'file)
   (setq org-outline-path-complete-in-steps nil)
@@ -296,10 +286,8 @@
   ;;  ("C-c n j" . org-roam-dailies-capture-today))
 
   ;; If you're using a vertical completion framework, you might want a more informative completion interface
-  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
-  ;; Setup Org-roam to run functions on file changes to maintain cache consistency. This is achieved by running M-x org-roam-db-autosync-mode. To ensure that Org-roam is available on startup, place this in your Emacs configuration: 
-  (org-roam-db-autosync-mode)
-  ;; Run once only (M-:) in case org-roam ids are not found:
+  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag))
+		org-roam-db-autosync-enable t)
   (org-id-update-id-locations (directory-files-recursively org-roam-directory ".org$\\|.org.gpg$"))
 
   ;; configure what sections are displayed in the buffer,
@@ -316,18 +304,6 @@
 				 (direction . right)
 				 (window-width . 0.33)
 				 (window-height . fit-window-to-buffer)))
-
-  ;; Use org mode for eml files (useful for Thunderbird's ExternalEditor plugin)
-  ;; (add-to-list 'auto-mode-alist
-  ;;              '("\\.eml\\'" .
-  ;; 				 (lambda ()
-  ;;                  (org-mode)
-  ;;                  ;; Disable auto-fill-mode.
-  ;;                  (auto-fill-mode 0)
-  ;;                  ;; If lines are longer than the screen width, show
-  ;;                  ;; the broken arrow in the right margin.
-  ;;                  (setq truncate-lines nil)
-  ;;                  )))
   
   ;; enlarge and shrink windows while in an org-mode buffer
   (define-key org-mode-map (kbd "S-C-<left>") 'shrink-window-horizontally)
