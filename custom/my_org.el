@@ -5,8 +5,6 @@
 (use-package org
   :mode ("\\.org$" . org-mode)
   :config
-  ;(global-set-key "\C-cl" 'org-store-link)
-  ;(global-set-key "\C-ca" 'org-agenda)
   (global-set-key (kbd "\C-cv") 'org-latex-export-to-pdf)
   (global-set-key (kbd "\C-cb") 'org-beamer-export-to-pdf)
 
@@ -275,36 +273,6 @@
   ;; Org download should use the attachment features to save the images. 
   (setq org-download-method 'attach)
 
-  ;; Org Roam
-  (setq org-roam-directory (file-truename "~/org/org-roam"))
-  ;; (("C-c n l" . org-roam-buffer-toggle)
-  ;;  ("C-c n f" . org-roam-node-find)
-  ;;  ("C-c n g" . org-roam-graph)
-  ;;  ("C-c n i" . org-roam-node-insert)
-  ;;  ("C-c n c" . org-roam-capture)
-  ;;  ;; Dailies
-  ;;  ("C-c n j" . org-roam-dailies-capture-today))
-
-  ;; If you're using a vertical completion framework, you might want a more informative completion interface
-  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag))
-		org-roam-db-autosync-enable t)
-  (org-id-update-id-locations (directory-files-recursively org-roam-directory ".org$\\|.org.gpg$"))
-
-  ;; configure what sections are displayed in the buffer,
-  (setq org-roam-mode-section-functions
-		(list #'org-roam-backlinks-section
-              #'org-roam-reflinks-section
-              ;; #'org-roam-unlinked-references-section
-              ))
-
-  ;; Org-roam does not control how the pop-up buffer is displayed: this is left to the user.
-  (add-to-list 'display-buffer-alist
-               '("\\*org-roam\\*"
-				 (display-buffer-in-direction)
-				 (direction . right)
-				 (window-width . 0.33)
-				 (window-height . fit-window-to-buffer)))
-  
   ;; enlarge and shrink windows while in an org-mode buffer
   (define-key org-mode-map (kbd "S-C-<left>") 'shrink-window-horizontally)
   (define-key org-mode-map (kbd "S-C-<right>") 'enlarge-window-horizontally)
@@ -448,6 +416,38 @@
 						  ("\\(+-\\)"
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "±"))))
 						  ))
+
+(use-package org-roam
+  :config
+  (setq org-roam-directory (file-truename "~/org/org-roam"))
+  ;; (("C-c n l" . org-roam-buffer-toggle)
+  ;;  ("C-c n f" . org-roam-node-find)
+  ;;  ("C-c n g" . org-roam-graph)
+  ;;  ("C-c n i" . org-roam-node-insert)
+  ;;  ("C-c n c" . org-roam-capture)
+  ;;  ;; Dailies
+  ;;  ("C-c n j" . org-roam-dailies-capture-today))
+
+  ;; If you're using a vertical completion framework, you might want a more informative completion interface
+  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag))
+		org-roam-db-autosync-enable t)
+  (org-id-update-id-locations (directory-files-recursively org-roam-directory ".org$\\|.org.gpg$"))
+
+  ;; configure what sections are displayed in the buffer,
+  (setq org-roam-mode-section-functions
+		(list #'org-roam-backlinks-section
+              #'org-roam-reflinks-section
+              ;; #'org-roam-unlinked-references-section
+              ))
+
+  ;; Org-roam does not control how the pop-up buffer is displayed: this is left to the user.
+  (add-to-list 'display-buffer-alist
+               '("\\*org-roam\\*"
+				 (display-buffer-in-direction)
+				 (direction . right)
+				 (window-width . 0.33)
+				 (window-height . fit-window-to-buffer)))
+  )
 
 (use-package cdlatex
   :config

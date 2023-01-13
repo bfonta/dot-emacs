@@ -48,6 +48,31 @@
 
 (setq-default tab-width 4)
 
+(defun add-py-debug ()  
+      "add debug code and move line down"  
+    (interactive)  
+    (move-beginning-of-line 1)  
+    (insert "breakpoint();\n"))  
+(local-set-key (kbd "<f8>") 'add-py-debug)
+
+(defun remove-py-debug ()  
+  "remove py debug code, if found"  
+  (interactive)  
+  (let ((x (line-number-at-pos))  
+    (cur (point)))  
+    (search-forward-regexp "^[ ]*breakpoint()")  
+    (if (= x (line-number-at-pos))  
+    (let ()  
+      (move-beginning-of-line 1)  
+      (kill-line 1)  
+      (move-beginning-of-line 1))  
+      (goto-char cur))))  
+(local-set-key (kbd "<f9>") 'remove-py-debug)
+
+(local-set-key (kbd "<f7>") '(lambda ()  
+                               (interactive)   
+                               (search-forward-regexp "^[ ]*breakpoint()")
+                               (move-beginning-of-line 1)))
 (provide 'my_python)
 ;;; my_python ends here
 

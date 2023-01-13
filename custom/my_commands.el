@@ -16,6 +16,7 @@
   (let ((command1 '("FPGA display: launch bokeh server" "bokeh serve bye_splits/plot/display/ --address llruicms01.in2p3.fr --port <port>  --allow-websocket-origin=localhost:<port>"))
 		(command2 '("FPGA display: run code locally" "python bye_splits/plot/display/main.py"))
 		(command3 '("SSH jump tunnel" "ssh -L <port>:llruicms01.in2p3.fr:<port> -N alves@llrgate01.in2p3.fr"))
+		)
 	
 	(cond ((string-equal name (car command1))
 		   (let ((port (read-string "Port number: " "8003" nil "8003")))
@@ -30,7 +31,7 @@
 		  
 	      (t (user-error "Function implementation error. Fix."))
 	      )
-	))
+	)
   (comint-send-input)
   )
    
