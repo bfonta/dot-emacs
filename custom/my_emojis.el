@@ -53,7 +53,7 @@
 		(c19 '("🧱 Infrastructure related changes | :bricks:" "🧱"))
 		(c20 '("🧑‍💻 Improve developer experience | :technologist:" "🧑‍💻"))
 		(c21 '("🦺 Add or update code related to validation | :safety_vest:" "🦺"))
-		(c22 '("😶 Nothing to say | :no_mouth:"))
+		(c22 '("😶 Nothing to say | :no_mouth:" "😶"))
 		)
 	
 	(cond ((string-equal name (car c1)) (insert (car (last c1))))
