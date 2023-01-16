@@ -467,5 +467,16 @@
               '(:ascii-verbatim-format "%s" :ascii-paragraph-spacing auto :ascii-headline-spacing nil :preserve-breaks t))
        ))))
 
+(defun my/org-copy-link (&optional arg)
+  "Extract URL from org-mode link and add it to kill ring."
+  (interactive "P")
+  (let* ((link (org-element-lineage (org-element-context) '(link) t))
+          (type (org-element-property :type link))
+          (url (org-element-property :path link))
+          (url (concat type ":" url)))
+    (kill-new url)
+    (message (concat "Copied URL: " url))))
+(define-key org-mode-map (kbd "C-x C-l") 'my/org-copy-link)
+
 (provide 'my_org)
 ;;; my_org ends here
