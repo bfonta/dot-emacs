@@ -30,6 +30,9 @@
 							  "🧑‍💻 Improve developer experience | :technologist:"
 							  "🦺 Add or update code related to validation | :safety_vest:"
 							  "😶 Nothing to say | :no_mouth:"
+							  "➕ Plus | :heavy_plus_sign:"
+							  "🩹 Simple fix for a non-critical issue | :adhesive_bandage:"
+							  "🚑️ Critical hotfix | :ambulance:" "🚑️"
 							  ) nil t))))
 
   (let ((c1 '("🎨 Improve structure / format of the code | :art:" "🎨"))
@@ -54,6 +57,9 @@
 		(c20 '("🧑‍💻 Improve developer experience | :technologist:" "🧑‍💻"))
 		(c21 '("🦺 Add or update code related to validation | :safety_vest:" "🦺"))
 		(c22 '("😶 Nothing to say | :no_mouth:" "😶"))
+		(c23 '("➕ Plus | :heavy_plus_sign:" "➕"))
+		(c24 '("🩹 Simple fix for a non-critical issue | :adhesive_bandage:" "🩹"))
+		(c25 '("🚑️ Critical hotfix | :ambulance:" "🚑️"))
 		)
 	
 	(cond ((string-equal name (car c1)) (insert (car (last c1))))
@@ -78,6 +84,9 @@
 		  ((string-equal name (car c20)) (insert (car (last c20))))
 		  ((string-equal name (car c21)) (insert (car (last c21))))
 		  ((string-equal name (car c22)) (insert (car (last c22))))
+		  ((string-equal name (car c23)) (insert (car (last c23))))
+		  ((string-equal name (car c24)) (insert (car (last c24))))
+		  ((string-equal name (car c25)) (insert (car (last c25))))
 	      (t (user-error "Function implementation error. Fix."))
 	      )
 	))
