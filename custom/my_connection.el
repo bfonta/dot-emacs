@@ -174,6 +174,30 @@ Starts by disconnecting some sshfs connection on the same folder."
 	)
   )
 
+
+(defun my/ssh_port ()
+  "Runs sshfs for some server machine.
+Starts by disconnecting some sshfs connection on the same folder."
+  (interactive)
+  (let* ((command "ssh -L <port>:<host>:<port> -N <gate>")
+		(port (read-string "Port number: " "8003" nil "8003"))
+		(host (read-string "Host: " "llruicms01.in2p3.fr" nil "llruicms01.in2p3.fr"))
+		(gate (read-string "Gate: " "alves@llrgate01.in2p3.fr" nil "alves@llrgate01.in2p3.fr"))
+
+		(buffer (concat "*ssh_port_" port "*"))
+		(wth (window-total-height))
+		)
+	
+	(unless (or (eq major-mode 'shell-mode) (< wth 12) (get-buffer-window buffer t))
+	  (split-window-below (round (* -0.35 wth)))
+	  (other-window 1))
+	(shell buffer)
+
+	(insert (s-replace "<gate>" gate (s-replace "<host>" host (s-replace "<port>" port command))))
+	(comint-send-input)
+	)
+  )
+
 ; disable company-mode in remote dired environments."
 (add-hook 'dired-mode-hook
 	  (lambda ()
