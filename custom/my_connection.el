@@ -25,7 +25,7 @@
   "Connects to a server."
   (interactive
    (let ((completion-ignore-case t))
-     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "KLUB" "BigNtuples" "P5") nil t))))
+     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "KLUB Triggers" "KLUB Production" "BigNtuples" "P5") nil t))))
 
   (cond ((string-equal server "Triggers")
 		 (let ((default-directory
@@ -51,16 +51,28 @@
 			   (shell (concat "shell_" (read-string "HGC-TPG new shell buffer: shell_")))
 			 (shell "shell_hgc_tpg"))))
 
-		((string-equal server "KLUB")
+		((string-equal server "KLUB Triggers")
 		 (let ((default-directory
 				 "/scp:alves@llr:/home/llr/cms/alves/CMSSW_11_1_9/src/KLUBAnalysis/"))
 		   (dired default-directory)
 		   (if (get-buffer "shell_klub")
-			   (shell (concat "shell_" (read-string "KLUB new shell buffer: shell_")))
+			   (shell (concat "shell_" (read-string "KLUB Triggers new shell buffer: shell_")))
 			 (shell "shell_klub")))
 		 (add-to-list
 		  'tramp-remote-path
 		  "/cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_11_1_9/external/slc7_amd64_gcc820/bin/git")
+		 )
+		
+		((string-equal server "KLUB Production")
+		 (let ((default-directory
+				 "/scp:alves@llr:/home/llr/cms/alves/CMSSW_12_6_0_pre3/src/KLUBAnalysis/"))
+		   (dired default-directory)
+		   (if (get-buffer "shell_klub")
+			   (shell (concat "shell_" (read-string "KLUB Triggers new shell buffer: shell_")))
+			 (shell "shell_klub")))
+		 (add-to-list
+		  'tramp-remote-path
+		  "/cvmfs/cms.cern.ch/slc7_amd64_gcc820/cms/cmssw/CMSSW_12_6_0_pre3/external/slc7_amd64_gcc820/bin/git")
 		 )
 
 		((string-equal server "BigNtuples")
@@ -89,7 +101,9 @@
 		 (insert "cmsenv; conda activate FPGA;"))
 		((string-equal server "HGC-TPG")
 		 (insert "cmsenv;"))
-		((string-equal server "KLUB")
+		((string-equal server "KLUB Triggers")
+		 (insert "cmsenv;"))
+		((string-equal server "KLUB Production")
 		 (insert "cmsenv;"))
 		((string-equal server "BigNtuples")
 		 (insert "cd CMSSW_10_6_29/src/LLRHiggsTauTau; cmsenv;"))
@@ -105,7 +119,7 @@
 Starts by disconnecting some sshfs connection on the same folder."
   (interactive
    (let ((completion-ignore-case t))
-     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "KLUB" "BigNtuples" "P5") nil t))))
+     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "KLUB Triggers" "KLUB Production" "BigNtuples" "P5") nil t))))
 
   (let ((buffer (concat "*shell_sshfs_" server "*")) (wth (window-total-height)))
 	(unless (or (eq major-mode 'shell-mode) (< wth 12) (get-buffer-window buffer t))
@@ -129,11 +143,17 @@ Starts by disconnecting some sshfs connection on the same folder."
 						   "; "
 						   (my/sshfs-mount-string "llr_hgctpg" "llr"
 												  "/home/llr/cms/alves/CMSSW_12_5_0_pre4/src/; "))))
-		  ((string-equal server "KLUB")
+		  ((string-equal server "KLUB Triggers")
 		   (insert (concat (my/sshfs-unmount-string "klub")
 						   "; "
 						 (my/sshfs-mount-string "klub" "llr"
 												"/home/llr/cms/alves/CMSSW_11_1_9/src/KLUBAnalysis"))))
+
+		  ((string-equal server "KLUB Production")
+		   (insert (concat (my/sshfs-unmount-string "klub")
+						   "; "
+						 (my/sshfs-mount-string "klub" "llr"
+												"/home/llr/cms/alves/CMSSW_12_6_0_pre3/src/KLUBAnalysis"))))
 
 		  ((string-equal server "BigNtuples")
 		   (insert (concat (my/sshfs-unmount-string "big_ntuples")
@@ -162,12 +182,12 @@ Starts by disconnecting some sshfs connection on the same folder."
 	      (company-mode -1))))
 
 ; hide password input
-(setq comint-password-prompt-regexp
-      (concat comint-password-prompt-regexp
-			  "\\|^Password:.*\'"
-			  "\\|^Repeat for confirmation:.*\'"
-			  "\\|^Enter PEM pass phrase:.*\'"
-			  "\\|^Enter it again:.*\'" ))
+;; (setq comint-password-prompt-regexp
+;;       (concat comint-password-prompt-regexp
+;; 			  "\\|^Password:.*\'"
+;; 			  "\\|^Repeat for confirmation:.*\'"
+;; 			  "\\|^Enter PEM pass phrase:.*\'"
+;; 			  "\\|^Enter it again:.*\'" ))
 
 ; when t emacs does not read the shell history, rather the tramp history
 ; https://www.gnu.org/software/emacs/manual/html_node/emacs/Shell-Ring.html

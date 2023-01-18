@@ -58,7 +58,14 @@
 		;; for major-mode-local removal seed
 		;; https://emacs.stackexchange.com/questions/20485/how-to-exclude-a-company-backend-from-autocompleting-without-globally-removing-i
 		company-backends (delete 'company-cmake company-backends))
+  
   (global-company-fuzzy-mode 1)
+  )
+
+(use-package company-c-headers
+  :config
+  (add-to-list 'company-backends 'company-c-headers)
+  (add-to-list 'company-c-headers-path-system "/usr/include/c++/10/")
   )
 
 (provide 'my_company)
