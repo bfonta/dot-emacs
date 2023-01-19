@@ -9,20 +9,24 @@
   :config
   (setq openwith-associations
         (list
-          (list (openwith-make-extension-regexp
+         (list (openwith-make-extension-regexp
                 '("mpg" "mpeg" "mp3" "mp4"
                   "avi" "wmv" "wav" "mov" "flv"
                   "ogm" "ogg" "mkv"))
-                "mpv"
-                '(file))
-          (list (openwith-make-extension-regexp
+               "mpv"
+               '(file))
+         (list (openwith-make-extension-regexp
                 '("png" "gif" "jpeg" "jpg"))
-                  "okular"
-                  '(file))
-          (list (openwith-make-extension-regexp
+               "okular"
+               '(file))
+		 (list (openwith-make-extension-regexp
+                '("svg"))
+               "eog"
+               '(file))
+         (list (openwith-make-extension-regexp
                 '("pdf"))
-                "okular"
-                '(file)))))
+               "okular"
+               '(file)))))
 
 (provide 'my_open)
 ;;; my_open ends here
