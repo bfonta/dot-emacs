@@ -33,6 +33,8 @@
   ;; always inline images
   (setq org-startup-with-inline-images t)
 
+  (setq org-image-actual-width nil)
+  
   (setq org-log-into-drawer t)
 
   ;; hide blocks by default

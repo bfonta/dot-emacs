@@ -156,7 +156,7 @@
  '(org-level-5 ((t (:inherit default :weight regular :foreground "#f6f3e8" :family "Sans Serif" :foreground "#BA55D3"))))
  '(org-level-6 ((t (:inherit default :weight regular :foreground "#f6f3e8" :family "Sans Serif" :foreground "#5C4033"))))
  '(org-link ((t (:family "Sans Serif" :foreground "#93E0E3" :underline (:color foreground-color :style line)))))
- '(org-meta-line ((t (:family "Sans Serif" :foreground "#989890"))))
+ '(org-meta-line ((t (:foreground "light gray" :height 0.5 :family "Sans Serif"))))
  '(org-property-value ((t (:family "Sans Serif" :background "#2B2B2B" :foreground "#FFFFEF"))) t)
  '(org-special-keyword ((t (:family "Sans Serif" :background "#303030" :foreground "#9FC59F"))))
  '(org-table ((t (:family "Sans Serif" :foreground "#9FC59F"))))

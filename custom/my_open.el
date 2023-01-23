@@ -16,7 +16,7 @@
                "mpv"
                '(file))
          (list (openwith-make-extension-regexp
-                '("png" "gif" "jpeg" "jpg"))
+                '("png" "gif" "jpeg"))
                "okular"
                '(file))
 		 (list (openwith-make-extension-regexp
