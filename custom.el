@@ -164,4 +164,5 @@
  '(org-tag-group ((t (:family "Sans Serif" :background "#303030" :foreground "#9FC59F"))))
  '(org-verbatim ((t (:family "Sans Serif" :foreground "#DC8CC3"))))
  '(org-verse ((t (:family "Sans Serif" :foreground "#9FC59F"))))
- '(region ((t (:extend t :background "gray" :foreground "black")))))
+ '(region ((t (:extend t :background "gray" :foreground "black"))))
+ '(show-paren-match ((t (:background "dark orange" :foreground "black" :weight medium)))))
