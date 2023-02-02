@@ -25,7 +25,7 @@
   "Connects to a server."
   (interactive
    (let ((completion-ignore-case t))
-     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "KLUB Triggers" "KLUB Production" "BigNtuples" "P5") nil t))))
+     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "RecoHadro" "KLUB Triggers" "KLUB Production" "BigNtuples" "P5") nil t))))
 
   (cond ((string-equal server "Triggers")
 		 (let ((default-directory
@@ -50,6 +50,14 @@
 		   (if (get-buffer "shell_hgc_tpg")
 			   (shell (concat "shell_" (read-string "HGC-TPG new shell buffer: shell_")))
 			 (shell "shell_hgc_tpg"))))
+
+		((string-equal server "RecoHadro")
+		 (let ((default-directory
+				 "/scp:alves@llr:/home/llr/cms/alves/CMSSW_12_6_0_pre4/src/"))
+		   (dired default-directory)
+		   (if (get-buffer "shell_reco_hadro")
+			   (shell (concat "shell_" (read-string "RecoHadro new shell buffer: shell_")))
+			 (shell "shell_reco_hadro"))))
 
 		((string-equal server "KLUB Triggers")
 		 (let ((default-directory
@@ -98,8 +106,10 @@
   (cond ((string-equal server "Triggers")
 		 (insert "cmsenv; conda activate Trigger;"))
 		((string-equal server "FPGAs")
-		 (insert "cmsenv; conda activate FPGA;"))
+		 (insert "conda activate FPGA; cmsenv;"))
 		((string-equal server "HGC-TPG")
+		 (insert "cmsenv;"))
+		((string-equal server "RecoHadro")
 		 (insert "cmsenv;"))
 		((string-equal server "KLUB Triggers")
 		 (insert "cmsenv;"))
@@ -119,7 +129,7 @@
 Starts by disconnecting some sshfs connection on the same folder."
   (interactive
    (let ((completion-ignore-case t))
-     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "KLUB Triggers" "KLUB Production" "BigNtuples" "P5") nil t))))
+     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "RecoHadro" "KLUB Triggers" "KLUB Production" "BigNtuples" "P5") nil t))))
 
   (let ((buffer (concat "*shell_sshfs_" server "*")) (wth (window-total-height)))
 	(unless (or (eq major-mode 'shell-mode) (< wth 12) (get-buffer-window buffer t))
@@ -143,6 +153,11 @@ Starts by disconnecting some sshfs connection on the same folder."
 						   "; "
 						   (my/sshfs-mount-string "llr_hgctpg" "llr"
 												  "/home/llr/cms/alves/CMSSW_12_5_0_pre4/src/; "))))
+		  ((string-equal server "RecoHadro")
+		   (insert (concat (my/sshfs-unmount-string "llr_reco_hadro")
+						   "; "
+						   (my/sshfs-mount-string "llr_reco_hadro" "llr"
+												  "/home/llr/cms/alves/CMSSW_12_6_0_pre4/src/; "))))
 		  ((string-equal server "KLUB Triggers")
 		   (insert (concat (my/sshfs-unmount-string "klub")
 						   "; "

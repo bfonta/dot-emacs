@@ -480,5 +480,15 @@
     (message (concat "Copied URL: " url))))
 (define-key org-mode-map (kbd "C-x C-l") 'my/org-copy-link)
 
+(if (require 'toc-org nil t)
+    (progn
+      (add-hook 'org-mode-hook 'toc-org-mode)
+
+      ;; enable in markdown, too
+      ;; (add-hook 'markdown-mode-hook 'toc-org-mode)
+      ;; (define-key markdown-mode-map (kbd "\C-c\C-o") 'toc-org-markdown-follow-thing-at-point)
+	  )
+  (warn "toc-org not found"))
+
 (provide 'my_org)
 ;;; my_org ends here
