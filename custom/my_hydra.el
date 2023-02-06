@@ -16,7 +16,7 @@
   ("3" (dired "~/llr_hgctpg/L1Trigger/L1THGCal/test/HGCalTriggerGeomTesterV9Imp3.cc") "hgc-tpg")
   ("4" (dired "~/klub/") "klub")
   ("5" (dired "~/big_ntuples/") "big ntuples")
-  ("5" (dired "~/llr_reco_hadro/") "reco hadro")
+  ("6" (dired "~/llr_reco_hadro/") "reco hadro")
   )
 
 (global-set-key (kbd "C-x d") 'hydra-dired/body)
