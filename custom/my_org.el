@@ -490,5 +490,7 @@
 	  )
   (warn "toc-org not found"))
 
+(require 'org-mouse) ;; clickable items
+
 (provide 'my_org)
 ;;; my_org ends here
