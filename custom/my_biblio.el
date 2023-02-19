@@ -1,6 +1,6 @@
 ;;; my_biblio --- Summary
 ;;; Code:
-;;; Commentary:
+;;; Commentary: https://github.com/tmalsburg/helm-bibtex
 
 (use-package org-ref
   :after (org)
@@ -17,7 +17,7 @@
   (setq bibtex-completion-library-path "~/Documents/Library/"
 		bibtex-completion-bibliography '("~/dot-emacs/bibliography/l1.bib"
 										 "~/dot-emacs/bibliography/gpu.bib")
-		bibtex-completion-additional-search-fields '(keywords note journal booktitle) ; search in tags and notes
+		bibtex-completion-additional-search-fields '(tags)
 		bibtex-completion-notes-symbol "✎"
 		bibtex-completion-pdf-symbol "📁"
 		bibtex-completion-notes-path "~/dot-emacs/bibliography/notes.org"
@@ -29,8 +29,8 @@
           (markdown-mode . bibtex-completion-format-citation-pandoc-citeproc)
           (default       . bibtex-completion-format-citation-default))
 		bibtex-completion-display-formats
-		'((techreport    . "${author:25} ${title:40} ${year:4} ${=has-pdf=:1}${=has-note=:1} ${=type=:3}")
-		  (t             . "${author:25} ${title:40} ${year:4} ${journal:20} ${=has-pdf=:1}${=has-note=:1} ${=type=:3}")))
+		'((techreport    . "${author:25} ${title:40} ${year:4} ${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${tags:20}")
+		  (t             . "${author:25} ${title:40} ${year:4} ${journal:20} ${=has-pdf=:1}${=has-note=:1} ${=type=:3} ${tags:20}")))
   )
 
 (provide 'my_biblio)
