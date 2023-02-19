@@ -1,0 +1,8 @@
+#+BIBLIOGRAPHY: ~/dot-emacs/bibliography/l1.bib
+
+This is example. You can cite things like this: [[cite:&jb_hdr_slides]] and [[cite:&jb_constr]]. Type =org-ref-insert-cite-link= to add a citation from your database.
+Use the keyword =#+BIBLIOGRAPHY= to search only within a specific file with =helm-bibtex-with-local-bibliography=.
+Finally, to convert to ~pdf~, use =org-latex-export-to-pdf=.
+
+bibliography:~/dot-emacs/bibliography/l1.bib
+[[bibliographystyle:unsrt]]

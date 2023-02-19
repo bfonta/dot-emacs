@@ -9,6 +9,7 @@
   "dired"
   ("t" (dired "~/llr_triggers") "triggers")
   ("e" (dired "~/dot-emacs/custom/") "emacs")
+  ("b" (dired "~/dot-emacs/bibliography/") "biblio")
   ("o" (dired "~/org/") "org")
   ("d" (dired "~/Documents/") "Documents")
   ("1" (dired "~/llr_fpgas/bye_splits") "fpgas")

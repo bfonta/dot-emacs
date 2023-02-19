@@ -101,14 +101,14 @@
  '(line-number-mode nil)
  '(magit-bury-buffer-function 'magit-mode-quit-window)
  '(org-agenda-files
-   '("~/org/PhD/BayesianStatistics/classes/16June2022/16June2022.org" "/home/bruno/org/Indico.org"))
+   '("/home/bruno/dot-emacs/bibliography/example.org" "/home/bruno/org/PhD/BayesianStatistics/classes/16June2022/16June2022.org" "/home/bruno/org/Indico.org"))
  '(org-fontify-done-headline nil)
  '(org-fontify-todo-headline nil)
  '(org-format-latex-options
    '(:foreground orange :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.5 :matchers
 				 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(package-selected-packages
-   '(toc-org ggtags openwith dired-collapse dired dired-rainbow with-venv pdf-tools php-mode vterm-toggle vterm orglink company vundo imenu-list flx git-timemachine restart-emacs company-jedi tex company-auctex tex-ispell cl latex nlinum shackle latex-math-preview epc git impatient-mode pdf-continuous-scroll-mode org-pdftools yasnippet-classic-snippets native-complete ssh org-download visual-fill-column org-superstar exwm xterm-color rainbow-delimiters spacemacs-theme hide-mode-line easy-after-load minions ghub mu4e-alert smtpmail-multi company-c-headers smooth-scrolling helm-pydoc pydoc anaconda-mode magithub eimp image+ go-mode neotree smartparens latex-preview-pane yaml-mode latex-unicode-math-mode yasnippet))
+   '(helm-bibtex toc-org ggtags openwith dired-collapse dired dired-rainbow with-venv pdf-tools php-mode vterm-toggle vterm orglink company vundo imenu-list flx git-timemachine restart-emacs company-jedi tex company-auctex tex-ispell cl latex nlinum shackle latex-math-preview epc git impatient-mode pdf-continuous-scroll-mode org-pdftools yasnippet-classic-snippets native-complete ssh org-download visual-fill-column org-superstar exwm xterm-color rainbow-delimiters spacemacs-theme hide-mode-line easy-after-load minions ghub mu4e-alert smtpmail-multi company-c-headers smooth-scrolling helm-pydoc pydoc anaconda-mode magithub eimp image+ go-mode neotree smartparens latex-preview-pane yaml-mode latex-unicode-math-mode yasnippet))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
  '(persp-keymap-prefix [M-up])
  '(persp-mode t)
