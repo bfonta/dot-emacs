@@ -20,3 +20,10 @@ eln-cache/
 bookmarks
 image-dired/
 request/
+*bbl
+bibliography/*gz
+bibliography/*pdf
+bibliography/*aux
+bibliography/*bbl
+bibliography/*tex
+bibliography/auto/
