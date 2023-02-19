@@ -6,9 +6,7 @@
   (mapcar 'purecopy
   '((c-mode "{" "}" "/[*/]" nil nil)
     (c++-mode "{" "}" "/[*/]" nil nil)
-    (bibtex-mode ("@\\S(*\\(\\s(\\)" 1))
-    (java-mode "{" "}" "/[*/]" nil nil)
-    (js-mode "{" "}" "/[*/]" nil))))
+    (bibtex-mode ("@\\S(*\\(\\s(\\)" 1)))))
 
 (setq hs-isearch-open 't) ;;"code", "comments" or "t" (both)
 
@@ -25,9 +23,5 @@
 (add-hook 'sh-mode-hook         'hs-org/minor-mode)
 (add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
 (add-hook 'emacs-lisp-mode-hook 'hs-org/minor-mode)
-(add-hook 'java-mode-hook       'hs-org/minor-mode)
-(add-hook 'java-mode-hook       'hs-minor-mode)
-(add-hook 'perl-mode-hook       'hs-org/minor-mode)
-(add-hook 'perl-mode-hook       'hs-minor-mode)
 (provide 'my_hideshow)
 ;;; my_hideshow ends here
