@@ -1,8 +1,26 @@
-#+BIBLIOGRAPHY: ~/dot-emacs/bibliography/l1.bib
+#+TITLE:     \LARGE{Title}
+#+EMAIL:     bruno.alves@cern.ch
+#+DATE:      \today
+#+AUTHOR:    \large{Bruno Alves}
 
-This is example. You can cite things like this: [[cite:&jb_hdr_slides]] and [[cite:&jb_constr]]. Type =org-ref-insert-cite-link= to add a citation from your database.
-Use the keyword =#+BIBLIOGRAPHY= to search only within a specific file with =helm-bibtex-with-local-bibliography=.
-Finally, to convert to ~pdf~, use =org-latex-export-to-pdf=.
+#+OPTIONS: tasks:todo
+#+OPTIONS: num:nil toc:nil
 
-bibliography:~/dot-emacs/bibliography/l1.bib
+#+LATEX_HEADER: \hypersetup{colorlinks=true}
+#+LATEX_HEADER: \usepackage{color}
+#+MACRO: color @@latex:{\color{$1}@@$2@@latex:}@@
+
+#+BIBLIOGRAPHY: ~/dot-emacs/bibliography/references/l1.bib
+
+* Point one
+This is an example. You can cite things like this: [[cite:&jb_hdr_slides]] and [[cite:&jb_constr]]. Type =org-ref-insert-cite-link= to add a citation from your database.
+* Another point with a link
+Use the keyword =#+BIBLIOGRAPHY= to search only within a specific file with =helm-bibtex-with-local-bibliography=. And this is a [[https://www.google.com/search?hl=en&q=org%2Dref%20undefined%20citation][link]].
+* Last point, including a note with ~org-noter~
+:PROPERTIES:
+:NOTER_DOCUMENT: /home/bruno/Documents/Library/Higgs/Papers/CMS/HIG-17-002-paper-v19.pdf
+:END:
+Finally, to convert to ~pdf~, use =org-latex-export-to-pdf=. This will only work if you define the ~bibliography~ and ~bibliographystyle~ links at the end of the document.
+
+bibliography:~/dot-emacs/bibliography/references/l1.bib
 [[bibliographystyle:unsrt]]

@@ -75,7 +75,7 @@
 (load-library "my_hydra")
 (load-library "my_biblio")
 (load-library "my_commands")
-(load-library "my_keybinds") ;;;; should be the last one to be loaded
+(load-library "my_keybinds") ;; should be the last one to be loaded
 
 ;;; ---------------------------
 ;;; Load non-MELPA packages
