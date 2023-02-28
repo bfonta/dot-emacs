@@ -11,7 +11,7 @@
   (require 'dired-x)
   :config
   (global-set-key (kbd "C-x f") 'dired-jump)
-  (define-key dired-mode-map [?%?h] 'dired-show-only)
+  (define-key dired-mode-map [?%?h] 'my/dired-show-only)
   (define-key dired-mode-map (kbd "C-<up>") 'dired-up-directory)
   (define-key dired-mode-map (kbd "S-<return>") 'dired-find-file-other-window)
   (define-key dired-mode-map (kbd "q") 'dired-subtree-toggle)
@@ -67,7 +67,7 @@
 ;; https://emacs.stackexchange.com/questions/16891/changing-confirmation-style-when-deleting-files-in-dired
 ;; Type `y` or `n` without requiring additional `Enter` key press
 ;; Note that recursive directory deletion hard-codes a yes-or-no-p because it's a more dangerous action.
-(defun dired-show-only (regexp)
+(defun my/dired-show-only (regexp)
   (interactive "sFiles to show (regexp): ") 
   (dired-mark-files-regexp regexp) ;; dired %m command
   (dired-toggle-marks) ;; dired *t command
