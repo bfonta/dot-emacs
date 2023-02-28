@@ -8,7 +8,6 @@
   (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c ]") 'org-ref-insert-cite-link)))
   (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c [") 'helm-bibtex-with-local-bibliography)))
   (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c n") 'org-noter)))
-  (global-set-key (kbd "C-c C-[") 'helm-bibtex)
   ;;(setq org-ref-default-citation-link "autocite")
   ;;(org-ref-define-citation-link "citez" ?z)
   )
@@ -19,7 +18,8 @@
   (setq bibtex-completion-library-path "~/Documents/Library/"
 		bibtex-completion-bibliography '("~/dot-emacs/bibliography/references/l1.bib"
 										 "~/dot-emacs/bibliography/references/gpu.bib"
-										 "~/dot-emacs/bibliography/references/stats.bib")
+										 "~/dot-emacs/bibliography/references/stats.bib"
+										 "~/dot-emacs/bibliography/references/higgs.bib")
 		bibtex-completion-additional-search-fields '(tags journal)
 		bibtex-completion-notes-symbol "✎"
 		bibtex-completion-pdf-symbol "📁"
