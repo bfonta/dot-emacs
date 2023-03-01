@@ -16,18 +16,7 @@
 	(let ((mode-imenu (imenu-default-create-index-function))
           (custom-imenu (imenu--generic-function imenu-generic-expression)))
       (append mode-imenu custom-imenu)))
-
-  (defun my-python-hooks()
-    (interactive)
-    (setq tab-width 4
-          python-indent 4
-		  indent-tabs-mode nil)
-    (add-to-list
-     'imenu-generic-expression
-     '("Sections" "^#### \\[ \\(.*\\) \\]$" 1))
-    (setq imenu-create-index-function 'my-merge-imenu)
-	)
-  (add-hook 'python-mode-hook 'my-python-hooks))
+  )
 
 (use-package pyvenv
   :defer t
@@ -36,6 +25,18 @@
   (setenv "WORKON_HOME" "/home/bruno/miniconda3/envs")
   (pyvenv-mode 1)
   )
+
+(defun my-python-hooks()
+  (interactive)
+  (setq tab-width 4
+        python-indent 4
+		indent-tabs-mode nil)
+  (add-to-list
+   'imenu-generic-expression
+   '("Sections" "^#### \\[ \\(.*\\) \\]$" 1))
+  (setq imenu-create-index-function 'my-merge-imenu)
+  )
+(add-hook 'python-mode-hook 'my-python-hooks)
 
 ;;; References: https://github.com/antonj/Highlight-Indentation-for-Emacs/blob/master/highlight-indentation.el https://github.com/antonj/Highlight-Indentation-for-Emacs/issues/16
 (add-to-list 'load-path "~/dot-emacs/highlight-indentation/")
