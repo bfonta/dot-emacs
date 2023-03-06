@@ -19,6 +19,7 @@
 		bibtex-completion-bibliography '("~/dot-emacs/bibliography/references/l1.bib"
 										 "~/dot-emacs/bibliography/references/gpu.bib"
 										 "~/dot-emacs/bibliography/references/stats.bib"
+										 "~/dot-emacs/bibliography/references/hgcal.bib"
 										 "~/dot-emacs/bibliography/references/higgs.bib")
 		bibtex-completion-additional-search-fields '(tags journal)
 		bibtex-completion-notes-symbol "✎"
