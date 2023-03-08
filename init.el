@@ -71,9 +71,8 @@
 (load-library "my_magit")
 (load-library "my_multiplecursors")
 (load-library "my_vundo")
-(load-library "my_hideshow")
 (load-library "my_hydra")
-;;(load-library "my_biblio")
+(load-library "my_biblio")
 (load-library "my_commands")
 (load-library "my_keybinds") ;; should be the last one to be loaded
 
@@ -88,9 +87,6 @@
 
 (add-to-list 'load-path "~/dot-emacs/zoom/") ;; using deprecated 'cl' package
 (require 'zoom-frm)
-
-(add-to-list 'load-path "~/dot-emacs/hideshow/")
-(load-library "hideshow-org")
 
 ;;; --------------------------------
 ;;; Load content added by customize
