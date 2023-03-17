@@ -26,6 +26,11 @@
   (pyvenv-mode 1)
   )
 
+(when (executable-find "ipython")
+  (setq python-shell-interpreter "ipython"
+        python-shell-interpreter-args "-i --simple-prompt --InteractiveShell.display_page=True"
+		python-shell-completion-native-enable nil))
+
 (defun my-python-hooks()
   (interactive)
   (setq tab-width 4
