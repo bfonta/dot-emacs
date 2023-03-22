@@ -108,7 +108,7 @@
    '(:foreground orange :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.5 :matchers
 				 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(package-selected-packages
-   '(readline-complete org-noter-pdftools org-noter helm-bibtex toc-org ggtags openwith dired-collapse dired dired-rainbow with-venv pdf-tools php-mode vterm-toggle vterm orglink company vundo imenu-list flx git-timemachine restart-emacs company-jedi tex company-auctex tex-ispell cl latex nlinum shackle latex-math-preview epc git impatient-mode pdf-continuous-scroll-mode org-pdftools yasnippet-classic-snippets native-complete ssh org-download visual-fill-column org-superstar exwm xterm-color rainbow-delimiters spacemacs-theme hide-mode-line easy-after-load minions ghub mu4e-alert smtpmail-multi company-c-headers smooth-scrolling helm-pydoc pydoc anaconda-mode magithub eimp image+ go-mode neotree smartparens latex-preview-pane yaml-mode latex-unicode-math-mode yasnippet))
+   '(stripes readline-complete org-noter-pdftools org-noter helm-bibtex toc-org ggtags openwith dired-collapse dired dired-rainbow with-venv pdf-tools php-mode vterm-toggle vterm orglink company vundo imenu-list flx git-timemachine restart-emacs company-jedi tex company-auctex tex-ispell cl latex nlinum shackle latex-math-preview epc git impatient-mode pdf-continuous-scroll-mode org-pdftools yasnippet-classic-snippets native-complete ssh org-download visual-fill-column org-superstar exwm xterm-color rainbow-delimiters spacemacs-theme hide-mode-line easy-after-load minions ghub mu4e-alert smtpmail-multi company-c-headers smooth-scrolling helm-pydoc pydoc anaconda-mode magithub eimp image+ go-mode neotree smartparens latex-preview-pane yaml-mode latex-unicode-math-mode yasnippet))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
  '(persp-keymap-prefix [M-up])
  '(persp-mode t)
@@ -165,4 +165,5 @@
  '(org-verbatim ((t (:family "Sans Serif" :foreground "#DC8CC3"))))
  '(org-verse ((t (:family "Sans Serif" :foreground "#9FC59F"))))
  '(region ((t (:extend t :background "gray" :foreground "black"))))
- '(show-paren-match ((t (:background "#6F6F6F" :foreground "#DCDCCC" :weight normal)))))
+ '(show-paren-match ((t (:background "#6F6F6F" :foreground "#DCDCCC" :weight normal))))
+ '(stripes ((t (:extend t :background "gray23")))))

@@ -24,9 +24,21 @@
   (add-hook 'dired-mode-hook
 			(lambda ()
               (dired-omit-mode 1)
-			  (dired-collapse-mode 1)))
+			  (dired-collapse-mode 1)
+			  ))
   )
 
+; stripes
+(use-package stripes
+  :ensure nil
+  :init
+  (setq stripes-unit 1)
+  :commands stripes-mode
+  )
+; the above is ignored if put inise use-package's :config
+(add-hook 'dired-mode-hook (lambda ()
+							 (stripes-mode 1)))
+		  
 (use-package dired-rainbow
     :config
     (dired-rainbow-define-chmod directory "#6cb2eb" "d.*")
