@@ -99,5 +99,12 @@
   :defer t
   :commands (dired-sidebar-toggle-sidebar))
 
+(defun my/dired-duplicate-this-file (suffix)
+  "Duplicate file on this line."
+  (interactive (list (read-string "Suffix: " "_COPY")))
+  (dired-do-copy-regexp "\\(.*\\)\\.\\(.*\\)"
+						(concat "\\1" suffix ".\\2"))
+  )
+
 (provide 'my_dired)
 ;;; my_dired ends here
