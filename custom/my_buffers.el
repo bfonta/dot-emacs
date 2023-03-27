@@ -153,10 +153,20 @@ will be killed."
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
 
-(defun my-buffer-name ()   
+(defun my/buffer-name ()   
     "Copy the name of the current buffer to the kill ring."  
     (interactive)  
     (kill-new (file-name-nondirectory (buffer-file-name (window-buffer (minibuffer-selected-window))))))
+
+(defun my/duplicate-buffer ()
+  "Open the file that the current buffer is visiting in a new buffer."
+  (interactive)
+  (let* ((fn buffer-file-name)
+         (buf (create-file-buffer fn)))
+    (with-current-buffer buf
+      (setq buffer-file-name fn)
+      (revert-buffer t t))
+    (switch-to-buffer-other-window buf)))
 
 (provide 'my_buffers)
 ;;; my_buffers ends here
