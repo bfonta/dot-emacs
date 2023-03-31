@@ -10,10 +10,10 @@
   :requires helm
   :config
   (setq swiper-helm-display-function 'helm-default-display-buffer)
-  (global-set-key (kbd "M-s s") 'swiper-helm)
   (setq case-fold-search t)
   ;; colors can be changed with `customize-group ivy-faces` in 'Swiper Line Face'
   )
+(global-set-key (kbd "M-s s") 'swiper-helm)
 
 ;; Kill text when doing incremental search
 (defun my/isearch-kill-result ()
