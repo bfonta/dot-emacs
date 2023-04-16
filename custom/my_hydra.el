@@ -15,9 +15,10 @@
   ("w" (dired "~/Downloads/") "Downloads")
   ("1" (dired "~/llr_fpgas/bye_splits") "fpgas")
   ("2" (dired "~/klub/") "klub")
-  ("3" (dired "~/llr_hgctpg/L1Trigger/L1THGCal/plugins/geometries/HGCalTriggerGeometryV9Imp3.cc") "hgc-tpg")
-  ("4" (dired "~/big_ntuples/") "big ntuples")
-  ("5" (dired "~/llr_reco_hadro/") "reco hadro")
+  ("3" (dired "~/an/") "an")
+  ("4" (dired "~/llr_hgctpg/L1Trigger/L1THGCal/plugins/geometries/HGCalTriggerGeometryV9Imp3.cc") "hgc-tpg")
+  ("5" (dired "~/big_ntuples/") "big ntuples")
+  ("6" (dired "~/llr_reco_hadro/") "reco hadro")
   )
 
 (global-set-key (kbd "C-x d") 'hydra-dired/body)
