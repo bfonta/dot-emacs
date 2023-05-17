@@ -25,7 +25,7 @@
   "Connects to a server."
   (interactive
    (let ((completion-ignore-case t))
-     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "RecoHadro" "KLUB Triggers" "KLUB Production" "BigNtuples" "P5") nil t))))
+     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "RecoHadro" "KLUB Triggers" "KLUB Production" "BigNtuples" "Gridpacks" "P5") nil t))))
 
   (cond ((string-equal server "Triggers")
 		 (let ((default-directory
@@ -92,6 +92,15 @@
 			 (shell "shell_big_ntuples")))
 		 )
 
+		((string-equal server "Gridpacks")
+		 (let ((default-directory
+				 "/scp:bfontana@lxplus:/afs/cern.ch/work/b/bfontana/"))
+		   (dired default-directory)
+		   (if (get-buffer "shell_gridpakcs")
+			   (shell (concat "shell_" (read-string "Gridpacks new shell buffer: shell_")))
+			 (shell "shell_gridpacks")))
+		 )
+
 		((string-equal server "P5")
 		 (let ((default-directory
 				 "/scp:bfontana@cmsusr:/nfshome0/bfontana/"))
@@ -117,6 +126,8 @@
 		 (insert "cmsenv;"))
 		((string-equal server "BigNtuples")
 		 (insert "cd CMSSW_10_6_29/src/LLRHiggsTauTau; cmsenv;"))
+		((string-equal server "Gridpacks")
+		 (insert "cd /afs/cern.ch/work/b/bfontana/genproductions/bin/MadGraph5_aMCatNLO; cmsenv;"))
 		((string-equal server "P5")
 		 (insert ". /nfshome0/ecaldev/utils/pro;"))
 		(t (user-error "Function implementation error. Fix."))
@@ -129,7 +140,7 @@
 Starts by disconnecting some sshfs connection on the same folder."
   (interactive
    (let ((completion-ignore-case t))
-     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "RecoHadro" "KLUB Triggers" "KLUB Production" "BigNtuples" "P5") nil t))))
+     (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "RecoHadro" "KLUB Triggers" "KLUB Production" "BigNtuples" "Gridpacks" "P5") nil t))))
 
   (let ((buffer (concat "*shell_sshfs_" server "*")) (wth (window-total-height)))
 	(unless (or (eq major-mode 'shell-mode) (< wth 12) (get-buffer-window buffer t))
@@ -176,6 +187,12 @@ Starts by disconnecting some sshfs connection on the same folder."
 						   (my/sshfs-mount-string "big_ntuples" "lxplus"
 												  "/afs/cern.ch/work/b/bfontana/CMSSW_10_6_29/src/"))))
 
+		  ((string-equal server "Gridpacks")
+		   (insert (concat (my/sshfs-unmount-string "gridpacks")
+						   "; "
+						   (my/sshfs-mount-string "gridpacks" "lxplus"
+												  "/afs/cern.ch/work/b/bfontana/genproductions/bin/MadGraph5_aMCatNLO"))))
+		  
 		  ((string-equal server "P5")
 		   (insert (concat (my/sshfs-unmount-string "p5")
 						   "; "

@@ -19,6 +19,7 @@
   ("4" (dired "~/llr_hgctpg/L1Trigger/L1THGCal/plugins/geometries/HGCalTriggerGeometryV9Imp3.cc") "hgc-tpg")
   ("5" (dired "~/big_ntuples/") "big ntuples")
   ("6" (dired "~/llr_reco_hadro/") "reco hadro")
+  ("7" (dired "~/gridpacks/") "gridpacks")
   )
 
 (global-set-key (kbd "C-x d") 'hydra-dired/body)
