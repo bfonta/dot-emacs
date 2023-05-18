@@ -45,6 +45,7 @@
 (load-library "my_compilation")
 (load-library "my_markdown")
 (load-library "my_python")
+(load-library "my_golang")
 (load-library "my_whichfunc")
 (load-library "my_modeline")
 (load-library "my_pdf")
