@@ -82,12 +82,14 @@ is available. Useful if you tend to hammer your keys like I do."
 available. Otherwise will try company, yasnippet or normal
 tab-indent."
   (interactive)
-  (if (or (eq major-mode 'shell-mode)
+  (cond ((or (eq major-mode 'shell-mode)
 		  (eq major-mode 'minibuffer-mode-hook))
-	  (completion-at-point)
-	  (or (copilot-accept-completion)
-		  ;(company-yasnippet-or-completion) ;I'm using M-<tab> for yasnippets
-		  (indent-for-tab-command)
+		 (completion-at-point))
+		((eq major-mode 'org-mode)
+		 (org-cycle))
+		(t (copilot-accept-completion)
+      	    ;(company-yasnippet-or-completion) ;I'm using M-<tab> for yasnippets
+		   (indent-for-tab-command)
 		  ))
   )
 
