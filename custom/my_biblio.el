@@ -51,5 +51,6 @@
    ;; Everything is relative to the main notes file
    org-noter-notes-search-path "~/dot-emacs/bibliography/"))
 
+
 (provide 'my_biblio)
 ;;; my_biblio ends here
