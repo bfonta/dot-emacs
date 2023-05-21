@@ -2,14 +2,18 @@
 ;;; Code:
 ;;; Commentary:
 (use-package yasnippet
-  :defer t
+  :ensure t
   :commands (yas-load-directory)
+
   :config
   (add-to-list 'load-path "~/dot-emacs/yasnippet-0.13.0/")
   (yas-global-mode 1)
-  (define-key yas-minor-mode-map (kbd "<tab>") nil)
-  (define-key yas-minor-mode-map (kbd "TAB") nil)
-  (define-key yas-minor-mode-map (kbd "<M-tab>") 'yas-expand)
-  )
+)
+
+(yas-minor-mode 1)
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+(define-key yas-minor-mode-map (kbd "<M-tab>") 'yas-expand)
+
 (provide 'my_snippets)
 ;;; my_snippets.el ends here

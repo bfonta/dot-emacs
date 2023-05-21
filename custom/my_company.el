@@ -45,7 +45,7 @@
 ;;; Reference: https://github.com/jcs-elpa/company-fuzzy
 (use-package company-fuzzy
   :hook (company-mode . company-fuzzy-mode)
-  :after flx
+  :after (flx yasnippet)
   :init
   (setq company-fuzzy-sorting-backend 'flx
 		company-fuzzy-prefix-on-top nil
