@@ -3,6 +3,16 @@
 ;;; Commentary:
 
 (use-package pulsar
+  :ensure t
+  :config
+  (setq pulsar-pulse t
+		pulsar-delay 0.07
+		pulsar-iterations 20 ;; how long it highlights
+		pulsar-face 'pulsar-cyan
+		pulsar-highlight-face 'pulsar-yellow
+		pulsar-pulse-on-window-change t)
+  (pulsar-global-mode 1)
+
   :custom
   (pulsar-pulse-functions
    '(recenter-top-bottom
@@ -23,15 +33,14 @@
      outline-forward-same-level
      outline-next-visible-heading
      outline-previous-visible-heading
-     outline-up-heading))
-  :config
-  (pulsar-global-mode 1)
-  (setq pulsar-pulse t
-		pulsar-delay 0.07
-		pulsar-iterations 20 ;; how long it highlights
-		pulsar-face 'pulsar-cyan
-		pulsar-highlight-face 'pulsar-cyan
-		pulsar-pulse-on-window-change t)
+     outline-up-heading
+	 balance-windows
+	 keyboard-quit
+	 windmove-right
+	 windmove-left
+	 windmove-down
+	 windmove-up))  
   )
+
 (provide 'my_pulsar)
 ;;; my_pulsar ends here

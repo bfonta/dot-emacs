@@ -77,23 +77,26 @@ is available. Useful if you tend to hammer your keys like I do."
 (define-key copilot-mode-map (kbd "M-S-<down>") #'copilot-accept-completion-by-line)
 (define-key global-map (kbd "M-S-<return>") #'my/copilot-complete-or-accept)
 
-(defun my/copilot-tab ()
-  "Tab command that will complet with copilot if a completion is
+(defun my/copilot-backtab ()
+  "Backtab command that will complet with copilot if a completion is
 available. Otherwise will try company, yasnippet or normal
 tab-indent."
   (interactive)
-  (cond ((or (eq major-mode 'shell-mode)
-		  (eq major-mode 'minibuffer-mode-hook))
-		 (completion-at-point))
-		((eq major-mode 'org-mode)
-		 (org-cycle))
-		(t (copilot-accept-completion)
-      	    ;(company-yasnippet-or-completion) ;I'm using M-<tab> for yasnippets
-		   (indent-for-tab-command)
-		  ))
-  )
+  ;; (cond ((or (eq major-mode 'shell-mode)
+  ;; 		  (eq major-mode 'minibuffer-mode-hook))
+  ;; 		 (completion-at-point))
+  ;; 		((eq major-mode 'org-mode)
+  ;; 		 (org-cycle))
+  ;; 		((eq major-mode 'python-mode)
+  ;; 		 (org-cycle))
+  ;; 		(t (copilot-accept-completion)
+  ;;     	    ;(company-yasnippet-or-completion) ;I'm using M-<tab> for yasnippets
+  ;; 		   (indent-for-tab-command)
+  ;; 		  ))
+  (copilot-accept-completion)
+)
 
-(define-key global-map (kbd "<tab>") #'my/copilot-tab)
+(define-key global-map (kbd "S-<iso-lefttab>") #'my/copilot-backtab)
 
 (defun my/copilot-quit ()
   "Run `copilot-clear-overlay' or `keyboard-quit'. If copilot is

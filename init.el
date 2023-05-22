@@ -75,11 +75,11 @@
 (load-library "my_replace")
 (load-library "my_buffers")
 (load-library "my_windows")
+(load-library "my_pulsar")
 (load-library "my_connection")
 (load-library "my_helm")
 (load-library "my_search")
 (load-library "my_dired")
-(load-library "my_pulsar")
 (load-library "my_snippets")
 (load-library "my_desktop")
 (load-library "my_colors")
@@ -130,6 +130,7 @@
 ;; Set the right directory to store the native comp cache
 (add-to-list 'native-comp-eln-load-path (expand-file-name "eln-cache/" user-emacs-directory))
 
-(dired ".")
+;; run dired on current folder at start-up
+(add-hook 'emacs-startup-hook (lambda() (dired ".")))
 
 ;;; init.el ends here
