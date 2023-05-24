@@ -1,6 +1,6 @@
 ;;; my_windows --- Summary
 ;;; Code:
-;;; Commentary:
+;;; Commentary: go back and forth between buffer displays
 
 (winner-mode 1)
 

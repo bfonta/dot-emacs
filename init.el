@@ -130,7 +130,4 @@
 ;; Set the right directory to store the native comp cache
 (add-to-list 'native-comp-eln-load-path (expand-file-name "eln-cache/" user-emacs-directory))
 
-;; run dired on current folder at start-up
-(add-hook 'emacs-startup-hook (lambda() (dired ".")))
-
 ;;; init.el ends here

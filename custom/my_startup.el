@@ -2,8 +2,6 @@
 ;;; Code:
 ;;; Commentary:
 
-(add-hook 'emacs-startup-hook #'toggle-frame-fullscreen)
-
 ;; Font size adjustment
 (defun my/adjust-font-size-start-up ()
   "Inspired by https://emacs.stackexchange.com/a/44930/17066"
@@ -16,6 +14,11 @@
   (set-face-attribute 'default nil :height 105)
   )
 (add-hook 'emacs-startup-hook #'my/adjust-font-size-start-up)
+
+;; run dired on current folder at start-up
+(add-hook 'emacs-startup-hook (lambda() (dired ".")))
+
+(add-hook 'emacs-startup-hook #'toggle-frame-fullscreen)
 
 (provide 'my_startup)
 ;;; my_startup ends here

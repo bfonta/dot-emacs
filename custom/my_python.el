@@ -5,18 +5,13 @@
 (use-package python-mode
   :bind (("C->" . python-indent-shift-right)
 		 ("C-<" . python-indent-shift-left))
-
-  :config
-  ;; originally linked weirdly-behaving `py-electric-backspace`
-  (define-key python-mode-map (kbd "<backspace>") nil)
-  (define-key python-mode-map (kbd "DEL") nil)
-
-  (defun my-merge-imenu ()
-	(interactive)
-	(let ((mode-imenu (imenu-default-create-index-function))
-          (custom-imenu (imenu--generic-function imenu-generic-expression)))
-      (append mode-imenu custom-imenu)))
   )
+
+(defun my/merge-imenu ()
+  (interactive)
+  (let ((mode-imenu (imenu-default-create-index-function))
+        (custom-imenu (imenu--generic-function imenu-generic-expression)))
+    (append mode-imenu custom-imenu)))
 
 (use-package pyvenv
   :defer t
@@ -39,7 +34,7 @@
   (add-to-list
    'imenu-generic-expression
    '("Sections" "^#### \\[ \\(.*\\) \\]$" 1))
-  (setq imenu-create-index-function 'my-merge-imenu)
+  (setq imenu-create-index-function 'my/merge-imenu)
   )
 (add-hook 'python-mode-hook 'my-python-hooks)
 
