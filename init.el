@@ -50,8 +50,8 @@
 ;;; ---------------------------
 (add-to-list 'load-path "~/dot-emacs/custom/")
 (load-library "my_theme")
-(load-library "my_frame")
 (load-library "my_startup")
+(load-library "my_frame")
 (load-library "my_menu")
 (load-library "my_definitions")
 (load-library "my_open")
@@ -111,23 +111,17 @@
 (add-to-list 'load-path "~/dot-emacs/zoom/") ;; using deprecated 'cl' package
 (require 'zoom-frm)
 
-;;; --------------------------------
-;;; Load content added by customize
-;;; --------------------------------
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
-
-(defun load-emacs ()
-  """Quick emacs configuration loading."""
-  (interactive)
-  (load user-init-file)
-  )
-
 ;; The default is 800 kilobytes.  Measured in bytes.
 (setq gc-cons-threshold (* 50 1000 1000))
 ;; Silence compiler warnings as they can be pretty disruptive
 (setq native-comp-async-report-warnings-errors nil)
 ;; Set the right directory to store the native comp cache
 (add-to-list 'native-comp-eln-load-path (expand-file-name "eln-cache/" user-emacs-directory))
+
+(defun my/load-emacs ()
+  """Quick emacs configuration loading."""
+  (interactive)
+  (load user-init-file)
+  )
 
 ;;; init.el ends here
