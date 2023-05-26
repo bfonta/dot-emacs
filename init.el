@@ -26,21 +26,21 @@
 ;;; Install `quelpa`
 ;;; https://github.com/quelpa/quelpa
 ;;; ---------------------------
-(unless (package-installed-p 'quelpa)
-  (with-temp-buffer
-    (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
-    (eval-buffer)
-    (quelpa-self-upgrade)))
+;; (unless (package-installed-p 'quelpa)
+;;   (with-temp-buffer
+;;     (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
+;;     (eval-buffer)
+;;     (quelpa-self-upgrade)))
 
 ;;; ---------------------------
 ;;; Install utility to use `quelpa` with `use-package`
 ;;; https://github.com/quelpa/quelpa-use-package
 ;;; ---------------------------
-(quelpa
- '(quelpa-use-package
-   :fetcher git
-   :url "https://github.com/quelpa/quelpa-use-package.git"))
-(require 'quelpa-use-package)
+;; (quelpa
+;;  '(quelpa-use-package
+;;    :fetcher git
+;;    :url "https://github.com/quelpa/quelpa-use-package.git"))
+;; (require 'quelpa-use-package)
 
 ;;; Emacs performance (plists vs slower hash-table)
 (setenv "LSP_USE_PLISTS" "true")
@@ -91,7 +91,7 @@
 (load-library "my_cursor")
 (load-library "my_emojis")
 (load-library "my_magit")
-(load-library "my_copilot")
+;(load-library "my_copilot")
 (load-library "my_multiplecursors")
 (load-library "my_vundo")
 (load-library "my_hydra")
