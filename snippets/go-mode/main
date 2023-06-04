@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: main
+# key: m
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+
+package main
+
+import (
+	"os"
+	"fmt"
+)
+
+func main() {
+	 $0
+}

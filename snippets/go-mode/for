@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: for
+# key: f
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+for _, v := range $1 {
+	$0
+}
