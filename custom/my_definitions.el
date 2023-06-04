@@ -9,7 +9,9 @@
   
   (menu-bar-mode -1)
   (toggle-scroll-bar -1)
-  (tool-bar-mode -1)
+  ;; This is about 0.1 seconds faster than running
+  ;; (tool-bar-mode -1)
+  (push '(tool-bar-lines . 0) default-frame-alist)
 
   (put 'scroll-left 'disabled nil)
   (put 'upcase-region 'disabled nil)

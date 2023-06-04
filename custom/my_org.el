@@ -75,13 +75,6 @@
   ;; Changes to task states might get logged, especially for recurring routines. If so, log them in a drawer, not the content of the note. 
   (setq org-log-state-notes-into-drawer t)
 
-  ;; While Org mode needs a lot of custom styling to work in variable-pitch-mode I take the easy way out in the agenda view by choosing the monospaced version of the font: iA Writer Mono S. It is way easier to align the ASCII tables of agenda with a font with a fixed pitch.
-  (defun my-org-config/setup-buffer-face ()
-	(setq buffer-face-mode-face '(:family "iA Writer Mono S"))
-	(buffer-face-mode)
-	)
-  (add-hook 'org-agenda-mode-hook 'my-org-config/setup-buffer-face)
-
   ;;Once Org mode loaded, turn on olivetti, hide tilde fringes and enable visual line mode.
   (defun my-org-config/after-org-mode-load ()
 	(visual-line-mode)
@@ -96,14 +89,6 @@
 	(buffer-face-mode))
   (add-hook 'org-mode-hook 'my-org-config/set-base-font)
   
-  ;; I use a general inbox file to collect all new tasks on the run and will batch-schedule/refile them a couple times a day.
-  ;; Inbox and mobile inbox co-exist to prevent sync conflicts when adding tasks while having no internet connection. This works pretty well and I treat them equally in the agenda views. 
-  (defvar org-my-inbox-file "~/org/inbox.org")
-  (defvar org-my-mobile-inbox-file "~/org/inbox_mobile.org")
-
-  ;; Default note file, that will also be used for capturing new notes. 
-  (setq org-default-notes-file org-my-inbox-file)
-
   ;; Work-related tasks and notes. 
   (defvar org-my-general-files "~/org")
 
@@ -402,10 +387,10 @@
   
   )
 
-(use-package org-bullets
-  :config
-  (setq org-bullets-bullet-list '("●" "■" "●" "■" "●" "■"))
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+;; (use-package org-bullets
+;;   :config
+;;   (setq org-bullets-bullet-list '("●" "■" "●" "■" "●" "■"))
+;;   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 ;; replace list bullet
 (font-lock-add-keywords 'org-mode
