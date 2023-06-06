@@ -85,7 +85,7 @@
   (defun my-org-config/set-base-font ()
     "Sets a fixed width (monospace) font in current buffer"
 	(interactive)
-	(setq buffer-face-mode-face '(:family "Sans Serif"))
+	(setq buffer-face-mode-face '(:family "Sans Serif" :width ultracondensed))
 	(buffer-face-mode))
   (add-hook 'org-mode-hook 'my-org-config/set-base-font)
   
@@ -147,7 +147,6 @@
 	;; I have removed indentation to make the file look cleaner
 	(org-indent-mode 1)
 	
-	;;(my/buffer-face-mode-variable)
 	(setq line-spacing 0.1
           org-pretty-entities t
 		  )
@@ -159,8 +158,6 @@
 				(nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
 		 (base-font-color     (face-foreground 'default nil 'default))
 		 (headline           `(:inherit default :weight regular :foreground ,base-font-color)))
-	  ;; ((default-font
-	  ;; 	(base-font-color     (face-foreground 'default nil 'default))))
 	  
 	  (custom-theme-set-faces 'user
 							  `(org-level-1
@@ -386,11 +383,6 @@
 ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
   
   )
-
-;; (use-package org-bullets
-;;   :config
-;;   (setq org-bullets-bullet-list '("●" "■" "●" "■" "●" "■"))
-;;   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 ;; replace list bullet
 (font-lock-add-keywords 'org-mode
