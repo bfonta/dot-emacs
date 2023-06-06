@@ -12,21 +12,39 @@
   :config
   (global-set-key (kbd "C-x f") 'dired-jump)
   (define-key dired-mode-map [?%?h] 'my/dired-show-only)
+  (define-key dired-mode-map [?%?s] 'my/dired-swap-omit)
   (define-key dired-mode-map (kbd "C-<up>") 'dired-up-directory)
   (define-key dired-mode-map (kbd "S-<return>") 'dired-find-file-other-window)
   (define-key dired-mode-map (kbd "q") 'dired-subtree-toggle)
   (setq dired-deletion-confirmer #'y-or-n-p ;; ls program name
-		dired-omit-files (rx (or (seq bol (? ".") "#")
-								 (seq bol "." eol)
-								 (seq bol "." (+ any) eol)
-								 (seq bol ".." eol)
-								 (seq bol "#" eol))))
+		)
   (add-hook 'dired-mode-hook
 			(lambda ()
               (dired-omit-mode 1)
 			  (dired-collapse-mode 1)
 			  ))
   )
+
+(defun my/dired-swap-omit ()
+  "Show/hide dot-files"
+  (interactive)
+  (when (equal major-mode 'dired-mode)
+    (if (or (not (boundp 'dired-dotfiles-show-p)) dired-dotfiles-show-p) ; if currently showing
+		(progn 
+	      (set (make-local-variable 'dired-dotfiles-show-p) nil)
+	      (message "h")
+	      (dired-mark-files-regexp "^\\\.")
+	      (dired-do-kill-lines))
+	  (progn (revert-buffer) ; otherwise just revert to re-show
+			 (set (make-local-variable 'dired-dotfiles-show-p) t)))))
+
+
+;; (defun my/swap-omit-files ()
+;;   ""
+;;   (interactive)
+;;   (setq dired-omit-files "")
+;;   (revert-buffer)
+;;   )
 
 ; stripes
 (use-package stripes
