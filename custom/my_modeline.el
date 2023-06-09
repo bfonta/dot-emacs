@@ -47,7 +47,7 @@
 
 	       ;; "%m "
 	       ;; line (and possibly column) number
-               (propertize "%l" 'face 'font-lock-constant-face)
+               ;(propertize "%l:%c" 'face 'font-lock-constant-face)
 
 	       " "
 	       mode-line-misc-info ; for eyebrowse
