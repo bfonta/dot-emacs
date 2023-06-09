@@ -94,7 +94,7 @@
 
 		((string-equal server "Gridpacks")
 		 (let ((default-directory
-				 "/scp:alves@llr:/home/llr/cms/alves/"))
+				 "/scp:alves@lxplus:/afs/cern.ch/work/b/bfontana/"))
 		   (dired default-directory)
 		   (if (get-buffer "shell_gridpacks")
 			   (shell (concat "shell_" (read-string "Gridpacks new shell buffer: shell_")))
@@ -127,7 +127,7 @@
 		((string-equal server "BigNtuples")
 		 (insert "cd CMSSW_10_6_29/src/LLRHiggsTauTau; cmsenv;"))
 		((string-equal server "Gridpacks")
-		 (insert "cd /home/llr/cms/alves/genproductions/bin/MadGraph5_aMCatNLO; cmsenv;"))
+		 (insert "cd /afs/cern.ch/work/b/bfontana/genproductions/bin/MadGraph5_aMCatNLO; cmsenv;"))
 		((string-equal server "P5")
 		 (insert ". /nfshome0/ecaldev/utils/pro;"))
 		(t (user-error "Function implementation error. Fix."))
@@ -191,7 +191,7 @@ Starts by disconnecting some sshfs connection on the same folder."
 		   (insert (concat (my/sshfs-unmount-string "gridpacks")
 						   "; "
 						   (my/sshfs-mount-string "gridpacks" "llr"
-												  "/home/llr/cms/alves/genproductions/bin/MadGraph5_aMCatNLO"))))
+												  "/afs/cern.ch/work/b/bfontana/bin/MadGraph5_aMCatNLO"))))
 		  
 		  ((string-equal server "P5")
 		   (insert (concat (my/sshfs-unmount-string "p5")
