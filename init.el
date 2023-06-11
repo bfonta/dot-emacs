@@ -80,7 +80,7 @@
   (load-library "my_emojis")
   (load-library "my_magit")
   ;(load-library "my_copilot")
-  (load-library "my_multiplecursors")
+  ;(load-library "my_multiplecursors")
   (load-library "my_hydra")
   (load-library "my_biblio")
   (load-library "my_colors")

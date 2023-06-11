@@ -8,7 +8,7 @@
 (defun my-TeX-command-run-all (arg)
   (interactive "P")
   (TeX-command-run-all arg)
-  (reduce-this-window-width)
+  ;(reduce-this-window-width)
   )
 (add-hook 'LaTeX-mode-hook
 		  (lambda () (local-set-key (kbd "C-c C-a") #'my-TeX-command-run-all)))
