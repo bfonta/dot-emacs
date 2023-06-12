@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: breakpoint_old
+# key: b2
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+import pdb; pdb.set_trace()$0

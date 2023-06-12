@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: self
+# key: s
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+self.$0
