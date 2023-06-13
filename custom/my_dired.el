@@ -17,7 +17,7 @@
   (define-key dired-mode-map (kbd "S-<return>") 'dired-find-file-other-window)
   (define-key dired-mode-map (kbd "q") 'dired-subtree-toggle)
   (setq dired-deletion-confirmer #'y-or-n-p ;; ls program name
-		dired-listing-switches "-ltrh"
+		dired-listing-switches "-ltrhgo"
 		)
   (add-hook 'dired-mode-hook
 			(lambda ()
