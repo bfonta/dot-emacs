@@ -14,6 +14,7 @@
   ("d" (dired "~/Documents/") "docs")
   ("w" (dired "~/Downloads/") "downloads")
   ("p" (dired "~/Pictures/") "pics")
+  ("s" (dired "~/Pictures/Screenshots/") "screenshots")
 
   ("1" (dired "~/llr_fpgas/bye_splits") "fpgas")
   ("2" (dired "~/klub/") "klub")
