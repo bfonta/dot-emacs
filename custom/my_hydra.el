@@ -11,8 +11,10 @@
   ("e" (dired "~/dot-emacs/custom/") "emacs")
   ("b" (dired "~/dot-emacs/bibliography/") "biblio")
   ("o" (dired "~/org/") "org")
-  ("d" (dired "~/Documents/") "Documents")
-  ("w" (dired "~/Downloads/") "Downloads")
+  ("d" (dired "~/Documents/") "docs")
+  ("w" (dired "~/Downloads/") "downloads")
+  ("p" (dired "~/Pictures/") "pics")
+
   ("1" (dired "~/llr_fpgas/bye_splits") "fpgas")
   ("2" (dired "~/klub/") "klub")
   ("3" (dired "~/an/") "an")
