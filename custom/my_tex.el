@@ -93,5 +93,32 @@
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 
+
+(defalias 'my/tex-newline
+   (kmacro "% <return>"))
+
+(defun my/LaTeX-insert-item ()
+  "Insert a new item in an environment.
+You may use `LaTeX-item-list' to change the routines used to insert 
+the item."
+  (interactive "*")
+  (let ((environment (LaTeX-current-environment)))
+    (when (and (TeX-active-mark)
+			   (> (point) (mark)))
+      (exchange-point-and-mark))
+    (unless (bolp) (LaTeX-newline))
+
+	(cond
+	 ((string-equal environment "document")
+	  (my/tex-newline))
+	 (t
+      (if (assoc environment LaTeX-item-list)
+		  (funcall (cdr (assoc environment LaTeX-item-list)))
+		(TeX-insert-macro "item")))
+     (indent-according-to-mode))))
+(advice-add 'LaTeX-insert-item :override #'my/LaTeX-insert-item)
+
 (provide 'my_tex)
 ;;; my_gitlink ends here
+
+
