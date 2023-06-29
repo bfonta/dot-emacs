@@ -18,6 +18,8 @@
 				   ("^.*magit.*$" :regexp t :size 1. :same t)
 				   ("^.*Completions.*$" :regexp t :size 0.25 :align 'below :select nil)
 				   ("^.*Python.*$" :regexp t :size 0.5 :align 'below :select nil)
+				   ("^.*CrossRef.*$" :regexp t :size 0.5 :align 'below :select nil)
+				   ("^.*arXiv.*$" :regexp t :size 0.5 :align 'below :select nil)
 		   ))
   (shackle-default-rule :regexp nil :size 0.3 :align 'below :select t)
   (shackle-mode 1)
