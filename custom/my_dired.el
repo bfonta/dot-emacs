@@ -18,6 +18,7 @@
   (define-key dired-mode-map (kbd "q") 'dired-subtree-toggle)
   (setq dired-deletion-confirmer #'y-or-n-p ;; ls program name
 		dired-listing-switches "-ltrhgo"
+		large-file-warning-threshold 500000000 ;; about 500 MB
 		)
   (add-hook 'dired-mode-hook
 			(lambda ()
