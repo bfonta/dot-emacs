@@ -10,6 +10,7 @@
   :init
   (require 'dired-x)
   :config
+
   (global-set-key (kbd "C-x f") 'dired-jump)
   (define-key dired-mode-map [?%?h] 'my/dired-show-only)
   (define-key dired-mode-map [?%?s] 'my/dired-swap-omit)
@@ -125,6 +126,22 @@
   (dired-do-copy-regexp "\\(.*\\)\\.\\(.*\\)"
 						(concat "\\1" suffix ".\\2"))
   )
+
+(defun my/dired-open-root-cern-file ()
+  (interactive)
+  (setq dfn (dired-get-filename))
+
+  (if (get-buffer "*shell_ROOT*")
+	  (shell (concat "*shell_ROOT_" (read-string "New shell for ROOT CERN prompt: shell_ROOT_") "*"))
+	(shell "*shell_ROOT*"))
+
+  (insert (concat "root " dfn))
+  (comint-send-input)
+
+  (insert "new TBrowser")
+  (comint-send-input)
+  )
+(define-key dired-mode-map (kbd "b") #'my/dired-open-root-cern-file)
 
 (provide 'my_dired)
 ;;; my_dired ends here
