@@ -8,6 +8,7 @@
   :config
   ;; change font color of firt member in each row
   ;; other colors: 'font-lock-face '(:foreground "red")
+  (setq csv-align-mode t)
   (add-hook 'csv-mode-hook
 			(lambda ()
               (font-lock-add-keywords nil '(("^\\([^,]*\\)," 1 'font-lock-function-name-face)))))
