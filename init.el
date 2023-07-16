@@ -53,6 +53,7 @@
 (load-library "my_expandregion")
 (load-library "my_org")
 (load-library "my_vundo")
+(load-library "my_grep")
 (when window-system 
   (load-library "my_theme")
   (load-library "my_startup")

@@ -1,8 +1,9 @@
 ;;; cust_grep --- Summary
-;;; Code:
-;;; Commentary:
+;;; Code: https://www.emacswiki.org/emacs/grep-a-lot.el
+;;; Commentary: Allow multiple grep buffers
 
-(push (cons "cu" "*.cc *.h *.cu *.cuh") grep-files-aliases)
+(require 'grep-a-lot)
+(grep-a-lot-setup-keys)
 
 (provide 'cust_grep)
 ;;; cust_grep ends here
