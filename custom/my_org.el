@@ -438,6 +438,7 @@
               nil nil t
               '(:ascii-verbatim-format "%s" :ascii-paragraph-spacing auto :ascii-headline-spacing nil :preserve-breaks t))
        ))))
+(define-key org-mode-map (kbd "C-c C-c") 'my/org-copy-code)
 
 (defun my/org-copy-link (&optional arg)
   "Extract URL from org-mode link and add it to kill ring."
