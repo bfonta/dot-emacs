@@ -23,6 +23,7 @@
   ("5" (dired "~/llr_reco_hadro/") "reco hadro")
   ("6" (dired "~/gridpacks/") "gridpacks")
   ("7" (dired "~/llr_met/") "met")
+  ("8" (dired "~/lxplus_mc/") "mc")
   )
 
 (global-set-key (kbd "C-x d") 'hydra-dired/body)
