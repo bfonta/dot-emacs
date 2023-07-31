@@ -14,5 +14,14 @@
               (font-lock-add-keywords nil '(("^\\([^,]*\\)," 1 'font-lock-function-name-face)))))
   )
 
+(defun my/modify-csv-syntax-table ()
+  (modify-syntax-entry ?_ "w")
+  (modify-syntax-entry ?- "w")
+  (modify-syntax-entry ?: "w")
+  (modify-syntax-entry ?/ "w")
+  (modify-syntax-entry ?. "w")
+  )
+(add-hook 'csv-mode-hook 'my/modify-csv-syntax-table)
+
 (provide 'cust_csv)
 ;;; cust_csv ends here
