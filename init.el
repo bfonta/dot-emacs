@@ -70,6 +70,7 @@
   (load-library "my_magit")
   (load-library "my_lisp")
   (load-library "my_diff")
+  (load-library "my_smerge")
   (load-library "my_compilation")
   (load-library "my_modeline")
   (load-library "my_pdf")
