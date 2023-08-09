@@ -24,6 +24,7 @@
   ("6" (dired "~/gridpacks/") "gridpacks")
   ("7" (dired "~/llr_met/") "met")
   ("8" (dired "~/lxplus_mc/") "mc")
+  ("9" (dired "~/llr_finite/") "finite")
   )
 
 (global-set-key (kbd "C-x d") 'hydra-dired/body)

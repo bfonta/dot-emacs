@@ -85,7 +85,10 @@
   (defun my-org-config/set-base-font ()
     "Sets a fixed width (monospace) font in current buffer"
 	(interactive)
-	(setq buffer-face-mode-face '(:family "Sans Serif" :width ultracondensed))
+    (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
+    (set-face-attribute 'default t :font "DejaVu Sans Mono-10")
+	;;; not fixed-width
+	;;(setq buffer-face-mode-face '(:family "Sans Serif" :width ultracondensed)) 
 	(buffer-face-mode))
   (add-hook 'org-mode-hook 'my-org-config/set-base-font)
   
@@ -154,7 +157,8 @@
 	;; fonts and colors (inspired on zenburn theme)
 	(let*
 		((sans-font
-		  (cond ((x-family-fonts "Sans Serif") '(:family "Sans Serif"))
+		  ;; (cond ((x-family-fonts "Sans Serif mono") '(:family "Sans Serif"))
+		  (cond ((x-family-fonts "DejaVu Sans Mono-10") '(:family "Monospace"))
 				(nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
 		 (base-font-color     (face-foreground 'default nil 'default))
 		 (headline           `(:inherit default :weight regular :foreground ,base-font-color)))
@@ -226,7 +230,7 @@
 	  )
 	)
   (add-hook 'org-mode-hook 'my/style-org)
-
+  
   ;; Babel
   ;; Syntax highlightning in code blocks
   (setq org-src-fontify-natively t)

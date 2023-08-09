@@ -53,6 +53,8 @@
 (load-library "my_expandregion")
 (load-library "my_org")
 (load-library "my_vundo")
+;; loaded file directly due to the MELPA `csv-mode-` bug
+;; (load-library "my_csv")
 
 (add-to-list 'load-path "~/dot-emacs/grep-a-lot/")
 (require 'grep-a-lot)
@@ -98,6 +100,11 @@
 ;;; ---------------------------
 ;;; Load non-MELPA packages
 ;;; ---------------------------
+(when window-system 
+  (add-to-list 'load-path "~/dot-emacs/csv-mode/")
+  (load-library "csv-mode")
+  )
+
 (when window-system 
   (add-to-list 'load-path "~/dot-emacs/markerpen/")
   (load-library "markerpen")
