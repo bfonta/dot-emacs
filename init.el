@@ -33,6 +33,24 @@
 (setenv "LSP_USE_PLISTS" "true")
 
 ;;; ---------------------------
+;;; Load non-MELPA packages
+;;; ---------------------------
+(when window-system 
+  (add-to-list 'load-path "~/dot-emacs/markerpen/")
+  (load-library "markerpen")
+  )
+
+(when window-system 
+  (add-to-list 'load-path "~/dot-emacs/transpose_frame/")
+  (require 'transpose-frame)
+  )
+
+(when window-system 
+  (add-to-list 'load-path "~/dot-emacs/zoom/") ;; using deprecated 'cl' package
+  (require 'zoom-frm)
+  )
+
+;;; ---------------------------
 ;;; Load custom content
 ;;; ---------------------------
 (add-to-list 'load-path "~/dot-emacs/custom/")
@@ -53,8 +71,6 @@
 (load-library "my_expandregion")
 (load-library "my_org")
 (load-library "my_vundo")
-;; loaded file directly due to the MELPA `csv-mode-` bug
-;; (load-library "my_csv")
 
 (add-to-list 'load-path "~/dot-emacs/grep-a-lot/")
 (require 'grep-a-lot)
@@ -76,6 +92,7 @@
   (load-library "my_compilation")
   (load-library "my_modeline")
   (load-library "my_pdf")
+  (load-library "my_csv")
   (load-library "my_gitlink")
   (load-library "my_windows")
   (load-library "my_pulsar")
@@ -96,29 +113,6 @@
   (load-library "my_commands")
   )
 (load-library "my_keybinds") ;; should be the last one to be loaded
-
-;;; ---------------------------
-;;; Load non-MELPA packages
-;;; ---------------------------
-(when window-system 
-  (add-to-list 'load-path "~/dot-emacs/csv-mode/")
-  (load-library "csv-mode")
-  )
-
-(when window-system 
-  (add-to-list 'load-path "~/dot-emacs/markerpen/")
-  (load-library "markerpen")
-  )
-
-(when window-system 
-  (add-to-list 'load-path "~/dot-emacs/transpose_frame/")
-  (require 'transpose-frame)
-  )
-
-(when window-system 
-  (add-to-list 'load-path "~/dot-emacs/zoom/") ;; using deprecated 'cl' package
-  (require 'zoom-frm)
-  )
 
 ;; The default is 800 kilobytes.  Measured in bytes.
 (setq gc-cons-threshold (* 50 1000 1000))
