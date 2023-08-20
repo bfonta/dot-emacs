@@ -143,5 +143,7 @@
   )
 (define-key dired-mode-map (kbd "b") #'my/dired-open-root-cern-file)
 
+(setq image-dired-external-viewer "/usr/bin/okular")
+
 (provide 'my_dired)
 ;;; my_dired ends here
