@@ -9,6 +9,7 @@
     (exec-path-from-shell-initialize))
   )
 
+(setq native-comp-async-report-warnings-errors nil) ;; prevents annoying pop-up warning buffer to appear
 ;;; ---------------------------
 ;;; Install `quelpa`
 ;;; https://github.com/quelpa/quelpa
@@ -85,7 +86,6 @@
   (load-library "my_open")
   (load-library "my_company")
   (load-library "my_cpp")
-  (load-library "my_magit")
   (load-library "my_lisp")
   (load-library "my_diff")
   (load-library "my_smerge")
@@ -103,8 +103,8 @@
   (load-library "my_pastebuffer")
   (load-library "my_cursor")
   (load-library "my_emojis")
-  (load-library "my_magit")
   (load-library "my_shackle")
+  ;(load-library "my_magit")
   ;(load-library "my_copilot")
   ;(load-library "my_multiplecursors")
   (load-library "my_hydra")
@@ -114,17 +114,17 @@
   )
 (load-library "my_keybinds") ;; should be the last one to be loaded
 
-;; The default is 800 kilobytes.  Measured in bytes.
-(setq gc-cons-threshold (* 50 1000 1000))
-;; Silence compiler warnings as they can be pretty disruptive
-(setq native-comp-async-report-warnings-errors nil)
-;; Set the right directory to store the native comp cache
-(add-to-list 'native-comp-eln-load-path (expand-file-name "eln-cache/" user-emacs-directory))
+;; ;; The default is 800 kilobytes.  Measured in bytes.
+;; (setq gc-cons-threshold (* 50 1000 1000))
+;; ;; Silence compiler warnings as they can be pretty disruptive
+;; (setq native-comp-async-report-warnings-errors nil)
+;; ;; Set the right directory to store the native comp cache
+;; (add-to-list 'native-comp-eln-load-path (expand-file-name "eln-cache/" user-emacs-directory))
 
-(defun my/load-emacs ()
-  """Quick emacs configuration loading."""
-  (interactive)
-  (load user-init-file)
-  )
+;; (defun my/load-emacs ()
+;;   """Quick emacs configuration loading."""
+;;   (interactive)
+;;   (load user-init-file)
+;;   )
 
 ;;; init.el ends here
