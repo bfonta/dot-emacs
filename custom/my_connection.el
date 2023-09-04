@@ -149,9 +149,9 @@ Starts by disconnecting some sshfs connection on the same folder."
 	(shell buffer)
 
 	(cond ((string-equal server "Triggers")
-		   (insert (concat (my/sshfs-unmount-string "llr_triggers")
+		   (insert (concat (my/sshfs-unmount-string "llr_trigger")
 						   "; "
-						   (my/sshfs-mount-string "llr_triggers" "llr"
+						   (my/sshfs-mount-string "llr_trigger" "llr"
 												  "/home/llr/cms/alves/CMSSW_12_5_0_pre1/src/METTriggerStudies; "))))
 		  
 		  ((string-equal server "FPGAs")
