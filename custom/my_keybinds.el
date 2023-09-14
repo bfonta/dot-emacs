@@ -6,11 +6,6 @@
 (global-set-key (kbd "C-M-r") 'my/batch-replace-strings)
 (global-set-key (kbd "M-q") 'align-regexp)
 (global-set-key (kbd "M-c") 'goto-line)
-
-(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "S-C-<down>") 'shrink-window)
-(global-set-key (kbd "S-C-<up>") 'enlarge-window)
 (global-set-key (kbd "C-x x") 'exchange-point-and-mark)
 ;;(global-set-key "\C-x\C-b" 'buffer-menu) ;;overrides Buffer List ;;replaced by helm-mini
 
