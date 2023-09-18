@@ -148,13 +148,7 @@ Starts by disconnecting some sshfs connection on the same folder."
 	  (other-window 1))
 	(shell buffer)
 
-	(cond ((string-equal server "Triggers")
-		   (insert (concat (my/sshfs-unmount-string "llr_trigger")
-						   "; "
-						   (my/sshfs-mount-string "llr_trigger" "llr"
-												  "/home/llr/cms/alves/CMSSW_12_5_0_pre1/src/METTriggerStudies; "))))
-		  
-		  ((string-equal server "FPGAs")
+	(cond ((string-equal server "FPGAs")
 		   (insert (concat (my/sshfs-unmount-string "llr_fpgas")
 						   "; "
 						   (my/sshfs-mount-string "llr_fpgas" "llr"
