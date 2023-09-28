@@ -23,6 +23,7 @@
   ("6" (dired "~/llr_met/")             "met")
   ("7" (dired "~/lxplus_mc/")           "mc")
   ("8" (dired "~/llr_finite/")          "finite")
+  ("9" (dired "~/lxplus_b2g/")          "B2G")
   )
 
 (global-set-key (kbd "C-x d") 'hydra-dired/body)
