@@ -23,7 +23,8 @@
   ("6" (dired "~/llr_met/")             "met")
   ("7" (dired "~/llr_clue3d/")          "clue3d")
   ("8" (dired "~/llr_finite/")          "finite")
-  ("9" (dired "~/lxplus_b2g/")          "B2G")
+  ("9" (dired "~/lxplus_klub/")         "lx_klub")
+  ;; ("9" (dired "~/lxplus_b2g/")          "B2G")
   )
 
 (global-set-key (kbd "C-x d") 'hydra-dired/body)
