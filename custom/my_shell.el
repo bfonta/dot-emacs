@@ -82,5 +82,16 @@
   (pop-to-buffer (get-buffer-create (generate-new-buffer-name (concat "term_" name))))
   (vterm (current-buffer)))
 
+(defun my/phonebook (user)
+  "Access CERN phonebook info for one user."
+  (interactive "MCERN User: ")
+  (let ((default-directory (expand-file-name "/ssh:bfontana@lxplus:~/")))
+	(with-connection-local-variables
+	 (shell-command-to-string (concat "phonebook " user " --all"))
+      ))
+  (message "Done. Check tramp buffer.")
+  )
+
+
 (provide 'my_shell)
 ;;; my_shell ends here
