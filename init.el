@@ -110,6 +110,7 @@
   (load-library "my_hydra")
   (load-library "my_biblio")
   (load-library "my_colors")
+  ;;(load-library "my_mail")
   (load-library "my_commands")
   )
 (load-library "my_keybinds") ;; should be the last one to be loaded
