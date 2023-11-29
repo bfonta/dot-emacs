@@ -7,6 +7,8 @@
 (global-set-key (kbd "M-q") 'align-regexp)
 (global-set-key (kbd "M-c") 'goto-line)
 (global-set-key (kbd "C-x x") 'exchange-point-and-mark)
+(global-set-key (kbd "C-f") 'revert-buffer)
+(global-set-key (kbd "C-S-f") 'revert-buffers)
 ;;(global-set-key "\C-x\C-b" 'buffer-menu) ;;overrides Buffer List ;;replaced by helm-mini
 
 (global-set-key (kbd "M-k") '(lambda () (interactive) (kill-line 0)) ) ;C-u kills to the left
