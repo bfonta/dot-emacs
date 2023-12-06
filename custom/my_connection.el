@@ -242,6 +242,9 @@ Starts by disconnecting some sshfs connection on the same folder."
 ; when t emacs does not read the shell history, rather the tramp history
 ; https://www.gnu.org/software/emacs/manual/html_node/emacs/Shell-Ring.html
 (setq tramp-histfile-override nil)
+(setq tramp-backup-directory-alist nil)
+(setq tramp-auto-save-directory (expand-file-name "~/.emacs.d/tramp-autosaves/"))
+(setq tramp-verbose 1) ;; Change to 0 to completely disable echoing
 
 (provide 'my_connection)
 ;;; my_connection ends here
