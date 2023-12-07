@@ -71,7 +71,6 @@
 (load-library "my_snippets")
 (load-library "my_expandregion")
 (load-library "my_org")
-(load-library "my_vundo")
 
 (add-to-list 'load-path "~/dot-emacs/grep-a-lot/")
 (require 'grep-a-lot)
@@ -112,6 +111,8 @@
   (load-library "my_colors")
   ;;(load-library "my_mail")
   (load-library "my_commands")
+  (load-library "my_vundo")
+  (load-library "my_scratch")
   )
 (load-library "my_keybinds") ;; should be the last one to be loaded
 
