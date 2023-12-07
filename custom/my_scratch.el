@@ -13,5 +13,8 @@
 ;;           (erase-buffer)
 ;;           (insert-file-contents filename))))))
 
+;; make the scratch follow org syntax
+(setq initial-major-mode 'org-mode)
+
 (provide 'my_scratch)
 ;;; my_scratch ends here
