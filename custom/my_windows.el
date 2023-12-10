@@ -8,6 +8,7 @@
 (fringe-mode '(2 . 2)) ;; left/right widths
 (set-face-attribute 'fringe nil :background nil)
 
+;;;###autoload
 (defun my/shrink-window-third ()
   (interactive)
   (shrink-window (round (* (window-width) .333)) t)

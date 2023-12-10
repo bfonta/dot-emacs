@@ -22,6 +22,7 @@
 ;;               (font-lock-add-keywords nil '(("^\\([^,]*\\)," 1 'font-lock-function-name-face)))))
 ;;   )
 
+;;;###autoload
 (defun my/modify-csv-syntax-table ()
   (modify-syntax-entry ?_ "w")
   (modify-syntax-entry ?- "w")

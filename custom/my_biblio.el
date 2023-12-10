@@ -7,8 +7,6 @@
   :config
   (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c ]") 'org-ref-insert-cite-link)))
   (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c [") 'helm-bibtex-with-local-bibliography)))
-  ;;(setq org-ref-default-citation-link "autocite")
-  ;;(org-ref-define-citation-link "citez" ?z)
   )
 
 (use-package helm-bibtex

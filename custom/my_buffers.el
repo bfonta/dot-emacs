@@ -2,6 +2,7 @@
 ;;; Code:
 ;;; Commentary:
 
+;;;###autoload
 (defun compilation-find-file (marker filename directory &rest formats)
   "Overrides same name function from compile.el to fix grep buffer display."
   (or formats (setq formats '("%s")))
@@ -79,6 +80,7 @@
         (overlay-put ov 'intangible nil)))
     buffer))
 
+;;;###autoload
 (defun revert-buffers ()
   "Refresh all open file buffers without confirmation.
 Buffers in modified (not yet saved) state in Emacs will not be reverted.
@@ -102,6 +104,7 @@ will be killed."
             (message "Killed non-existing/unreadable file buffer: %s" filename))))))
   (message "Finished reverting buffers containing unmodified files."))
 
+;;;###autoload
 (defun dts-switch-between-header-and-source ()
   "Switch between a c/c++ header (.h) and its corresponding source (.c/.cc)."
   (interactive)
@@ -139,6 +142,7 @@ will be killed."
    )
   )
 
+;;;###autoload
 (defun switch-to-minibuffer-window ()
   "switch to minibuffer window (if active)"
   (interactive)
@@ -153,11 +157,13 @@ will be killed."
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
 
+;;;###autoload
 (defun my/buffer-name ()   
     "Copy the name of the current buffer to the kill ring."  
     (interactive)  
     (kill-new (file-name-nondirectory (buffer-file-name (window-buffer (minibuffer-selected-window))))))
 
+;;;###autoload
 (defun my/duplicate-buffer ()
   "Open the file that the current buffer is visiting in a new buffer."
   (interactive)

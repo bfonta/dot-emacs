@@ -2,8 +2,6 @@
 ;;; Code:
 ;;; Commentary: 
 
-(setq initial-scratch-message "")
-
 ;; The following replaces the above message by the contents of the 'scratch.txt' file
 ;; (let ((filename (concat user-emacs-directory "scratch.txt")))
 ;;   (when (file-exists-p filename)
@@ -12,6 +10,7 @@
 ;;         (with-current-buffer scratch-buf
 ;;           (erase-buffer)
 ;;           (insert-file-contents filename))))))
+(setq initial-scratch-message "")
 
 ;; make the scratch follow org syntax
 (setq initial-major-mode 'org-mode)

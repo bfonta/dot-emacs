@@ -2,14 +2,16 @@
 ;;; Code:
 ;;; Commentary:
 
-; https://stackoverflow.com/questions/8682079/batch-replace-a-bunch-of-strings-in-a-text-file-with-emacs
+
+;;;###autoload
 (defun my/batch-replace-strings (replacement-alist)
-  "Prompt user for pairs of strings to search/replace, then do so in the current buffer"
+  "Prompt user for pairs of strings to search/replace, then do so in the current buffer (https://stackoverflow.com/questions/8682079/batch-replace-a-bunch-of-strings-in-a-text-file-with-emacs)"
   (interactive (list (batch-replace-strings-prompt)))
   (dolist (pair replacement-alist)
     (save-excursion
       (replace-regexp (car pair) (cdr pair)))))
 
+;;;###autoload
 (defun batch-replace-strings-prompt ()
   "prompt for string pairs and return as an association list"
   (let (from-string

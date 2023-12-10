@@ -50,6 +50,7 @@
   :defer t
   )
 
+;;;###autoload
 (defun my-show-file-name ()
   "Show the full path file name in the minibuffer and clipboard"
   (interactive)

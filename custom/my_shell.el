@@ -56,6 +56,7 @@
   (add-hook 'shell-mode-hook 'do-not-ask-just-kill-buffer)
   )
 
+;;;###autoload
 (defun my/debian-update ()
   "Runs apt update and upgrade commands."
   (interactive)
@@ -70,18 +71,21 @@
 	(comint-send-input)
 	))
 
+;;;###autoload
 (defun my/spawn-shell (name)
   "Create new shell buffer"
   (interactive "MName of new shell buffer: shell_")
   (pop-to-buffer (get-buffer-create (generate-new-buffer-name (concat "shell_" name))))
   (shell (current-buffer)))
 
+;;;###autoload
 (defun my/spawn-term (name)
   "Create new term buffer"
   (interactive "MName of new shell buffer: term_")
   (pop-to-buffer (get-buffer-create (generate-new-buffer-name (concat "term_" name))))
   (vterm (current-buffer)))
 
+;;;###autoload
 (defun my/phonebook (user)
   "Access CERN phonebook info for one user."
   (interactive "MCERN User: ")

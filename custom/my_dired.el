@@ -28,6 +28,7 @@
 			  ))
   )
 
+;;;###autoload
 (defun my/dired-swap-omit ()
   "Show/hide dot-files"
   (interactive)
@@ -42,6 +43,7 @@
 			 (set (make-local-variable 'dired-dotfiles-show-p) t)))))
 
 
+;;;###autoload
 ;; (defun my/swap-omit-files ()
 ;;   ""
 ;;   (interactive)
@@ -83,10 +85,9 @@
     (dired-rainbow-define vc "#0074d9" ("git" "gitignore" "gitattributes" "gitmodules"))
     (dired-rainbow-define-chmod executable-unix "#38c172" "-.*x.*"))
 
-;;; Sort directories first
-;;; https://www.emacswiki.org/emacs/DiredSortDirectoriesFirst
+;;;###autoload
 (defun mydired-sort ()
-  "Sort dired listings with directories first."
+  "Sort dired listings with directories first (https://www.emacswiki.org/emacs/DiredSortDirectoriesFirst)."
   (save-excursion
     (let (buffer-read-only)
       (forward-line 2) ;; beyond dir. header 
@@ -97,10 +98,9 @@
   "Sort dired listings with directories first before adding marks."
   (mydired-sort))
 
-;; https://emacs.stackexchange.com/questions/16891/changing-confirmation-style-when-deleting-files-in-dired
-;; Type `y` or `n` without requiring additional `Enter` key press
-;; Note that recursive directory deletion hard-codes a yes-or-no-p because it's a more dangerous action.
+;;;###autoload
 (defun my/dired-show-only (regexp)
+  "Type `y` or `n` without requiring additional `Enter` key press. Note that recursive directory deletion hard-codes a yes-or-no-p because it's a more dangerous action."
   (interactive "sFiles to show (regexp): ") 
   (dired-mark-files-regexp regexp) ;; dired %m command
   (dired-toggle-marks) ;; dired *t command
@@ -120,6 +120,7 @@
   :defer t
   :commands (dired-sidebar-toggle-sidebar))
 
+;;;###autoload
 (defun my/dired-duplicate-this-file (suffix)
   "Duplicate file on this line."
   (interactive (list (read-string "Suffix: " "_COPY")))
@@ -127,6 +128,7 @@
 						(concat "\\1" suffix ".\\2"))
   )
 
+;;;###autoload
 (defun my/dired-open-root-cern-file ()
   (interactive)
   (setq dfn (dired-get-filename))

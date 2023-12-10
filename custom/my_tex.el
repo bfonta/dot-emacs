@@ -2,9 +2,12 @@
 ;;; Code:
 ;;; Commentary:
 
+;;;###autoload
 (defun reduce-this-window-width ()
   "Expand current window to use half of the other window's lines."
   (shrink-window-horizontally (/ (window-width (next-window)) 5)))
+
+;;;###autoload
 (defun my-TeX-command-run-all (arg)
   (interactive "P")
   (TeX-command-run-all arg)
@@ -97,6 +100,7 @@
 (defalias 'my/tex-newline
    (kmacro "% <return>"))
 
+;;;###autoload
 (defun my/LaTeX-insert-item ()
   "Insert a new item in an environment.
 You may use `LaTeX-item-list' to change the routines used to insert 

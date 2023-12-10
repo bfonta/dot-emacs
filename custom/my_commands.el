@@ -2,7 +2,7 @@
 ;;; Code:
 ;;; Commentary:
 
-;;TODO: Find a way to avoid duplication of strings
+;;;###autoload
 (defun my/shell-commands (name)
   "Stores custom commands."
   (interactive

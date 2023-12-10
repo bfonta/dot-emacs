@@ -15,9 +15,9 @@
   )
 (global-set-key (kbd "M-s s") 'swiper-helm)
 
-;; Kill text when doing incremental search
+;;;###autoload
 (defun my/isearch-kill-result ()
-  "https://stackoverflow.com/questions/11943285/how-can-i-most-quickly-edit-the-text-highlighted-by-incremental-search"
+  "Kill text when doing incremental search (https://stackoverflow.com/questions/11943285/how-can-i-most-quickly-edit-the-text-highlighted-by-incremental-search)"
   (interactive)
   (if (use-region-p)
       (call-interactively 'kill-region)

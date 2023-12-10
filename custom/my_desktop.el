@@ -33,6 +33,7 @@
 	 (defvar choose-directory-desktops-directory "~/dot-emacs/desktops/"
 	   "Initial default directory.")
 
+	 ;;;###autoload
 	 (defun desktop-change-dir-my-copy (dirname)
 	   "Copy of desktop-change-dir function in desktop.el."
 	   (interactive "DChange to directory: ")
@@ -41,6 +42,7 @@
 	   (desktop-clear)
 	   (desktop-read dirname))
 
+	 ;;;###autoload
 	 (defun desktop-change-dir ()
 	   "Modify the default directory appearing with the D control letter."
 	   (interactive)
@@ -59,6 +61,7 @@
 	 (defvar choose-directory-desktops-directorys "~/dot-emacs/desktops/"
 	   "Initial default directory.")
 
+	 ;;;###autoload
 	 (defun desktop-save-my-copy (dirname &optional release only-if-changed version)
 	   "Copy of desktop-save function in desktop.el."
 	   (interactive (list
@@ -183,6 +186,7 @@
 												(desktop-full-file-name)))))))))))
 	 
 
+     	 ;;;###autoload
 	 	 (defun desktop-save ()
 		   "Modify the default directory appearing with the D control letter."
 		   (interactive)

@@ -75,15 +75,16 @@
   ;; Changes to task states might get logged, especially for recurring routines. If so, log them in a drawer, not the content of the note. 
   (setq org-log-state-notes-into-drawer t)
 
-  ;;Once Org mode loaded, turn on olivetti, hide tilde fringes and enable visual line mode.
+  ;;;###autoload
   (defun my-org-config/after-org-mode-load ()
+	"Once Org mode loaded, turn on olivetti, hide tilde fringes and enable visual line mode."
 	(visual-line-mode)
 	(vi-tilde-fringe-mode -1))
   (add-hook 'org-mode-hook 'my-org-config/after-org-mode-load)
 
-  ;; Use monospaced font faces in current buffer
+  ;;;###autoload
   (defun my-org-config/set-base-font ()
-    "Sets a fixed width (monospace) font in current buffer"
+    "Sets a fixed width (monospace) font in current buffer."
 	(interactive)
     (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
     (set-face-attribute 'default t :font "DejaVu Sans Mono-10")
@@ -145,9 +146,9 @@
   ;; Show tags directly after headings (not on the right), which plays nicer with line-wrapping.
   (setq org-tags-column 0)
 
-  ;; Beautify
+  ;;;###autoload
   (defun my/style-org ()
-	;; I have removed indentation to make the file look cleaner
+	"Beautify. I have removed indentation to make the file look cleaner."
 	(org-indent-mode 1)
 	
 	(setq line-spacing 0.1
@@ -430,9 +431,9 @@
   (add-hook 'org-mode-hook #'turn-on-org-cdlatex)
   )
 
-;; https://emacs.stackexchange.com/questions/66218/possible-to-copy-paste-without-markup-in-org-mode
+;;;###autoload
 (defun my/org-copy-code ()
-  "Export code silently to kill-ring, removing org formatting."
+  "Export code silently to kill-ring, removing org formatting (https://emacs.stackexchange.com/questions/66218/possible-to-copy-paste-without-markup-in-org-mode)."
   (interactive)
   (require 'ox-ascii)
   (cl-letf (((symbol-function 'org-element-normalize-string) #'identity))
@@ -444,6 +445,7 @@
        ))))
 (define-key org-mode-map (kbd "C-c C-c") 'my/org-copy-code)
 
+;;;###autoload
 (defun my/org-copy-link (&optional arg)
   "Extract URL from org-mode link and add it to kill ring."
   (interactive "P")

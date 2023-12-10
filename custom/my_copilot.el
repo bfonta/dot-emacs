@@ -11,6 +11,7 @@
   (add-hook 'prog-mode-hook 'copilot-mode)  
   )
 
+;;;###autoload
 (defun my/no-copilot-mode ()
   "Helper for `my/no-copilot-modes'."
   (copilot-mode -1))

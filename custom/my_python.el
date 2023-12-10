@@ -7,6 +7,7 @@
 		 ("C-<" . python-indent-shift-left))
   )
 
+;;;###autoload
 (defun my/merge-imenu ()
   (interactive)
   (let ((mode-imenu (imenu-default-create-index-function))
@@ -26,6 +27,7 @@
         python-shell-interpreter-args "-i --simple-prompt --InteractiveShell.display_page=True"
 		python-shell-completion-native-enable nil))
 
+;;;###autoload
 (defun my-python-hooks()
   (interactive)
   (setq tab-width 4
@@ -49,6 +51,7 @@
 
 (setq-default tab-width 4)
 
+;;;###autoload
 (defun add-py-debug ()  
       "add debug code and move line down"  
     (interactive)  
@@ -56,6 +59,7 @@
     (insert "breakpoint();\n"))  
 (local-set-key (kbd "<f8>") 'add-py-debug)
 
+;;;###autoload
 (defun remove-py-debug ()  
   "remove py debug code, if found"  
   (interactive)  

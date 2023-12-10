@@ -6,9 +6,9 @@
 	  custom-file (expand-file-name "custom.el" user-emacs-directory)
 	  )
 
-;; Font size adjustment
+;;;###autoload
 (defun my/adjust-font-size-start-up ()
-  "Inspired by https://emacs.stackexchange.com/a/44930/17066"
+  "Font size adjustment. Inspired by https://emacs.stackexchange.com/a/44930/17066"
   (let ((width-px (nth 3 (nth 1 (frame-monitor-attributes)))))
 	(when (eq width-px 1024) ;; Home
 	  (set-face-attribute 'default nil :height 110))

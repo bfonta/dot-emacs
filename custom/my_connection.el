@@ -7,6 +7,7 @@
 
 (setq vc-follow-symlinks t)
 
+;;;###autoload
 (defun my/sshfs-mount-string (locfolder machine rempath)
   "Runs sshfs for LLR machines, via local sshloc function."
   (concat "sshloc -l " locfolder
@@ -14,15 +15,15 @@
 		  " -d " rempath)
   )
 
+;;;###autoload
 (defun my/sshfs-unmount-string (locfolder)
   "Runs sshfs for LLR machines, via local sshloc function."
   (concat "fusermount -q -u " locfolder "/")
   )
 
-; /scp: ssh for small files, scp for large files
-; /ssh: always ssh
+;;;###autoload
 (defun my/connect (server)
-  "Connects to a server."
+  "Connects to a server. /scp: ssh for small files, scp for large files /ssh: always ssh."
   (interactive
    (let ((completion-ignore-case t))
      (list (completing-read "Server: " '("Triggers" "FPGAs" "HGC-TPG" "RecoHadro" "KLUB Triggers" "KLUB Production" "BigNtuples" "Gridpacks" "P5") nil t))))
@@ -135,6 +136,7 @@
   (comint-send-input)
   )
 
+;;;###autoload
 (defun my/sshfs (server)
   "Runs sshfs for some server machine.
 Starts by disconnecting some sshfs connection on the same folder."
@@ -200,7 +202,7 @@ Starts by disconnecting some sshfs connection on the same folder."
 	)
   )
 
-
+;;;###autoload
 (defun my/ssh_port ()
   "Runs sshfs for some server machine.
 Starts by disconnecting some sshfs connection on the same folder."

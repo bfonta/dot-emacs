@@ -2,18 +2,16 @@
 ;;; Code:
 ;;; Commentary:
 
-;; do not ask for confirmation when quitting
+;;;###autoload
 (defun disable-y-or-n-p (orig-fun &rest args)
+  "Do not ask for confirmation when quitting."
   (cl-letf (((symbol-function 'y-or-n-p) (lambda (prompt) t)))
     (apply orig-fun args)))
 (advice-add 'ediff-quit :around #'disable-y-or-n-p)
 
-;; Diff two regions
-;; Step 1: Select a region and `M-x diff-region-a'
-;; Step 2: Select another region and `M-x diff-region-b'
-;; Press "q" in evil-mode or "C-c C-c" to exit the diff output buffer
+;;;###autoload
 (defun diff-region-format-region-boundary (b e)
-  "Make sure lines are selected and B is less than E"
+  "Diff two regions. Step 1: Select a region and `M-x diff-region-a'. Step 2: Select another region and `M-x diff-region-b'. Press 'q' in evil-mode or 'C-c C-c' to exit the diff output buffer. Make sure lines are selected and B is less than E"
   (let (tmp rlt)
     ;; swap b e, make sure b < e
     (when (> b e)
@@ -38,11 +36,13 @@
     (setq rlt (list b e))
     rlt))
 
+;;;###autoload
 (defun diff-region-exit ()
   (interactive)
   (bury-buffer "*Diff-region-output*")
   (winner-undo))
 
+;;;###autoload
 (defun my/diff-region-a ()
   "Select a region to compare"
   (interactive)
@@ -57,6 +57,7 @@
       (append-to-buffer buf (car tmp) (cadr tmp))))
   (message "Now select other region to compare and run `diff-region-b`"))
 
+;;;###autoload
 (defun my/diff-region-b ()
   "Compare current region with region selected by `diff-region-tag-selected-as-a' "
   (interactive)
