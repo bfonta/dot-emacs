@@ -24,6 +24,7 @@
 			  (lambda() (load custom-file)) ;; load content added by customize
 			  ))
   (add-hook 'after-init-hook fn)
+  ;;(add-hook 'after-make-frame-functions 'fn)
   )
 
 (provide 'my_startup)
