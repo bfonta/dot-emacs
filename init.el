@@ -49,7 +49,7 @@
 ;;; Load custom content
 ;;; ---------------------------
 (add-to-list 'load-path "~/dot-emacs/custom/")
-(load-library "my_benchmarkinit")
+;;(load-library "my_benchmarkinit")
 (load-library "my_emacsclient")
 (load-library "my_cua")
 (load-library "my_whichfunc")
@@ -96,10 +96,10 @@
 (load-library "my_emojis")
 (load-library "my_shackle")
 (load-library "my_expandregion")
-										;(load-library "my_magit")
-										;(load-library "my_copilot")
-										;(load-library "my_multiplecursors")
-										;(load-library "my_mail")
+;(load-library "my_magit")
+;(load-library "my_copilot")
+;(load-library "my_multiplecursors")
+;(load-library "my_mail")
 (load-library "my_hydra")
 (load-library "my_biblio")			
 (load-library "my_colors")
