@@ -4,7 +4,8 @@
 
 (use-package wttrin
   :config
-  (setq wttrin-default-cities '("Paris"))
+  (setq wttrin-default-cities
+		'("Massy" "Paris" "Evora, Portugal" "Lisboa"))
   (defalias 'weather 'wttrin)
   )
 
