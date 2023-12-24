@@ -3,10 +3,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(auth-source-save-behavior nil)
  '(package-selected-packages
-   '(notmuch zoom zenburn-theme yasnippet-snippets yasnippet-classic-snippets yaml-mode xterm-color with-venv which-key webpaste vundo vterm-toggle vi-tilde-fringe use-package toc-org swiper-helm stripes smooth-scrolling slime-repl-ansi-color shackle restart-emacs realgud rainbow-delimiters quelpa pyvenv python-mode php-mode pdf-tools ov org-roam org-ref openwith nlinum multiple-cursors magit lsp-ui latex-math-preview julia-mode jedi irony impatient-mode imenu-list highlight-indentation hide-mode-line helm-swoop helm-slime helm-lsp helm-bibtex grep-a-lot go-complete gnuplot git-timemachine git-link git-auto-commit-mode git flycheck flx expand-region exec-path-from-shell ess emojify ein ebib dired-sidebar dired-rainbow dired-collapse dap-mode conda company-quickhelp company-jedi company-fuzzy company-c-headers company-box company-auctex cdlatex benchmark-init bash-completion all-the-icons ag))
- '(vline-style 'face))
+   '(wttrin org-roam zoom zenburn-theme yasnippet-snippets yasnippet-classic-snippets yaml-mode xterm-color with-venv which-key websocket webpaste vterm-toggle vi-tilde-fringe use-package toc-org swiper-helm stripes smooth-scrolling slime-repl-ansi-color shackle restart-emacs realgud rainbow-delimiters quelpa pyvenv python-mode polymode php-mode pdf-tools ov org-ref openwith notmuch nlinum multiple-cursors lsp-ui latex-math-preview jedi irony impatient-mode imenu-list highlight-indentation hide-mode-line helm-swoop helm-slime helm-lsp helm-bibtex grep-a-lot go-complete gnuplot git emojify dired-rainbow company-jedi company-c-headers company-auctex benchmark-init anaphora ag)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -31,7 +29,7 @@
  '(org-level-6 ((t (:inherit default :weight regular :foreground "#DCDCCC" :foreground "#5C4033"))))
  '(org-link ((t (:foreground "#93E0E3" :underline (:color foreground-color :style line)))))
  '(org-meta-line ((t (:foreground "#989890"))))
- '(org-property-value ((t (:background "#2B2B2B" :foreground "#FFFFEF"))) t)
+ '(org-property-value ((t (:background "#2B2B2B" :foreground "#FFFFEF"))))
  '(org-special-keyword ((t (:background "#303030" :foreground "#9FC59F"))))
  '(org-table ((t (:foreground "#9FC59F"))))
  '(org-tag ((t (:background "#303030" :foreground "#9FC59F"))))
