@@ -59,6 +59,7 @@
 (load-library "my_dired")
 (load-library "my_snippets")
 (load-library "my_weather")
+(load-library "my_disk")
 
 (add-to-list 'load-path "~/dot-emacs/grep-a-lot/")
 (require 'grep-a-lot)
