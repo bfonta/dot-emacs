@@ -45,6 +45,9 @@
 (add-to-list 'load-path "~/dot-emacs/zoom/") ;; using deprecated 'cl' package
 (require 'zoom-frm)
 
+(add-to-list 'load-path "~/dot-emacs/wttrin/")
+(load-library "wttrin")
+
 ;;; ---------------------------
 ;;; Load custom content
 ;;; ---------------------------
