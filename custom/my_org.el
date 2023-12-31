@@ -160,70 +160,72 @@
 		 (base-font-color     (face-foreground 'default nil 'default))
 		 (headline           `(:inherit default :weight regular :foreground ,base-font-color)))
 	  
-	  (custom-theme-set-faces 'user
-							  `(org-level-1
-								((t (,@headline ,@sans-font :foreground "#6C3333"))))
-							  `(org-level-2
-								((t (,@headline ,@sans-font :foreground "#7F9F7F"))))
-							  `(org-level-3
-								((t (,@headline ,@sans-font :foreground "#6a5acd"))))
-							  `(org-level-4
-								((t (,@headline ,@sans-font :foreground "#DEB887"))))
-							  `(org-level-5
-								((t (,@headline ,@sans-font :foreground "#BA55D3"))))
-							  `(org-level-6
-								((t (,@headline ,@sans-font :foreground "#5C4033"))))
-							  
-							  `(org-ellipsis
-								((t (,@headline ,@sans-font :foreground "#989890"))))
-							  `(org-meta-line
-								((t (,@sans-font :foreground "#989890"))))
-							  `(org-drawer
-								((t (,@sans-font
-									 :background "#303030" :foreground "#6CA0A3"))))
-							  `(org-verbatim
-								((t (,@sans-font :foreground "#DC8CC3"))))
-							  `(org-property-value
-								((t (,@sans-font
-									 :background "#2B2B2B" :foreground "#FFFFEF"))))
-							  `(org-checkbox
-								((t (,@sans-font :foreground "#FFFFFD"))))
-							  `(org-block
-								((t (:font "Monospace" :height 1.0
-										   :background "gray30" :foreground "#FFFFFD"))))
-							  `(org-document-info
-								((t (,@sans-font :background "#303030"))))
-							  `(org-document-info-keyword
-								((t (,@sans-font :background "#303030"))))
-							  `(org-tag
-								((t (,@sans-font
-									 :background "#303030" :foreground "#9FC59F"))))
-							  `(org-special-keyword
-								((t (,@sans-font
-									 :background "#303030" :foreground "#9FC59F"))))
-							  `(org-tag-group
-								((t (,@sans-font
-									 :background "#303030" :foreground "#9FC59F"))))
-							  `(org-verse
-								((t (,@sans-font :foreground "#9FC59F"))))
-							  `(org-block-begin-line
-								((t
-								  (:family "Sans Serif" :width ultracondensed :height 0.6 :weight semibold :foreground "gray16" :background "orange4" :box (:style released-button) :extend t))))
-							  `(org-block-end-line
-								((t
-								  (:family "Sans Serif" :width ultracondensed :height 0.6 :weight semibold :foreground "gray16" :background "orange4" :box (:style released-button) :extend t))))
-							  `(org-code
-								((t (:font "Monospace" :height 1.0
-									 :foreground "#D0BF8F"))))
-							  `(org-link
-								((t (,@sans-font
-									 :foreground "#93E0E3" :underline (:color foreground-color :style line) ))))
-							  `(org-table
-								((t (,@sans-font :foreground "#9FC59F"))))
-							  `(org-document-title
-								((t (,@sans-font
-									 :foreground "#6C3333" :underline nil))))
-							  )
+	  (custom-theme-set-faces
+	   'user
+	   `(org-level-1
+		 ((t (,@headline ,@sans-font :weight bold :foreground "#6C3333"))))
+	   `(org-level-2
+		 ((t (,@headline ,@sans-font :weight bold :foreground "#7F9F7F"))))
+	   `(org-level-3
+		 ((t (,@headline ,@sans-font :weight bold :foreground "#6a5acd"))))
+	   `(org-level-4
+		 ((t (,@headline ,@sans-font :foreground "#DEB887"))))
+	   `(org-level-5
+		 ((t (,@headline ,@sans-font :foreground "#BA55D3"))))
+	   `(org-level-6
+		 ((t (,@headline ,@sans-font :foreground "#5C4033"))))
+	   
+	   `(org-ellipsis
+		 ((t (,@headline ,@sans-font :foreground "#989890"))))
+	   `(org-meta-line
+		 ((t (,@sans-font :foreground "#989890"))))
+	   `(org-drawer
+		 ((t (,@sans-font
+			  :background "#303030" :foreground "#6CA0A3"))))
+	   `(org-verbatim
+		 ((t (,@sans-font :foreground "#DC8CC3"))))
+	   `(org-property-value
+		 ((t (,@sans-font
+			  :background "#2B2B2B" :foreground "#FFFFEF"))))
+	   `(org-checkbox
+		 ((t (,@sans-font :weight bold
+						  :background "orange4" :foreground "gray5"))))
+	   `(org-block
+		 ((t (:font "Monospace" :height 1.0
+					:background "gray30" :foreground "#FFFFFD"))))
+	   `(org-document-info
+		 ((t (,@sans-font :background "#303030"))))
+	   `(org-document-info-keyword
+		 ((t (,@sans-font :background "#303030"))))
+	   `(org-tag
+		 ((t (,@sans-font
+			  :background "#303030" :foreground "#9FC59F"))))
+	   `(org-special-keyword
+		 ((t (,@sans-font
+			  :background "#303030" :foreground "#9FC59F"))))
+	   `(org-tag-group
+		 ((t (,@sans-font
+			  :background "#303030" :foreground "#9FC59F"))))
+	   `(org-verse
+		 ((t (,@sans-font :foreground "#9FC59F"))))
+	   `(org-block-begin-line
+		 ((t
+		   (:height 0.75 :weight bold :foreground "gray5" :background "orange4" :box (:style released-button) :extend t))))
+	   `(org-block-end-line
+		 ((t
+		   (:height 0.75 :weight bold :foreground "gray5" :background "orange4" :box (:style released-button) :extend t))))
+	   `(org-code
+		 ((t (:font "Monospace" :height 1.0
+					:foreground "#D0BF8F"))))
+	   `(org-link
+		 ((t (,@sans-font
+			  :foreground "#93E0E3" :underline (:color foreground-color :style line) ))))
+	   `(org-table
+		 ((t (,@sans-font :foreground "#9FC59F"))))
+	   `(org-document-title
+		 ((t (,@sans-font
+			  :foreground "#6C3333" :underline nil))))
+	   )
 	  )
 	)
   (add-hook 'org-mode-hook 'my/style-org)
@@ -426,20 +428,6 @@
   :config
   (add-hook 'org-mode-hook #'turn-on-org-cdlatex)
   )
-
-;;;###autoload
-(defun my/org-copy-code ()
-  "Export code silently to kill-ring, removing org formatting (https://emacs.stackexchange.com/questions/66218/possible-to-copy-paste-without-markup-in-org-mode)."
-  (interactive)
-  (require 'ox-ascii)
-  (cl-letf (((symbol-function 'org-element-normalize-string) #'identity))
-    (save-excursion
-      (kill-new
-       (org-export-as 'ascii
-              nil nil t
-              '(:ascii-verbatim-format "%s" :ascii-paragraph-spacing auto :ascii-headline-spacing nil :preserve-breaks t))
-       ))))
-(define-key org-mode-map (kbd "C-c C-c") 'my/org-copy-code)
 
 ;;;###autoload
 (defun my/org-copy-link (&optional arg)
