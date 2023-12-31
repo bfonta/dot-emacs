@@ -43,24 +43,13 @@
 			 (set (make-local-variable 'dired-dotfiles-show-p) t)))))
 
 
-;;;###autoload
-;; (defun my/swap-omit-files ()
-;;   ""
-;;   (interactive)
-;;   (setq dired-omit-files "")
-;;   (revert-buffer)
-;;   )
-
-; stripes
-(use-package stripes
-  :ensure nil
-  :init
-  (setq stripes-unit 1)
-  :commands stripes-mode
-  )
-; the above is ignored if put inise use-package's :config
-(add-hook 'dired-mode-hook (lambda ()
-							 (stripes-mode 1)))
+;; alternated color stripes in dired
+(add-to-list 'load-path "~/dot-emacs/stripes/")
+(load-library "stripes")
+(setq stripes-unit 1)
+(modify-face 'stripes "#bebebe" "#3F3F3F")
+(add-hook 'dired-mode-hook
+		  (lambda () (stripes-mode 1)))
 		  
 (use-package dired-rainbow
     :config
