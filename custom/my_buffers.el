@@ -174,5 +174,11 @@ will be killed."
       (revert-buffer t t))
     (switch-to-buffer-other-window buf)))
 
+;;;###autoload
+(defun my/kill-all-buffers ()
+  (interactive)
+  (mapcar 'kill-buffer (buffer-list))
+  (delete-other-windows))
+
 (provide 'my_buffers)
 ;;; my_buffers ends here
