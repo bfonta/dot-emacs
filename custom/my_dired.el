@@ -47,7 +47,7 @@
 (add-to-list 'load-path "~/dot-emacs/stripes/")
 (load-library "stripes")
 (setq stripes-unit 1)
-(modify-face 'stripes "#bebebe" "#3F3F3F")
+(modify-face 'stripes "white smoke" "#3F3F3F")
 (add-hook 'dired-mode-hook
 		  (lambda () (stripes-mode 1)))
 		  
