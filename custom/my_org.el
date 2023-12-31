@@ -165,7 +165,7 @@
 	   `(org-level-1
 		 ((t (,@headline ,@sans-font :weight bold :foreground "#6C3333"))))
 	   `(org-level-2
-		 ((t (,@headline ,@sans-font :weight bold :foreground "#7F9F7F"))))
+		 ((t (,@headline ,@sans-font :weight bold :foreground "chartreuse4"))))
 	   `(org-level-3
 		 ((t (,@headline ,@sans-font :weight bold :foreground "#6a5acd"))))
 	   `(org-level-4
@@ -215,8 +215,7 @@
 		 ((t
 		   (:height 0.75 :weight bold :foreground "gray5" :background "orange4" :box (:style released-button) :extend t))))
 	   `(org-code
-		 ((t (:font "Monospace" :height 1.0
-					:foreground "#D0BF8F"))))
+		 ((t (:font "Monospace" :height 0.95 :foreground "#7F9F7F"))))
 	   `(org-link
 		 ((t (,@sans-font
 			  :foreground "#93E0E3" :underline (:color foreground-color :style line) ))))
