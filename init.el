@@ -34,26 +34,16 @@
 (setenv "LSP_USE_PLISTS" "true")
 
 ;;; ---------------------------
-;;; Load non-MELPA packages
-;;; ---------------------------
-(add-to-list 'load-path "~/dot-emacs/markerpen/")
-(load-library "markerpen")
-
-(add-to-list 'load-path "~/dot-emacs/transpose_frame/")
-(require 'transpose-frame)
-
-(add-to-list 'load-path "~/dot-emacs/zoom/") ;; using deprecated 'cl' package
-(require 'zoom-frm)
-
-(add-to-list 'load-path "~/dot-emacs/wttrin/")
-(load-library "wttrin")
-
-;;; ---------------------------
 ;;; Load custom content
 ;;; ---------------------------
 (add-to-list 'load-path "~/dot-emacs/custom/")
 ;;(load-library "my_benchmarkinit")
 (load-library "my_emacsclient")
+(load-library "my_theme")
+(load-library "my_startup")
+(load-library "my_frame")
+(load-library "my_menu")
+(load-library "my_definitions")
 (load-library "my_cua")
 (load-library "my_whichfunc")
 (load-library "my_buffers")
@@ -63,17 +53,6 @@
 (load-library "my_snippets")
 (load-library "my_weather")
 (load-library "my_disk")
-
-(add-to-list 'load-path "~/dot-emacs/grep-a-lot/")
-(require 'grep-a-lot)
-(load-library "my_grep")
-
-;;(when window-system 
-(load-library "my_theme")
-(load-library "my_startup")
-(load-library "my_frame")
-(load-library "my_menu")
-(load-library "my_definitions")
 (load-library "my_replace")
 (load-library "my_org")
 (load-library "my_markdown")
@@ -114,6 +93,25 @@
 (load-library "my_scratch")
 
 (load-library "my_keybinds") ;; should be the last one to be loaded
+
+;;; ---------------------------
+;;; Load non-MELPA packages
+;;; ---------------------------
+(add-to-list 'load-path "~/dot-emacs/markerpen/")
+(load-library "markerpen")
+
+(add-to-list 'load-path "~/dot-emacs/transpose_frame/")
+(require 'transpose-frame)
+
+(add-to-list 'load-path "~/dot-emacs/zoom/") ;; using deprecated 'cl' package
+(require 'zoom-frm)
+
+(add-to-list 'load-path "~/dot-emacs/wttrin/")
+(load-library "wttrin")
+
+(add-to-list 'load-path "~/dot-emacs/grep-a-lot/")
+(require 'grep-a-lot)
+(load-library "my_grep")
 
 ;; ;; The default is 800 kilobytes.  Measured in bytes.
 ;; (setq gc-cons-threshold (* 50 1000 1000))

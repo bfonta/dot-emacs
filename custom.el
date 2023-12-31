@@ -4,7 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(gptel disk-usage wttrin org-roam zoom zenburn-theme yasnippet-snippets yasnippet-classic-snippets yaml-mode xterm-color with-venv which-key websocket webpaste vterm-toggle vi-tilde-fringe use-package toc-org swiper-helm stripes smooth-scrolling slime-repl-ansi-color shackle restart-emacs realgud rainbow-delimiters quelpa pyvenv python-mode polymode php-mode pdf-tools ov org-ref openwith notmuch nlinum multiple-cursors lsp-ui latex-math-preview jedi irony impatient-mode imenu-list highlight-indentation hide-mode-line helm-swoop helm-slime helm-lsp helm-bibtex grep-a-lot go-complete gnuplot git emojify dired-rainbow company-jedi company-c-headers company-auctex benchmark-init anaphora ag)))
+   '(gptel disk-usage wttrin org-roam zoom zenburn-theme yasnippet-snippets yasnippet-classic-snippets yaml-mode xterm-color with-venv which-key websocket webpaste vterm-toggle vi-tilde-fringe use-package toc-org swiper-helm smooth-scrolling slime-repl-ansi-color shackle restart-emacs realgud rainbow-delimiters quelpa pyvenv python-mode polymode php-mode pdf-tools ov org-ref openwith notmuch nlinum multiple-cursors lsp-ui latex-math-preview jedi irony impatient-mode imenu-list highlight-indentation hide-mode-line helm-swoop helm-slime helm-lsp helm-bibtex grep-a-lot go-complete gnuplot git emojify dired-rainbow company-jedi company-c-headers company-auctex benchmark-init anaphora ag)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

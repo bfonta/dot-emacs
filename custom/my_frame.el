@@ -12,7 +12,7 @@ Issue: It seems width-px is picked from the previous frame an action was perform
 	(when (eq width-px 1024) ;; Home
 	  (set-face-attribute 'default t :height 120))
 	(when (eq width-px 2560) ;; TP
-	  (set-face-attribute 'default t :height 220))
+	  (set-face-attribute 'default t :height 190))
 	)
   )
 (add-hook 'after-make-frame-functions #'my/adjust-font-size-new-frame)
