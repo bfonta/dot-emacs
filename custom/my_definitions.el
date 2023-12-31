@@ -28,9 +28,6 @@
   (setq tramp-terminal-type "dumb")
 
   (setq revert-without-query '(".*"))
-
-  (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
-  (set-face-attribute 'default t :font "DejaVu Sans Mono-10")
   )
 
 (use-package flycheck

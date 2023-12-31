@@ -13,7 +13,7 @@
 	(when (eq width-px 1024) ;; Home
 	  (set-face-attribute 'default nil :height 110))
 	(when (eq width-px 2560) ;; TP, Germany
-	  (set-face-attribute 'default nil :height 135))
+	  (set-face-attribute 'default nil :height 90))
 	)
   )
 

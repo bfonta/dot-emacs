@@ -86,10 +86,6 @@
   (defun my-org-config/set-base-font ()
     "Sets a fixed width (monospace) font in current buffer."
 	(interactive)
-    (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
-    (set-face-attribute 'default t :font "DejaVu Sans Mono-10")
-	;;; not fixed-width
-	;;(setq buffer-face-mode-face '(:family "Sans Serif" :width ultracondensed)) 
 	(buffer-face-mode))
   (add-hook 'org-mode-hook 'my-org-config/set-base-font)
   
