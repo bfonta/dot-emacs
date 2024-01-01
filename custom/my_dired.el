@@ -42,12 +42,11 @@
 	  (progn (revert-buffer) ; otherwise just revert to re-show
 			 (set (make-local-variable 'dired-dotfiles-show-p) t)))))
 
-
 ;; alternated color stripes in dired
 (add-to-list 'load-path "~/dot-emacs/stripes/")
 (load-library "stripes")
 (setq stripes-unit 1)
-(modify-face 'stripes "white smoke" "#3F3F3F")
+(modify-face 'stripes nil "#3F3F3F") ;; nil ensures the foreground color remains as-is
 (add-hook 'dired-mode-hook
 		  (lambda () (stripes-mode 1)))
 		  
