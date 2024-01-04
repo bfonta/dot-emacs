@@ -25,6 +25,7 @@
 			(lambda ()
               (dired-omit-mode 1)
 			  (dired-collapse-mode 1)
+			  (hl-line-mode)
 			  ))
   )
 

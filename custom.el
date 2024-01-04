@@ -11,6 +11,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(hl-line ((t (:inherit nil :extend t :box (:line-width (1 . 4) :color "saddle brown" :style flat-button)))))
  '(org-block ((t (:font "Monospace" :height 1.0 :background "gray30" :foreground "#FFFFFD"))))
  '(org-block-begin-line ((t (:family "Sans Serif" :width ultracondensed :height 0.6 :weight semibold :foreground "gray16" :background "orange4" :box (:style released-button) :extend t))))
  '(org-block-end-line ((t (:family "Sans Serif" :width ultracondensed :height 0.6 :weight semibold :foreground "gray16" :background "orange4" :box (:style released-button) :extend t))))
