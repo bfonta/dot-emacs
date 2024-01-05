@@ -2,8 +2,26 @@
 ;;; Code:
 ;;; Commentary:
 
-(add-hook 'isearch-mode-hook (apply-partially #'hl-line-mode +1))
-(add-hook 'isearch-mode-end-hook (apply-partially #'hl-line-mode -1))
+;; press enter only once in dired to enter folder/file after isearch
+(add-hook 'isearch-mode-end-hook 
+  (lambda ()
+    (when (and (eq major-mode 'dired-mode)
+			   (not isearch-mode-end-hook-quit)
+			   (eq last-input-event 'return)
+			   )
+      (dired-find-file))))
+
+;; enable/disable current line highlight after isearch only if not running in dired-mode
+;; line highlight is set independently for dired-mode to avoid conflicts
+;; originally implemented to avoid turning off the highlight once isearch has finished
+(add-hook 'isearch-mode-hook
+		  (lambda ()
+            (if (not (eq major-mode 'dired-mode))
+                (apply-partially #'hl-line-mode +1))))
+(add-hook 'isearch-mode-end-hook
+		  (lambda ()
+            (if (not (eq major-mode 'dired-mode))
+                (apply-partially #'hl-line-mode -1))))
 
 (use-package swiper-helm
   :ensure t

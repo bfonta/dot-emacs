@@ -180,5 +180,14 @@ will be killed."
   (mapcar 'kill-buffer (buffer-list))
   (delete-other-windows))
 
+;;;###autoload
+(defun my/end-of-buffer ()
+  "Go to beginning of last line in buffer. If last line is empty, go to beginning of penultimate one instead. Needed orignally for dired, where end-of-buffer takes the user to the lines after the last one."
+  (interactive)
+  (goto-char (point-max))
+  (beginning-of-line (and (looking-at-p "^$") 0)))
+(global-set-key "\M->" #'my/end-of-buffer)
+
+
 (provide 'my_buffers)
 ;;; my_buffers ends here

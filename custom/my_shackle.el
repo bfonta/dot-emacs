@@ -10,7 +10,7 @@
 		'(("^\\*?shell.*"		:regexp t   :size 0.5   :select nil	:align 'below	)
 		  ("^\\*?term.*"		:regexp t	:size 1.	:same t						)
 		  ("^\\*grep\\*.*$"		:regexp t   :size 0.3	:select nil	:align 'below	)
-		  ("*Help*"				:regexp nil :size 0.3	:select t					)
+		  ("*Help*"				:regexp nil :size 0.3	:select t	:align 'below	)
 		  (".*\\.gz"			:regexp t	:size 1.	:same t						)
 		  ("\\*swiper\\*"		:regexp t	:size .25	:select t					)
 		  ("^.*Man.*$"			:regexp t	:size 1.	:same t						)

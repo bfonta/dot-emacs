@@ -96,15 +96,6 @@
   (dired-do-kill-lines) ;; dired k command
   )
 
-;;press enter only once to enter folder/file after isearch
-(add-hook 'isearch-mode-end-hook 
-  (lambda ()
-    (when (and (eq major-mode 'dired-mode)
-			   (not isearch-mode-end-hook-quit)
-			   (eq last-input-event 'return)
-			   )
-      (dired-find-file))))
-
 (use-package dired-sidebar
   :defer t
   :commands (dired-sidebar-toggle-sidebar))
