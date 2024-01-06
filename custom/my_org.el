@@ -441,6 +441,7 @@
     (kill-new url)
     (message (concat "Copied URL: " url))))
 (define-key org-mode-map (kbd "C-x C-l") 'my/org-copy-link)
+(define-key org-mode-map (kbd "S-<return>") 'org-insert-heading)
 
 (if (require 'toc-org nil t)
     (progn
