@@ -4,7 +4,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(gptel disk-usage wttrin org-roam zoom zenburn-theme yasnippet-snippets yasnippet-classic-snippets yaml-mode xterm-color with-venv which-key websocket webpaste vterm-toggle vi-tilde-fringe use-package toc-org swiper-helm smooth-scrolling slime-repl-ansi-color shackle restart-emacs realgud rainbow-delimiters quelpa pyvenv python-mode polymode php-mode pdf-tools ov org-ref openwith notmuch nlinum multiple-cursors lsp-ui latex-math-preview jedi irony impatient-mode imenu-list highlight-indentation hide-mode-line helm-swoop helm-slime helm-lsp helm-bibtex grep-a-lot go-complete gnuplot git emojify dired-rainbow company-jedi company-c-headers company-auctex benchmark-init anaphora ag)))
+   '(gptel disk-usage wttrin org-roam zoom zenburn-theme yasnippet-snippets yasnippet-classic-snippets yaml-mode xterm-color with-venv which-key websocket webpaste vterm-toggle vi-tilde-fringe use-package toc-org swiper-helm smooth-scrolling slime-repl-ansi-color shackle restart-emacs realgud rainbow-delimiters quelpa pyvenv python-mode polymode php-mode pdf-tools ov org-ref openwith notmuch nlinum multiple-cursors lsp-ui latex-math-preview jedi irony impatient-mode imenu-list highlight-indentation hide-mode-line helm-swoop helm-slime helm-lsp helm-bibtex grep-a-lot go-complete gnuplot git emojify dired-rainbow company-jedi company-c-headers company-auctex benchmark-init anaphora ag))
+ '(safe-local-variable-values
+   '((etags-regen-ignores "test/manual/etags/")
+	 (etags-regen-regexp-alist
+	  (("c" "objc")
+	   "/[ \11]*DEFVAR_[A-Z_ \11(]+\"\\([^\"]+\\)\"/\\1/" "/[ \11]*DEFVAR_[A-Z_ \11(]+\"[^\"]+\",[ \11]\\([A-Za-z0-9_]+\\)/\\1/")))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -30,7 +35,7 @@
  '(org-level-6 ((t (:inherit default :weight regular :foreground "#DCDCCC" :foreground "#5C4033"))))
  '(org-link ((t (:foreground "#93E0E3" :underline (:color foreground-color :style line)))))
  '(org-meta-line ((t (:foreground "#989890"))))
- '(org-property-value ((t (:background "#2B2B2B" :foreground "#FFFFEF"))))
+ '(org-property-value ((t (:background "#2B2B2B" :foreground "#FFFFEF"))) t)
  '(org-special-keyword ((t (:background "#303030" :foreground "#9FC59F"))))
  '(org-table ((t (:foreground "#9FC59F"))))
  '(org-tag ((t (:background "#303030" :foreground "#9FC59F"))))

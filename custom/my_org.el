@@ -10,15 +10,34 @@
 
   ;; Org-mode: support shift selection also when cua mode is on
   (setq org-support-shift-select t)
+
+
+  (defun my/org-call-for-shift-select ()
+	""
+	(if (and cua-mode
+             org-support-shift-select
+             (not (use-region-p)))
+        (cua-set-mark))
+	)
   (eval-after-load "org"
     '(progn
        (eval-after-load "cua-base"
          '(progn            
-            (defadvice org-call-for-shift-select (before org-call-for-shift-select-cua activate)
-              (if (and cua-mode
-                       org-support-shift-select
-                       (not (use-region-p)))
-                  (cua-set-mark)))))))
+            (advice-add 'org-call-for-shift-select :before #'my/org-call-for-shift-select-cua)
+			)
+		 )))
+  ;;; using the old 'defadvice'
+  ;; (eval-after-load "org"
+  ;;   '(progn
+  ;;      (eval-after-load "cua-base"
+  ;;        '(progn            
+  ;;           (defadvice org-call-for-shift-select (before org-call-for-shift-select-cua activate)
+  ;;             (if (and cua-mode
+  ;;                      org-support-shift-select
+  ;;                      (not (use-region-p)))
+  ;;                 (cua-set-mark))
+  ;; 			  )
+  ;; 			))))
 
   ;; Make windmove work in Org mode:
   (add-hook 'org-shiftup-final-hook 'windmove-up)
@@ -265,6 +284,19 @@
   (define-key org-mode-map (kbd "S-C-<down>") 'shrink-window)
   (define-key org-mode-map (kbd "S-C-<up>") 'enlarge-window)
 
+  ;;;###autoload
+  (defun my/org-copy-link (&optional arg)
+    "Extract URL from org-mode link and add it to kill ring."
+    (interactive "P")
+    (let* ((link (org-element-lineage (org-element-context) '(link) t))
+           (type (org-element-property :type link))
+           (url (org-element-property :path link))
+           (url (concat type ":" url)))
+      (kill-new url)
+      (message (concat "Copied URL: " url))))
+  (define-key org-mode-map (kbd "C-x C-l") 'my/org-copy-link)
+  (define-key org-mode-map (kbd "S-<return>") 'org-insert-heading)
+
   ;; active Babel languages
   (org-babel-do-load-languages
    'org-babel-load-languages
@@ -401,6 +433,7 @@
 						  ))
 
 (use-package org-roam
+  :after org
   :config
   (setq org-roam-directory (file-truename "~/org/org-roam"))
 
@@ -429,19 +462,6 @@
   :config
   (add-hook 'org-mode-hook #'turn-on-org-cdlatex)
   )
-
-;;;###autoload
-(defun my/org-copy-link (&optional arg)
-  "Extract URL from org-mode link and add it to kill ring."
-  (interactive "P")
-  (let* ((link (org-element-lineage (org-element-context) '(link) t))
-          (type (org-element-property :type link))
-          (url (org-element-property :path link))
-          (url (concat type ":" url)))
-    (kill-new url)
-    (message (concat "Copied URL: " url))))
-(define-key org-mode-map (kbd "C-x C-l") 'my/org-copy-link)
-(define-key org-mode-map (kbd "S-<return>") 'org-insert-heading)
 
 (if (require 'toc-org nil t)
     (progn

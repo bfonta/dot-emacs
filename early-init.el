@@ -4,11 +4,10 @@
   (package-refresh-contents)
   (package-install 'use-package))
 (require 'package)
-;(add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/"))
 (setq package-archives '(("melpa"  . "https://melpa.org/packages/")
-			 ("gnu"    . "https://elpa.gnu.org/packages/")
-			 ("nongnu" . "https://elpa.nongnu.org/nongnu/")
-			 )
+						 ("gnu"    . "https://elpa.gnu.org/packages/")
+						 ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+						 )
       package-quickstart t)
 (eval-and-compile
   (setq use-package-always-ensure t

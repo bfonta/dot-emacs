@@ -50,8 +50,7 @@
   ;; Reftex
   (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 
-  (defadvice TeX-LaTeX-sentinel
-      (around mg-TeX-LaTeX-sentinel-open-output activate)
+  (defun my/TeX-LaTeX-sentinel ()
 	"Open output when there are errors."
 	;; Run `TeX-LaTeX-sentinel' as usual.
 	ad-do-it
@@ -61,6 +60,20 @@
           (plist-get TeX-error-report-switches (intern (TeX-master-file))))
       ;; If there are errors, open the output buffer.
       (TeX-recenter-output-buffer nil)))
+  (advice-add 'TeX-LaTeX-sentinel :around #'my/TeX-LaTeX-sentinel)
+
+  ;;; using the old 'defadvice'
+  ;; (defadvice TeX-LaTeX-sentinel
+  ;;     (around mg-TeX-LaTeX-sentinel-open-output activate)
+  ;; 	"Open output when there are errors."
+  ;; 	;; Run `TeX-LaTeX-sentinel' as usual.
+  ;; 	ad-do-it
+  ;; 	;; Check for the presence of errors.
+  ;; 	(when
+  ;; 		(with-current-buffer TeX-command-buffer
+  ;;         (plist-get TeX-error-report-switches (intern (TeX-master-file))))
+  ;;     ;; If there are errors, open the output buffer.
+  ;;     (TeX-recenter-output-buffer nil)))
 
   ;; ensure synching between source and pdf
   (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex --synctex=1%(mode)%' %t" TeX-run-TeX nil t :help "Run XeLaTeX"))

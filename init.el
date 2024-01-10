@@ -10,25 +10,6 @@
   )
 
 (setq native-comp-async-report-warnings-errors nil) ;; prevents annoying pop-up warning buffer to appear
-;;; ---------------------------
-;;; Install `quelpa`
-;;; https://github.com/quelpa/quelpa
-;;; ---------------------------
-;; (unless (package-installed-p 'quelpa)
-;;   (with-temp-buffer
-;;     (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
-;;     (eval-buffer)
-;;     (quelpa-self-upgrade)))
-
-;;; ---------------------------
-;;; Install utility to use `quelpa` with `use-package`
-;;; https://github.com/quelpa/quelpa-use-package
-;;; ---------------------------
-;; (quelpa
-;;  '(quelpa-use-package
-;;    :fetcher git
-;;    :url "https://github.com/quelpa/quelpa-use-package.git"))
-;; (require 'quelpa-use-package)
 
 ;;; Emacs performance (plists vs slower hash-table)
 (setenv "LSP_USE_PLISTS" "true")
@@ -52,7 +33,11 @@
 (load-library "my_search")
 (load-library "my_dired")
 (load-library "my_snippets")
+
+(add-to-list 'load-path "~/dot-emacs/wttrin/")
+(load-library "wttrin")
 (load-library "my_weather")
+
 (load-library "my_disk")
 (load-library "my_replace")
 (load-library "my_org")
@@ -105,9 +90,6 @@
 
 (add-to-list 'load-path "~/dot-emacs/zoom/") ;; using deprecated 'cl' package
 (require 'zoom-frm)
-
-(add-to-list 'load-path "~/dot-emacs/wttrin/")
-(load-library "wttrin")
 
 (add-to-list 'load-path "~/dot-emacs/grep-a-lot/")
 (require 'grep-a-lot)
