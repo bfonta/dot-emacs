@@ -234,7 +234,7 @@
 		 ((t
 		   (:height 0.75 :weight bold :foreground "gray5" :background "orange4" :box (:style released-button) :extend t))))
 	   `(org-code
-		 ((t (:font "Monospace" :height 0.95 :foreground "#7F9F7F"))))
+		 ((t (:font "Monospace" :height 0.85 :foreground "#7F9F7F"))))
 	   `(org-link
 		 ((t (,@sans-font
 			  :foreground "#93E0E3" :underline (:color foreground-color :style line) ))))
