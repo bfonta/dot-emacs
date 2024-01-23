@@ -13,7 +13,7 @@
                 '("mpg" "mpeg" "mp3" "mp4"
                   "avi" "wmv" "wav" "mov" "flv"
                   "ogm" "ogg" "mkv"))
-               "mpv"
+               "rhythmbox"
                '(file))
          (list (openwith-make-extension-regexp
                 '("png" "gif" "jpeg"))
