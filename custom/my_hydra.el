@@ -15,9 +15,11 @@
   ("p" (dired "~/Pictures/")               "pics")
   ("s" (dired "~/Pictures/Screenshots/")   "screenshots")
 
-  ("1" (dired "~/remote1/")  "Remote1")
-  ("2" (dired "~/remote2/")  "Remote2")
-  ("3" (dired "~/remote3/")  "Remote3")
+  ("1" (dired "~/remote1/")  "Rem1")
+  ("2" (dired "~/remote2/")  "Rem2")
+  ("3" (dired "~/remote3/")  "Rem3")
+  ("4" (dired "~/remote4/")  "Rem4")
+  ("5" (dired "~/remote5/")  "Rem5")
   )
 
 (global-set-key (kbd "C-x d") 'hydra-dired/body)
