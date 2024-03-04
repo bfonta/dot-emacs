@@ -32,7 +32,7 @@
           (default       . bibtex-completion-format-citation-default))
 		bibtex-completion-display-formats
 		'(;;(techreport . "${title:40} ${year:4} ${author:25} ${=has-pdf=:1}${=has-note=:1} ${tags:20}")
-		  (t . "${title:40} ${year:4} ${author:25} ${journal:20} ${=has-pdf=:1}${=has-note=:1} ${tags:20}")))
+		  (t . "${title:80} ${year:4} ${author:25} ${journal:20} ${=has-pdf=:1}${=has-note=:1} ${tags:20}")))
   )
 
 (provide 'my_biblio)
