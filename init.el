@@ -53,6 +53,7 @@
 (load-library "my_csv")
 (load-library "my_tex")
 (load-library "my_python")
+(load-library "my_yaml")
 (load-library "my_golang")
 (load-library "my_gitlink")
 (load-library "my_pulsar")
