@@ -210,8 +210,8 @@
 		 ((t (,@sans-font :weight bold
 						  :background "orange4" :foreground "gray5"))))
 	   `(org-block
-		 ((t (:font "Monospace" :height 1.0
-					:background "gray30" :foreground "#FFFFFD"))))
+		 ((t (,@sans-font 
+			  :background "gray30" :foreground "#FFFFFD"))))
 	   `(org-document-info
 		 ((t (,@sans-font :background "#303030"))))
 	   `(org-document-info-keyword
@@ -234,7 +234,7 @@
 		 ((t
 		   (:height 0.75 :weight bold :foreground "gray5" :background "orange4" :box (:style released-button) :extend t))))
 	   `(org-code
-		 ((t (:font "Monospace" :height 0.85 :foreground "#7F9F7F"))))
+		 ((t (,@sans-font :height 0.65 :foreground "#7F9F7F"))))
 	   `(org-link
 		 ((t (,@sans-font
 			  :foreground "#93E0E3" :underline (:color foreground-color :style line) ))))
@@ -247,7 +247,6 @@
 	  )
 	)
   (add-hook 'org-mode-hook 'my/style-org)
-  
   ;; Babel
   ;; Syntax highlightning in code blocks
   (setq org-src-fontify-natively t)
@@ -428,8 +427,6 @@
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "→"))))
 						  ("\\(<-\\)"
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "←"))))
-						  ("\\(+-\\)"
-                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "±"))))
 						  ))
 
 (use-package org-roam
@@ -473,6 +470,33 @@
   (warn "toc-org not found"))
 
 (require 'org-mouse) ;; clickable items
+
+;; activate the :ignore: tag
+;; excludes the heading upon tex/pdf export while still including its contents.
+(require 'ox-extra)
+(ox-extras-activate '(latex-header-blocks ignore-headlines))
+
+;; set caption to stay below the table when exporting to tex/pdf
+(setq org-latex-caption-above nil)
+
+;; Type of emphasis used between spcific characters
+(setq org-emphasis-alist
+  '(("*" (bold :foreground "Orange"))
+    ("/" italic)
+    ("_" underline)
+    ("=" org-verbatim)
+    ("~" org-verse)
+    ("+" (:strike-through t))))
+
+(defface dollar-face
+  '((t (:weight bold :foreground "orange")))
+  "Face for dollar sign")
+(font-lock-add-keywords 'org-mode '(("\\<$.*?$\\>" . 'dollar-face)))
+
+(defface comment-face
+  '((t (:weight bold :foreground "red")))
+  "Face for dollar sign")
+(font-lock-add-keywords 'org-mode '(("\\(@[^@\n]+@\\)" . 'comment-face)))
 
 (provide 'my_org)
 ;;; my_org ends here

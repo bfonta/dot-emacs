@@ -4,19 +4,19 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(gptel disk-usage wttrin org-roam zoom zenburn-theme
-		   yasnippet-snippets yasnippet-classic-snippets yaml-mode
-		   xterm-color with-venv which-key websocket webpaste
-		   vterm-toggle vi-tilde-fringe use-package toc-org
-		   swiper-helm smooth-scrolling slime-repl-ansi-color shackle
-		   restart-emacs realgud rainbow-delimiters quelpa pyvenv
-		   python-mode polymode php-mode pdf-tools ov org-ref openwith
-		   notmuch nlinum multiple-cursors lsp-ui latex-math-preview
-		   jedi irony impatient-mode imenu-list highlight-indentation
-		   hide-mode-line helm-swoop helm-slime helm-lsp helm-bibtex
-		   grep-a-lot go-complete gnuplot git emojify dired-rainbow
-		   company-jedi company-c-headers company-auctex
-		   benchmark-init anaphora ag))
+   '(ag anaphora benchmark-init company-auctex company-c-headers
+		company-jedi dired-rainbow disk-usage emojify git gnuplot
+		go-complete gptel grep-a-lot helm-bibtex helm-lsp helm-slime
+		helm-swoop hide-mode-line highlight-indentation imenu-list
+		impatient-mode irony jedi latex-math-preview lsp-ui
+		multiple-cursors nlinum notmuch openwith org-contrib org-ref
+		org-roam ov pdf-tools php-mode polymode python-mode pyvenv
+		quelpa rainbow-delimiters realgud restart-emacs shackle
+		slime-repl-ansi-color smooth-scrolling swiper-helm toc-org
+		use-package vi-tilde-fringe vterm-toggle webpaste websocket
+		which-key with-venv wttrin xterm-color yaml-mode
+		yasnippet-classic-snippets yasnippet-snippets zenburn-theme
+		zoom))
  '(safe-local-variable-values
    '((etags-regen-ignores "test/manual/etags/")
 	 (etags-regen-regexp-alist

@@ -14,6 +14,7 @@
   ("w" (dired "~/Downloads/")              "downloads")
   ("p" (dired "~/Pictures/")               "pics")
   ("s" (dired "~/Pictures/Screenshots/")   "screenshots")
+  ("t" (dired "~/org/PhD/Thesis/")         "thesis")
 
   ("1" (dired "~/remote1/")  "Rem1")
   ("2" (dired "~/remote2/")  "Rem2")

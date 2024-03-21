@@ -3,8 +3,7 @@
 # key: eq
 # contributor: Bruno Alves (bruno.alves@cern.ch)
 # --
+#+NAME: eq:${1:"Equation label"}
 \begin{equation}
-${2:"insert latex equation"$(unless yas/modified-p (reftex-label "name" 'dont-insert))}
-\label{eq:${1:"insert name"$(unless yas/modified-p (reftex-label "name" 'dont-insert))}}
-\end{equation}
 $0
+\end{equation}

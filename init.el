@@ -77,6 +77,7 @@
 (load-library "my_vundo")
 (load-library "my_gpt")
 (load-library "my_scratch")
+(load-library "my_thesis")
 
 (load-library "my_keybinds") ;; should be the last one to be loaded
 
