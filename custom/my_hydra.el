@@ -2,11 +2,21 @@
 ;;; Code:
 ;;; Commentary:
 
+(defun my/hydra-set-thesis ()
+  (interactive)
+  (delete-other-windows)
+  (find-file "~/org/PhD/Thesis/thesis.org")
+  (split-window-right)
+  (my/shrink-window-third)
+  (windmove-right)
+  (dired "~/org/PhD/Thesis/chapters/")
+  )
+
 (use-package hydra
   )
 
 (defhydra hydra-dired (:exit t)
-  "dired"
+  "Quick navigation."
   ("e" (dired "~/dot-emacs/custom/")       "emacs")
   ("b" (dired "~/dot-emacs/bibliography/") "biblio")
   ("o" (dired "~/org/")                    "org")
@@ -14,7 +24,7 @@
   ("w" (dired "~/Downloads/")              "downloads")
   ("p" (dired "~/Pictures/")               "pics")
   ("s" (dired "~/Pictures/Screenshots/")   "screenshots")
-  ("t" (dired "~/org/PhD/Thesis/")         "thesis")
+  ("t" (my/hydra-set-thesis)               "thesis")
 
   ("1" (dired "~/remote1/")  "Rem1")
   ("2" (dired "~/remote2/")  "Rem2")
