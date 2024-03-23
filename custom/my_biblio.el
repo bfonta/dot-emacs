@@ -19,7 +19,7 @@
 										 "~/dot-emacs/bibliography/references/hgcal.bib"
 										 "~/dot-emacs/bibliography/references/higgs.bib"
 										 "~/dot-emacs/bibliography/references/mtd.bib"
-										 "~/dot-emacs/bibliography/references/mccontact.bib")
+										 "~/dot-emacs/bibliography/references/mc_generation.bib")
 		bibtex-completion-additional-search-fields '(tags journal)
 		;bibtex-completion-notes-symbol "✎"
 		;bibtex-completion-pdf-symbol "📁"
