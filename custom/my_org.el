@@ -261,8 +261,7 @@
 
   ;; Available embedded languages for babel.
   (org-babel-do-load-languages 'org-babel-load-languages
-                               '((sql . t)
-                                 (shell . t)
+                               '((shell . t)
                                  (dot . t)
                                  (emacs-lisp . t)
                                  (ruby . t)
@@ -460,21 +459,7 @@
   (add-hook 'org-mode-hook #'turn-on-org-cdlatex)
   )
 
-(if (require 'toc-org nil t)
-    (progn
-      (add-hook 'org-mode-hook 'toc-org-mode)
-      ;; enable in markdown, too
-      ;; (add-hook 'markdown-mode-hook 'toc-org-mode)
-      ;; (define-key markdown-mode-map (kbd "\C-c\C-o") 'toc-org-markdown-follow-thing-at-point)
-	  )
-  (warn "toc-org not found"))
-
 (require 'org-mouse) ;; clickable items
-
-;; activate the :ignore: tag
-;; excludes the heading upon tex/pdf export while still including its contents.
-(require 'ox-extra)
-(ox-extras-activate '(latex-header-blocks ignore-headlines))
 
 ;; set caption to stay below the table when exporting to tex/pdf
 (setq org-latex-caption-above nil)

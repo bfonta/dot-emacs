@@ -165,8 +165,6 @@
 ;;
 ;;; Code:
 
-(eval-when-compile (require 'cl)) ;; psetq
-
 (require 'thingatpt nil t) ;; (no error if not found): symbol-at-point
 (when (and (require 'thingatpt+ nil t);; (no error if not found)
            (fboundp 'tap-put-thing-at-point-props)) ; >= 2012-08-21
@@ -231,7 +229,7 @@ Optional args BEGIN and END delimit the region to use."
   (unless suffix (setq suffix ""))
   (when (and begin (not end)) (setq end (point)))
   (cond (begin ;; Use arg-supplied region
-         (psetq begin (min begin end)
+         (cl-psetq begin (min begin end)
                 end   (max begin end)))
         (t ;; Use current region.
          (setq begin (min (point) (mark)))

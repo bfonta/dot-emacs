@@ -77,7 +77,7 @@
 (load-library "my_vundo")
 (load-library "my_gpt")
 (load-library "my_scratch")
-(load-library "my_thesis")
+;;(load-library "my_thesis")
 
 (load-library "my_keybinds") ;; should be the last one to be loaded
 
@@ -89,6 +89,12 @@
 
 (add-to-list 'load-path "~/dot-emacs/transpose_frame/")
 (require 'transpose-frame)
+
+(add-to-list 'load-path "~/dot-emacs/ox-extra/")
+(require 'ox-extra)
+;; activate the :ignore: tag
+;; excludes the heading upon tex/pdf export while still including its contents.
+(ox-extras-activate '(latex-header-blocks ignore-headlines))
 
 (add-to-list 'load-path "~/dot-emacs/zoom/") ;; using deprecated 'cl' package
 (require 'zoom-frm)

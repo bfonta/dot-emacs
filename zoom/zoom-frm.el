@@ -230,8 +230,6 @@
 ;;
 ;;; Code:
 
-(eval-when-compile (require 'cl)) ;; case
-
 (require 'frame-cmds) ;; enlarge-font
 
 
@@ -408,7 +406,7 @@ Remember that you can also use `C-u' when you are done zooming."
              (step             (if (or (equal arg '(4))  (eq ?\025 last-command-event)) ; C-u
                                    'C-U-WAS-USED
                                  (setq arg  (prefix-numeric-value arg))
-                                 (case base
+                                 (cl-case base
                                    ((?+ ?=) arg)
                                    (?-      (- arg))
                                    (?0      0)
