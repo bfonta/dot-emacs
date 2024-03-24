@@ -90,11 +90,12 @@
 (add-to-list 'load-path "~/dot-emacs/transpose_frame/")
 (require 'transpose-frame)
 
-;; (add-to-list 'load-path "~/dot-emacs/ox-extra/")
-;; (require 'ox-extra)
-;; ;; activate the :ignore: tag
-;; ;; excludes the heading upon tex/pdf export while still including its contents.
+(add-to-list 'load-path "~/dot-emacs/ox-extra/")
+(require 'ox-extra)
+;; activate the :ignore: tag
+;; excludes the heading upon tex/pdf export while still including its contents.
 ;; (ox-extras-activate '(latex-header-blocks ignore-headlines))
+(ox-extras-activate '(ignore-headlines))
 
 (add-to-list 'load-path "~/dot-emacs/zoom/") ;; using deprecated 'cl' package
 (require 'zoom-frm)
