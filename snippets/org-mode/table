@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: table
+# key: tab
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+#+NAME: tab:${1:"Table label"}
+#+CAPTION: ${2:"Table caption"}
+|$0  |  |
+|--+--|
+
