@@ -6,7 +6,7 @@
   :after (org)
   :config
   (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c ]") 'org-ref-insert-cite-link)))
-  (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c [") 'helm-bibtex-with-local-bibliography)))
+  (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c [") 'org-ref-insert-ref-link)))
   )
 
 (use-package helm-bibtex

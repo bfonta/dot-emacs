@@ -474,7 +474,7 @@
     ("+" (:strike-through t))))
 
 (defface dollar-face
-  '((t (:weight bold :foreground "orange")))
+  '((t (:foreground "orange")))
   "Face for dollar sign")
 (font-lock-add-keywords 'org-mode '(("\\<$.*?$\\>" . 'dollar-face)))
 
