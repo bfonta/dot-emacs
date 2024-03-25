@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: figure
+# key: fig
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+#+NAME: fig:${1:"Figure label"}
+#+ATTR_LATEX: :width ${2:"Text width"}\textwidth
+#+CAPTION: ${3:"Figure caption."}
+[[~/org/PhD/Thesis/figures/$0.pdf]]
