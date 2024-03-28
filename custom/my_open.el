@@ -19,10 +19,6 @@
                 '("png" "gif" "jpeg"))
                "okular"
                '(file))
-		 (list (openwith-make-extension-regexp
-                '("svg"))
-               "eog"
-               '(file))
          (list (openwith-make-extension-regexp
                 '("pdf"))
                "okular"
