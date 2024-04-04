@@ -26,19 +26,7 @@
             (advice-add 'org-call-for-shift-select :before #'my/org-call-for-shift-select-cua)
 			)
 		 )))
-  ;;; using the old 'defadvice'
-  ;; (eval-after-load "org"
-  ;;   '(progn
-  ;;      (eval-after-load "cua-base"
-  ;;        '(progn            
-  ;;           (defadvice org-call-for-shift-select (before org-call-for-shift-select-cua activate)
-  ;;             (if (and cua-mode
-  ;;                      org-support-shift-select
-  ;;                      (not (use-region-p)))
-  ;;                 (cua-set-mark))
-  ;; 			  )
-  ;; 			))))
-
+  
   ;; Make windmove work in Org mode:
   (add-hook 'org-shiftup-final-hook 'windmove-up)
   (add-hook 'org-shiftleft-final-hook 'windmove-left)
@@ -459,8 +447,6 @@
   (add-hook 'org-mode-hook #'turn-on-org-cdlatex)
   )
 
-(require 'org-mouse) ;; clickable items
-
 ;; set caption to stay below the table when exporting to tex/pdf
 (setq org-latex-caption-above nil)
 
@@ -482,6 +468,23 @@
   '((t (:weight bold :foreground "red")))
   "Face for dollar sign")
 (font-lock-add-keywords 'org-mode '(("\\(@[^@\n]+@\\)" . 'comment-face)))
+
+(require 'org-mouse) ;; clickable items
+(defvar my-org-mouse-map (make-sparse-keymap))
+(org-defkey my-org-mouse-map [mouse-1] 'org-cycle)
+(add-hook 'org-mode-hook
+          (defun my-org-mouse-map-hook ()
+            (font-lock-add-keywords
+             nil
+             `((,(rx (and bol (one-or-more "*") (one-or-more space) (group-n 1 (one-or-more any)) eol))
+                (0
+                 `(
+                   face nil
+                   keymap ,my-org-mouse-map
+                   mouse-face highlight
+                   )
+                 prepend)))
+             t)))
 
 (provide 'my_org)
 ;;; my_org ends here
