@@ -18,10 +18,9 @@
   )
 
 ;; To be understood: this runs after calling load-emacs()
-(dolist (fn '(toggle-frame-fullscreen
-			  (lambda() (dired ".")) ;; run dired on current folder at start-up
-			  my/adjust-font-size-start-up
+(dolist (fn '((lambda() (dired ".")) ;; run dired on current folder at start-up
 			  (lambda() (load custom-file)) ;; load content added by customize
+			  my/adjust-font-size-start-up
 			  ))
   (add-hook 'after-init-hook fn)
   ;;(add-hook 'after-make-frame-functions 'fn)
