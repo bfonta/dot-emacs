@@ -194,9 +194,8 @@
 	   `(org-property-value
 		 ((t (,@sans-font
 			  :background "#2B2B2B" :foreground "#FFFFEF"))))
-	   `(org-checkbox
-		 ((t (,@sans-font :weight bold
-						  :background "orange4" :foreground "gray5"))))
+	   ;; `(org-checkbox
+	   ;; 	 ((t (,@sans-font :foreground "orange4" :background nil))))
 	   `(org-block
 		 ((t (,@sans-font 
 			  :background "gray30" :foreground "#FFFFFD"))))
@@ -234,6 +233,14 @@
 	   )
 	  )
 	)
+
+  (add-hook 'org-mode-hook (lambda ()
+							 "Beautify Org Checkbox Symbol"
+							 (push '("[ ]" . " ") prettify-symbols-alist) ;U+2001
+							 (push '("[X]" . "✓" ) prettify-symbols-alist)
+							 (push '("[-]" . " " ) prettify-symbols-alist) ;U+2001
+							 (prettify-symbols-mode)))
+  
   (add-hook 'org-mode-hook 'my/style-org)
   ;; Babel
   ;; Syntax highlightning in code blocks
@@ -406,7 +413,9 @@
 
 ;; replace list bullet
 (font-lock-add-keywords 'org-mode
-						'(("^ *\\([\+]\\) "
+						'(("^ *\\([\*]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "▶"))))
+						  ("^ *\\([\+]\\) "
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))
 						  ("^ *\\([\-]\\) "
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))

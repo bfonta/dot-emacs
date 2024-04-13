@@ -14,7 +14,7 @@
                 (abbreviate-file-name (buffer-file-name))
                   "%b"))))
 
-(add-hook 'after-make-frame-functions #'toggle-frame-fullscreen)
+; (add-hook 'after-make-frame-functions #'toggle-frame-fullscreen)
 
 (provide 'my_frame)
 ;;; my_frame ends here
