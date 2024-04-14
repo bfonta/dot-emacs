@@ -42,6 +42,8 @@
     (kill-region (point) isearch-other-end))
   (isearch-exit))
 (define-key isearch-mode-map [(control f)] 'my/isearch-kill-result)
+(define-key isearch-mode-map (kbd "M-<down>") 'isearch-ring-retreat)
+(define-key isearch-mode-map (kbd "M-<up>") 'isearch-ring-advance)
 
 (provide 'my_search)
 ;;; my_search ends here
