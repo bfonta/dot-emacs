@@ -152,11 +152,14 @@
   ;;;###autoload
   (defun my/style-org ()
 	"Beautify. I have removed indentation to make the file look cleaner."
-	(org-indent-mode 1)
+
+	;; Customize default behaviour of (org-indent-mode 1)
+	(setq org-startup-indented t
+		  org-indent-indentation-per-level 2
+		  org-indent-mode-turns-on-hiding-stars nil)
 	
-	(setq line-spacing 0.1
-          org-pretty-entities t
-		  )
+	(setq line-spacing 0.05
+          org-pretty-entities t)
 
 	;; fonts and colors (inspired on zenburn theme)
 	(let*
@@ -413,11 +416,21 @@
 
 ;; replace list bullet
 (font-lock-add-keywords 'org-mode
-						'(("^ *\\([\*]\\) "
+						'(("^[[:space:]]*\\([\*]\\) "
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "▶"))))
-						  ("^ *\\([\+]\\) "
+						  ("^[[:space:]]*\\([\*][\*]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "▶"))))
+						  ("^[[:space:]]*\\([\*][\*][\*]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "▶"))))
+						  ("^[[:space:]]*\\([\*][\*][\*][\*]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "⊙"))))
+						  ("^[[:space:]]*\\([\*][\*][\*][\*][\*]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "⊙"))))
+						  ("^[[:space:]]*\\([\*][\*][\*][\*][\*][\*]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "⊙"))))
+						  ("^[[:space:]]*\\([\+]\\) "
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))
-						  ("^ *\\([\-]\\) "
+						  ("^[[:space:]]*\\([\-]\\) "
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))
 						  ("\\(->\\)"
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "→"))))
