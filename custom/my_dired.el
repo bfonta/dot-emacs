@@ -109,6 +109,26 @@
   )
 
 ;;;###autoload
+(defun my/dired-copy-to-thesis ()
+  "Copy the current file in dired-mode to a fixed directory, allowing the user to override if the file already exists."
+  (interactive)
+  (let ((src (dired-get-file-for-visit)))
+    (if src
+        (let* ((dest "~/org/PhD/Thesis/figures/") ; Change this to your desired destination directory
+               (destination-file (expand-file-name (file-name-nondirectory src) dest)))
+          (if (file-exists-p destination-file)
+              (if (yes-or-no-p (format "File %s already exists in %s. Override? " (file-name-nondirectory src) dest))
+                  (progn
+                    (delete-file destination-file)
+                    (copy-file src dest)
+                    (message "File copied to %s." dest))
+                (message "Copy aborted."))
+            (progn
+              (copy-file src dest)
+              (message "File copied to %s." dest))))
+      (message "No file is selected"))))
+
+;;;###autoload
 (defun my/dired-open-root-cern-file ()
   (interactive)
   (setq dfn (dired-get-filename))
