@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: ac
+# key: ac
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+\ac{$0}
