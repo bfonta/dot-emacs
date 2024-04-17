@@ -3,4 +3,4 @@
 # key: ac
 # contributor: Bruno Alves (bruno.alves@cern.ch)
 # --
-\ac{$0}
+\ac{$1}$0
