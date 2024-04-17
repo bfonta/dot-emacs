@@ -508,5 +508,10 @@
                  prepend)))
              t)))
 
+;; alternated color stripes in dired
+(add-to-list 'load-path "~/dot-emacs/stripes/")
+(load-library "stripe-buffer")
+(add-hook 'org-mode-hook 'turn-on-stripe-table-mode)
+
 (provide 'my_org)
 ;;; my_org ends here
