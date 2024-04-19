@@ -513,5 +513,8 @@
 (load-library "stripe-buffer")
 (add-hook 'org-mode-hook 'turn-on-stripe-table-mode)
 
+;; exports correctly single quotes, double quotes, and apostrophes.
+(setq org-export-with-smart-quotes t)
+
 (provide 'my_org)
 ;;; my_org ends here
