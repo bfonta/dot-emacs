@@ -1,6 +1,6 @@
 ;;; my_hydra --- Summary
 ;;; Code:
-;;; Commentary:
+;;; Commentary: https://github.com/abo-abo/hydra/wiki/Nesting-Hydras
 
 (defun my/hydra-set-thesis ()
   (interactive)
@@ -10,6 +10,16 @@
   (my/shrink-window-third)
   (windmove-right)
   (dired "~/org/PhD/Thesis/chapters/")
+  )
+
+(defun my/hydra-set-dis-proceedings ()
+  (interactive)
+  (delete-other-windows)
+  (find-file "~/org/PhD/Thesis/dis_proceedings.org")
+  (split-window-right)
+  (my/shrink-window-third)
+  (windmove-right)
+  (dired "~/org/PhD/Thesis/dis_proceedings/")
   )
 
 (use-package hydra
@@ -25,6 +35,7 @@
   ("p" (dired "~/Pictures/")               "pics")
   ("s" (dired "~/Pictures/Screenshots/")   "screenshots")
   ("t" (my/hydra-set-thesis)               "thesis")
+  ("x" (my/hydra-set-dis-proceedings)      "DIS")
 
   ("1" (dired "~/remote1/")  "Rem1")
   ("2" (dired "~/remote2/")  "Rem2")
