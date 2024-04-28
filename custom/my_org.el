@@ -466,10 +466,10 @@
 				 (window-height . fit-window-to-buffer)))
   )
 
-(use-package cdlatex
-  :config
-  (add-hook 'org-mode-hook #'turn-on-org-cdlatex)
-  )
+;; (use-package cdlatex
+;;   :config
+;;   (add-hook 'org-mode-hook #'turn-on-org-cdlatex)
+;;   )
 
 ;; set caption to stay below the table when exporting to tex/pdf
 (setq org-latex-caption-above nil)
