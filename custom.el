@@ -19,7 +19,7 @@
 		yasnippet-classic-snippets yasnippet-snippets zenburn-theme
 		zoom))
  '(safe-local-variable-values
-   '((TeX-master . t) (etags-regen-ignores "test/manual/etags/")
+   '((etags-regen-ignores "test/manual/etags/")
 	 (etags-regen-regexp-alist
 	  (("c" "objc") "/[ \11]*DEFVAR_[A-Z_ \11(]+\"\\([^\"]+\\)\"/\\1/"
 	   "/[ \11]*DEFVAR_[A-Z_ \11(]+\"[^\"]+\",[ \11]\\([A-Za-z0-9_]+\\)/\\1/")))))
@@ -34,6 +34,7 @@
  '(org-block-begin-line ((t (:family "Sans Serif" :width ultracondensed :height 0.6 :weight semibold :foreground "gray16" :background "orange4" :box (:style released-button) :extend t))))
  '(org-block-end-line ((t (:family "Sans Serif" :width ultracondensed :height 0.6 :weight semibold :foreground "gray16" :background "orange4" :box (:style released-button) :extend t))))
  '(org-checkbox ((t (:foreground "#FFFFFD"))))
+ '(org-cite-face ((t (:weight bold :foreground "#DC8CC3"))))
  '(org-code ((t (:font "Monospace" :height 1.0 :foreground "#D0BF8F"))))
  '(org-document-info ((t (:background "#303030"))))
  '(org-document-info-keyword ((t (:background "#303030"))))
@@ -53,6 +54,7 @@
  '(org-table ((t (:foreground "#9FC59F"))))
  '(org-tag ((t (:background "#303030" :foreground "#9FC59F"))))
  '(org-tag-group ((t (:background "#303030" :foreground "#9FC59F"))))
+ '(org-target ((t (:foreground "olive drab" :underline t :slant oblique))))
  '(org-verbatim ((t (:foreground "#DC8CC3"))))
  '(org-verse ((t (:foreground "#9FC59F"))))
  '(tex-verbatim ((t (:inherit font-lock-string-face)))))

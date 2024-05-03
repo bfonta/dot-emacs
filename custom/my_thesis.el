@@ -39,9 +39,16 @@
               (message "File copied to %s." dest))))
       (message "No file is selected"))))
 
+;;;###autoload
 (defun my/open-thesis ()
   (interactive)
   (find-file (concat my/thesis-path "thesis.pdf"))
+  )
+
+;;;###autoload
+(defun my/open-dis-proceedings ()
+  (interactive)
+  (find-file (concat my/thesis-path "dis_proceedings.pdf"))
   )
 
 (defun my/org-latex-ref-to-cref (text backend info)

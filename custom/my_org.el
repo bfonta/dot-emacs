@@ -194,6 +194,8 @@
 			  :background "#303030" :foreground "#6CA0A3"))))
 	   `(org-verbatim
 		 ((t (,@sans-font :foreground "#DC8CC3"))))
+	   `(org-cite-face
+		 ((t (,@sans-font :weight bold :foreground "#DC8CC3"))))
 	   `(org-property-value
 		 ((t (,@sans-font
 			  :background "#2B2B2B" :foreground "#FFFFEF"))))
@@ -464,10 +466,10 @@
 				 (window-height . fit-window-to-buffer)))
   )
 
-(use-package cdlatex
-  :config
-  (add-hook 'org-mode-hook #'turn-on-org-cdlatex)
-  )
+;; (use-package cdlatex
+;;   :config
+;;   (add-hook 'org-mode-hook #'turn-on-org-cdlatex)
+;;   )
 
 ;; set caption to stay below the table when exporting to tex/pdf
 (setq org-latex-caption-above nil)
@@ -485,6 +487,11 @@
   '((t (:foreground "orange")))
   "Face for dollar sign")
 (font-lock-add-keywords 'org-mode '(("\\<$.*?$\\>" . 'dollar-face)))
+
+(defface cite-face
+  '((t (:italic t :foreground "slate gray")))
+  "Face for cite sign")
+(font-lock-add-keywords 'org-mode '(("cite:\&" . 'cite-face)))
 
 (defface comment-face
   '((t (:weight bold :foreground "red")))
