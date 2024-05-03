@@ -12,6 +12,12 @@
   (dired "~/org/PhD/Thesis/chapters/")
   )
 
+(defun my/hydra-set-cv ()
+  (interactive)
+  (delete-other-windows)
+  (find-file "~/Documents/LatexArchive/CurriculumVitae/Curriculum/master.tex")
+  )
+
 (use-package hydra
   )
 
@@ -25,6 +31,7 @@
   ("p" (dired "~/Pictures/")               "pics")
   ("s" (dired "~/Pictures/Screenshots/")   "screenshots")
   ("t" (my/hydra-set-thesis)               "thesis")
+  ("c" (my/hydra-set-cv)                   "cv")
 
   ("1" (dired "~/remote1/")  "Rem1")
   ("2" (dired "~/remote2/")  "Rem2")
