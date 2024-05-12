@@ -1,18 +1,13 @@
 ;;; my_tex --- Summary
 ;;; Code:
-;;; Commentary:
+;;; Commentary: 
 
-;;;###autoload
-(defun reduce-this-window-width ()
-  "Expand current window to use half of the other window's lines."
-  (shrink-window-horizontally (/ (window-width (next-window)) 5)))
-
-(use-package auctex
-  :ensure t
+;; https://emacs.stackexchange.com/questions/41321/when-to-specify-a-package-name-in-use-packages-ensure-tag/41324#41324
+(use-package tex
+  :ensure auctex
   :init
-  (setq
-   split-width-threshold 80
-   split-height-threshold nil)
+  (setq split-width-threshold 80
+		split-height-threshold nil)
 
   (setq-default TeX-master nil)
   ;; display PDF
@@ -23,14 +18,16 @@
 		  ((output-dvi style-pstricks) "dvips and gv")
 		  (output-pdf "Okular")
 		  (output-dvi "xdvi")
-		  (output-html "xdg-open")))
-  (setq TeX-auto-save t
+		  (output-html "xdg-open"))
+		TeX-auto-save t
 		TeX-parse-self t
-		TeX-PDF-mode t)
-  ;; Reftex
-  (setq reftex-plug-into-AUCTeX t)
+		TeX-PDF-mode t
+		;; Reftex
+		reftex-plug-into-AUCTeX t)
+
   :mode
   ("\\.tex\\'" . tex-mode)
+
   :config
   (company-auctex-init)
   
@@ -52,19 +49,6 @@
       ;; If there are errors, open the output buffer.
       (TeX-recenter-output-buffer nil)))
   (advice-add 'TeX-LaTeX-sentinel :around #'my/TeX-LaTeX-sentinel)
-
-  ;;; using the old 'defadvice'
-  ;; (defadvice TeX-LaTeX-sentinel
-  ;;     (around mg-TeX-LaTeX-sentinel-open-output activate)
-  ;; 	"Open output when there are errors."
-  ;; 	;; Run `TeX-LaTeX-sentinel' as usual.
-  ;; 	ad-do-it
-  ;; 	;; Check for the presence of errors.
-  ;; 	(when
-  ;; 		(with-current-buffer TeX-command-buffer
-  ;;         (plist-get TeX-error-report-switches (intern (TeX-master-file))))
-  ;;     ;; If there are errors, open the output buffer.
-  ;;     (TeX-recenter-output-buffer nil)))
 
   ;; ensure synching between source and pdf
   (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex --synctex=1%(mode)%' %t" TeX-run-TeX nil t :help "Run XeLaTeX"))
@@ -127,13 +111,18 @@ the item."
 (advice-add 'LaTeX-insert-item :override #'my/LaTeX-insert-item)
 
 ;;;###autoload
+(defun reduce-this-window-width ()
+  "Expand current window to use half of the other window's lines."
+  (shrink-window-horizontally (/ (window-width (next-window)) 5)))
+
+;;;###autoload
 (defun my/TeX-command-run-all (arg)
   (interactive "P")
   (TeX-command-run-all arg)
-  ;(reduce-this-window-width)
+  (reduce-this-window-width)
   )
 (add-hook 'LaTeX-mode-hook
-		  (lambda () (local-set-key (kbd "C-c C-a") #'my-TeX-command-run-all)))
+		  (lambda () (local-set-key (kbd "C-c C-a") #'my/TeX-command-run-all)))
 
 (provide 'my_tex)
 ;;; my_gitlink ends here
