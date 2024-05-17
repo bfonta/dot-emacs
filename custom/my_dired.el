@@ -16,6 +16,8 @@
   (define-key dired-mode-map [?%?s] 'my/dired-swap-omit)
   (define-key dired-mode-map (kbd "C-<up>") 'dired-up-directory)
   (define-key dired-mode-map (kbd "S-<return>") 'dired-find-file-other-window)
+  (define-key dired-mode-map (kbd "<mouse-2>") 'dired-find-file)
+  (define-key dired-mode-map (kbd "C-<down-mouse-1>") 'dired-find-file-other-window)
   (define-key dired-mode-map (kbd "q") 'dired-subtree-toggle)
   (setq dired-deletion-confirmer #'y-or-n-p ;; ls program name
 		dired-listing-switches "-ltrhgo --time-style=long-iso"
