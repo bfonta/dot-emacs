@@ -488,6 +488,10 @@
   "Face for dollar sign")
 (font-lock-add-keywords 'org-mode '(("\\<$.*?$\\>" . 'dollar-face)))
 
+(setq org-pretty-entities nil
+	  org-pretty-entities-include-sub-superscripts nil
+	  org-use-sub-superscripts "{}")
+
 (defface cite-face
   '((t (:italic t :foreground "slate gray")))
   "Face for cite sign")
