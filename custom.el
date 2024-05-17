@@ -5,8 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    '(ag anaphora auctex benchmark-init company-auctex company-c-headers
-		company-jedi dired-rainbow disk-usage emacsql-mysql
-		emacsql-sqlite-builtin emacsql-sqlite-module emojify git
+		company-jedi dired-rainbow disk-usage emojify git
 		gnuplot go-complete gptel grep-a-lot helm-bibtex helm-lsp
 		helm-slime helm-swoop hide-mode-line highlight-indentation
 		imenu-list impatient-mode irony jedi latex-math-preview lsp-ui
