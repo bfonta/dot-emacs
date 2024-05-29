@@ -11,6 +11,12 @@
 (global-set-key (kbd "C-S-f") 'revert-buffers)
 (global-set-key (kbd "C-c o") 'ffap-other-window)
 
+(use-package sudo-edit
+  :ensure t
+  :init
+  (global-set-key (kbd "C-c C-r") 'sudo-edit)
+  )
+
 (global-set-key (kbd "M-k") '(lambda () (interactive) (kill-line 0)) ) ;C-u kills to the left
 
 ;;;; Use C-u to switch between buffer and frame zoom
