@@ -4,9 +4,9 @@
 
 (use-package copilot
   :quelpa (copilot :fetcher github
-                   :repo "zerolfx/copilot.el"
+                   :repo "copilot-emacs/copilot.el"
                    :branch "main"
-                   :files ("dist" "*.el"))
+                   :files ("*.el"))
   :config
   (add-hook 'prog-mode-hook 'copilot-mode)  
   )

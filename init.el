@@ -14,6 +14,14 @@
 ;;; Emacs performance (plists vs slower hash-table)
 (setenv "LSP_USE_PLISTS" "true")
 
+;;; Require quelpa
+(use-package quelpa
+  :ensure)
+(use-package quelpa-use-package
+  :demand
+  :config
+  (quelpa-use-package-activate-advice))
+
 ;;; ---------------------------
 ;;; Load custom content
 ;;; ---------------------------
@@ -67,7 +75,7 @@
 (load-library "my_shackle")
 (load-library "my_expandregion")
 ;(load-library "my_magit")
-;(load-library "my_copilot")
+(load-library "my_copilot")
 ;(load-library "my_multiplecursors")
 ;(load-library "my_mail")
 (load-library "my_hydra")
