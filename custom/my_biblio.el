@@ -16,10 +16,10 @@
 		bibtex-completion-bibliography '("~/dot-emacs/bibliography/references/l1.bib"
 										 "~/dot-emacs/bibliography/references/gpu.bib"
 										 "~/dot-emacs/bibliography/references/stats.bib"
-										 "~/dot-emacs/bibliography/references/hgcal.bib"
 										 "~/dot-emacs/bibliography/references/higgs.bib"
 										 "~/dot-emacs/bibliography/references/mtd.bib"
 										 "~/dot-emacs/bibliography/references/mc_generation.bib"
+										 "~/dot-emacs/bibliography/references/pure_software.bib"
 										 "~/dot-emacs/bibliography/references/detector.bib")
 		bibtex-completion-additional-search-fields '(tags journal)
 		;bibtex-completion-notes-symbol "✎"
@@ -33,7 +33,7 @@
           (default       . bibtex-completion-format-citation-default))
 		bibtex-completion-display-formats
 		'(;;(techreport . "${title:40} ${year:4} ${author:25} ${=has-pdf=:1}${=has-note=:1} ${tags:20}")
-		  (t . "${title:80} ${year:4} ${author:10} ${journal:3} ${=has-pdf=:1}${=has-note=:1} ${tags:40}")))
+		  (t . "${title:80} ${year:4} ${author:10} ${journal:3} ${=has-pdf=:1}${=has-note=:1} ${tags:200}")))
   )
 
 (provide 'my_biblio)

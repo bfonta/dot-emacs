@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: fix
+# key: fix
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+@\fixme{$1}$0@

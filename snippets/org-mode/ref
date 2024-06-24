@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: ref
+# key: ref
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+\cref{$1}$0

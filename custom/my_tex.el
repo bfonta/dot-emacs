@@ -71,18 +71,39 @@
 			#'TeX-revert-document-buffer)
   )
 
+;; enables to use @EMAIL@ anywhere and replace it with the email address when exporting to latex
+;; https://stackoverflow.com/questions/67738804/orgmode-latex-export-email-is-not-exported
+(defun nd-email-filter (contents backend info)
+  (let ((email (plist-get info :email)))
+    (replace-regexp-in-string "@EMAIL@" email contents t)))
+(add-to-list 'org-export-filter-final-output-functions (function nd-email-filter))
+
 (with-eval-after-load 'ox-latex
-(add-to-list 'org-latex-classes
-             '("org-plain-latex"
-               "\\documentclass{article}
+  (add-to-list 'org-latex-classes
+               '("org-plain-latex"
+				 "\\documentclass{article}
            [NO-DEFAULT-PACKAGES]
            [PACKAGES]
            [EXTRA]"
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\paragraph{%s}" . "\\paragraph*{%s}")
-               ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+				 ("\\section{%s}" . "\\section*{%s}")
+				 ("\\subsection{%s}" . "\\subsection*{%s}")
+				 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+				 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+				 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+  (add-to-list 'org-latex-classes
+               '("pos"
+				 "\\documentclass[a4paper,11pt]{article}
+\\usepackage{pos}
+[NO-DEFAULT-PACKAGES]
+           [PACKAGES]
+           [EXTRA]"
+				 ("\\section{%s}" . "\\section*{%s}")
+				 ("\\subsection{%s}" . "\\subsection*{%s}")
+				 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+				 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+				 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  )
 
 
 (defalias 'my/tex-newline

@@ -308,6 +308,11 @@
                       org-latex-compiler 
                       " -recorder -synctex=1 -bibtex-cond %b")))
   (setq org-latex-listings t)
+
+  ;; To make \ref and \cref commands work in LaTeX
+  ;; https://superuser.com/questions/702070/how-do-i-add-a-label-to-a-figure-in-an-org-mode-file-that-im-going-to-export
+  (setq org-latex-prefer-user-labels t) 
+
   (setq org-latex-default-packages-alist
       '(("" "graphicx" t)
         ("" "grffile" t)
