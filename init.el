@@ -22,6 +22,9 @@
   :config
   (quelpa-use-package-activate-advice))
 
+(setq font-latex-match-italic-command-keywords
+	  '(("paragraph" "{")))
+
 ;;; ---------------------------
 ;;; Load custom content
 ;;; ---------------------------

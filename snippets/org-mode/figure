@@ -3,7 +3,10 @@
 # key: fig
 # contributor: Bruno Alves (bruno.alves@cern.ch)
 # --
+
 #+NAME: fig:${1:Figure label}
-#+ATTR_LATEX: :width ${2:"Text width"}\textwidth
 #+CAPTION: ${3:Figure caption.}
+#+BEGIN_figure
+#+ATTR_LATEX: :width .5\textwidth :center
 [[~/org/PhD/Thesis/figures/$0.pdf]]
+#+END_figure
