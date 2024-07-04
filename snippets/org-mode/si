@@ -3,4 +3,4 @@
 # key: si
 # contributor: Bruno Alves (bruno.alves@cern.ch)
 # --
-\SI{${1:100}}{${2:\GeV}}$0
+\SI{${1:100}}{\\${2:GeV}}$0
