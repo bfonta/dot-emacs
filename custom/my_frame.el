@@ -10,8 +10,7 @@
 (add-hook 'after-make-frame-functions #'my/run-dired-on-frame-creation)
 
 (setq frame-title-format
-  '("" invocation-name ": "(:eval (if (buffer-file-name)
-                (abbreviate-file-name (buffer-file-name))
+  '("" invocation-name ": "(:eval (if (buffer-file-nameeviate-file-name (buffer-file-name))
                   "%b"))))
 
 ; (add-hook 'after-make-frame-functions #'toggle-frame-fullscreen)

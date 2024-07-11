@@ -1,15 +1,3 @@
-@techreport{hlttdr,
-  author = "{The CMS Collaboration}",
-  title = "{The Phase-2 Upgrade of the CMS Data Acquisition and High Level Trigger}",
-  institution	= "CERN",
-  reportNumber	= "CERN-LHCC-2021-007, CMS-TDR-022",
-  address		= "Geneva",
-  year			= "2021",
-  note			= "This is the final version of the document, approved by the LHCC",
-  doi = {https://cds.cern.ch/record/2759072},
-  tags = {bruno, hlt, tdr},
-}
-
 @article{refCUDA1,
   doi = {10.1088/1742-6596/2438/1/012015},
   url = {https://dx.doi.org/10.1088/1742-6596/2438/1/012015},
@@ -36,3 +24,63 @@
   pages = 04017,
   tags={bruno,gpu,cms,hgcal},
 }
+
+@misc{patatrack,
+   title={Heterogeneous reconstruction of tracks and primary vertices with the CMS pixel tracker}, 
+   author={Andrea Bocci and Matti Kortelainen and Vincenzo Innocente and Felice Pantaleo and Marco Rovere},
+   year={2020},
+   eprint={2008.13461},
+   archivePrefix={arXiv},
+   primaryClass={physics.ins-det},
+   url={https://arxiv.org/abs/2008.13461},
+   tags = {patatrack, gpu, hlt},
+}
+
+@article{hlt_cpu_gpu_2023,
+    author = "Bocci, Andrea",
+    collaboration = "CMS",
+    title = "{CMS High Level Trigger performance comparison on CPUs and GPUs}",
+    doi = "10.1088/1742-6596/2438/1/012016",
+    journal = "J. Phys. Conf. Ser.",
+    volume = "2438",
+    number = "1",
+    pages = "012016",
+    year = "2023",
+	tags = {hlt, gpu, cpu, switch},
+}
+
+@article{hlt_ecal_gpu,
+    author = "Reis, Thomas",
+    collaboration = "CMS",
+    title = "{Developing GPU-compliant algorithms for CMS ECAL local reconstruction during LHC Run 3 and Phase 2}",
+    reportNumber = "CMS-CR-2022-029",
+    doi = "10.1088/1742-6596/2438/1/012027",
+    journal = "J. Phys. Conf. Ser.",
+    volume = "2438",
+    number = "1",
+    pages = "012027",
+    year = "2023",
+	tags = {hlt, ecal, gpu},	
+}
+
+@article{hlt_alpaka,
+    author = "Bocci, Andrea and Czirkos, Angela and Di Pilato, Antonio and Pantaleo, Felice and Hugo, Gabrielle and Kortelainen, Matti and Redjeb, Wahid",
+    collaboration = "CMS",
+    title = "{Performance portability for the CMS Reconstruction with Alpaka}",
+    doi = "10.1088/1742-6596/2438/1/012058",
+    journal = "J. Phys. Conf. Ser.",
+    volume = "2438",
+    number = "1",
+    pages = "012058",
+    year = "2023",
+	tags = {hlt, alpaka},
+}
+
+@article{hlt_hadron_pf,
+  collaboration = "CMS",
+  title         = "{Particle Flow Reconstruction on Heterogeneous
+                   Architecture for CMS}",
+  year          = "2022",
+  url           = "https://cds.cern.ch/record/2842374",
+  tags = {hcal, gpu, pf}
+} 
