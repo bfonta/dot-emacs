@@ -4,9 +4,37 @@
 
 (use-package org
   :mode ("\\.org$" . org-mode)
-  :config
-  (global-set-key (kbd "\C-cv") 'org-latex-export-to-pdf)
+  :config  
   (global-set-key (kbd "\C-cb") 'org-beamer-export-to-pdf)
+  (global-set-key (kbd "\C-c \C-o") 'org-open-at-point) ;;default to go to reference
+
+  ;;;###autoload
+  (defun my/org-latex-export-to-pdf (choice)
+	"Export the master Org file to PDF."
+	(interactive
+	 (list
+      (completing-read
+       "Choose master file or enter custom path: "
+       '("~/org/PhD/Thesis/thesis.org" "Enter custom path...")
+       nil nil nil nil "~/org/PhD/Thesis/thesis.org")))
+	(let ((master-file
+		   (if (string= choice "Enter custom path...")
+               (read-file-name "Path to the master Org file: ")
+			 choice))
+          (current-buffer (current-buffer)))
+	  (find-file master-file)
+	  (org-latex-export-to-pdf)
+	  (switch-to-buffer current-buffer))
+	)
+  (global-set-key (kbd "\C-cv") 'my/org-latex-export-to-pdf)
+
+  ;;;###autoload
+  (defun my/org-mark-ring-goto ()
+	"Go back to previous point and reset buffer position."
+	(interactive)
+	(org-mark-ring-goto)
+	(winner-undo)) ;;C-c <left>
+  (global-set-key (kbd "\C-x \C-o") 'my/org-mark-ring-goto) ;;custom to come back to reference
 
   ;; Org-mode: support shift selection also when cua mode is on
   (setq org-support-shift-select t)
@@ -531,6 +559,26 @@
 
 ;; exports correctly single quotes, double quotes, and apostrophes.
 (setq org-export-with-smart-quotes t)
+
+;; (defun my/org-export-file-link-removal (backend)
+;;   "Inspired by 'org-attach-expand-links' ，which is in 'org-export-before-parsing-functions' "
+;;   (save-excursion
+;;     (while (re-search-forward "file:" nil t)
+;;       (let ((link (org-element-context)))
+;;         (if (and (eq 'link (org-element-type link))
+;;                  (string-equal "file"
+;;                                (org-element-property :type link)))
+;;             (let ((description (and (org-element-property :contents-begin link)
+;;                                     (buffer-substring-no-properties
+;;                                      (org-element-property :contents-begin link)
+;;                                      (org-element-property :contents-end link))))
+;;                   )
+;;               (goto-char (org-element-property :end link))
+;;               (skip-chars-backward " \t")
+;;               (delete-region (org-element-property :begin link) (point))
+;;               (insert description))
+;;           )))))
+;; (add-to-list 'org-export-before-parsing-functions #'my/org-export-file-link-removal)
 
 (provide 'my_org)
 ;;; my_org ends here
