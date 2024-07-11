@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: num
+# key: num
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+\num{$1}$0

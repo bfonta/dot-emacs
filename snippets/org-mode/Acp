@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Acp
+# key: Acp
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+\Acp{$1}$0
