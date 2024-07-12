@@ -36,8 +36,9 @@
 (global-set-key (kbd "<mouse-3>") 'winner-undo)
 (global-set-key (kbd "<down-mouse-3> <mouse-3>") 'winner-undo)
 
-;; set META key to "mac" key when using keyboards with a mac layout
-(setq mac-command-modifier 'meta)
+;; swap super and meta keys
+(setq x-meta-keysym 'super
+      x-super-keysym 'meta)
 
 (provide 'my_keybinds)
 ;;; my_keybinds ends here

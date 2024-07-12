@@ -63,6 +63,7 @@
 (load-library "my_pdf")
 (load-library "my_csv")
 (load-library "my_tex")
+(load-library "my_text")
 (load-library "my_python")
 (load-library "my_yaml")
 (load-library "my_golang")

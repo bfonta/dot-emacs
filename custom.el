@@ -4,24 +4,25 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(ace-window all-the-icons bash-completion benchmark-init bui cdlatex
-				cfrs company-auctex company-box company-c-headers
-				company-fuzzy company-quickhelp conda copilot csv-mode
-				dired-collapse dired-rainbow dired-sidebar disk-usage
-				doom-modeline ebib emacsql-sqlite
-				emacsql-sqlite-module exec-path-from-shell
-				expand-region flx flycheck ggtags git-timemachine
-				go-mode gptel helm-ag helm-bibtex helm-gtags helm-lsp
-				helm-swoop hide-mode-line imenu-list impatient-mode
-				jedi list-utils lsp-ui magit markdown-preview-mode
-				multiple-cursors openwith org-bullets org-contrib
-				org-noter org-ref org-roam pdf-tools pfuture php-mode
-				pkg-info projectile pulsar python-mode pyvenv quelpa
-				quelpa-use-package rainbow-delimiters
-				readline-complete realgud restart-emacs shackle slime
-				smooth-scrolling stripes sudo-edit swiper-helm toc-org
-				tree-sitter vi-tilde-fringe vterm vundo webpaste
-				which-key wttrin zenburn-theme)))
+   '(ace-window all-the-icons auctex bash-completion benchmark-init bui
+				cdlatex cfrs company-auctex company-box
+				company-c-headers company-fuzzy company-quickhelp
+				conda copilot csv-mode dired-collapse dired-rainbow
+				dired-sidebar disk-usage doom-modeline ebib
+				emacsql-sqlite emacsql-sqlite-module
+				exec-path-from-shell expand-region flx flycheck ggtags
+				git-timemachine go-mode gptel helm-ag helm-bibtex
+				helm-gtags helm-lsp helm-swoop hide-mode-line
+				imenu-list impatient-mode jedi list-utils lsp-ui magit
+				markdown-preview-mode multiple-cursors openwith
+				org-bullets org-contrib org-noter org-ref org-roam
+				pdf-tools pfuture php-mode pkg-info projectile pulsar
+				python-mode pyvenv quelpa quelpa-use-package
+				rainbow-delimiters readline-complete realgud
+				restart-emacs shackle slime smooth-scrolling stripes
+				sudo-edit swiper-helm toc-org tree-sitter
+				vi-tilde-fringe vterm vundo webpaste which-key wttrin
+				zenburn-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
