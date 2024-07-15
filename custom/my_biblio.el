@@ -35,6 +35,8 @@
 		bibtex-completion-display-formats
 		'(;;(techreport . "${title:40} ${year:4} ${author:25} ${=has-pdf=:1}${=has-note=:1} ${tags:20}")
 		  (t . "${title:80} ${year:4} ${author:10} ${journal:3} ${=has-pdf=:1}${=has-note=:1} ${tags:200}")))
+  :bind
+  ("C-c p" . helm-bibtex) ;; (global-set-key (kbd "C-c p") 'helm-bibtex)
   )
 
 (provide 'my_biblio)
