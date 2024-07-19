@@ -33,7 +33,8 @@
 	"Go back to previous point and reset buffer position."
 	(interactive)
 	(org-mark-ring-goto)
-	(winner-undo)) ;;C-c <left>
+	;;(winner-undo) TODO: needs some work to work in all buffer configurations
+	) ;;C-c <left>
   (global-set-key (kbd "\C-x \C-o") 'my/org-mark-ring-goto) ;;custom to come back to reference
 
   ;; Org-mode: support shift selection also when cua mode is on
@@ -559,26 +560,6 @@
 
 ;; exports correctly single quotes, double quotes, and apostrophes.
 (setq org-export-with-smart-quotes t)
-
-;; (defun my/org-export-file-link-removal (backend)
-;;   "Inspired by 'org-attach-expand-links' ，which is in 'org-export-before-parsing-functions' "
-;;   (save-excursion
-;;     (while (re-search-forward "file:" nil t)
-;;       (let ((link (org-element-context)))
-;;         (if (and (eq 'link (org-element-type link))
-;;                  (string-equal "file"
-;;                                (org-element-property :type link)))
-;;             (let ((description (and (org-element-property :contents-begin link)
-;;                                     (buffer-substring-no-properties
-;;                                      (org-element-property :contents-begin link)
-;;                                      (org-element-property :contents-end link))))
-;;                   )
-;;               (goto-char (org-element-property :end link))
-;;               (skip-chars-backward " \t")
-;;               (delete-region (org-element-property :begin link) (point))
-;;               (insert description))
-;;           )))))
-;; (add-to-list 'org-export-before-parsing-functions #'my/org-export-file-link-removal)
 
 (provide 'my_org)
 ;;; my_org ends here
