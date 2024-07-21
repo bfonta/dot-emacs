@@ -91,6 +91,13 @@
 			   ("\\paragraph{%s}" . "\\paragraph*{%s}")
 			   ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 (add-to-list 'org-latex-classes
+             '("mimosis"
+			   "\\documentclass{mimosis}
+                [NO-DEFAULT-PACKAGES]
+                [PACKAGES]
+                [EXTRA]"
+			   ))
+(add-to-list 'org-latex-classes
              '("pos"
 			   "\\documentclass[a4paper,11pt]{article}
                \\usepackage{pos}
