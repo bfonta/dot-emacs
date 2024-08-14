@@ -515,7 +515,8 @@
 		("_" underline)
 		("=" org-verbatim)
 		("~" org-verse)
-		("+" (:strike-through t))))
+		;("+" (:strike-through t))
+		))
 
 (defface dollar-face
   '((t (:foreground "orange")))
