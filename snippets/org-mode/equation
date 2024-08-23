@@ -4,6 +4,6 @@
 # contributor: Bruno Alves (bruno.alves@cern.ch)
 # --
 #+NAME: eq:${1:"Equation label"}
-#+BEGIN_equation
+\begin{equation}
 $0
-#+END_equation
+\end{equation}

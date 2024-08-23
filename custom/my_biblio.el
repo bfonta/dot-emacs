@@ -22,6 +22,7 @@
 										 "~/dot-emacs/bibliography/references/pure_software.bib"
 										 "~/dot-emacs/bibliography/references/physics.bib"
 										 "~/dot-emacs/bibliography/references/detector.bib"
+										 "~/dot-emacs/bibliography/references/astrophysics.bib"
 										 "~/dot-emacs/bibliography/references/biology.bib")
 		bibtex-completion-additional-search-fields '(tags journal)
 		;bibtex-completion-notes-symbol "✎"
