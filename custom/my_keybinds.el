@@ -8,6 +8,7 @@
 (global-set-key (kbd "M-c") 'goto-line)
 (global-set-key (kbd "C-x x") 'exchange-point-and-mark)
 (global-set-key (kbd "C-f") 'revert-buffer)
+(global-set-key (kbd "M-f") 'rgrep)
 (global-set-key (kbd "C-S-f") 'revert-buffers)
 (global-set-key (kbd "C-c o") 'ffap-other-window)
 

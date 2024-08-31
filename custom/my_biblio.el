@@ -10,7 +10,7 @@
   )
 
 (use-package helm-bibtex
-  :after (org-ref)
+  ;; :after (org-ref)
   :config
   (setq bibtex-completion-library-path "~/Documents/Library/"
 		bibtex-completion-bibliography '("~/dot-emacs/bibliography/references/trigger.bib"

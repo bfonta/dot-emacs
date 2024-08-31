@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: noindent
+# key: ni
+# contributor: Bruno Alves (bruno.alves@cern.ch)
+# --
+\noindent $0
