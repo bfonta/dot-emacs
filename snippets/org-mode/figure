@@ -7,6 +7,7 @@
 #+NAME: fig:${1:Figure label}
 #+CAPTION: ${3:Figure caption.}
 #+BEGIN_figure
+\centering
 #+ATTR_LATEX: :width 1.\textwidth :center
 [[~/org/PhD/Thesis/figures/$0.pdf]]
 #+END_figure

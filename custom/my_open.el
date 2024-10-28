@@ -16,7 +16,7 @@
                "rhythmbox"
                '(file))
          (list (openwith-make-extension-regexp
-                '("png" "gif" "jpeg"))
+                '("gif" "jpeg" "png"))
                "okular"
                '(file))
          (list (openwith-make-extension-regexp
