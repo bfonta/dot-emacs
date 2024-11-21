@@ -24,7 +24,8 @@
           (current-buffer (current-buffer)))
 	  (find-file master-file)
 	  (org-latex-export-to-pdf)
-	  (switch-to-buffer current-buffer))
+	  ;;(switch-to-buffer current-buffer)
+	  )
 	)
   (global-set-key (kbd "\C-cv") 'my/org-latex-export-to-pdf)
 
@@ -67,7 +68,7 @@
   (setq org-outline-path-complete-in-steps nil)
 
   ;; always inline images
-  (setq org-startup-with-inline-images t)
+  (setq org-startup-with-inline-images nil)
 
   (setq org-image-actual-width nil)
   

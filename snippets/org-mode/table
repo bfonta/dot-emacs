@@ -5,7 +5,9 @@
 # --
 #+NAME: tab:${1:"Table label"}
 #+CAPTION: ${2:"Table caption"}
-#+ATTR_LATEX: :placement [!h] :center t :align c|c|
+#+ATTR_LATEX: :placement [!h] :center t :align c|c| :environment mytablewiderrows
+|--+--|
 |$0  |  |
 |--+--|
-
+|  |  |
+|--+--|
