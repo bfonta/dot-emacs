@@ -20,6 +20,10 @@
                "okular"
                '(file))
          (list (openwith-make-extension-regexp
+                '("odp"))
+               "libreoffice"
+               '(file))
+         (list (openwith-make-extension-regexp
                 '("pdf"))
                "okular"
                '(file)))))
