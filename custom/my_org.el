@@ -13,10 +13,12 @@
 	"Export the master Org file to PDF."
 	(interactive
 	 (list
-      (completing-read
-       "Choose master file or enter custom path: "
-       '("~/org/PhD/Thesis/thesis.org" "Enter custom path...")
-       nil nil nil nil "~/org/PhD/Thesis/thesis.org")))
+	  (let* ((current-file (buffer-file-name)))
+		(completing-read
+		 "Choose master file or enter custom path: "
+		 (list current-file "~/org/PhD/Thesis/thesis.org" "Enter custom path...")
+		 nil nil nil nil current-file)))
+	 )
 	(let ((master-file
 		   (if (string= choice "Enter custom path...")
                (read-file-name "Path to the master Org file: ")
