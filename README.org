@@ -20,7 +20,7 @@ You should now be able to open emacs. During initialization you might be require
 
 It should look as follows:
 
-[[screenshot.png]]
+[[./screenshot.png]]
 
 ** Disclaimer
 
