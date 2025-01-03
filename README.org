@@ -1,4 +1,4 @@
-Tested with emacs 27.2 and 29.0.50 (=emacs-version=).
+Tested with emacs 30.0.50 (=emacs-version=).
 
 To try the configuration above, clone this repository in your home folder (=~=):
 
@@ -61,6 +61,9 @@ sudo apt install build-essential ...
 #+END_SRC
 
 *** Version 29
+:PROPERTIES:
+:CUSTOM_ID: version29
+:END:
 
 This version notably offers =pixel-scroll-precision-mode= for the first time, which provides a smooth scrolling experience when scrolling with the mouse.
 
@@ -91,3 +94,7 @@ The following sources were consulted on 6^{th} August 2022:
 + [[https://www.emacswiki.org/emacs/GccEmacs][Gcc Emacs installation]]
 + [[https://batsov.com/articles/2021/12/19/building-emacs-from-source-with-pgtk/][Bozhidar Batsov]] article (focuses on the new ~pgtk~ support)
 
+
+*** Version 30
+
+Version 30 can be accessed following the [[#version29][instructions]] for version 29, modifying the version number where appropriate.
