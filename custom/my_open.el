@@ -20,7 +20,7 @@
                "okular"
                '(file))
          (list (openwith-make-extension-regexp
-                '("odp"))
+                '("odp" "pptx" "ppt"))
                "libreoffice"
                '(file))
          (list (openwith-make-extension-regexp
