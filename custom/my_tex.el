@@ -141,14 +141,14 @@ the item."
   "Expand current window to use half of the other window's lines."
   (shrink-window-horizontally (/ (window-width (next-window)) 5)))
 
-;;;###autoload
-(defun my/TeX-command-run-all (arg)
-  (interactive "P")
-  (TeX-command-run-all arg)
-  (reduce-this-window-width)
-  )
-(add-hook 'LaTeX-mode-hook
-		  (lambda () (local-set-key (kbd "C-c C-a") #'my/TeX-command-run-all)))
+;; ;;;###autoload
+;; (defun my/TeX-command-run-all (arg)
+;;   (interactive "P")
+;;   (TeX-command-run-all arg)
+;;   (reduce-this-window-width)
+;;   )
+;; (add-hook 'LaTeX-mode-hook
+;; 		  (lambda () (local-set-key (kbd "C-c C-a") #'my/TeX-command-run-all)))
 
 (provide 'my_tex)
 ;;; my_gitlink ends here
