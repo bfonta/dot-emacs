@@ -7,7 +7,7 @@
   (when window-system 
     (add-hook 'prog-mode-hook 'company-mode)
     (setq company-idle-delay 0) ; No delay in showing suggestions.
-    (setq company-minimum-prefix-length 1 ; Show suggestions after entering two characters.
+    (setq company-minimum-prefix-length 2 ; Show suggestions after entering two characters.
 	  company-selection-wrap-around t ; connect end and start of suggestion list
 	  company-dabbrev-downcase nil ; avoid downcase
 	  company-idle-delay 0.0
