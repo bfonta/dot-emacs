@@ -2,14 +2,14 @@
 ;;; Code:
 ;;; Commentary: https://robert.kra.hn/posts/2023-02-22-copilot-emacs-setup/
 
-;; (use-package copilot
-;;   :quelpa (copilot :fetcher github
-;;                    :repo "copilot-emacs/copilot.el"
-;;                    :branch "main"
-;;                    :files ("*.el"))
-;;   :config
-;;   (add-hook 'prog-mode-hook 'copilot-mode)  
-;;   )
+(use-package copilot
+  :quelpa (copilot :fetcher github
+                   :repo "copilot-emacs/copilot.el"
+                   :branch "main"
+                   :files ("*.el"))
+  :config
+  (add-hook 'prog-mode-hook 'copilot-mode)  
+  )
 
 ;;;###autoload
 (defun my/no-copilot-mode ()
