@@ -19,9 +19,9 @@
 				pkg-info projectile pulsar python-mode pyvenv
 				quelpa-use-package rainbow-delimiters
 				readline-complete realgud restart-emacs shackle slime
-				smooth-scrolling stripes sudo-edit swiper-helm toc-org
-				tree-sitter vi-tilde-fringe vterm vundo webpaste
-				which-key wttrin zenburn-theme))
+				smooth-scrolling snakemake-mode stripes sudo-edit
+				swiper-helm toc-org tree-sitter vi-tilde-fringe vterm
+				vundo webpaste which-key wttrin zenburn-theme))
  '(safe-local-variable-values '((TeX-master . t))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
