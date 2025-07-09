@@ -14,6 +14,7 @@
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
 (define-key yas-minor-mode-map (kbd "<M-tab>") 'yas-expand)
+(define-key yas-minor-mode-map (kbd "<C-tab>") 'yas-expand)
 
 (provide 'my_snippets)
 ;;; my_snippets.el ends here
