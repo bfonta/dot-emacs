@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; csv-mode-tests.el --- Tests for CSV mode         -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2020-2022 Free Software Foundation, Inc

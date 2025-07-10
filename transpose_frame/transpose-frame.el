@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; transpose-frame.el --- Transpose windows arrangement in a frame
 ;;; Bruno Alves: updated file to run on version 29.0.50
 

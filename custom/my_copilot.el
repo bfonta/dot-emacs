@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_copilot --- Summary
 ;;; Code:
 ;;; Commentary: https://robert.kra.hn/posts/2023-02-22-copilot-emacs-setup/

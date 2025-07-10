@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; stripes.el --- highlight alternating lines differently -*- lexical-binding: t -*-
 
 ;; Author: Michael Schierl <schierlm-public@gmx.de>

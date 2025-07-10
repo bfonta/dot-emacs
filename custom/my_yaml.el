@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_yaml --- Summary
 ;;; Code:
 ;;; Commentary: Tree-sitter https://www.masteringemacs.org/article/how-to-get-started-tree-sitter

@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; strings.el --- Miscellaneous string functions.
 ;;
 ;; Filename: strings.el

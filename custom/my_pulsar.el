@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_pulsar --- Summary
 ;;; Code: https://github.com/protesilaos/pulsar
 ;;; Commentary:

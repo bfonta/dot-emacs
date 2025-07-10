@@ -1,6 +1,12 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_org --- Summary
 ;;; Code:
 ;;; Commentary: https://emacs.christianbaeuerlein.com/my-org-config.html#orgc3bc9b5 and https://hugocisneros.com/org-config/#faces-setup
+
+(use-package vi-tilde-fringe
+  :ensure t
+  )
 
 (use-package org
   :mode ("\\.org$" . org-mode)

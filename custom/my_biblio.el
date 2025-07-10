@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_biblio --- Summary
 ;;; Code:
 ;;; Commentary: https://github.com/tmalsburg/helm-bibtex

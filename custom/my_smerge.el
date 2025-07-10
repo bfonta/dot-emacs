@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; cust_smerge --- Summary
 ;;; Code:
 ;;; Commentary:

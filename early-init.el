@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; Remove startup "Warning (bytecomp): reference to free variable"
 (defvar php-defs-functions-alist)
 (defvar php-ide-lsp-command-alist)

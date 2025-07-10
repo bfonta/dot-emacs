@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; misc-fns.el --- Miscellaneous non-interactive functions.
 ;;
 ;; Filename: misc-fns.el

@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_windows --- Summary
 ;;; Code:
 ;;; Commentary: go back and forth between buffer displays

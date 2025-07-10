@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_shackle --- Summary
 ;;; Code:
 ;;; Commentary: controls how buffers are mapped to windows

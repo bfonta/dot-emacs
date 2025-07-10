@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; cust_benchmarkinit --- Summary
 ;;; Code: 
 ;;; Commentary: https://github.com/dholm/benchmark-init-el

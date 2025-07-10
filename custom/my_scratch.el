@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_scratch --- Summary
 ;;; Code:
 ;;; Commentary: 

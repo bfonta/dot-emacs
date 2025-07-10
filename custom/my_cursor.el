@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_cursor --- Summary
 ;;; Code:
 ;;; Commentary:

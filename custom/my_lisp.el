@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil -*-
+
 ;;; my_lisp --- Summary
 ;;; Code:
 ;;; Commentary:

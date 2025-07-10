@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; cust_align --- Summary
 ;;; Code:
 ;;; Commentary:

@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_weather --- Summary
 ;;; Code: https://github.com/bcbcarl/emacs-wttrin
 ;;; Commentary: weather forecast (https://wttr.in/); 'g' to change city, 'q' to quit

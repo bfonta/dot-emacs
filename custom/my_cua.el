@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_cua --- Summary
 ;;; Code:
 ;;; Commentary:

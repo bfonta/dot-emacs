@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_hydra --- Summary
 ;;; Code:
 ;;; Commentary: https://github.com/abo-abo/hydra/wiki/Nesting-Hydras

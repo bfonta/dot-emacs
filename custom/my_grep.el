@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; cust_grep --- Summary
 ;;; Code: https://www.emacswiki.org/emacs/grep-a-lot.el
 ;;; Commentary: Allow multiple grep buffers

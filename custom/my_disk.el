@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_disk --- Summary
 ;;; Code: https://github.com/emacs-straight/disk-usage
 ;;; Commentary: disk usage

@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_theme --- Summary
 ;;; Code:
 ;;; Commentary: define and modify the color theme

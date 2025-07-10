@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_companybox --- Summary
 ;;; Code:
 ;;; Commentary: https://melpa.org/#/company-box

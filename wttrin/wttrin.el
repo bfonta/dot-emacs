@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; wttrin.el --- Emacs frontend for weather web service wttr.in
 ;; Copyright (C) 2016 Carl X. Su
 

@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; cust_csv --- Summary
 ;;; Code:
 ;;; Commentary: copy locally and load file directly due to the MELPA `csv-mode-` bug

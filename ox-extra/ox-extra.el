@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; ox-extra.el --- Convenience functions for org export
 
 ;; Copyright (C) 2014  Aaron Ecay

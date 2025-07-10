@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_weather --- Summary
 ;;; Code: https://github.com/karthink/gptel
 ;;; Commentary: LLM client

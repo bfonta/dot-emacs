@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_scroll --- Summary
 ;;; Code:
 ;;; Commentary:

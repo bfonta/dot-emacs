@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_open --- Summary
 ;;; Code:
 ;;; Commentary: https://stackoverflow.com/questions/11218316/emacs-dired-and-openwith

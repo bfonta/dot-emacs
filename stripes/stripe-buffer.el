@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; stripe-buffer.el --- Use a different background for even and odd lines
 
 ;; Copyright (C) 2008-2009  Andy Stewart

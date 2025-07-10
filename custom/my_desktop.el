@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; cust_desktop --- Summary
 ;;; Code:
 ;;; Commentary:

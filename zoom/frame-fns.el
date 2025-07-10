@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; frame-fns.el --- Non-interactive frame and window functions.
 ;;
 ;; Filename: frame-fns.el

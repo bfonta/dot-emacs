@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; markerpen.el --- Colour and highlight arbitrary sections of buffers
 
 ;; Author: Ben Moseley <ben@moseley.name>

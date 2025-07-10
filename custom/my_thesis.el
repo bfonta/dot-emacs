@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: nil; -*-
+
 ;;; my_thesis --- Summary
 ;;; Code:
 ;;; Commentary: https://write.as/dani/writing-a-phd-thesis-with-org-mode
