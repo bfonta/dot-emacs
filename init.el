@@ -42,14 +42,25 @@
 (load-library "my_cua")
 (load-library "my_whichfunc")
 (load-library "my_buffers")
-(load-library "my_helm")
 (load-library "my_search")
 (load-library "my_dired")
 (load-library "my_snippets")
+(load-library "my_projectile")
+
+;; cscope (a better alternative to etags)
+(add-to-list 'load-path "~/dot-emacs/xcscope/")
+(load-library "xcscope")
+(require 'xcscope)
+(cscope-setup)
+
+(load-library "my_helm")
 
 (add-to-list 'load-path "~/dot-emacs/wttrin/")
 (load-library "wttrin")
 (load-library "my_weather")
+
+;; (add-to-list 'load-path "~/dot-emacs/helm-ag/")
+;; (load-library "helm-ag")
 
 (load-library "my_disk")
 (load-library "my_replace")
@@ -93,9 +104,6 @@
 (load-library "my_scratch")
 (load-library "my_thesis")
 
-;;; ---------------------------
-;;; Load non-MELPA packages
-;;; ---------------------------
 (add-to-list 'load-path "~/dot-emacs/markerpen/")
 (load-library "markerpen")
 
@@ -123,12 +131,12 @@
 ;; ;; Set the right directory to store the native comp cache
 ;; (add-to-list 'native-comp-eln-load-path (expand-file-name "eln-cache/" user-emacs-directory))
 
+(load-library "my_keybinds") ;; should be the last one to be loaded
+
 (defun my/load-emacs ()
   """Quick emacs configuration loading."""
   (interactive)
   (load user-init-file)
   )
-
-(load-library "my_keybinds") ;; should be the last one to be loaded
 
 ;;; init.el ends here

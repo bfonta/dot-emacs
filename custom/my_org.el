@@ -13,6 +13,7 @@
   :config  
   (global-set-key (kbd "\C-cb") 'org-beamer-export-to-pdf)
   (global-set-key (kbd "\C-c \C-o") 'org-open-at-point) ;;default to go to reference
+  (global-set-key (kbd "\C-ci") 'org-toggle-inline-images) ;;default to go to reference
 
   ;;;###autoload
   (defun my/org-latex-export-to-pdf (choice)
@@ -570,6 +571,11 @@
 
 ;; exports correctly single quotes, double quotes, and apostrophes.
 (setq org-export-with-smart-quotes t)
+
+;; disables png opening in org-mode, to allow inline image display
+(defun my/no-openwith ()
+  (openwith-mode -1))
+(add-hook 'org-mode-hook #'my/no-openwith)
 
 (provide 'my_org)
 ;;; my_org ends here

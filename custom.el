@@ -5,20 +5,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(bash-completion benchmark-init company-auctex company-c-headers
-					 company-fuzzy company-quickhelp dired-collapse
-					 dired-rainbow dired-sidebar disk-usage
-					 exec-path-from-shell expand-region flx flycheck
-					 git-link go-mode gptel grep-a-lot helm-bibtex
-					 imenu-list impatient-mode markdown-mode
-					 modern-fringes olivetti openwith org-ref org-roam
-					 pdf-tools pulsar python-mode pyvenv
-					 quelpa-use-package rainbow-delimiters
-					 restart-emacs shackle slime smooth-scrolling
-					 sudo-edit swiper-helm tree-sitter treesit-auto
-					 vi-tilde-fringe vundo webpaste which-key wttrin
-					 yaml yaml-mode zenburn-theme)))
+ '(helm-source-names-using-follow '("/home/bfonta/cmssw/"))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
