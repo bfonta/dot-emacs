@@ -46,6 +46,7 @@
 (load-library "my_dired")
 (load-library "my_snippets")
 (load-library "my_projectile")
+(load-library "my_cern_ldap")
 
 ;; cscope (a better alternative to etags)
 (add-to-list 'load-path "~/dot-emacs/xcscope/")

@@ -38,6 +38,7 @@
   ("e" (dired "~/dot-emacs/custom/")       "emacs")
   ("b" (dired "~/dot-emacs/bibliography/") "biblio")
   ("o" (dired "~/org/")                    "org")
+  ("n" (find-file "~/org/NGT/general.org") "NGT")
   ("d" (dired "~/Documents/")              "docs")
   ("w" (dired "~/Downloads/")              "downloads")
   ("p" (dired "~/Pictures/")               "pics")
@@ -53,17 +54,7 @@
   ("5" (dired "~/remote5/")  "Rem5")
   )
 
-(defhydra hydra-pdf (:exit t)
-  "Quick navigation."
-  ("t" (find-file "~/Downloads/Books/latex_math.pdf")     "tex symbols")
-  ("c" (find-file "~/Downloads/Books/CadamuroThesis.pdf") "Cadamuro Thesis")
-  ("a" (find-file "~/Downloads/Books/AlessandroTesi.pdf") "Alessandro Thesis")
-  ("j" (find-file "~/Downloads/Books/JonaTesi.pdf")       "Jona Thesis")
-  ("m" (find-file "~/Downloads/Books/Thomson.pdf")        "Modern Particle Physics")
-  )
-
 (global-set-key (kbd "C-x d") 'hydra-dired/body)
-(global-set-key (kbd "C-x p") 'hydra-pdf/body)
 
 (provide 'my_hydra)
 ;;; my_hydra ends here
