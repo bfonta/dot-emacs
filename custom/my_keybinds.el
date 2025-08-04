@@ -41,8 +41,8 @@
 (global-set-key (kbd "<down-mouse-3> <mouse-3>") 'winner-undo)
 
 ;; swap super and meta keys
-(setq x-meta-keysym 'super
-      x-super-keysym 'meta)
+; (setq x-meta-keysym 'super
+;       x-super-keysym 'meta)
 
 (provide 'my_keybinds)
 ;;; my_keybinds ends here

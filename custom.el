@@ -8,7 +8,7 @@
  '(helm-source-names-using-follow '("/home/bfonta/cmssw/"))
  '(package-selected-packages
    '(ag bash-completion benchmark-init cern-ldap company-auctex
-		company-c-headers company-fuzzy company-quickhelp
+		company-c-headers company-fuzzy company-quickhelp copilot
 		dired-collapse dired-rainbow dired-sidebar disk-usage
 		exec-path-from-shell expand-region flx flycheck git-link
 		git-timemachine go-mode gptel grep-a-lot helm-bibtex

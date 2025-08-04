@@ -26,11 +26,8 @@
 
 (defun my/hydra-set-cv ()
   (interactive)
-  (delete-other-windows)
-  (find-file "~/Documents/LatexArchive/CurriculumVitae/Curriculum/master.tex")
-  )
+  ;; (delete-other-windows)
 
-(use-package hydra
   )
 
 (defhydra hydra-dired (:exit t)
@@ -45,7 +42,7 @@
   ("s" (dired "~/Pictures/Screenshots/")   "screenshots")
   ("t" (my/hydra-set-thesis)               "thesis")
   ("x" (my/hydra-set-dis-proceedings)      "DIS")
-  ("c" (my/hydra-set-cv)                   "cv")
+  ("c" (dired "~/cmssw/")        "CMSSW")
 
   ("1" (dired "~/remote1/")  "Rem1")
   ("2" (dired "~/remote2/")  "Rem2")
