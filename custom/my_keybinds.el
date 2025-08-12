@@ -41,8 +41,26 @@
 (global-set-key (kbd "<down-mouse-3> <mouse-3>") 'winner-undo)
 
 ;; swap super and meta keys
-; (setq x-meta-keysym 'super
-;       x-super-keysym 'meta)
+(setq x-meta-keysym 'super
+      x-super-keysym 'meta)
+
+(defvar my/swap-super-meta nil
+  "Variable to keep track of whether super and meta keys are swapped.")
+(defun my/toggle-super-meta ()
+  "Swaps the super and meta keys."
+  (interactive)
+  (setq my/swap-super-meta (not my/swap-super-meta))
+  (if my/swap-super-meta
+      (progn
+        (setq x-meta-keysym 'super
+              x-super-keysym 'meta)
+        (message "Super and Meta keys swapped."))
+    (progn
+      (setq x-meta-keysym 'meta
+            x-super-keysym 'super)
+      (message "Super and Meta keys restored."))))
+
+
 
 (provide 'my_keybinds)
 ;;; my_keybinds ends here
