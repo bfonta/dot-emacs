@@ -55,6 +55,7 @@
 (cscope-setup)
 
 (load-library "my_helm")
+(load-library "my_shell")
 
 (add-to-list 'load-path "~/dot-emacs/wttrin/")
 (load-library "wttrin")
@@ -86,7 +87,6 @@
 (load-library "my_connection")
 (load-library "my_desktop")
 (load-library "my_scroll")
-(load-library "my_shell")
 (load-library "my_pastebuffer")
 (load-library "my_cursor")
 (load-library "my_emojis")

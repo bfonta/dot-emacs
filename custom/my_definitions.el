@@ -24,6 +24,7 @@
 
   (add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.cuh\\'" . c++-mode))
+  (add-to-list 'auto-mode-alist '("\\.hip\\'" . c++-mode))
 
   (setq visible-bell t) ;;disable noisy bell
 

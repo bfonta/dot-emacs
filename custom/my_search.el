@@ -25,15 +25,15 @@
             (if (not (eq major-mode 'dired-mode))
                 (apply-partially #'hl-line-mode -1))))
 
-(use-package swiper-helm
-  :ensure t
-  :requires helm
-  :config
-  (setq swiper-helm-display-function 'helm-default-display-buffer)
-  (setq case-fold-search t)
-  ;; colors can be changed with `customize-group ivy-faces` in 'Swiper Line Face'
-  )
-(global-set-key (kbd "M-s s") 'swiper-helm)
+;;(use-package swiper-helm
+;;  :ensure t
+;;  :requires helm
+;;  :config
+;;  (setq swiper-helm-display-function 'helm-default-display-buffer)
+;;  (setq case-fold-search t)
+;;  ;; colors can be changed with `customize-group ivy-faces` in 'Swiper Line Face'
+;;  )
+;;(global-set-key (kbd "M-s s") 'swiper-helm)
 
 ;;;###autoload
 (defun my/isearch-kill-result ()

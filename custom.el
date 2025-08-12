@@ -19,6 +19,7 @@
 		smooth-scrolling sudo-edit swiper-helm tree-sitter
 		treesit-auto vi-tilde-fringe vterm vundo webpaste which-key
 		wttrin yaml yaml-mode zenburn-theme)))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
