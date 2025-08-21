@@ -11,6 +11,16 @@
     (exec-path-from-shell-initialize))
   )
 
+(require 'package)
+(setq package-archives '(("gnu"    . "https://elpa.gnu.org/packages/")
+                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+                         ("melpa"  . "https://melpa.org/packages/")
+                        )
+      package-quickstart t)
+(eval-and-compile
+  (setq use-package-always-ensure t
+        use-package-expand-minimally t))
+
 (setq native-comp-async-report-warnings-errors nil) ;; prevents annoying pop-up warning buffer to appear
 
 ;;; Emacs performance (plists vs slower hash-table)
