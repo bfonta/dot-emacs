@@ -5,20 +5,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(helm-source-names-using-follow '("/home/bruno/cmssw/" "/home/bfonta/cmssw/"))
- '(package-selected-packages
-   '(ag bash-completion benchmark-init cern-ldap company-auctex
-		company-c-headers company-fuzzy company-quickhelp copilot
-		dired-collapse dired-rainbow dired-sidebar disk-usage
-		exec-path-from-shell expand-region flx flycheck git-link
-		git-timemachine go-mode gptel grep-a-lot helm-bibtex
-		helm-cscope imenu-list impatient-mode magit markdown-mode
-		modern-fringes olivetti openwith org-ref org-roam pdf-tools
-		projectile pulsar python-mode pyvenv quelpa-use-package
-		rainbow-delimiters restart-emacs shackle slime
-		smooth-scrolling sudo-edit swiper-helm tree-sitter
-		treesit-auto vi-tilde-fringe vterm vundo webpaste which-key
-		wttrin yaml yaml-mode zenburn-theme)))
+ '(package-selected-packages nil)
+ '(warning-suppress-log-types '((files missing-lexbind-cookie "~/.emacs"))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

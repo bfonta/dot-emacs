@@ -43,6 +43,7 @@ I did not participate in the development of the following packages, included in 
 - [[https://github.com/magnars/expand-region.el][expand-region]]
 - [[https://github.com/magnars/multiple-cursors.el][multiple-cursors]]
 - [[https://github.com/protesilaos/pulsar][pulsar]]
++ [[https://www.emacswiki.org/emacs/grep-a-lot.el][grep-a-lot]]
 - [[https://github.com/takaxp/org-tree-slide][org-tree-slide]]
 - [[https://www.emacswiki.org/emacs?action=browse;oldid=DeskTop;id=Desktop][desktop]]
 
