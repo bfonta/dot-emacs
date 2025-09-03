@@ -52,15 +52,13 @@
   (setq my/swap-super-meta (not my/swap-super-meta))
   (if my/swap-super-meta
       (progn
-        (setq x-meta-keysym 'super
-              x-super-keysym 'meta)
+        (setq x-meta-keysym 'meta
+              x-super-keysym 'super)
         (message "Super and Meta keys swapped."))
     (progn
-      (setq x-meta-keysym 'meta
-            x-super-keysym 'super)
+      (setq x-meta-keysym 'super
+            x-super-keysym 'meta)
       (message "Super and Meta keys restored."))))
-
-
 
 (provide 'my_keybinds)
 ;;; my_keybinds ends here
