@@ -14,6 +14,7 @@
 		 ("C-x C-f" . helm-find-files)
 		 ("C-x C-d" . helm-browse-project)
 		 ("C-x b" . helm-mini)
+		 ("C-x k" . helm-show-kill-ring)
 		 ("C-D" . 'helm-buffer-run-kill-buffers)
 		 ;; "<tab>" . helm-execute-persistent-action) ; rebind tab to run persistent action
 		 )
