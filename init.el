@@ -24,9 +24,6 @@
   :config
   (quelpa-use-package-activate-advice))
 
-(setq font-latex-match-italic-command-keywords
-	  '(("paragraph" "{")))
-
 ;;; ---------------------------
 ;;; Load custom content
 ;;; ---------------------------
@@ -61,8 +58,8 @@
 (load-library "wttrin")
 (load-library "my_weather")
 
-;; (add-to-list 'load-path "~/dot-emacs/helm-ag/")
-;; (load-library "helm-ag")
+(add-to-list 'load-path "~/dot-emacs/helm-ag/")
+(load-library "helm-ag")
 
 (load-library "my_disk")
 (load-library "my_replace")
@@ -92,7 +89,7 @@
 (load-library "my_emojis")
 (load-library "my_shackle")
 (load-library "my_expandregion")
-;; (load-library "my_magit")
+(load-library "my_magit")
 ;; (load-library "my_copilot")   
 ;; (load-library "my_multiplecursors")
 ;; (load-library "my_mail")

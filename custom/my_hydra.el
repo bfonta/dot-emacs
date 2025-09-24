@@ -4,6 +4,9 @@
 ;;; Code:
 ;;; Commentary: https://github.com/abo-abo/hydra/wiki/Nesting-Hydras
 
+(use-package hydra
+  :ensure t )
+
 (defun my/hydra-set-thesis ()
   (interactive)
   (delete-other-windows)

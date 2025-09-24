@@ -27,8 +27,6 @@
 										 "~/dot-emacs/bibliography/references/astrophysics.bib"
 										 "~/dot-emacs/bibliography/references/biology.bib")
 		bibtex-completion-additional-search-fields '(tags journal)
-		;bibtex-completion-notes-symbol "✎"
-		;bibtex-completion-pdf-symbol "📁"
 		bibtex-completion-pdf-field "file"
 		org-cite-follow-processor 'helm-bibtex-org-cite-follow
 		bibtex-completion-format-citation-functions
@@ -36,9 +34,11 @@
           (latex-mode    . bibtex-completion-format-citation-cite)
           (markdown-mode . bibtex-completion-format-citation-pandoc-citeproc)
           (default       . bibtex-completion-format-citation-default))
-		bibtex-completion-display-formats
-		'(;;(techreport . "${title:40} ${year:4} ${author:25} ${=has-pdf=:1}${=has-note=:1} ${tags:20}")
-		  (t . "${title:80} ${year:4} ${author:10} ${journal:3} ${=has-pdf=:1}${=has-note=:1} ${tags:200}")))
+		;; breaks move (R) and copy (C) in dired mode; not clear why
+		;; bibtex-completion-display-formats
+		;; '(
+		;;   (t . "${title:80} ${year:4} ${author:10} ${journal:3} ${=has-pdf=:1}${=has-note=:1} ${tags:200}")))
+		)
   )
 
 (provide 'my_biblio)

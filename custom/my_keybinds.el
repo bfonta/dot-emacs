@@ -41,8 +41,8 @@
 (global-set-key (kbd "<down-mouse-3> <mouse-3>") 'winner-undo)
 
 ;; swap super and meta keys
-(setq x-meta-keysym 'super
-      x-super-keysym 'meta)
+(setq x-meta-keysym 'meta
+      x-super-keysym 'super)
 
 (defvar my/swap-super-meta nil
   "Variable to keep track of whether super and meta keys are swapped.")

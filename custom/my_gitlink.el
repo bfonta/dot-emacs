@@ -13,7 +13,6 @@
 		git-link-use-commit t)
   )
 
-
 ;; (use-package git-link
 ;;   :ensure t
 ;;   :config
@@ -22,7 +21,6 @@
 ;;   (git-link-default-remote "origin")
 ;;   (git-link-use-commit t)
 ;;   )
-
 
 (provide 'my_gitlink)
 ;;; my_gitlink ends here

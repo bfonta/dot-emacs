@@ -6,7 +6,7 @@
 
 ;; https://emacs.stackexchange.com/questions/41321/when-to-specify-a-package-name-in-use-packages-ensure-tag/41324#41324
 (use-package tex
-  :ensure auctex
+  :ensure company-auctex 
   :init
   (setq split-width-threshold 80
 		split-height-threshold nil)
@@ -71,6 +71,10 @@
   ;; Update PDF buffers after successful LaTeX runs
   (add-hook 'TeX-after-compilation-finished-functions
 			#'TeX-revert-document-buffer)
+
+  (setq font-latex-match-italic-command-keywords
+		'(("paragraph" "{")))
+
   )
 
 ;; enables to use @EMAIL@ anywhere and replace it with the email address when exporting to latex
