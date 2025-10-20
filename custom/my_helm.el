@@ -39,7 +39,7 @@
 
   (define-key helm-map (kbd "C-<left>") 'backward-char)
   (define-key helm-map (kbd "C-<right>") 'forward-char)
-  (helm-mode 1)
+  ;; (helm-mode 1)
   )
 
 (use-package xcscope
