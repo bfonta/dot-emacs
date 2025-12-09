@@ -22,5 +22,8 @@
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
+(global-set-key (kbd "C-x 4") 'split-root-window-right)
+(global-set-key (kbd "C-x 5") 'split-root-window-below)
+
 (provide 'my_windows)
 ;;; my_windows ends here
