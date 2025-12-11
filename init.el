@@ -65,7 +65,6 @@
 (load-library "my_replace")
 (load-library "my_org")
 (load-library "my_markdown")
-(load-library "my_open")
 (load-library "my_company")
 (load-library "my_lisp")
 (load-library "my_diff")
@@ -100,7 +99,6 @@
 (load-library "my_vundo")
 (load-library "my_gpt")
 (load-library "my_scratch")
-(load-library "my_thesis")
 
 (add-to-list 'load-path "~/dot-emacs/markerpen/")
 (load-library "markerpen")

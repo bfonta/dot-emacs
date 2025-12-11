@@ -573,9 +573,9 @@
 (setq org-export-with-smart-quotes t)
 
 ;; disables png opening in org-mode, to allow inline image display
-(defun my/no-openwith ()
-  (openwith-mode -1))
-(add-hook 'org-mode-hook #'my/no-openwith)
+;; (defun my/no-openwith ()
+;;   (openwith-mode -1))
+;; (add-hook 'org-mode-hook #'my/no-openwith)
 
 (provide 'my_org)
 ;;; my_org ends here
