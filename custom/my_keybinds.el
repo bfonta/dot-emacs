@@ -38,10 +38,11 @@
 (define-key ctl-x-map [(control ?0)] 'zoom-in/out)
 
 ;; define keybinds to scroll up and down with the keyboard
+(setq scroll-preserve-screen-position 'always)
 (defvar my-ctl-x-transient-map (make-sparse-keymap)
   "Transient keymap for C-x arrow keys.")
-(define-key my-ctl-x-transient-map (kbd "<up>")  (lambda () (interactive) (scroll-up 1)))
-(define-key my-ctl-x-transient-map (kbd "<down>") (lambda () (interactive) (scroll-down 1)))
+(define-key my-ctl-x-transient-map (kbd "<down>")  (lambda () (interactive) (scroll-up 1)))
+(define-key my-ctl-x-transient-map (kbd "<up>") (lambda () (interactive) (scroll-down 1)))
 (defun my/scroll-up-down ()
   "Activate transient keymap for C-x arrow keys."
   (interactive)
