@@ -99,6 +99,7 @@
 (load-library "my_vundo")
 (load-library "my_gpt")
 (load-library "my_scratch")
+(load-library "my_sync_window")
 
 (add-to-list 'load-path "~/dot-emacs/markerpen/")
 (load-library "markerpen")
