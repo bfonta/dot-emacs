@@ -1,6 +1,6 @@
 ;;; -*- lexical-binding: nil; -*-
 
-;;; my_weather --- Summary
+;;; my_gpt --- Summary
 ;;; Code: https://github.com/karthink/gptel
 ;;; Commentary: LLM client
 
@@ -10,7 +10,10 @@
 
   ;; (add-hook 'gptel-post-stream-hook 'gptel-auto-scroll)
   ;; (add-hook 'gptel-post-response-hook 'gptel-end-of-response)
-
+  
+  (setq	gptel-model 'gpt-5.2
+		gptel-backend (gptel-make-gh-copilot "Copilot"))
+  
   (defun my/chat ()
 	"Alias."
 	(interactive)
